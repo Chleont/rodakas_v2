@@ -1,5 +1,9 @@
 {
     "check":"English",
-    "language":"en"
-
+    "language":"en",
+    "rodakas":"Rodakas",
+    "activities":"Activities",
+    "archive":"Archive",
+    "multimedia":"Multimedia",
+    "communication":"Communication"
 }

@@ -1,7 +1,7 @@
 @import 'Colors.scss';
 
 body{
-  overflow:hidden
+  overflow:hidden;
 }
 
 .App {
@@ -42,6 +42,7 @@ body{
   content:"";
   height: 100vh;
   position:absolute;
+  top:4rem;
   left:0;
   right:0;
   background:rgba(0,0,0,0.5);
@@ -53,14 +54,51 @@ body{
   background-color:$mainBeige;
   display:flex;
   align-items:center;
-  padding: 0 1rem 0 1rem;
+  box-shadow: 5px 10px white;
+}
+
+.Navbar button{
+  font-size: 1.5rem;
+  cursor:pointer
 }
 
 .Navbar img{
-  height:3rem;
+  height: 3rem;
+  margin: 0 2rem 0 2rem;
+  cursor:pointer;
   filter:invert(100%);
 }
 
+.navbarButton{
+  color:$menuLetters;
+  margin: 0 1rem 0 1rem;
+  font-weight:500;
+}
+.navbarButton:hover{
+  color:$menuLettersStrong;
+}
+.navbarButton:focus{
+  color:$menuLettersStrong;
+}
+.noOutlineButton{
+  background-color: transparent;
+  border:none;
+}
+
+#pick-language-button{
+  height:fit-content!important;
+  width:fit-content!important;
+  margin-right:4rem;
+  margin-left:auto;
+  font-size:larger
+}
+#pick-language-icon{
+  margin-right:0.5rem;
+}
+#pick-language-icon::before{
+  content:'\f7a2';
+  font: var(--fa-font-solid);
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,4 +1,9 @@
 {
     "check":"Ελληνικά",
-    "language":"el"
+    "language":"el",
+    "rodakas":"Ρόδακας",
+    "activities":"Δράσεις",
+    "archive":"Αρχείο",
+    "multimedia":"Πολυμέσα",
+    "communication":"Επικοινωνία"
 }
