@@ -1,7 +1,7 @@
 @import 'Colors.scss';
 
-body{
-  overflow:hidden;
+:root {
+  --navbar-height: 4.2rem;
 }
 
 .App {
@@ -42,7 +42,7 @@ body{
   content:"";
   height: 100vh;
   position:absolute;
-  top:4rem;
+  top:var(--navbar-height);
   left:0;
   right:0;
   background:rgba(0,0,0,0.5);
@@ -50,7 +50,7 @@ body{
 
 .Navbar{
   width:100%;
-  height:4rem;
+  height:var(--navbar-height);
   background-color:$mainBeige;
   display:flex;
   align-items:center;
@@ -73,6 +73,8 @@ body{
   color:$menuLetters;
   margin: 0 1rem 0 1rem;
   font-weight:500;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: .1rem;
 }
 .navbarButton:hover{
   color:$menuLettersStrong;
@@ -90,7 +92,7 @@ body{
   width:fit-content!important;
   margin-right:4rem;
   margin-left:auto;
-  font-size:larger
+  font-family: 'Ubuntu', sans-serif;
 }
 #pick-language-icon{
   margin-right:0.5rem;
