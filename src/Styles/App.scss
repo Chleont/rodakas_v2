@@ -10,19 +10,25 @@
   height:100%;
 }
 
-.App-logo {
-  height: 18rem;
-  z-index:1000;
+.app-logo {
+  max-width: 80%;
+  height:auto;
+  width: 18rem;
+  z-index:500;
   pointer-events: none;
+}
+.app-title{
+  z-index:500;
+  color:$mainBeige
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 120s linear;
+  .app-logo {
+    animation: app-logo-spin infinite 120s linear;
   }
 }
 
-.App-header {
+.homescreen {
   background-image: url("./home_front.jpg");
   background-position:center center;
   background-repeat: no-repeat;
@@ -38,7 +44,7 @@
   color: white;
 }
 
-.App-header:after{
+.homescreen:after{
   content:"";
   height: 100vh;
   position:absolute;
@@ -86,26 +92,70 @@
   background-color: transparent;
   border:none;
 }
+#browser-menu-container{
+  height:100%;
+  display:flex;
+  align-items: center;
+}
+#burger-menu-button span{
+
+}
+
+#burger-menu-button span::before{
+  content:'\f0c9';
+  font: var(--fa-font-solid);
+  font-size: 2.5rem;  
+}
 
 #pick-language-button{
-  height:fit-content!important;
-  width:fit-content!important;
-  margin-right:4rem;
+  height:fit-content;
+  display:flex;
+  align-items: center;
+  width:fit-content;
   margin-left:auto;
   font-family: 'Ubuntu', sans-serif;
 }
-#pick-language-icon{
-  margin-right:0.5rem;
+#pick-language-text{
+  margin-right:4rem;
 }
+#pick-language-icon{
+  margin-right:0.25rem;
+}
+
 #pick-language-icon::before{
   content:'\f7a2';
   font: var(--fa-font-solid);
 }
-@keyframes App-logo-spin {
+
+@keyframes app-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Navbar button{
+    font-size:1.2rem;
+  }
+  #pick-language-icon{
+    margin-right:0;
+  }
+  #pick-language-icon::before{
+    font-size:1.5rem
+  } 
+  #pick-language-button{
+    padding: 0 0 0 0;
+  }
+  #pick-language-text{
+    margin-right:1.5rem;
+  }
+  #burger-menu-button{
+    margin-left:1rem;
+    padding:0 0 0 0;
+  }
+  #burger-menu-button span::before {
+    font-size:1.75rem;
   }
 }
