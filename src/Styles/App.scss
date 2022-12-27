@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top:10%;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -137,7 +137,7 @@
   width:100vw;
   background-color: transparent;
   height: fit-content;
-  padding: 2rem 0 2rem 0;
+  padding: 2rem 0 .5rem 0;
 }
 .footer-button{
   width:fit-content;
@@ -145,10 +145,12 @@
   margin: 0 1rem 0 1rem;
 }
 #footer img{
-  height:2rem;
+  height:calc(9px + 3.5vmin);
+  max-height:1.75rem;
+  min-height: 25px; 
 }
 #footer p{
-  font-size:1.05rem;
+  font-size: calc(5px + 2vmin)!important;
   font-family: 'Ubuntu', sans-serif;
 }
 #footer a{
