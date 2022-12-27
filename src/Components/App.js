@@ -8,7 +8,7 @@ import NavbarBrowserMenu from './NavbarBrowserMenu.js';
 import NavbarMobileMenu from './NavbarMobileMenu.js';
 import {FormattedMessage} from 'react-intl';
 import {Route, useNavigate,Routes} from 'react-router-dom';
-
+import Footer from './Footer.js'
 
 
 function App() {
@@ -74,6 +74,9 @@ function App() {
             </div>
           }/>
         </Routes>
+        <div class='footer'>
+          <Footer/>
+        </div>
       </IntlProvider>
     </div>
   );

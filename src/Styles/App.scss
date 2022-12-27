@@ -78,7 +78,7 @@
 .navbarButton{
   color:$menuLetters;
   margin: 0 1rem 0 1rem;
-  font-weight:500;
+  font-weight:400;
   font-family: 'Ubuntu', sans-serif;
   letter-spacing: .1rem;
 }
@@ -127,6 +127,34 @@
   font: var(--fa-font-solid);
 }
 
+.footer{
+  z-index:500;
+  position: fixed;
+  bottom:0;
+}
+#footer{
+  color:white;
+  width:100vw;
+  background-color: transparent;
+  height: fit-content;
+  padding: 2rem 0 2rem 0;
+}
+.footer-button{
+  width:fit-content;
+  height: fit-content;
+  margin: 0 1rem 0 1rem;
+}
+#footer img{
+  height:2rem;
+}
+#footer p{
+  font-size:1.05rem;
+  font-family: 'Ubuntu', sans-serif;
+}
+#footer a{
+  display: inline-block;
+  color:white;
+}
 @keyframes app-logo-spin {
   from {
     transform: rotate(0deg);
