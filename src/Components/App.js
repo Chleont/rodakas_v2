@@ -74,7 +74,7 @@ function App() {
             </div>
           }/>
         </Routes>
-        <div class='footer'>
+        <div className='footer'>
           <Footer/>
         </div>
       </IntlProvider>

@@ -12,27 +12,40 @@ function NavbarMobileMenu(){
         )
     }
     let navigate = useNavigate();
+    function showOptions(){
+        let menu = document.getElementById('dropdown-menu') 
+        if(menu.style.display =='flex'){
+            menu.style.display = 'none'
+        }else{
+            menu.style.display = 'flex'
+        }
+    }
 
     return (
         <div id="mobile-menu-container">
-            <button className="noOutlineButton navbarButton" id="burger-menu-button">
+            <button className="noOutlineButton navbarButton" id="burger-menu-button" onClick={()=>{showOptions()}}>
                 <span/>
             </button>
-            {/* <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/about')}}>
-            <FormattedMessage id = "rodakas"/>  
-            </button>
-            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/activities')}}>
-            <FormattedMessage id = "activities"/>  
-            </button>
-            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/archive')}}>
-            <FormattedMessage id = "archive"/>  
-            </button>
-            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/multimedia')}}>
-            <FormattedMessage id = "multimedia"/>  
-            </button>
-            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/communication')}}>
-            <FormattedMessage id = "communication"/>  
-            </button> */}
+            <div id="dropdown-menu">
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/about')}}>
+                    <FormattedMessage id = "rodakas"/>  
+                </button>
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/activities')}}>
+                    <FormattedMessage id = "activities"/>  
+                </button>
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/archive')}}>
+                    <FormattedMessage id = "archive"/>  
+                </button>
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/multimedia')}}>
+                    <FormattedMessage id = "multimedia"/>  
+                </button>
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/communication')}}>
+                    <FormattedMessage id = "communication"/>  
+                </button>
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/')}}>
+                    <FormattedMessage id = "homepage"/>  
+                </button>
+            </div>
         </div>
     )
 }

@@ -97,16 +97,30 @@
   display:flex;
   align-items: center;
 }
-#burger-menu-button span{
-
-}
 
 #burger-menu-button span::before{
   content:'\f0c9';
   font: var(--fa-font-solid);
   font-size: 2.5rem;  
 }
+#dropdown-menu{
+  display:none;
+  z-index:600;
+  background-color: $mainBeige;
+  padding-bottom: 0.5rem;
+  flex-direction: column;
+  justify-content:start;
+  align-items: flex-start;
+  position:absolute;
+  top:var(--navbar-height);
+  left:0;
+  width:100vw;
+}
+#dropdown-menu .navbarButton{
+  font-weight:500;
+  padding: .15rem 0 .15rem 0;
 
+}
 #pick-language-button{
   height:fit-content;
   display:flex;
@@ -150,7 +164,8 @@
   min-height: 25px; 
 }
 #footer p{
-  font-size: calc(5px + 2vmin)!important;
+  font-size: calc(5px + 1.5vmin)!important;
+  font-weight: 100;
   font-family: 'Ubuntu', sans-serif;
 }
 #footer a{
