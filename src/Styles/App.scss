@@ -1,19 +1,40 @@
 @import 'Colors.scss';
 
+
+html {
+  font-size: 16px;
+}
+@media (min-width:768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (min-width:1024px) {
+  html{
+    font-size: 19px;
+  }
+}
+@media (min-width:1280px) {
+  html{
+    font-size: 20px;
+  }
+}
+
 :root {
-  --navbar-height: 4.2rem;
+  --navbar-height: 4.8em;
+  --footer-height: 6em;
 }
 
 .App {
   text-align: center;
   width:100%;
-  height:100%;
+  height:100vh;
 }
 
 .app-logo {
   max-width: 80%;
   height:auto;
-  width: 18rem;
+  width: 13em;
   z-index:500;
   pointer-events: none;
 }
@@ -29,6 +50,7 @@
 }
 
 .homescreen {
+  position: relative;
   background-image: url("./home_front.jpg");
   background-position:center center;
   background-repeat: no-repeat;
@@ -46,9 +68,9 @@
 
 .homescreen:after{
   content:"";
-  height: 100vh;
+  height: 100%;
   position:absolute;
-  top:var(--navbar-height);
+  top:0;
   left:0;
   right:0;
   background:rgba(0,0,0,0.5);
@@ -64,23 +86,23 @@
 }
 
 .Navbar button{
-  font-size: 1.5rem;
+  font-size: 1.4em;
   cursor:pointer
 }
 
 .Navbar img{
-  height: 3rem;
-  margin: 0 2rem 0 2rem;
+  height: 3em;
+  margin: 0 2em 0 2em;
   cursor:pointer;
   filter:invert(100%);
 }
 
 .navbarButton{
   color:$menuLetters;
-  margin: 0 1rem 0 1rem;
+  margin: 0 1em 0 1em;
   font-weight:400;
   font-family: 'Ubuntu', sans-serif;
-  letter-spacing: .1rem;
+  letter-spacing: .05em;
 }
 .navbarButton:hover{
   color:$menuLettersStrong;
@@ -101,13 +123,13 @@
 #burger-menu-button span::before{
   content:'\f0c9';
   font: var(--fa-font-solid);
-  font-size: 2.5rem;  
+  font-size: 2.5em;  
 }
 #dropdown-menu{
   display:none;
   z-index:600;
   background-color: $mainBeige;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.5em;
   flex-direction: column;
   justify-content:start;
   align-items: flex-start;
@@ -118,7 +140,7 @@
 }
 #dropdown-menu .navbarButton{
   font-weight:500;
-  padding: .15rem 0 .15rem 0;
+  padding: .15em 0 .15em 0;
 
 }
 #pick-language-button{
@@ -130,10 +152,12 @@
   font-family: 'Ubuntu', sans-serif;
 }
 #pick-language-text{
-  margin-right:4rem;
+  display: flex;
+  align-self: flex-start;
+  margin-right:4em;
 }
 #pick-language-icon{
-  margin-right:0.25rem;
+  margin-right:0.25em;
 }
 
 #pick-language-icon::before{
@@ -145,28 +169,32 @@
   z-index:500;
   position: fixed;
   bottom:0;
+  height: var(--footer-height);
+  // padding: .2em 0 .2em 0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 #footer{
   color:white;
   width:100vw;
   background-color: transparent;
-  height: fit-content;
-  padding: 2rem 0 .5rem 0;
 }
 .footer-button{
   width:fit-content;
   height: fit-content;
-  margin: 0 1rem 0 1rem;
+  margin: 0 1em 0 1em;
 }
 #footer img{
   height:calc(9px + 3.5vmin);
-  max-height:1.75rem;
+  max-height:1.75em;
   min-height: 25px; 
 }
 #footer p{
   font-size: calc(5px + 1.5vmin)!important;
   font-weight: 100;
   font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 0;
 }
 #footer a{
   display: inline-block;
@@ -182,25 +210,26 @@
 }
 @media only screen and (max-width: 1000px) {
   .Navbar button{
-    font-size:1.2rem;
+    font-size:1.2em;
   }
   #pick-language-icon{
     margin-right:0;
   }
   #pick-language-icon::before{
-    font-size:1.5rem
+    font-size:1.5em
   } 
   #pick-language-button{
     padding: 0 0 0 0;
   }
   #pick-language-text{
-    margin-right:1.5rem;
+    padding-left:.25em;
+    margin-right:1.5em;
   }
   #burger-menu-button{
-    margin-left:1rem;
+    margin-left:1em;
     padding:0 0 0 0;
   }
   #burger-menu-button span::before {
-    font-size:1.75rem;
+    font-size:1.75em;
   }
 }

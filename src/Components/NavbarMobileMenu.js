@@ -14,7 +14,7 @@ function NavbarMobileMenu(){
     let navigate = useNavigate();
     function showOptions(){
         let menu = document.getElementById('dropdown-menu') 
-        if(menu.style.display =='flex'){
+        if(menu.style.display ==='flex'){
             menu.style.display = 'none'
         }else{
             menu.style.display = 'flex'

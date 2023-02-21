@@ -9,6 +9,7 @@ import NavbarMobileMenu from './NavbarMobileMenu.js';
 import {FormattedMessage} from 'react-intl';
 import {Route, useNavigate,Routes} from 'react-router-dom';
 import Footer from './Footer.js'
+import Workshops from './Workshops';
 
 
 function App() {
@@ -71,6 +72,24 @@ function App() {
           <Route path='/about' element={
             <div>
               About
+            </div>
+          }/>
+          <Route path='/activities' element={
+            <Workshops/>
+          }/>
+          <Route path='/archive' element={
+            <div>
+              Archive
+            </div>
+          }/>
+          <Route path='/multimedia' element={
+            <div>
+              Multimedia
+            </div>
+          }/>
+          <Route path='/communication' element={
+            <div>
+              Communication
             </div>
           }/>
         </Routes>

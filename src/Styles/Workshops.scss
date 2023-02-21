@@ -1,0 +1,29 @@
+@import 'Colors.scss';
+
+#workshop-page-container{
+    background-image:url(https://i.imgur.com/DTaAjfn.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    padding-bottom:6em;
+}
+
+#single-workshop-vue{
+    height:calc(60% - var(--navbar-height));
+    width:100%;
+    background-color: rgba(aquamarine,0.3);
+}
+
+#all-workshops-view{
+    height:calc(40% - var(--footer-height));
+    width:100%;
+    background-color: rgba(purple,0.3);
+}
+
+.workshops-image-thumbnail{
+    height:100%
+}
