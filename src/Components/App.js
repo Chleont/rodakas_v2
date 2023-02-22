@@ -67,6 +67,9 @@ function App() {
               <p className='app-title'>
                 <FormattedMessage id = "homescreen-title"/>     
               </p>
+              <div className='footer'>
+                <Footer/>
+              </div>
             </div>
           }/>
           <Route path='/about' element={
@@ -90,12 +93,12 @@ function App() {
           <Route path='/communication' element={
             <div>
               Communication
+              <div className='footer'>
+                <Footer/>
+              </div>
             </div>
           }/>
         </Routes>
-        <div className='footer'>
-          <Footer/>
-        </div>
       </IntlProvider>
     </div>
   );
