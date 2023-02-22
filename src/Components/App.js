@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import logo from './home_logo.png';
 import '../Styles/App.scss';
 import {IntlProvider} from 'react-intl';
