@@ -105,7 +105,15 @@ export default function FrogTroll(){
     }
 
     useEffect(()=>{
+        console.log('a')
         document.getElementById('frog-troll-container').addEventListener('mousemove', listener );
+    },[listener])
+
+    useEffect(()=>{
+        return () => {
+            clearInterval(interval)
+            clearInterval(hitInterval)
+        }
     },[])
 
 
