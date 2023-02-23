@@ -37,7 +37,7 @@
 
 #single-image img{
     height:100%;
-    padding-left: 2em;
+    padding-left: 1em;
 }
 
 #info{
@@ -49,6 +49,7 @@
     color:$menuLettersStrong;
     font-weight:500;
     word-wrap: break-word;
+    padding-right: 1em;
 }
 
 #title{
@@ -123,6 +124,7 @@
     }
     #info{
         display: flex;
+        padding-right: 0;
         align-items: center;
         justify-content: center;
         height:fit-content;
@@ -132,11 +134,13 @@
     #title{
         text-align: center;
         margin-top:1em;
+        padding: 0 .3em 0 .3em;
     }
 
     #dates{
         text-align: center;
         margin-top:1em;
+        padding: 0 .3em 0 .3em;
     }
 
     #single-image{

@@ -1,15 +1,16 @@
-import React, {useEffect, useState, useContext} from 'react'
-import logo from './home_logo.png';
-import '../Styles/App.scss';
+import React, {useEffect, useState} from 'react'
 import {IntlProvider} from 'react-intl';
-import Greek from '../Lang/el.json';
-import English from '../Lang/en.json';
-import NavbarBrowserMenu from './NavbarBrowserMenu.js';
-import NavbarMobileMenu from './NavbarMobileMenu.js';
 import {FormattedMessage} from 'react-intl';
 import {Route, useNavigate,Routes} from 'react-router-dom';
+import '../Styles/App.scss';
+import Greek from '../Lang/el.json';
+import English from '../Lang/en.json';
+import logo from './home_logo.png';
+import NavbarBrowserMenu from './NavbarBrowserMenu.js';
+import NavbarMobileMenu from './NavbarMobileMenu.js';
 import Footer from './Footer.js'
 import Workshops from './Workshops';
+import FrogTroll from './FrogTroll/FrogTroll';
 
 
 function App() {
@@ -73,9 +74,7 @@ function App() {
             </div>
           }/>
           <Route path='/about' element={
-            <div>
-              About
-            </div>
+              <FrogTroll/>
           }/>
           <Route path='/activities' element={
             <Workshops/>
