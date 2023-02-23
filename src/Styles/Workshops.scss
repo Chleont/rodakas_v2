@@ -27,42 +27,40 @@
 }
 
 #single-image{
-    height:calc(100%);
+    height:100%;
     width:50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
 }
 
 #single-image img{
     height:100%;
-    padding-right: 2em;
+    padding-left: 2em;
 }
 
 #info{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: flex-start;
     width:50%;
-    padding: 0 2em 0 2em;
     color:$menuLettersStrong;
     font-weight:500;
     word-wrap: break-word;
 }
 
-
 #title{
     margin:auto 0 auto 0;
     overflow-wrap: break-word;
-    text-align: left;
+    text-align: right;
     font-size: 1.4em;
 }
 
 #dates{
     margin:auto 0 auto 0;
-    text-align: left;
+    text-align: right;
     font-size: 1.2em;
 }
 
@@ -105,3 +103,59 @@
     border-radius: 20px;   
     border: none;
 }
+
+
+@media only screen and (max-width: 1000px) {
+    .App{
+        overflow-y: auto;
+    }
+    #workshop-page-container{
+        height:fit-content;
+    }
+    #single-workshop-view{
+        position: relative;
+        height:fit-content;
+        // top:var(--navbar-height);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0 0 0;
+    }
+    #info{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:fit-content;
+        width:100%
+    }
+
+    #title{
+        text-align: center;
+        margin-top:1em;
+    }
+
+    #dates{
+        text-align: center;
+        margin-top:1em;
+    }
+
+    #single-image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        margin-top: 1em;
+    }
+    #single-image img{
+        width:80%;
+        padding: 0 0 1em 0;
+    }
+    #all-workshops-view{
+        position:relative;
+        margin-top:auto;
+        min-height: 10em;
+    }
+    #all-workshops-view img{
+        height:8em;
+    }
+  }

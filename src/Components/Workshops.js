@@ -62,11 +62,11 @@ export default function Workshops(){
     return(
         <div id="workshop-page-container">
             <div id="single-workshop-view">
-                <div id='single-image'></div>
                 <div id='info'>
                     <span id='title'></span>
                     <span id='dates'></span>
                 </div>
+                <div id='single-image'></div>
             </div>
             <div id="all-workshops-view">
             </div>
