@@ -1,5 +1,6 @@
 :root{
-    --frog-width:10em;
+    --frog-width:8em;
+    // --frog-width:5em;
 }
 
 #frog-troll-container{
@@ -37,7 +38,8 @@
 #dot{
     width:1em;
     height:1em;
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: red;
     position: absolute;
     z-index:2000;
     border-radius: 80%;

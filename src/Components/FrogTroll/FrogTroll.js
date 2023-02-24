@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import './FrogTroll.scss'
 import trollBody from './fb.png'
 import trollJumping from './fj.png'
@@ -7,7 +7,6 @@ import trollMouthOpen from './fmo.png'
 
 export default function FrogTroll(){
 
-    // const [headType,setHead] = React.useState('closed')
 
     var canvas = null,
         x = null,
@@ -26,7 +25,10 @@ export default function FrogTroll(){
         interval = null,
         hitInterval= null,
         fontSize = null,
-        mouthCenter = []     
+        mouthCenter = [],
+        trollWidth = null,
+        offsety = null,
+        offsetx = null    
 
 
 
@@ -40,12 +42,10 @@ export default function FrogTroll(){
         }
         var navbarHeight = 4.8 * fontSize
 
-
     function start(){
         clearInterval(interval)
         interval = setInterval(function(){
             document.getElementById('frog-troll-head').src = trollMouthOpen
-            // setHead('open')
             clearInterval(hitInterval)
             hitInterval = setInterval(function(){
                 killPointer()
@@ -61,7 +61,11 @@ export default function FrogTroll(){
         x = document.getElementById('dot').getBoundingClientRect().x + document.getElementById('dot').getBoundingClientRect().width/2
         y = document.getElementById('dot').getBoundingClientRect().y + document.getElementById('dot').getBoundingClientRect().height/2
         ctx.beginPath();
-        ctx.moveTo(x,y - navbarHeight);
+        offsety = navbarHeight +  (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.22)
+        // offsety = 0
+        offsetx = Math.sin(radians) * (200 - trollWidth) * 0.08
+        // offsetx = 0
+        ctx.moveTo(x - offsetx,y - offsety);
         ctx.lineWidth = 10;
         ctx.strokeStyle = "#ff7887";
         ctx.lineTo(mouseX, mouseY - navbarHeight);
@@ -71,12 +75,17 @@ export default function FrogTroll(){
         },100)
         document.getElementById('frog-troll-container').style.cursor = 'none'
         document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
+        document.getElementById('frog-troll-container').removeEventListener('mouseleave', stopHunting)
         setTimeout(function(){
             document.getElementById('frog-troll-head').src = trollMouthClosed
-            // setHead('closed')
         },300)
         clearInterval(interval)
         clearInterval(hitInterval)
+        setTimeout(
+            function(){
+                rotateBack()
+            },300
+        )
     }
 
     function rotatePointer(e) {
@@ -89,24 +98,42 @@ export default function FrogTroll(){
         centerY = pointerBox.top + parseInt(centers[1]) - window.pageYOffset
         centerX = pointerBox.left + parseInt(centers[0]) - window.pageXOffset
         radians = Math.atan2(mouseX - centerX, mouseY - centerY)
-        degrees = (radians * (180 / Math.PI) * -1); 
+        degrees = (radians * (180 / Math.PI) * -1);
         pointer.style.transform = 'rotate('+degrees+'deg)';
         mouthCenter = [Math.sin(radians) * fontSize, (Math.cos(radians) - 2) * fontSize]
         document.getElementById('dot').style.transform = 'translate(' + mouthCenter[0] + 'px, ' + mouthCenter[1]+ 'px)'
     }
 
-    
+    function rotateBack(e) {
+        pointer = document.getElementById("frog-troll-head")
+        pointer.style.transitionDuration = '0.4s'
+        pointer.style.transform = 'rotate('+0+'deg)';
+        setTimeout(
+            function(){
+                pointer.style.transitionDuration = '0s'
+            },400
+        )
+    }
 
     function listener(e){
         document.getElementById('frog-troll-head').src = trollMouthClosed
-        // setHead('closed')
+        clearInterval(hitInterval)
         rotatePointer(e)
         start()
     }
 
+
+    function stopHunting(e){
+        document.getElementById('frog-troll-head').src = trollMouthClosed
+        clearInterval(interval)
+        clearInterval(hitInterval)
+        rotateBack(e)
+    }
+
+
     useEffect(()=>{
-        console.log('a')
         document.getElementById('frog-troll-container').addEventListener('mousemove', listener );
+        trollWidth = document.getElementById('frog-troll').offsetWidth
     },[listener])
 
     useEffect(()=>{
@@ -118,7 +145,7 @@ export default function FrogTroll(){
 
 
     return(
-        <div id='frog-troll-container'>
+        <div id='frog-troll-container' onMouseLeave={stopHunting}>
             <canvas id='canvas'/>
             <div id='dot'/>
             <div id='frog-troll'>
