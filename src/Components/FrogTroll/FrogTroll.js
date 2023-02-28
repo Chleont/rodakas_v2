@@ -5,7 +5,7 @@ import trollJumping from './fj.png'
 import trollMouthClosed from './fmc.png'
 import trollMouthOpen from './fmo.png'
 
-export default function FrogTroll(){
+export default function FrogTroll({size}){
 
 
     var canvas = null,
@@ -61,12 +61,12 @@ export default function FrogTroll(){
         x = document.getElementById('dot').getBoundingClientRect().x + document.getElementById('dot').getBoundingClientRect().width/2
         y = document.getElementById('dot').getBoundingClientRect().y + document.getElementById('dot').getBoundingClientRect().height/2
         ctx.beginPath();
-        offsety = navbarHeight +  (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.22)
+        offsety = navbarHeight +  (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.2)
         // offsety = 0
         offsetx = Math.sin(radians) * (200 - trollWidth) * 0.08
         // offsetx = 0
         ctx.moveTo(x - offsetx,y - offsety);
-        ctx.lineWidth = 10;
+        ctx.lineWidth = size + 2;
         ctx.strokeStyle = "#ff7887";
         ctx.lineTo(mouseX, mouseY - navbarHeight);
         ctx.stroke();
@@ -137,6 +137,7 @@ export default function FrogTroll(){
     },[listener])
 
     useEffect(()=>{
+        document.documentElement.style.setProperty('--frog-width',`${size}em`)
         return () => {
             clearInterval(interval)
             clearInterval(hitInterval)

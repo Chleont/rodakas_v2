@@ -74,7 +74,7 @@ function App() {
             </div>
           }/>
           <Route path='/about' element={
-              <FrogTroll/>
+              <FrogTroll size={2}/>
           }/>
           <Route path='/activities' element={
             <Workshops/>
