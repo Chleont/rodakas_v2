@@ -74,7 +74,15 @@ function App() {
             </div>
           }/>
           <Route path='/about' element={
-              <FrogTroll size={2}/>
+            // options:{
+            //   units:string 'em' or 'px' (default 'em')
+            //   startingPosition:{ calculated from center of screen
+            //     x:integer,
+            //     y:integer
+            //   },
+            //   size:{number}
+            // }
+              <FrogTroll options={{size:10, startingPosition:{x:160,y:-40}, units:'em'}}/>
           }/>
           <Route path='/activities' element={
             <Workshops/>

@@ -5,10 +5,21 @@ import trollJumping from './fj.png'
 import trollMouthClosed from './fmc.png'
 import trollMouthOpen from './fmo.png'
 
-export default function FrogTroll({size}){
+export default function FrogTroll({options}){
 
+    var propOption = {
+        units: options.units? options.units : 'em',
+        size: options.size? options.size: 10,
+        startingPosition:{
+            x: options.startingPosition.x? options.startingPosition.x : 0,
+            y: options.startingPosition.y? options.startingPosition.y : 0
+        }
+    }
 
     var canvas = null,
+        width =  Math.max(window.screen.width, window.innerWidth),
+        height =  Math.max(window.screen.height, window.innerHeight),
+        units = propOption.units,
         x = null,
         y = null,
         ctx = null,
@@ -24,23 +35,34 @@ export default function FrogTroll({size}){
         degrees = null,
         interval = null,
         hitInterval= null,
-        fontSize = null,
         mouthCenter = [],
         trollWidth = null,
         offsety = null,
-        offsetx = null    
+        offsetx = null,
+        fontSize = null
 
+    if(width < 1024){
+        fontSize = 16
+    }else if(width >= 1024 && width < 1280){
+        fontSize = 19
+    }else if(width >=1280){
+        fontSize = 20
+    }
+        
+    var trollSize = units === 'em'? propOption.size * fontSize : propOption.size,
+        frogx = units === 'em'? propOption.startingPosition.x * fontSize : propOption.startingPosition.x,
+        frogy = units === 'em'? propOption.startingPosition.y * fontSize : propOption.startingPosition.y,
+        navbarHeight = 4.8 * fontSize
 
+    if(Math.abs(frogx) > (width - trollSize) /2){
+        frogx = Math.sign(frogx) * (width - trollSize) / 2
+    }
 
-        var width =  Math.max(window.screen.width, window.innerWidth)
-        if(width < 1024){
-            fontSize = 16
-        }else if(width >= 1024 && width < 1280){
-            fontSize = 19
-        }else if(width >=1280){
-            fontSize = 20
-        }
-        var navbarHeight = 4.8 * fontSize
+    if(Math.abs(frogy) > (height - trollSize) /2 - navbarHeight){
+        frogy = Math.sign(frogy) * (height - 1.28 * trollSize - 2 * navbarHeight) / 2
+    }
+
+    console.log(frogx,frogy,width,height,trollSize)
 
     function start(){
         clearInterval(interval)
@@ -61,12 +83,12 @@ export default function FrogTroll({size}){
         x = document.getElementById('dot').getBoundingClientRect().x + document.getElementById('dot').getBoundingClientRect().width/2
         y = document.getElementById('dot').getBoundingClientRect().y + document.getElementById('dot').getBoundingClientRect().height/2
         ctx.beginPath();
-        offsety = navbarHeight +  (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.2)
+        offsety = navbarHeight +  (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.2) - frogy
         // offsety = 0
-        offsetx = Math.sin(radians) * (200 - trollWidth) * 0.08
+        offsetx = Math.sin(radians) * (200 - trollWidth) * 0.08 - frogx
         // offsetx = 0
         ctx.moveTo(x - offsetx,y - offsety);
-        ctx.lineWidth = size + 2;
+        ctx.lineWidth = propOption.size + 2;
         ctx.strokeStyle = "#ff7887";
         ctx.lineTo(mouseX, mouseY - navbarHeight);
         ctx.stroke();
@@ -137,7 +159,8 @@ export default function FrogTroll({size}){
     },[listener])
 
     useEffect(()=>{
-        document.documentElement.style.setProperty('--frog-width',`${size}em`)
+        document.documentElement.style.setProperty('--frog-width',`${trollSize}px`)
+        document.getElementById('frog-troll').style.transform = `translate(${frogx}px,${frogy}px)` 
         return () => {
             clearInterval(interval)
             clearInterval(hitInterval)
