@@ -80,9 +80,11 @@ function App() {
             //     x:integer,
             //     y:integer
             //   },
+            //   timeToOpenMouth:ms
+            //   timeToAttack:ms
             //   size:{number}
             // }
-              <FrogTroll options={{size:10, startingPosition:{x:160,y:-40}, units:'em'}}/>
+              <FrogTroll options={{size:10, startingPosition:{x:0,y:0}, units:'em',timeToOpenMouth:2000,timeToAttack:1000}}/>
           }/>
           <Route path='/activities' element={
             <Workshops/>
