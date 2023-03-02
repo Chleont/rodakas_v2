@@ -115,8 +115,14 @@ export default function FrogTroll({options}){
         let randX = Math.random() * (width - trollSize) - (width - trollSize) / 2
         let randY = Math.random() * ((height - trollSize) - 2 * navbarHeight) - ((height - trollSize) - 2 * navbarHeight) / 2
         let transitionTime = Math.round(Math.max(Math.abs(frogx - randX),Math.abs(frogy - randY)) / 100) / 10 + 0.1
-        // let randX = -100
-        // let randY = -110
+        if (randX === frogx){
+            randX = randX + 10 
+        }
+        if (randY === frogy){
+            randY = randY + 10 
+        }
+        // let randX = 200
+        // let randY = -150
         // let transitionTime = Math.round(Math.max(Math.abs(frogx - 200),Math.abs(frogy - 200)) / 100) / 10 + 0.1
 
         return {
@@ -143,41 +149,41 @@ export default function FrogTroll({options}){
 
         let dx = (newPositionData.x - frogx),
         dy = (newPositionData.y - frogy),
-        distance = Math.sqrt(dx**2 + dy**2),
         φ = -Math.atan(dy/dx),
-        ω = Math.PI/2 - φ,
         centery = null,
         r = null,         
         centerx = null,
-        // let r = Math.sqrt(dx**2 + dy**2) * ( Math.abs(Math.tan(φ))/Math.SQRT2 + Math.pow(2000000,-Math.abs(φ))/2)
-        // let centerx = frogx > newPositionData.x? frogx - r : frogx + r
         instances = newPositionData.t * 20,
         xinterval = dx / instances,
         points = []
-        document.getElementById('dot2').style.transform = 'translate(' + centerx + 'px, ' + centery + 'px)'
         
-        if(newPositionData.y >= frogy){
-            r = (distance / 2) / Math.cos(ω)
+        if(newPositionData.y <= frogy){
+            console.log('1')
             centerx = newPositionData.x
-            centery = centery - dy
+            centery = frogy + Math.abs(newPositionData.y - frogy)
+            r = centery - newPositionData.y
         }else{
-            centery = (distance / 2) / Math.cos(ω)
+            console.log('2')
+            centery = newPositionData.y + Math.abs(newPositionData.y - frogy)
             centerx = frogx
             r = Math.abs(centery - frogy)
         }
+        document.getElementById('dot2').style.transform = 'translate(' + centerx + 'px, ' + centery + 'px)'
+
         
-        console.log("going from: ", frogx,frogy,"to: ",newPositionData.x,newPositionData.y, "circle's center: ", centerx, centery, 'r: ', r, dy)
+        console.log("going from: ", frogx,frogy,"to: ",newPositionData.x,newPositionData.y, "circle's center: ", centerx, centery, 'r: ', r)
+        console.log('navbarHeight',navbarHeight)
         
         for(let i = 0; i <= instances; i++){
             points.push({
                 x:frogx + i * xinterval,
-                y: (Math.sqrt(Math.pow(r,2) - Math.pow(((frogx + i * xinterval)- centerx),2))+centery),
+                y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2) -1 * Math.sign(dy) * centery)),
                 func: function(){
                     document.getElementById('frog-troll').style.transform = `translate(${this.x}px,${this.y}px)`
                     if(points.indexOf(this) < points.length - 1){
                         setTimeout(
                             ()=>{
-                            points[points.indexOf(this)+1].func()
+                                points[points.indexOf(this)+1].func()
                             },100
                         )
                     }else{
@@ -197,24 +203,13 @@ export default function FrogTroll({options}){
         ctx = canvas.getContext("2d");
         ctx.moveTo(width/2,height/2);
         ctx.beginPath();
+        console.log(width,height)
         points.map(each=>{
-            ctx.lineTo(each.x + width/2, each.y + height/2);
+            ctx.lineTo(each.x + width/2, each.y + height/2 - navbarHeight);
         })
         ctx.lineWidth = propOption.size + 2;
         ctx.strokeStyle = "#ff7887";
         ctx.stroke();
-
-
-        ctx.moveTo(0,0);
-        ctx.beginPath();
-        for(let i=width/2;i<=width;i++){
-            ctx.lineTo(i, -1 * Math.sign(dy) * (Math.sqrt(Math.abs(Math.pow(r,2) - Math.pow((i - centerx),2)))+centery));
-        }
-        ctx.lineWidth = propOption.size;
-        ctx.strokeStyle = "#ff0000";
-        ctx.stroke();
-
-
 
         points[0].func()
         frogx = newPositionData.x
