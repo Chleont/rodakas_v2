@@ -136,16 +136,16 @@ export default function FrogTroll({options}){
         rotateBack(0.1)
         let newPositionData = generatePosition() 
         
-        // document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
         setTimeout(
             function(){
                 clearInterval(interval)
                 clearInterval(hitInterval)
             },(propOption.timeToAttack * 0.8)
         )
+
         document.getElementById('frog-troll-body').src = trollJumping
         document.getElementById('frog-troll-head').style.visibility = 'hidden'
-        document.getElementById('frog-troll').style.transitionDuration = `${newPositionData.t}s`
+        
         let dx = (newPositionData.x - frogx),
         dy = (newPositionData.y - frogy),
         halfDist = Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2,
@@ -157,6 +157,9 @@ export default function FrogTroll({options}){
         instances = newPositionData.t * 20,
         xinterval = dx / instances,
         points = []
+
+
+        //Calculate jumpin circular curve's center and radious
 
         if(newPositionData.y <= frogy && Math.abs(φ) < Math.PI/4){
             console.log('1')
@@ -180,35 +183,36 @@ export default function FrogTroll({options}){
             centerx = newPositionData.x + Math.sign(Math.sin(φ)) * r
         }
 
-        console.log('φ', φ * 180/Math.PI, ω* 180/Math.PI, dx,dy)
-        console.log("going from: ", frogx,frogy,"to: ",newPositionData.x,newPositionData.y, "circle's center: ", centerx, centery, 'r: ', r)
-        console.log('Should be r^2 - a^2 - b^2 = 0, result: ',r**2 - centerx**2 - centery**2)
-        
         for(let i = 0; i <= instances; i++){
             points.push({
+
+                // Calculate coordinates of points
                 x:frogx + i * xinterval,
-                y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2)) - Math.abs(centery)),//+ Math.sign(dy) * centery),
-                z: 'pow: ' + Math.pow((frogx + i * xinterval - centerx),2), 
+                y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2)) - Math.abs(centery)),
+                // Move frog to next point and recall function for next position
                 func: function(){
                     document.getElementById('frog-troll').style.transform = `translate(${this.x}px,${this.y}px)`
                     if(points.indexOf(this) < points.length - 1){
                         setTimeout(
                             ()=>{
                                 points[points.indexOf(this)+1].func()
-                            },100
+                            },15
                         )
                     }else{
+                        document.getElementById('frog-troll-container').addEventListener('mousemove', listener )
                         setTimeout(()=>{
                             document.getElementById('frog-troll-body').src = trollBody
                             document.getElementById('frog-troll-head').style.visibility = 'visible'
-                            document.getElementById('frog-troll-container').addEventListener('mousemove', listener )
                         },newPositionData.t*100)
                     }
                 }
             })
         }
-        console.log(points[points.length - 1])
+
+        // Call jump
         points[0].func()
+
+        // Set new position
         frogx = newPositionData.x
         frogy = newPositionData.y 
     }
@@ -257,14 +261,12 @@ export default function FrogTroll({options}){
         start()
     }
 
-
     function stopHunting(){
         document.getElementById('frog-troll-head').src = trollMouthClosed
         clearInterval(interval)
         clearInterval(hitInterval)
         rotateBack()
     }
-
 
     useEffect(()=>{
         document.getElementById('frog-troll-container').addEventListener('mousemove', listener );
@@ -279,7 +281,6 @@ export default function FrogTroll({options}){
             clearInterval(hitInterval)
         }
     },[])
-
 
     return(
         <div id='frog-troll-container' onMouseLeave={stopHunting}>
