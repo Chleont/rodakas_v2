@@ -81,13 +81,17 @@ export default function FrogTroll({options}){
         canvas.width = document.getElementById('frog-troll-container').clientWidth;
         canvas.height = document.getElementById('frog-troll-container').clientHeight
         ctx = canvas.getContext("2d");
+
+        // Calculate center of frog's mouth coordinates
         x = document.getElementById('dot').getBoundingClientRect().x + document.getElementById('dot').getBoundingClientRect().width/2
         y = document.getElementById('dot').getBoundingClientRect().y + document.getElementById('dot').getBoundingClientRect().height/2
-        ctx.beginPath();
+        
+        // Add offset depending on frog's position and on frog's head rotation
         offsety = navbarHeight +  (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.2) - frogy
-        // offsety = 0
         offsetx = Math.sin(radians) * (200 - trollWidth) * 0.08 - frogx
-        // offsetx = 0
+        
+        // Draw tongue
+        ctx.beginPath();
         ctx.moveTo(x - offsetx,y - offsety);
         ctx.lineWidth = propOption.size + 2;
         ctx.strokeStyle = "#ff7887";
@@ -96,12 +100,16 @@ export default function FrogTroll({options}){
         setTimeout(function(){
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         },100)
+
+        // Tongue's hit aftermath
         document.getElementById('frog-troll-container').style.cursor = 'none'
         document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
         document.getElementById('frog-troll-container').removeEventListener('mouseleave', stopHunting)
-        setTimeout(function(){
-            document.getElementById('frog-troll-head').src = trollMouthClosed
-        },300)
+        setTimeout(
+            function(){
+                document.getElementById('frog-troll-head').src = trollMouthClosed
+            },300
+        )
         clearInterval(interval)
         clearInterval(hitInterval)
         setTimeout(
@@ -121,10 +129,6 @@ export default function FrogTroll({options}){
         if (randY === frogy){
             randY = randY + 10 
         }
-        // let randX = 100
-        // let randY = -150
-        // let transitionTime = Math.round(Math.max(Math.abs(frogx - 200),Math.abs(frogy - 200)) / 100) / 10 + 0.1
-
         return {
             x:randX,
             y:randY,
