@@ -112,18 +112,18 @@ export default function FrogTroll({options}){
     }
 
     function generatePosition(){
-        // let randX = Math.random() * (width - trollSize) - (width - trollSize) / 2
-        // let randY = Math.random() * ((height - trollSize) - 2 * navbarHeight) - ((height - trollSize) - 2 * navbarHeight) / 2
-        // let transitionTime = Math.round(Math.max(Math.abs(frogx - randX),Math.abs(frogy - randY)) / 100) / 10 + 0.1
-        // if (randX === frogx){
-        //     randX = randX + 10 
-        // }
-        // if (randY === frogy){
-        //     randY = randY + 10 
-        // }
-        let randX = 150
-        let randY = -100
-        let transitionTime = Math.round(Math.max(Math.abs(frogx - 200),Math.abs(frogy - 200)) / 100) / 10 + 0.1
+        let randX = Math.random() * (width - trollSize) - (width - trollSize) / 2
+        let randY = Math.random() * ((height - trollSize) - 2 * navbarHeight) - ((height - trollSize) - 2 * navbarHeight) / 2
+        let transitionTime = Math.round(Math.max(Math.abs(frogx - randX),Math.abs(frogy - randY)) / 100) / 10 + 0.1
+        if (randX === frogx){
+            randX = randX + 10 
+        }
+        if (randY === frogy){
+            randY = randY + 10 
+        }
+        // let randX = 100
+        // let randY = -150
+        // let transitionTime = Math.round(Math.max(Math.abs(frogx - 200),Math.abs(frogy - 200)) / 100) / 10 + 0.1
 
         return {
             x:randX,
@@ -146,16 +146,9 @@ export default function FrogTroll({options}){
         document.getElementById('frog-troll-body').src = trollJumping
         document.getElementById('frog-troll-head').style.visibility = 'hidden'
         document.getElementById('frog-troll').style.transitionDuration = `${newPositionData.t}s`
-
-        /*
-
-        If φ > 45 => Circle's center should be on (frogx, ..) 
-        and the point (frogx,frogy) should be on the far left or 
-        far right of the circle depending on the sign of dx 
-
-        */
         let dx = (newPositionData.x - frogx),
         dy = (newPositionData.y - frogy),
+        halfDist = Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2,
         φ = -Math.atan(dy/dx),
         ω = Math.PI/2 - φ,
         centery = null,
@@ -164,25 +157,32 @@ export default function FrogTroll({options}){
         instances = newPositionData.t * 20,
         xinterval = dx / instances,
         points = []
-        r = Math.abs((Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2)/Math.cos(ω))
-        
-        if(newPositionData.y <= frogy){
+
+        if(newPositionData.y <= frogy && Math.abs(φ) < Math.PI/4){
             console.log('1')
             centerx = newPositionData.x
+            r = Math.abs(halfDist/Math.cos(ω))
             centery = newPositionData.y + r 
-            // r = (Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2)/Math.cos(Math.PI/2 - φ)
-            // r = centery - newPositionData.y
-        }else{
+        }else if(newPositionData.y <= frogy && Math.abs(φ) >= Math.PI/4){
             console.log('2')
-            centery = frogy.y + r
+            centery = frogy
+            r = Math.abs(halfDist/Math.cos(φ))
+            centerx = frogx + Math.sign(Math.sin(φ)) * r
+        }else if(newPositionData.y >= frogy && Math.abs(φ) < Math.PI/4){
+            console.log('3')
+            r = Math.abs(halfDist/Math.cos(ω))
             centerx = frogx
-            // r = Math.abs(centery - frogy)
+            centery = frogy + r
+        }else if(newPositionData.y >= frogy && Math.abs(φ) >= Math.PI/4){
+            console.log('3')
+            r = Math.abs(halfDist/Math.cos(ω))
+            centery = newPositionData.y
+            centerx = newPositionData.x + Math.sign(Math.sin(φ)) * r
         }
-        document.getElementById('dot2').style.transform = 'translate(' + centerx + 'px, ' + centery + 'px)'
 
-        console.log(dx, dy)
-        console.log("going from: ", frogx,frogy,"to: ",newPositionData.x,newPositionData.y, "circle's center: ", centerx, centery, 'r: ', r, 'φ', φ * 180/Math.PI, ω* 180/Math.PI)
-        console.log('Should be r^2 = a^2 + b^2, r^2: ',r**2, ' centerx^2: ', centerx**2, ' centery^2: ', centery**2, 'sum: ', centerx**2 + centery**2)
+        console.log('φ', φ * 180/Math.PI, ω* 180/Math.PI, dx,dy)
+        console.log("going from: ", frogx,frogy,"to: ",newPositionData.x,newPositionData.y, "circle's center: ", centerx, centery, 'r: ', r)
+        console.log('Should be r^2 - a^2 - b^2 = 0, result: ',r**2 - centerx**2 - centery**2)
         
         for(let i = 0; i <= instances; i++){
             points.push({
@@ -205,23 +205,9 @@ export default function FrogTroll({options}){
                         },newPositionData.t*100)
                     }
                 }
-                })
+            })
         }
-        console.log(points)
-        canvas = document.getElementById('canvas')
-        canvas.width = document.getElementById('frog-troll-container').clientWidth;
-        canvas.height = document.getElementById('frog-troll-container').clientHeight
-        ctx = canvas.getContext("2d");
-        ctx.moveTo(width/2,height/2);
-        ctx.beginPath();
-        console.log(width,height)
-        points.map(each=>{
-            ctx.lineTo(each.x + width/2, each.y + height/2 - navbarHeight);
-        })
-        ctx.lineWidth = propOption.size + 2;
-        ctx.strokeStyle = "#ff7887";
-        ctx.stroke();
-
+        console.log(points[points.length - 1])
         points[0].func()
         frogx = newPositionData.x
         frogy = newPositionData.y 
@@ -236,7 +222,6 @@ export default function FrogTroll({options}){
         centers = centerPoint.split(" ")
         centerY = pointerBox.top + parseInt(centers[1]) - window.pageYOffset
         centerX = pointerBox.left + parseInt(centers[0]) - window.pageXOffset
-        // console.log(Math.abs(mouseX - centerX),Math.abs(mouseY - centerY))
         if(Math.abs(mouseX - centerX) < (0.8 * trollSize) && Math.abs(mouseY - centerY) < (0.8 * trollSize)){
             document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
             jump()
@@ -300,7 +285,6 @@ export default function FrogTroll({options}){
         <div id='frog-troll-container' onMouseLeave={stopHunting}>
             <canvas id='canvas'/>
             <div id='dot'/>
-            <div id='dot2'/>
             <div id='frog-troll'>
                 <img alt='head' id='frog-troll-head' src={trollMouthClosed}/>
                 <img alt='body' id='frog-troll-body' src={trollBody}/>
