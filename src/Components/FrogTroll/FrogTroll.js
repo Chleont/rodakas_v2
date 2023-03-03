@@ -112,18 +112,18 @@ export default function FrogTroll({options}){
     }
 
     function generatePosition(){
-        let randX = Math.random() * (width - trollSize) - (width - trollSize) / 2
-        let randY = Math.random() * ((height - trollSize) - 2 * navbarHeight) - ((height - trollSize) - 2 * navbarHeight) / 2
-        let transitionTime = Math.round(Math.max(Math.abs(frogx - randX),Math.abs(frogy - randY)) / 100) / 10 + 0.1
-        if (randX === frogx){
-            randX = randX + 10 
-        }
-        if (randY === frogy){
-            randY = randY + 10 
-        }
-        // let randX = 200
-        // let randY = -150
-        // let transitionTime = Math.round(Math.max(Math.abs(frogx - 200),Math.abs(frogy - 200)) / 100) / 10 + 0.1
+        // let randX = Math.random() * (width - trollSize) - (width - trollSize) / 2
+        // let randY = Math.random() * ((height - trollSize) - 2 * navbarHeight) - ((height - trollSize) - 2 * navbarHeight) / 2
+        // let transitionTime = Math.round(Math.max(Math.abs(frogx - randX),Math.abs(frogy - randY)) / 100) / 10 + 0.1
+        // if (randX === frogx){
+        //     randX = randX + 10 
+        // }
+        // if (randY === frogy){
+        //     randY = randY + 10 
+        // }
+        let randX = 150
+        let randY = -100
+        let transitionTime = Math.round(Math.max(Math.abs(frogx - 200),Math.abs(frogy - 200)) / 100) / 10 + 0.1
 
         return {
             x:randX,
@@ -147,37 +147,48 @@ export default function FrogTroll({options}){
         document.getElementById('frog-troll-head').style.visibility = 'hidden'
         document.getElementById('frog-troll').style.transitionDuration = `${newPositionData.t}s`
 
+        /*
+
+        If φ > 45 => Circle's center should be on (frogx, ..) 
+        and the point (frogx,frogy) should be on the far left or 
+        far right of the circle depending on the sign of dx 
+
+        */
         let dx = (newPositionData.x - frogx),
         dy = (newPositionData.y - frogy),
         φ = -Math.atan(dy/dx),
+        ω = Math.PI/2 - φ,
         centery = null,
         r = null,         
         centerx = null,
         instances = newPositionData.t * 20,
         xinterval = dx / instances,
         points = []
+        r = Math.abs((Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2)/Math.cos(ω))
         
         if(newPositionData.y <= frogy){
             console.log('1')
             centerx = newPositionData.x
-            centery = frogy + Math.abs(newPositionData.y - frogy)
-            r = centery - newPositionData.y
+            centery = newPositionData.y + r 
+            // r = (Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2)/Math.cos(Math.PI/2 - φ)
+            // r = centery - newPositionData.y
         }else{
             console.log('2')
-            centery = newPositionData.y + Math.abs(newPositionData.y - frogy)
+            centery = frogy.y + r
             centerx = frogx
-            r = Math.abs(centery - frogy)
+            // r = Math.abs(centery - frogy)
         }
         document.getElementById('dot2').style.transform = 'translate(' + centerx + 'px, ' + centery + 'px)'
 
-        
-        console.log("going from: ", frogx,frogy,"to: ",newPositionData.x,newPositionData.y, "circle's center: ", centerx, centery, 'r: ', r)
-        console.log('navbarHeight',navbarHeight)
+        console.log(dx, dy)
+        console.log("going from: ", frogx,frogy,"to: ",newPositionData.x,newPositionData.y, "circle's center: ", centerx, centery, 'r: ', r, 'φ', φ * 180/Math.PI, ω* 180/Math.PI)
+        console.log('Should be r^2 = a^2 + b^2, r^2: ',r**2, ' centerx^2: ', centerx**2, ' centery^2: ', centery**2, 'sum: ', centerx**2 + centery**2)
         
         for(let i = 0; i <= instances; i++){
             points.push({
                 x:frogx + i * xinterval,
-                y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2) -1 * Math.sign(dy) * centery)),
+                y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2)) - Math.abs(centery)),//+ Math.sign(dy) * centery),
+                z: 'pow: ' + Math.pow((frogx + i * xinterval - centerx),2), 
                 func: function(){
                     document.getElementById('frog-troll').style.transform = `translate(${this.x}px,${this.y}px)`
                     if(points.indexOf(this) < points.length - 1){
