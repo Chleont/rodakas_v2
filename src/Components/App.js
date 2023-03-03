@@ -18,6 +18,16 @@ function App() {
   const [locale, setLocale] = useState('el');
   const [messages, setMessages] = useState(Greek);
   const [isMobile, setWidth] = useState(window.innerWidth < 1000);
+  const frogOptions = {
+    size:5, 
+    startingPosition:{
+      x:0,
+      y:0
+    }, 
+    units:'em',
+    timeToOpenMouth:2000,
+    timeToAttack:1000
+  }
   let navigate = useNavigate();
 
   function handleWindowSizeChange() {
@@ -84,7 +94,7 @@ function App() {
             //   timeToAttack:ms
             //   size:{number}
             // }
-              <FrogTroll options={{size:10, startingPosition:{x:0,y:0}, units:'em',timeToOpenMouth:2000,timeToAttack:1000}}/>
+              <FrogTroll options={frogOptions}/>
           }/>
           <Route path='/activities' element={
             <Workshops/>

@@ -160,8 +160,9 @@ export default function FrogTroll({options}){
         centerx = null,
         instances = newPositionData.t * 20,
         xinterval = dx / instances,
+        θinterval= Math.abs(2 * φ / instances),
         points = []
-
+        
 
         //Calculate jumpin circular curve's center and radious
 
@@ -193,6 +194,10 @@ export default function FrogTroll({options}){
                 // Calculate coordinates of points
                 x:frogx + i * xinterval,
                 y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2)) - Math.abs(centery)),
+
+                // Calculate frog body rotation
+                θ: dx > 0? (Math.abs(φ) - i * θinterval) * 180/Math.PI : (Math.PI - Math.abs(φ) + i * θinterval) * 180/Math.PI ,
+
                 // Move frog to next point and recall function for next position
                 func: function(){
                     document.getElementById('frog-troll').style.transform = `translate(${this.x}px,${this.y}px)`
@@ -212,7 +217,7 @@ export default function FrogTroll({options}){
                 }
             })
         }
-
+        console.log(points, φ *180/Math.PI)
         // Call jump
         points[0].func()
 
