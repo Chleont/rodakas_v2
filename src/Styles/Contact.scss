@@ -1,0 +1,62 @@
+@import 'Colors.scss';
+@import 'App.scss';
+
+
+
+#contact-page{
+    background-color: $contactGrey;
+    height:calc(100vh - var(--navbar-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:$mainBeige;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#contact-title{
+    margin: .5em 0 .7em 0;
+    font-size: 2em;
+}
+
+#contact-page :nth-child(5){
+    margin-bottom: 1.2em;
+}
+
+#address-link{
+    color:$mainBeige;
+    // text-decoration: underline;
+}
+
+#contact-button{
+    margin: 0.8em 0 1.2em 0;
+    font-size: 1em;
+    padding: .4em 1em .5em 1em;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid $mainBeige;
+    color:$mainBeige;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-button:hover{
+    background-color: $mainBeige;
+    color:$contactGrey;
+}
+
+.contact-info{
+    margin-bottom: .7em;
+}
+
+#contactpage-logo{
+    margin-top:2rem
+}
+
+#contact-page #footer{
+    margin-bottom:1.2em
+}

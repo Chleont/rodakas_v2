@@ -8,6 +8,7 @@ import English from '../Lang/en.json';
 import logo from './home_logo.png';
 import NavbarBrowserMenu from './NavbarBrowserMenu.js';
 import NavbarMobileMenu from './NavbarMobileMenu.js';
+import Contact from './Contact';
 import Footer from './Footer.js'
 import Workshops from './Workshops';
 import FrogTroll from './FrogTroll/FrogTroll';
@@ -111,10 +112,7 @@ function App() {
           }/>
           <Route path='/communication' element={
             <div>
-              Communication
-              <div className='footer'>
-                <Footer/>
-              </div>
+              <Contact/>
             </div>
           }/>
         </Routes>

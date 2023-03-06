@@ -62,7 +62,7 @@ export default function Workshops(){
     }
 
     useEffect(()=>{
-        if(locale == 'el')
+        if(locale === 'el')
         {
             setWorkshops(Object.keys(langfileGreek.workshops).map((key) => langfileGreek.workshops[key]))
         }else{
