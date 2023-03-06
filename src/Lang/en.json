@@ -12,46 +12,63 @@
         "1":{
             "title":"Preservation and restoration of masonry using natural materials workshop",
             "dates":"31 July - 2 August 2020",
-            "image1":"https://i.imgur.com/kD6pA2B.jpg",
-            "image2":"https://i.imgur.com/wJiWyzR.jpg",
-            "image3":"https://i.imgur.com/aOBoSVE.jpg"
+            "images":[
+                "https://i.imgur.com/kD6pA2B.jpg",
+                "https://i.imgur.com/wJiWyzR.jpg",
+                "https://i.imgur.com/aOBoSVE.jpg"
+            ]
         },
         "2":{
             "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
             "dates":"25 - 31 July 2021",
-            "image1":"https://i.imgur.com/VljrNaN.jpg",
-            "image2":"https://i.imgur.com/H6EhmSt.jpg",
-            "image3":"https://i.imgur.com/b9qY1mt.jpg",
-            "image4":"https://i.imgur.com/mezUuxE.jpg"
+            "images":[
+                "https://i.imgur.com/VljrNaN.jpg",
+                "https://i.imgur.com/H6EhmSt.jpg",
+                "https://i.imgur.com/b9qY1mt.jpg",
+                "https://i.imgur.com/mezUuxE.jpg"
+            ]
         },
         "3":{        
             "title":"Analog photography workshop",
             "dates":"24 - 27 March 2022",
-            "image1":"https://i.imgur.com/sATS7g3.jpg"},
+            "images":[
+                "https://i.imgur.com/sATS7g3.jpg"
+            ]
+        },
         "4":{
             "title":"Loom weaving workshop",
             "dates":"12 - 18 June 2022",
-            "image1":"https://i.imgur.com/UxkF2RT.png"
+            "images":[
+                "https://i.imgur.com/UxkF2RT.png"
+            ]
         },
         "5":{
             "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
             "dates":"24 - 30 July 2022",
-            "image1":"https://i.imgur.com/fyL6Jx6.jpg"
+            "images":[
+                "https://i.imgur.com/fyL6Jx6.jpg"
+            ]
         },
         "6":{
             "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
             "dates":"22 - 28 October 2022",
-            "image1":"https://i.imgur.com/Nqja63c.jpg"
+            "images":[
+                "https://i.imgur.com/Nqja63c.jpg"
+            ]
         },
         "7":{
             "title":"Loom weaving workshop",
             "dates":"20 - 26 November 2022",
-            "image1":"https://i.imgur.com/GALaxQL.jpg"
+            "images":[
+                "https://i.imgur.com/GALaxQL.jpg"
+            ]
         },
         "8":{
             "title":"Loom weaving sessions",
             "dates":"January - February 2023",
-            "image1":"https://i.imgur.com/nBw5wzF.jpg"
+            "images":[
+                "https://i.imgur.com/nBw5wzF.jpg"
+            ]
         }
     }
 }

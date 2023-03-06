@@ -161,6 +161,7 @@ export default function FrogTroll({options}){
         instances = newPositionData.t * 20,
         xinterval = dx / instances,
         θinterval= Math.abs(2 * φ / instances),
+        θ = null,
         points = []
         
 
@@ -188,15 +189,23 @@ export default function FrogTroll({options}){
             centerx = newPositionData.x + Math.sign(Math.sin(φ)) * r
         }
 
+
+
         for(let i = 0; i <= instances; i++){
+
+            // Calculate frog body rotation
+            if(dx > 0){
+                θ = Math.abs(φ) >= Math.PI/4 ? (Math.abs(Math.PI/2 - φ) - i * θinterval) * 180/Math.PI : (Math.abs(φ) - i * θinterval) * 180/Math.PI
+            }else{
+                θ = Math.abs(φ) >= Math.PI/4 ? (Math.PI - Math.abs(Math.PI/2) + i * θinterval) * 180/Math.PI : (Math.PI - Math.abs(φ) + i * θinterval) * 180/Math.PI
+            }
+
             points.push({
 
                 // Calculate coordinates of points
                 x:frogx + i * xinterval,
                 y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2)) - Math.abs(centery)),
-
-                // Calculate frog body rotation
-                θ: dx > 0? (Math.abs(φ) - i * θinterval) * 180/Math.PI : (Math.PI - Math.abs(φ) + i * θinterval) * 180/Math.PI ,
+                bodyAngle: θ,
 
                 // Move frog to next point and recall function for next position
                 func: function(){

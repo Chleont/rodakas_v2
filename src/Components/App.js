@@ -19,7 +19,7 @@ function App() {
   const [messages, setMessages] = useState(Greek);
   const [isMobile, setWidth] = useState(window.innerWidth < 1000);
   const frogOptions = {
-    size:5, 
+    size:2, 
     startingPosition:{
       x:0,
       y:0
