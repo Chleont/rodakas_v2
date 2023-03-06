@@ -12,6 +12,7 @@ export default function Workshops(){
     var locale = lang.locale
     const [wIndex, setIndex] = useState(workshops.length - 1)
     const [imageIndex, setImageIndex] = useState(0)
+    const [isMobile, setWidth] = useState(window.innerWidth < 1000);
 
     function toggleArrows(index){
         let arrows = document.getElementsByClassName('workshop-page-arrow')
@@ -97,7 +98,20 @@ export default function Workshops(){
 
     return(
         <div id="workshop-page-container">
-            <div id="single-workshop-view">
+            {isMobile ? 
+                <div id="single-workshop-view">
+                    <div id='info'>
+                        <span id='title'></span>
+                        <span id='dates'></span>
+                    </div>
+                    <div id='single-image'/>
+                    <div id = 'arrow-container'>
+                        <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
+                        <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
+                    </div>
+                </div>
+                :
+                <div id="single-workshop-view">
                 <div id='info'>
                     <span id='title'></span>
                     <span id='dates'></span>
@@ -106,6 +120,7 @@ export default function Workshops(){
                 <div id='single-image'/>
                 <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
             </div>
+            }
             <div id="all-workshops-view">
             </div>
         </div>
