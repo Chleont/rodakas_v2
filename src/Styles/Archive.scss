@@ -1,0 +1,39 @@
+@import 'Colors.scss';
+@import 'App.scss';
+
+
+#archive{
+    font-family: 'Ubuntu', sans-serif;
+    background-image:url(https://i.imgur.com/pSGkJfC.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height:100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    overflow:auto;
+}
+
+.archive-div{
+    width:55%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: start;
+}
+
+.archive-div :first-child{
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+}
+
+@media only screen and (max-width: 1000px) {
+    .archive-div{
+        width:90%;
+    }
+}

@@ -9,6 +9,7 @@ import logo from './home_logo.png';
 import NavbarBrowserMenu from './NavbarBrowserMenu.js';
 import NavbarMobileMenu from './NavbarMobileMenu.js';
 import Contact from './Contact';
+import Archive from './Archive.js';
 import Footer from './Footer.js'
 import Workshops from './Workshops';
 import FrogTroll from './FrogTroll/FrogTroll';
@@ -101,9 +102,7 @@ function App() {
             <Workshops/>
           }/>
           <Route path='/archive' element={
-            <div>
-              Archive
-            </div>
+            <Archive/>
           }/>
           <Route path='/multimedia' element={
             <div>
@@ -111,9 +110,7 @@ function App() {
             </div>
           }/>
           <Route path='/communication' element={
-            <div>
-              <Contact/>
-            </div>
+            <Contact/>
           }/>
         </Routes>
       </IntlProvider>
