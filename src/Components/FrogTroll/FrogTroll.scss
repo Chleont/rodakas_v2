@@ -4,6 +4,7 @@
 }
 
 #frog-troll-container{
+    pointer-events: none;
     width:100%;
     height:calc(100% - 4.8em);
     z-index:10000;
@@ -11,6 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#frog-troll-container :last-child{
+    pointer-events: auto;
 }
 #frog-troll{
     position:relative;

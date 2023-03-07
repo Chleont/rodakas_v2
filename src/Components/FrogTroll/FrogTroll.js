@@ -78,8 +78,10 @@ export default function FrogTroll({options}){
 
     function killPointer(){
         canvas = document.getElementById('canvas')
-        canvas.width = document.getElementById('frog-troll-container').clientWidth;
-        canvas.height = document.getElementById('frog-troll-container').clientHeight
+        // canvas.width = document.getElementById('frog-troll-container').clientWidth
+        // canvas.height = document.getElementById('frog-troll-container').clientHeight
+        canvas.width = document.body.clientWidth
+        canvas.height = document.body.clientHeight
         ctx = canvas.getContext("2d");
 
         // Calculate center of frog's mouth coordinates
@@ -92,7 +94,8 @@ export default function FrogTroll({options}){
         
         // Draw tongue
         ctx.beginPath();
-        ctx.moveTo(x - offsetx,y - offsety);
+        // ctx.moveTo(x - offsetx,y - offsety);
+        ctx.moveTo(x - offsetx,y + offsety);
         ctx.lineWidth = propOption.size + 2;
         ctx.strokeStyle = "#ff7887";
         ctx.lineTo(mouseX, mouseY - navbarHeight);
@@ -102,9 +105,12 @@ export default function FrogTroll({options}){
         },100)
 
         // Tongue's hit aftermath
-        document.getElementById('frog-troll-container').style.cursor = 'none'
-        document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
-        document.getElementById('frog-troll-container').removeEventListener('mouseleave', stopHunting)
+        // document.getElementById('frog-troll-container').style.cursor = 'none'
+        // document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
+        // document.getElementById('frog-troll-container').removeEventListener('mouseleave', stopHunting)
+        document.body.style.cursor = 'none'
+        document.body.removeEventListener('mousemove', listener)
+        document.body.removeEventListener('mouseleave', stopHunting)
         setTimeout(
             function(){
                 document.getElementById('frog-troll-head').src = trollMouthClosed
@@ -217,7 +223,8 @@ export default function FrogTroll({options}){
                             },15
                         )
                     }else{
-                        document.getElementById('frog-troll-container').addEventListener('mousemove', listener )
+                        // document.getElementById('frog-troll-container').addEventListener('mousemove', listener )
+                        document.body.addEventListener('mousemove', listener )
                         setTimeout(()=>{
                             document.getElementById('frog-troll-body').src = trollBody
                             document.getElementById('frog-troll-head').style.visibility = 'visible'
@@ -245,7 +252,8 @@ export default function FrogTroll({options}){
         centerY = pointerBox.top + parseInt(centers[1]) - window.pageYOffset
         centerX = pointerBox.left + parseInt(centers[0]) - window.pageXOffset
         if(Math.abs(mouseX - centerX) < (0.8 * trollSize) && Math.abs(mouseY - centerY) < (0.8 * trollSize)){
-            document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
+            // document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
+            document.body.removeEventListener('mousemove', listener)
             jump()
         }else{
             radians = Math.atan2(mouseX - centerX, mouseY - centerY)
@@ -287,7 +295,9 @@ export default function FrogTroll({options}){
     }
 
     useEffect(()=>{
-        document.getElementById('frog-troll-container').addEventListener('mousemove', listener );
+        // document.getElementById('frog-troll-container').addEventListener('mousemove', listener );
+        document.body.addEventListener('mousemove', listener );
+        document.body.addEventListener('mouseleave', stopHunting );
         trollWidth = document.getElementById('frog-troll').offsetWidth
     },[listener])
 
@@ -301,7 +311,7 @@ export default function FrogTroll({options}){
     },[])
 
     return(
-        <div id='frog-troll-container' onMouseLeave={stopHunting}>
+        <div id='frog-troll-container'>
             <canvas id='canvas'/>
             <div id='dot'/>
             <div id='frog-troll'>
