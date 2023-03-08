@@ -9,27 +9,113 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height:100%;
     display:flex;
     align-items: center;
     flex-direction: column;
     width:100%;
-    overflow:auto;
+    height:fit-content;
+    overflow-x:auto;
+    color:$menuLettersStrong
 }
 
 .archive-div{
-    width:55%;
+    margin-top:1.2em;
+    padding: 1.5em 2em .2em 2em;
+    background-color: rgba(white,0.5);
+    border-radius: 10px;
+    width:50%;
     display:flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     text-align: start;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    font-size:1em;
+    font-weight: 400;
 }
 
 .archive-div :first-child{
     font-weight: 500;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     margin-bottom: .5em;
+}
+
+.unavailable{
+    margin-bottom: .5em;
+    font-weight: 500;
+}
+
+#photo-carousel{
+    width:100%;
+    margin-top:1.25em;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-container{
+    height:80vh;
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size:1em;
+}
+
+#archive #le-arr{
+    font-weight:400;
+    font-size:2em;
+    margin: auto 0 auto auto;
+}
+
+#archive #ri-arr{
+    font-weight:400;
+    font-size:2em;
+    margin: auto auto auto 0;
+}
+
+.carousel-photo{
+    // margin: 0 auto 0 auto;
+    height:100%;
+    border-radius: 5px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.photo-name{
+    padding: .2em 1em .3em 1em;
+    border-radius: 5px;
+    width:25%;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: rgba(white,0.7);
+    position:absolute;
+    bottom:2em;
+}
+
+#archive :last-child{
+    margin-bottom:1.5em;
+}
+
+.archive-div a{
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: .5em auto 0 auto;
+    color:$menuLettersStrong;
+    border: 2px solid $menuLettersStrong;
+    padding: .2em .6em .3em .6em;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.archive-div a:hover{
+    background-color: $menuLettersStrong;
+    color:$mainBeige;
+    border: 2px solid $mainBeige;
 }
 
 @media only screen and (max-width: 1000px) {
