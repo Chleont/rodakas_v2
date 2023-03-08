@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '../Styles/App.scss'
 import '../Styles/Archive.scss'
 import langfileGreek from '../Lang/el.json'
@@ -9,6 +9,8 @@ import {FormattedMessage} from 'react-intl';
 export default function Workshops(){
 
     var lang = useIntl()
+    var interval = null
+
     const carouselImages = [
         {
             url:'https://i.imgur.com/YT6HFdA.jpg',
@@ -28,18 +30,55 @@ export default function Workshops(){
 
     function leftArrow(){
         if(photoIndex > 0){
-            document.getElementById('photo-carousel').firstElementChild.src = carouselImages[photoIndex - 1].url
-            document.getElementById('photo-carousel').lastElementChild.innerHTML = carouselImages[photoIndex - 1].tag
-            setIndex(photoIndex - 1)
+            document.getElementById(`photo${photoIndex}`).style.opacity = '0'
+            document.getElementById(`photo${photoIndex - 1}`).style.opacity = '1'
+            setTimeout(
+                ()=>{
+                    document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
+                    document.getElementById(`photo${photoIndex - 1}`).style.zIndex = '2'
+                    setIndex(photoIndex - 1)
+                    clearInterval(interval)
+                    interval = setInterval(photoSwitch, 5000);
+                },500
+            )
         }
     }
     
     function rightArrow(){
         if(photoIndex < carouselImages.length - 1){
-            document.getElementById('photo-carousel').firstElementChild.src = carouselImages[photoIndex + 1].url
-            document.getElementById('photo-carousel').lastElementChild.innerHTML = carouselImages[photoIndex  + 1].tag
+            document.getElementById(`photo${photoIndex}`).style.opacity = '0'
+            document.getElementById(`photo${photoIndex + 1}`).style.opacity = '1'
+            setTimeout(
+                ()=>{
+                    document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
+                    document.getElementById(`photo${photoIndex + 1}`).style.zIndex = '2'
+                    setIndex(photoIndex + 1)
+                    clearInterval(interval)
+                    interval = setInterval(photoSwitch, 5000);
+                    console.log(interval)
+                },500
+            )
+        }
+    }
 
-            setIndex(photoIndex + 1)  
+    useEffect(()=>{
+        document.getElementById('photo0').style.zIndex = 2;
+        document.getElementById('photo0').style.opacity = 1;
+        interval = setInterval(photoSwitch, 5000);
+    },[])
+
+    function photoSwitch(){
+        rightArrow()
+        if(photoIndex === carouselImages.length - 1){
+            document.getElementById(`photo${photoIndex}`).style.opacity = '0'
+            document.getElementById(`photo0`).style.opacity = '1'
+            setTimeout(
+                ()=>{
+                    document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
+                    document.getElementById(`photo0`).style.zIndex = '2'
+                    setIndex(0)
+                },500
+            )
         }
     }
 
@@ -57,10 +96,16 @@ export default function Workshops(){
                 <span id="photo-carousel">
                     <div className="photo-container">
                         <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
-                        <img className="carousel-photo" src={carouselImages[photoIndex].url}/>
+                        {carouselImages.map( each =>{
+                            return(
+                                <div className='each-container' style={{opacity:0,zIndex:1}} key={carouselImages.indexOf(each)} id={'photo' + carouselImages.indexOf(each)}>
+                                    <img id="carousel-photo" src={each.url}/>
+                                    <span id="photo-name">{each.tag}</span>        
+                                </div>
+                            )
+                        })}
                         <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
                     </div>
-                    <span className="photo-name">{carouselImages[photoIndex].tag}</span>        
                 </span>
             </div>
             <div className="archive-div">
