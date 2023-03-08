@@ -9,7 +9,6 @@ import {FormattedMessage} from 'react-intl';
 export default function Workshops(){
 
     var lang = useIntl()
-    var interval = null
 
     const carouselImages = [
         {
@@ -26,21 +25,19 @@ export default function Workshops(){
         }
     ]
 
-    const [photoIndex, setIndex] = useState(0)
+    var photoIndex = 0
+    var interval = null
+
 
     function leftArrow(){
         if(photoIndex > 0){
             document.getElementById(`photo${photoIndex}`).style.opacity = '0'
             document.getElementById(`photo${photoIndex - 1}`).style.opacity = '1'
-            setTimeout(
-                ()=>{
-                    document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
-                    document.getElementById(`photo${photoIndex - 1}`).style.zIndex = '2'
-                    setIndex(photoIndex - 1)
-                    clearInterval(interval)
-                    interval = setInterval(photoSwitch, 5000);
-                },500
-            )
+            document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
+            document.getElementById(`photo${photoIndex - 1}`).style.zIndex = '2'
+            photoIndex = photoIndex - 1
+        }else{
+            goToEnd()
         }
     }
     
@@ -48,39 +45,36 @@ export default function Workshops(){
         if(photoIndex < carouselImages.length - 1){
             document.getElementById(`photo${photoIndex}`).style.opacity = '0'
             document.getElementById(`photo${photoIndex + 1}`).style.opacity = '1'
-            setTimeout(
-                ()=>{
-                    document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
-                    document.getElementById(`photo${photoIndex + 1}`).style.zIndex = '2'
-                    setIndex(photoIndex + 1)
-                    clearInterval(interval)
-                    interval = setInterval(photoSwitch, 5000);
-                    console.log(interval)
-                },500
-            )
+            document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
+            document.getElementById(`photo${photoIndex + 1}`).style.zIndex = '2'
+            photoIndex = photoIndex + 1
+        }else{
+            goToStart()
         }
+    }
+
+    function goToStart(){
+        document.getElementById(`photo${photoIndex}`).style.opacity = '0'
+        document.getElementById(`photo0`).style.opacity = '1'
+        document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
+        document.getElementById(`photo0`).style.zIndex = '2'
+        photoIndex = 0
+    }
+
+    function goToEnd(){
+        document.getElementById(`photo${photoIndex}`).style.opacity = '0'
+        document.getElementById(`photo${carouselImages.length - 1}`).style.opacity = '1'
+        document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
+        document.getElementById(`photo${carouselImages.length - 1}`).style.zIndex = '2'
+        photoIndex = carouselImages.length - 1
     }
 
     useEffect(()=>{
+        console.log('a')
         document.getElementById('photo0').style.zIndex = 2;
         document.getElementById('photo0').style.opacity = 1;
-        interval = setInterval(photoSwitch, 5000);
+        interval = setInterval(rightArrow,15000)
     },[])
-
-    function photoSwitch(){
-        rightArrow()
-        if(photoIndex === carouselImages.length - 1){
-            document.getElementById(`photo${photoIndex}`).style.opacity = '0'
-            document.getElementById(`photo0`).style.opacity = '1'
-            setTimeout(
-                ()=>{
-                    document.getElementById(`photo${photoIndex}`).style.zIndex = '1'
-                    document.getElementById(`photo0`).style.zIndex = '2'
-                    setIndex(0)
-                },500
-            )
-        }
-    }
 
     return(
         <div id="archive">
