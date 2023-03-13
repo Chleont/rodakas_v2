@@ -98,7 +98,8 @@
 #all-workshops-view{
     position:absolute;
     bottom:0;
-    height:calc(40% - var(--footer-height));
+    // height:calc(40% - var(--footer-height));
+    height:10em;
     width:100%;
     max-width: 100vw;
     background-color: rgba(white,0.5);
