@@ -13,6 +13,7 @@ import Archive from './Archive.js';
 import Footer from './Footer.js'
 import Workshops from './Workshops';
 import Multimedia from './Multimedia';
+import About from './About';
 import FrogTroll from './FrogTroll/FrogTroll';
 
 
@@ -87,17 +88,7 @@ function App() {
             </div>
           }/>
           <Route path='/about' element={
-            // options:{
-            //   units:string 'em' or 'px' (default 'em')
-            //   startingPosition:{ calculated from center of screen
-            //     x:integer,
-            //     y:integer
-            //   },
-            //   timeToOpenMouth:ms
-            //   timeToAttack:ms
-            //   size:{number}
-            // }
-              <FrogTroll options={frogOptions}/>
+            <About/>
           }/>
           <Route path='/activity' element={
             <Workshops/>
@@ -110,6 +101,19 @@ function App() {
           }/>
           <Route path='/contact' element={
             <Contact/>
+          }/>
+          <Route path='/troll' element={
+            // options:{
+            //   units:string 'em' or 'px' (default 'em')
+            //   startingPosition:{ calculated from center of screen
+            //     x:integer,
+            //     y:integer
+            //   },
+            //   timeToOpenMouth:ms
+            //   timeToAttack:ms
+            //   size:{number}
+            // }
+            <FrogTroll options={frogOptions}/>
           }/>
         </Routes>
       </IntlProvider>

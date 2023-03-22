@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import '../Styles/App.scss'
 import '../Styles/Multimedia.scss'
 import {FormattedMessage} from 'react-intl';
