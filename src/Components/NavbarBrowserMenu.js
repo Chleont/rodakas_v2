@@ -20,7 +20,7 @@ function NavbarBrowserMenu(){
             <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/about')}}>
             <FormattedMessage id = "rodakas"/>  
             </button>
-            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/activities')}}>
+            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/activity')}}>
             <FormattedMessage id = "activities"/>  
             </button>
             <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/archive')}}>
@@ -29,7 +29,7 @@ function NavbarBrowserMenu(){
             <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/multimedia')}}>
             <FormattedMessage id = "multimedia"/>  
             </button>
-            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/communication')}}>
+            <button className="noOutlineButton navbarButton" onClick={()=>{routeChange('/contact')}}>
             <FormattedMessage id = "communication"/>  
             </button>
         </div>

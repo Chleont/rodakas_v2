@@ -103,6 +103,7 @@ export default function Workshops(){
                     <div id='info'>
                         <span id='title'></span>
                         <span id='dates'></span>
+                        <span id='button'></span>
                     </div>
                     <div id='single-image'/>
                     <div id = 'arrow-container'>

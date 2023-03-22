@@ -30,7 +30,7 @@ function NavbarMobileMenu(){
                 <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/about')}}>
                     <FormattedMessage id = "rodakas"/>  
                 </button>
-                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/activities')}}>
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/activity')}}>
                     <FormattedMessage id = "activities"/>  
                 </button>
                 <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/archive')}}>
@@ -39,7 +39,7 @@ function NavbarMobileMenu(){
                 <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/multimedia')}}>
                     <FormattedMessage id = "multimedia"/>  
                 </button>
-                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/communication')}}>
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/contact')}}>
                     <FormattedMessage id = "communication"/>  
                 </button>
                 <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/')}}>

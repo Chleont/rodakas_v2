@@ -98,7 +98,7 @@ function App() {
             // }
               <FrogTroll options={frogOptions}/>
           }/>
-          <Route path='/activities' element={
+          <Route path='/activity' element={
             <Workshops/>
           }/>
           <Route path='/archive' element={
@@ -109,7 +109,7 @@ function App() {
               Multimedia
             </div>
           }/>
-          <Route path='/communication' element={
+          <Route path='/contact' element={
             <Contact/>
           }/>
         </Routes>

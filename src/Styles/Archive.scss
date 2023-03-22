@@ -3,6 +3,7 @@
 
 
 #archive{
+    height:calc(100vh - var(--navbar-height));
     font-family: 'Ubuntu', sans-serif;
     background-image:url(https://i.imgur.com/pSGkJfC.png);
     background-position: center center;
@@ -13,10 +14,8 @@
     align-items: center;
     flex-direction: column;
     width:100%;
-    height:fit-content;
     overflow-x:auto;
     color:$menuLettersStrong;
-    padding-bottom: 1.5em;
 }
 
 
@@ -24,6 +23,10 @@
     font-weight: 500;
     font-size: 1.8em;
     margin-bottom: .5em;
+}
+
+#archive > div:last-child{
+    margin-bottom: 1.5em;
 }
 
 .archive-div{

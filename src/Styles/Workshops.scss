@@ -1,29 +1,31 @@
 @import 'Colors.scss';
 
 #workshop-page-container{
+    height:calc(100vh - var(--navbar-height));
+    overflow-y:auto;
     font-family: 'Ubuntu', sans-serif;
     background-image:url(https://i.imgur.com/DTaAjfn.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height:100%;
     display:flex;
     align-items: center;
     flex-direction: column;
     // padding-bottom:6em;
     width:100%;
-    overflow:auto;
 }
 
 #single-workshop-view{
     padding: 2em 0 1em 0;
-    height:calc(60% - 4em);
+    height:70vh;
+    min-height:300px;
     background-color: rgba(white,0.5);
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom:1em;
 }
 
 #single-image{
@@ -83,36 +85,53 @@
 
 #title{
     padding-left:2em;
-    margin:auto 0 auto 0;
+    height:33%;
     overflow-wrap: break-word;
     text-align: right;
     font-size: 1.4em;
+    font-weight:500;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #dates{
-    margin:auto 0 auto 0;
+    height:33%;
+    font-weight:500;
     text-align: right;
     font-size: 1.2em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#button{
+    height:33%;
+    text-align: right;
+    font-size: 1.2em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #all-workshops-view{
-    position:absolute;
-    bottom:0;
-    // height:calc(40% - var(--footer-height));
-    height:10em;
+    margin-top: auto;
+    height:calc(20vh + 5em);
+    min-height: 20vh;
     width:100%;
     max-width: 100vw;
     background-color: rgba(white,0.5);
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
     //for firefox scrollbar 
     scrollbar-color: $mainPetrol $mainBeige;
     scrollbar-width: thin;
+    margin-bottom: 1em;
 }
 
 #all-workshops-view img{
-    height:calc(100% - 1em);
+    height:20vh;
+    min-height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,7 +207,7 @@
     }
 
     #single-image img{
-        width:80%;
+        height:80vh;
         padding: 0 0 1em 0;
     }
     #all-workshops-view{
