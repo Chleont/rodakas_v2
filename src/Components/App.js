@@ -12,6 +12,7 @@ import Contact from './Contact';
 import Archive from './Archive.js';
 import Footer from './Footer.js'
 import Workshops from './Workshops';
+import Multimedia from './Multimedia';
 import FrogTroll from './FrogTroll/FrogTroll';
 
 
@@ -105,9 +106,7 @@ function App() {
             <Archive/>
           }/>
           <Route path='/multimedia' element={
-            <div>
-              Multimedia
-            </div>
+            <Multimedia/>
           }/>
           <Route path='/contact' element={
             <Contact/>
