@@ -207,7 +207,8 @@
     }
 
     #single-image img{
-        height:80vh;
+        max-width: 80vw;
+        width:60vh;
         padding: 0 0 1em 0;
     }
     #all-workshops-view{

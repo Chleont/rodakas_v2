@@ -61,7 +61,7 @@
     margin-top:1em;
     border:none;
     width:var(--video-width);
+    max-width: 80vw;
     height:calc(0.8 * var(--video-width));
     border-radius: 20px;
-    // box-shadow: 0 .5em 1em rgba(0,0,0,.15);
 }

@@ -101,7 +101,7 @@
 .member-photo{
     width:120px;
     border-radius:17px;
-    margin: 0 10px 0 1.5px;
+    margin: 0 10px 0 0px;
 }
 
 
@@ -176,4 +176,21 @@
 
 .member-cv-container :last-child{
     margin-top:1em;
+}
+
+@media only screen and (max-width: 1000px) {
+    .member-line{
+        margin: 0 0 0 0;
+        flex-direction: column ;
+    }
+    .member-cv-container :first-child{
+        margin-bottom: 1em;
+    }
+    #members{
+        padding: 1em 0 1em 0;
+    }
+    .member{
+        margin-bottom:2em;
+        width:100%;
+    }
 }
