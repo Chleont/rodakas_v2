@@ -27,6 +27,9 @@ function NavbarMobileMenu(){
                 <span/>
             </button>
             <div id="dropdown-menu">
+                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/')}}>
+                    <FormattedMessage id = "homepage"/>  
+                </button>
                 <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/about')}}>
                     <FormattedMessage id = "rodakas"/>  
                 </button>
@@ -41,9 +44,6 @@ function NavbarMobileMenu(){
                 </button>
                 <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/contact')}}>
                     <FormattedMessage id = "communication"/>  
-                </button>
-                <button className="noOutlineButton navbarButton" onClick={()=>{showOptions();routeChange('/')}}>
-                    <FormattedMessage id = "homepage"/>  
                 </button>
             </div>
         </div>
