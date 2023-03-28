@@ -17,7 +17,7 @@ export default function Contact(){
             <span id='contact-title'><FormattedMessage id="COMMUNICATION"/></span>
             <span className="contact-info"><FormattedMessage id="address"/>:&nbsp;<a id="address-link" href="https://goo.gl/maps/tYvfeehq4TCpodGm9" target="_blank"><FormattedMessage id="margarites"/></a></span>
             <span className="contact-info">Email: rodakas.koinsep@gmail.com</span>
-            <span className="contact-info">Α.Γ.Ε.ΜΗ: 166370861000</span>
+            <span className="contact-info">Α.Γ.Ε.ΜΗ: 169024650000</span>
             <span className="contact-info"><FormattedMessage id="president-contact"/></span>
             <span className="contact-info"><FormattedMessage id="secretary-contact"/></span>
             <span className="contact-info"><FormattedMessage id="clerk-contact"/></span>
