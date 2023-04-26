@@ -135,6 +135,15 @@
             "images":[
                 "https://i.imgur.com/nBw5wzF.jpg"
             ]
+        },
+        "9":{
+            "title":"Εργαστήριο κατασκευής ξερολιθιάς και αποκατάστασης λιθοδομής με φυσικά υλικά",
+            "dates":"22 - 29 Ιουλίου 2023",
+            "images":[
+                "https://i.imgur.com/0f06LRw.jpg"
+            ],
+            "button":"Πληροφορίες και Εγγραφή",
+            "navigate":"/stoneworkshop"
         }
     }
 }

@@ -15,6 +15,7 @@ import Workshops from './Workshops';
 import Multimedia from './Multimedia';
 import About from './About';
 import FrogTroll from './FrogTroll/FrogTroll';
+import StoneWorkshopPage from './stoneWorkshopPage';
 
 
 function App() {
@@ -101,6 +102,9 @@ function App() {
           }/>
           <Route path='/contact' element={
             <Contact/>
+          }/>
+          <Route path='/stoneworkshop' element={
+            <StoneWorkshopPage/>
           }/>
           <Route path='/troll' element={
             // options:{

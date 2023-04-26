@@ -4,6 +4,7 @@ import '../Styles/Workshops.scss'
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl';
+import {useNavigate } from 'react-router-dom';
 
 export default function Workshops(){
 
@@ -13,6 +14,7 @@ export default function Workshops(){
     const [wIndex, setIndex] = useState(workshops.length - 1)
     const [imageIndex, setImageIndex] = useState(0)
     const [isMobile, setWidth] = useState(window.innerWidth < 1000);
+    const navigate = useNavigate()
 
     function toggleArrows(index){
         let arrows = document.getElementsByClassName('workshop-page-arrow')
@@ -57,6 +59,17 @@ export default function Workshops(){
         img.onclick = ()=>{window.open(workshops[index].images[0], '_blank').focus()}
         document.getElementById('single-image').innerHTML = ''
         document.getElementById('single-image').append(img)
+        if(workshops[index].button){
+            let button = document.createElement('button')
+            button.innerHTML = workshops[index].button
+            button.onclick = () =>{
+                navigate(workshops[index].navigate)
+            }
+            document.getElementById('button').innerHTML = ''
+            document.getElementById('button').append(button)
+        }else{
+            document.getElementById('button').innerHTML = ''  
+        }
         setImageIndex(0)
         toggleArrows(index)
     }
@@ -76,7 +89,20 @@ export default function Workshops(){
             document.getElementById('title').append(workshops[workshops.length - 1].title)
             document.getElementById('dates').innerHTML = ''
             document.getElementById('dates').append(workshops[workshops.length - 1].dates)
-            img.setAttribute('src',workshops[workshops.length - 1].images[0])
+            img.setAttribute('src', '../Images/workshops/stone_summer_2023'
+            // workshops[workshops.length - 1].images[0]
+            )
+            if(workshops[workshops.length - 1].button){
+                let button = document.createElement('button')
+                button.innerHTML = workshops[workshops.length - 1].button
+                button.onclick = () =>{
+                    navigate(workshops[workshops.length - 1].navigate)
+                }
+                document.getElementById('button').innerHTML = ''
+                document.getElementById('button').append(button)
+            }else{
+                document.getElementById('button').innerHTML = ''  
+            }
             img.onclick = ()=>{window.open(workshops[workshops.length - 1].images[0], '_blank').focus()}
             document.getElementById('single-image').innerHTML = ''
             document.getElementById('single-image').append(img)
@@ -116,6 +142,7 @@ export default function Workshops(){
                 <div id='info'>
                     <span id='title'></span>
                     <span id='dates'></span>
+                    <span id='button'></span>
                 </div>
                 <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
                 <div id='single-image'/>
