@@ -41,7 +41,7 @@ export default function StoneworkshopPage(){
             <div id='sw-inscription'>
                 <span className="sw-subtitle">{workshop.costAndRegistration}</span>
                 <span>{workshop.cost}</span>
-                <span>{workshop.registration}</span>
+                <a href={workshop.formlink} target='_blank'>{workshop.registration}</a>
             </div>
 
 
