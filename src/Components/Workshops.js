@@ -5,8 +5,9 @@ import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl';
 import {useNavigate } from 'react-router-dom';
+import StoneworkshopPage from "./stoneWorkshopPage";
 
-export default function Workshops(){
+export default function Workshops(props){
 
     const [workshops,setWorkshops ] = useState(Object.keys(langfileGreek.workshops).map((key) => langfileGreek.workshops[key]))
     var lang = useIntl()
@@ -14,6 +15,7 @@ export default function Workshops(){
     const [wIndex, setIndex] = useState(workshops.length - 1)
     const [imageIndex, setImageIndex] = useState(0)
     const [isMobile, setWidth] = useState(window.innerWidth < 1000);
+    const [stoneWorkshopVisible, displaystoneWorkshop] = useState(false)
     const navigate = useNavigate()
 
     function toggleArrows(index){
@@ -49,29 +51,81 @@ export default function Workshops(){
         }
     }
 
-    function showWorkshop(index){
-        let img = document.createElement('img')
-        document.getElementById('title').innerHTML = ''
-        document.getElementById('title').append(workshops[index].title)
-        document.getElementById('dates').innerHTML = ''
-        document.getElementById('dates').append(workshops[index].dates)
-        img.setAttribute('src',workshops[index].images[0])
-        img.onclick = ()=>{window.open(workshops[index].images[0], '_blank').focus()}
-        document.getElementById('single-image').innerHTML = ''
-        document.getElementById('single-image').append(img)
-        if(workshops[index].button){
-            let button = document.createElement('button')
-            button.innerHTML = workshops[index].button
-            button.onclick = () =>{
-                navigate(workshops[index].navigate)
-            }
-            document.getElementById('button').innerHTML = ''
-            document.getElementById('button').append(button)
-        }else{
-            document.getElementById('button').innerHTML = ''  
+    function renderWorkshopPage(url){
+        window.history.replaceState(null, "workshop", "/activity" + url)
+        displaystoneWorkshop(true)
+    }
+
+    function renderSingleImagePage(){
+        if(props.url == ''){
+            window.history.replaceState(null, "activity", "/activity")
+            displaystoneWorkshop(false)    
+        }else if(props.url == '/stoneworkshop' && !stoneWorkshopVisible){
+            window.history.replaceState(null, "activity", "/activity")
         }
-        setImageIndex(0)
-        toggleArrows(index)
+    }
+
+    useEffect(()=>{
+        if(!stoneWorkshopVisible){
+            document.getElementById('single-workshop-view').style.padding = '2em 0 1em 0'
+            if(props.url == ''){
+                let img = document.createElement('img')
+                document.getElementById('title').append(workshops[wIndex].title)
+                document.getElementById('dates').append(workshops[wIndex].dates)
+                img.setAttribute('src',workshops[wIndex].images[0])
+                img.onclick = ()=>{window.open(workshops[wIndex].images[0], '_blank').focus()}
+                document.getElementById('single-image').innerHTML = ''
+                document.getElementById('single-image').append(img)
+                if(workshops[wIndex].button){
+                    let button = document.createElement('button')
+                    button.innerHTML = workshops[wIndex].button
+                    button.onclick = () =>{
+                        renderWorkshopPage(workshops[wIndex].navigate)
+                    }
+                    document.getElementById('button').innerHTML = ''
+                    document.getElementById('button').append(button)
+                }else{
+                    document.getElementById('button').innerHTML = ''  
+                }
+                setImageIndex(0)
+                toggleArrows(wIndex)
+            }
+        }else if(stoneWorkshopVisible){
+            document.getElementById('single-workshop-view').style.padding = '1.5em 0 1em 0'
+        }
+    },[stoneWorkshopVisible])
+
+
+
+    function showWorkshop(index){
+        if(!stoneWorkshopVisible){
+            let img = document.createElement('img')
+            document.getElementById('title').innerHTML = ''
+            document.getElementById('title').append(workshops[index].title)
+            document.getElementById('dates').innerHTML = ''
+            document.getElementById('dates').append(workshops[index].dates)
+            img.setAttribute('src',workshops[index].images[0])
+            img.onclick = ()=>{window.open(workshops[index].images[0], '_blank').focus()}
+            document.getElementById('single-image').innerHTML = ''
+            document.getElementById('single-image').append(img)
+            if(workshops[index].button){
+                let button = document.createElement('button')
+                button.innerHTML = workshops[index].button
+                button.onclick = () =>{
+                    renderWorkshopPage(workshops[index].navigate)
+                }
+                document.getElementById('button').innerHTML = ''
+                document.getElementById('button').append(button)
+            }else{
+                document.getElementById('button').innerHTML = ''  
+            }
+            setImageIndex(0)
+            toggleArrows(index)
+        }else if(props.url == ''){
+            renderSingleImagePage()
+        }else if( props.url == '/stoneworkshop'){
+            renderSingleImagePage()
+        }
     }
 
     useEffect(()=>{
@@ -84,6 +138,7 @@ export default function Workshops(){
     },[locale])
 
     useEffect(()=>{
+        if(props.url == ''){
             let img = document.createElement('img')
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[workshops.length - 1].title)
@@ -96,7 +151,7 @@ export default function Workshops(){
                 let button = document.createElement('button')
                 button.innerHTML = workshops[workshops.length - 1].button
                 button.onclick = () =>{
-                    navigate(workshops[workshops.length - 1].navigate)
+                    renderWorkshopPage(workshops[workshops.length - 1].navigate)
                 }
                 document.getElementById('button').innerHTML = ''
                 document.getElementById('button').append(button)
@@ -107,15 +162,20 @@ export default function Workshops(){
             document.getElementById('single-image').innerHTML = ''
             document.getElementById('single-image').append(img)
             toggleArrows(workshops.length - 1)
-            document.getElementById('all-workshops-view').innerHTML = ''
-            workshops.map(each =>{
-                let img = document.createElement('img')
-                img.setAttribute('src',each.images[0])
-                img.onclick = () => {
-                    setIndex(workshops.indexOf(each))
-                }
-                document.getElementById('all-workshops-view').prepend(img)
-            })
+        }else if(props.url == '/stoneworkshop'){
+            displaystoneWorkshop(true)
+        }
+        document.getElementById('all-workshops-view').innerHTML = ''
+        workshops.map(each =>{
+            let img = document.createElement('img')
+            img.setAttribute('src',each.images[0])
+            img.onclick = () => {
+                displaystoneWorkshop(false)  
+                window.history.replaceState(null, "activity", "/activity")
+                setIndex(workshops.indexOf(each))
+            }
+            document.getElementById('all-workshops-view').prepend(img)
+        })
     },[])
 
     useEffect(()=>{
@@ -124,30 +184,35 @@ export default function Workshops(){
 
     return(
         <div id="workshop-page-container">
-            {isMobile ? 
+            {stoneWorkshopVisible?
                 <div id="single-workshop-view">
+                    <StoneworkshopPage/>
+                </div>
+                :
+                isMobile ? 
+                    <div id="single-workshop-view">
+                        <div id='info'>
+                            <span id='title'></span>
+                            <span id='dates'></span>
+                            <span id='button'></span>
+                        </div>
+                        <div id='single-image'/>
+                        <div id = 'arrow-container'>
+                            <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
+                            <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
+                        </div>
+                    </div>
+                    :
+                    <div id="single-workshop-view">
                     <div id='info'>
                         <span id='title'></span>
                         <span id='dates'></span>
                         <span id='button'></span>
                     </div>
+                    <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
                     <div id='single-image'/>
-                    <div id = 'arrow-container'>
-                        <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
-                        <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
-                    </div>
-                </div>
-                :
-                <div id="single-workshop-view">
-                <div id='info'>
-                    <span id='title'></span>
-                    <span id='dates'></span>
-                    <span id='button'></span>
-                </div>
-                <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
-                <div id='single-image'/>
-                <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
-            </div>
+                    <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
+                </div>      
             }
             <div id="all-workshops-view">
             </div>
