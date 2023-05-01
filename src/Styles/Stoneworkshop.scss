@@ -123,6 +123,7 @@
     text-align: left;
 }
 .instructor-text img{
+    border-radius: 10px;
     width:200px;
     float:left;
     padding-right:1em;
@@ -132,5 +133,13 @@
     #sw-container{
         width:90%;
         padding:0 0;
+    }
+
+    .instructor-text img{
+        width:170px;
+    }
+
+    .instructor-text span{
+        word-break: normal;
     }
 }

@@ -35,7 +35,6 @@ function App() {
   let navigate = useNavigate();
 
   function handleWindowSizeChange() {
-    console.log('setting mobile')
     setWidth(window.innerWidth < 1000);
   }
 
