@@ -14,6 +14,7 @@ import Footer from './Footer.js'
 import Workshops from './Workshops';
 import Multimedia from './Multimedia';
 import About from './About';
+import Map from './Map';
 import FrogTroll from './FrogTroll/FrogTroll';
 
 
@@ -100,6 +101,9 @@ function App() {
           }/>
           <Route path='/multimedia' element={
             <Multimedia/>
+          }/>
+          <Route path='/multimedia/family-islands' element={
+            <Map/>
           }/>
           <Route path='/contact' element={
             <Contact/>

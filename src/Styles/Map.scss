@@ -1,0 +1,14 @@
+@import 'App.scss';
+
+#map-page-container{
+    width:100vw;
+    height:calc(100% - var(--navbar-height));
+}
+
+#mapper-container{
+    height: fit-content;
+}
+
+.map{
+    width:100%;
+}
