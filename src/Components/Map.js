@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import mapNoBack from '../Images/map/Map_no_back.png'
 import '../Styles/Map.scss'
 import ImageMapper from 'react-img-mapper';
@@ -11,9 +11,7 @@ export default function Map(){
     const [width, setWidth] = useState(null)
     const [localCoords, setLocalCoords] = useState({x: 0, y: 0});
     const [houses, setHouses] = useState([])
-    const [coords, setCoords] = useState([])
-    const [newHouse, setNewHouse] = useState(true)
-
+    var realCoords = useRef([])
 
     useEffect(()=>{
         let container = document.getElementById('map-page-container')
@@ -41,25 +39,16 @@ export default function Map(){
     }, []);
 
 
-    function passCoords(){
-      if(!newHouse){
-        let coordis = coords
-        coordis.push(parseInt(document.getElementById('x').innerHTML.substring(1),10))
-        coordis.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length - 1),10))
-        setCoords(coordis)
-      }else{
-        console.log('inNewHouse')
-        let coordis = []      
-        coordis.push(parseInt(document.getElementById('x').innerHTML.substring(1),10))
-        coordis.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length - 1),10))
-        setCoords(coordis)
-        setNewHouse(false)
-      }
-    }
+    const passCoords = React.useCallback((e)=>{
+      e.stopPropagation();
+        e.preventDefault();
+        realCoords.current.push(parseInt(document.getElementById('x').innerHTML.substring(1),10))
+        realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length - 1),10))
+        console.log(realCoords.current)
+    })
 
     function startRec(){
       setHouses([])
-      setCoords([])
       document.getElementById('mapper-container').addEventListener('click',passCoords);
     }
 
@@ -67,19 +56,19 @@ export default function Map(){
       if(e.key === 'Enter'){
         e.preventDefault();
         let houseis = houses
-        let ccoo = coords
         houseis.push({
           id:e.target.value,
           name:e.target.value,
-          coords:[...ccoo]
+          coords:realCoords.current
         })
         setHouses(houseis)
-        setNewHouse(true)
+        realCoords.current=[]
         console.log(houses,houseis)
       }
     }
 
     function completeRec(){
+      document.getElementById('mapper-container').removeEventListener('click',passCoords)
       const element = document.createElement("a");
       const textFile = new Blob([JSON.stringify(houses)], {type: 'text/plain'}); 
       element.href = URL.createObjectURL(textFile);
