@@ -1,11 +1,1 @@
-[
-  {
-    "id": "469f9800-c45a-483f-b13e-bd24f3fb79f4",
-    "title": "Hardwood",
-    "shape": "poly",
-    "name": "1",
-    "fillColor": "#eab54d4d",
-    "strokeColor": "black",
-    "coords": [517,701,544,709,527,765,503,759]
-  }
-]
+[{"id":"agios-ioannis","name":"agios-ioannis","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[2056,1616,2085,1610,2093,1658,2063,1667]},{"id":"nekrotafeio","name":"nekrotafeio","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1988,1551,2028,1549,2034,1614,2052,1690,1971,1697,1970,1702,1924,1705,1921,1627,1972,1628,1974,1593,1987,1550]}]

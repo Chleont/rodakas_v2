@@ -11,12 +11,15 @@ export default function Map(){
     const [width, setWidth] = useState(null)
     const [localCoords, setLocalCoords] = useState({x: 0, y: 0});
     const [houses, setHouses] = useState([])
+    var gotDown = useRef(false)
     var realCoords = useRef([])
 
     useEffect(()=>{
         let container = document.getElementById('map-page-container')
-        setWidth(container.offsetHeight * 1.51)
-        setWidth(container.offsetHeight * 3)
+        // setWidth(container.offsetHeight * 1.51)
+        // setWidth(container.offsetHeight * 3)
+        // setWidth('1636')
+        setWidth('3272')
         document.getElementById('mapper-container').style.width = width
     })
 
@@ -40,10 +43,17 @@ export default function Map(){
 
 
     const passCoords = React.useCallback((e)=>{
-      e.stopPropagation();
+        e.stopPropagation();
         e.preventDefault();
-        realCoords.current.push(parseInt(document.getElementById('x').innerHTML.substring(1),10))
-        realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length - 1),10))
+        console.log('dd',document.body.firstElementChild.firstElementChild)
+        realCoords.current.push(parseInt(document.getElementById('x').innerHTML.substring(1),10) + document.body.firstElementChild.firstElementChild.scrollLeft)
+        if(gotDown.current){
+          console.log('in got down')
+          realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10)  + document.body.firstElementChild.firstElementChild.scrollTop )
+        }else{
+          console.log('not in got down')
+          realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10)  + document.body.firstElementChild.firstElementChild.scrollTop )
+        }
         console.log(realCoords.current)
     })
 
@@ -59,6 +69,10 @@ export default function Map(){
         houseis.push({
           id:e.target.value,
           name:e.target.value,
+          shape: "poly",
+          fillColor: "#eab54d4d",
+          title:"",
+          strokeColor: "transparent",
           coords:realCoords.current
         })
         setHouses(houseis)
@@ -77,9 +91,16 @@ export default function Map(){
       element.click();
     }
 
+    function goDown(){
+      console.log('dd',document.body.firstElementChild.firstElementChild)
+      document.body.firstElementChild.firstElementChild.scrollTo(0, document.body.firstElementChild.firstElementChild.scrollHeight);
+      gotDown.current = true
+    }
+
     return(
         <div id="map-page-container">
             <span id='x'>({localCoords.x}</span><span>,</span><span id='y'>{localCoords.y})</span>
+            <button onClick={()=>{goDown()}}>go Down</button>
             <button onClick={()=>{startRec()}}>Start</button>
             <button onClick={()=>{completeRec()}}>Completed</button>
             <input id="houseInput"
