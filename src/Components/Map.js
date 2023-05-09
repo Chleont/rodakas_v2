@@ -16,8 +16,8 @@ export default function Map(){
     useEffect(()=>{
         // let container = document.getElementById('map-page-container')
         // setWidth(container.offsetHeight * 1.51)
-        setWidth('1636')
-        // setWidth('3272')
+        // setWidth('1636')
+        setWidth('3272')
         document.getElementById('mapper-container').style.width = width
     })
 
