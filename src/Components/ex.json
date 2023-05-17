@@ -125,5 +125,27 @@
   {"id":"102","name":"102","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1448,1156,1462,1063,1471,1062,1470,1030,1543,1051,1540,1065,1498,1061,1488,1165]},
   {"id":"108","name":"108","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1502,1067,1541,1069,1556,1096,1555,1178,1491,1165]},
   {"id":"107","name":"107","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1578,1158,1580,1261,1615,1263,1618,1227,1599,1221,1597,1159]},
-  {"id":"ek-agios-dimitrios","name":"ek-agios-dimitrios","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1634,1067,1654,1064,1656,1094,1635,1096]}
+  {"id":"ek-agios-dimitrios","name":"ek-agios-dimitrios","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1634,1067,1654,1064,1656,1094,1635,1096]},
+  {"id":"100","name":"100","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1493,859,1508,846,1548,837,1548,906,1499,904]},
+  {"id":"96a","name":"96a","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[
+    1500,909,1548,909,1556,994,1508,996,1501,986,1500,909,
+    1551,837,1579,839,1603,888,1632,893,1638,891,1637,935,1555,939,1554,939,1551,908,1552,905,1551,837,
+    1642,891,1715,900,1721,904,1718,940,1744,943,1733,1005,1769,1012,1767,1033,1717,1033,1713,1024,1679,1026,1675,1051,1656,1042,1564,1042,1555,999,1561,996,1642,891,1551,837,1500,909
+  ]},
+  {"id":"15","name":"15","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1725,904,1758,913,1766,911,1791,925,1807,956,1815,965,1810,975,1796,972,1787,993,1785,1007,1771,1007,1769,1010,1737,1001,1748,940,1723,937]},
+  {"id":"14","name":"14","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1799,978,1813,979,1833,986,1817,1034,1809,1032,1807,1053,1770,1053,1774,1012,1789,1012,1789,995]},
+  {"id":"16","name":"16","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1836,987,1840,987,1890,1018,1888,1038,1821,1033]},
+  {"id":"122","name":"122","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1771,1057,1811,1058,1812,1036,1814,1037,1886,1044,1889,1063,1860,1063,1856,1092,1813,1090,1810,1103,1762,1098,1765,1072,1771,1072]},
+  {"id":"121","name":"121","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1864,1067,1885,1069,1861,1117,1831,1119,1828,1136,1814,1132,1817,1094,1859,1096]},
+  {"id":"106","name":"106","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1683,1031,1710,1028,1715,1037,1767,1038,1766,1055,1768,1057,1767,1069,1679,1060]},
+  {"id":"105","name":"105","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1680,1062,1760,1072,1760,1098,1686,1098]},
+  {"id":"104","name":"104","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1670,1110,1686,1103,1739,1104,1741,1145,1740,1146,1668,1145]},
+  {"id":"124","name":"124","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1742,1101,1762,1100,1811,1109,1811,1136,1830,1140,1825,1149,1746,1144]},
+  {"id":"121","name":"121","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1816,1093,1859,1094,1864,1067,1885,1069,1862,1116,1831,1119,1828,1135,1813,1133]},
+  {"id":"123","name":"123","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1735,1156,1733,1151,1747,1151,1747,1149,1825,1154,1822,1175,1787,1173,1787,1191,1754,1191,1754,1189,1729,1187]},
+  {"id":"125","name":"125","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1752,1197,1792,1195,1791,1178,1822,1179,1816,1227,1751,1224]},
+  {"id":"119","name":"119","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1750,1230,1815,1232,1809,1288,1745,1286]},
+  {"id":"118","name":"118","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1728,1189,1748,1193,1742,1287,1718,1286,1718,1282,1722,1281,1724,1212]},
+  {"id":"117","name":"117","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1673,1215,1719,1220,1717,1279,1669,1280]},
+  {"id":"103","name":"103","shape":"poly","fillColor":"#eab54d4d","title":"","strokeColor":"transparent","coords":[1653,1216,1669,1215,1664,1275,1651,1274]}
 ]
