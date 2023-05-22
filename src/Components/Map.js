@@ -14,10 +14,10 @@ export default function Map(){
     var realCoords = useRef([])
 
     useEffect(()=>{
-        // let container = document.getElementById('map-page-container')
-        // setWidth(container.offsetHeight * 1.51)
+        let container = document.getElementById('map-page-container')
+        setWidth(container.offsetWidth * 0.9)
         // setWidth('1636')
-        setWidth('3272')
+        // setWidth('3272')
         document.getElementById('mapper-container').style.width = width
     })
 
