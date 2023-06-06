@@ -11,15 +11,16 @@ export default function Map(){
     const [width, setWidth] = useState(null)
     const [localCoords, setLocalCoords] = useState({x: 0, y: 0});
     const [houses, setHouses] = useState([])
+    const [overflow, setOverflow] = useState(0)
     var realCoords = useRef([])
 
     useEffect(()=>{
         let container = document.getElementById('map-page-container')
-        setWidth(container.offsetWidth * 0.9)
+        setWidth(container.offsetHeight * 1.5)
         // setWidth('1636')
         // setWidth('3272')
         document.getElementById('mapper-container').style.width = width
-    })
+    },[])
 
     const handleMouseMove = event => {
         setLocalCoords({
@@ -98,26 +99,51 @@ export default function Map(){
       //Stop Displaying info
     }
 
+    function zoom(type){
+      if(type == 'in'){
+        setOverflow(prev =>{return prev+1})
+        setWidth(prev=>{return prev+150})
+      }else{
+        setOverflow(prev =>{return prev-1})
+        setWidth(prev=>{return prev-150})
+      }
+      if(overflow > 0 && document.getElementById('map-container').style.overflowY == 'hidden'){
+        document.getElementById('map-container').style.overflowY = 'visible'
+      }else if(document.getElementById('map-container').style.overflowY == 'visible'){
+        document.getElementById('map-container').style.overflowY = 'hidden'
+      }
+    }
+
     return(
         <div id="map-page-container">
-            <span id='x'>({localCoords.x}</span><span>,</span><span id='y'>{localCoords.y})</span>
+
+            {/* Polygon input component - click start, click on all edges of polygon, fill the name field and hit enter, continue with next polygon */}
+
+            {/* <span id='x'>({localCoords.x}</span><span>,</span><span id='y'>{localCoords.y})</span>
             <button onClick={()=>{printMap()}}>print Map</button>
             <button onClick={()=>{startRec()}}>Start</button>
             <button onClick={()=>{completeRec()}}>Completed</button>
             <input id="houseInput"
               onKeyDown={(e)=>{handleEnter(e)}}
-            />
-
-            <div id='mapper-container'>
-                <ImageMapper id='mapper'
-                    src={mapNoBack} 
-                    map={map} 
-                    responsive
-                    parentWidth={width}
-                    onMouseEnter={area=>{handleMouseEnter(area)}}
-                    onMouseLeave={area=>{handleMouseLeave(area)}}
-                    onClick={area=>{handleClick(area)}}
-                />
+            /> */}
+            <div id='buttons-container'>
+              <button onClick={()=>{zoom('in')}}>+</button>
+              <button onClick={()=>{zoom('out')}}>-</button>
+            </div>
+            <div id='map-container'>
+              <div id='legend'></div>
+              <div id='mapper-container'>
+                  <ImageMapper id='mapper'
+                      src={mapNoBack} 
+                      map={map} 
+                      responsive
+                      parentWidth={width}
+                      onMouseEnter={area=>{handleMouseEnter(area)}}
+                      onMouseLeave={area=>{handleMouseLeave(area)}}
+                      onClick={area=>{handleClick(area)}}
+                  />
+              </div>
+              <div id='selectio-text'></div>
             </div>
         </div>
     )

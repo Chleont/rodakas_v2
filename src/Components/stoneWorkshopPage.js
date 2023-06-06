@@ -32,6 +32,22 @@ export default function StoneworkshopPage(){
                 <span>{workshop.introtext}</span>
                 <span>{workshop.info1}</span>
                 <span>{workshop.info2}</span>
+                <span className="sw-subtitle">{workshop.Programtitle}</span>
+                <span className="sw-activity-date">{workshop.program0}</span>
+                <span className="sw-activity-date">{workshop.program1.date}</span>
+                <span className="sw-activity">11:00 - 13:00: {workshop.program1.morning}</span>
+                <span className="sw-activity">18:30 - 20:30: {workshop.program1.evening}</span>
+                <span className="sw-activity-date">{workshop.program2.date}</span>
+                <span className="sw-activity">20:30 - 21:30: {workshop.program2.evening}</span>
+                <span className="sw-activity-date">{workshop.program3.date}</span>
+                <span className="sw-activity">20:30 - 21:30: {workshop.program3.evening}</span>
+                <span className="sw-activity-date">{workshop.program4.date}</span>
+                <span className="sw-activity">17:00 - 19:00: {workshop.program4.evening}</span>
+                <span className="sw-activity-date">{workshop.program5.date}</span>
+                <span className="sw-activity">20:00 - 21:00: {workshop.program5.evening}</span>
+                <span className="sw-activity-date">{workshop.program5.date}</span>
+                <span className="sw-activity">09:30 - 14:00: {workshop.program6.morning}</span>
+                <span className="sw-activity">18:30 - 20:30: {workshop.program6.evening}</span>
                 <span className="sw-subtitle">{workshop.accommodation}</span>
                 <span>{workshop.accommodationInfo1}</span>
                 <span>{workshop.accommodationInfo2}</span>
