@@ -4,8 +4,8 @@ import '../Styles/Workshops.scss'
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl';
-import {useNavigate } from 'react-router-dom';
 import StoneworkshopPage from "./stoneWorkshopPage";
+import Feast23 from "./Feast23";
 
 export default function Workshops(props){
 
@@ -15,8 +15,8 @@ export default function Workshops(props){
     const [wIndex, setIndex] = useState(workshops.length - 1)
     const [imageIndex, setImageIndex] = useState(0)
     const [isMobile, setWidth] = useState(window.innerWidth < 1000);
-    const [stoneWorkshopVisible, displaystoneWorkshop] = useState(false)
-    const navigate = useNavigate()
+    const [routedToComponent, setRoutedToComponent] = useState(false)
+    const [specialComponentDisplayed, setSpecialComponentDisplayed] = useState(<></>)
 
     function toggleArrows(index){
         let arrows = document.getElementsByClassName('workshop-page-arrow')
@@ -53,20 +53,27 @@ export default function Workshops(props){
 
     function renderWorkshopPage(url){
         window.history.replaceState(null, "workshop", "/activity" + url)
-        displaystoneWorkshop(true)
+        setRoutedToComponent(true)
+        if(url == '/stoneworkshop'){
+            setSpecialComponentDisplayed(<StoneworkshopPage/>)
+            setRoutedToComponent(true)
+        }else if(url == '/feast23'){
+            setSpecialComponentDisplayed(<Feast23/>)
+            setRoutedToComponent(true)
+        }
     }
 
     function renderSingleImagePage(){
         if(props.url == ''){
             window.history.replaceState(null, "activity", "/activity")
-            displaystoneWorkshop(false)    
-        }else if(props.url == '/stoneworkshop' && !stoneWorkshopVisible){
+            setRoutedToComponent(false)    
+        }else if(props.url != '' && !routedToComponent){
             window.history.replaceState(null, "activity", "/activity")
         }
     }
 
     useEffect(()=>{
-        if(!stoneWorkshopVisible){
+        if(!routedToComponent){
             document.getElementById('single-workshop-view').style.padding = '2em 0 1em 0'
             if(props.url == ''){
                 let img = document.createElement('img')
@@ -89,16 +96,17 @@ export default function Workshops(props){
                 }
                 setImageIndex(0)
                 toggleArrows(wIndex)
+                setSpecialComponentDisplayed(<></>)
             }
-        }else if(stoneWorkshopVisible){
+        }else if(routedToComponent){
             document.getElementById('single-workshop-view').style.padding = '1.5em 0 1em 0'
         }
-    },[stoneWorkshopVisible])
+    },[routedToComponent])
 
 
 
     function showWorkshop(index){
-        if(!stoneWorkshopVisible){
+        if(!routedToComponent){
             let img = document.createElement('img')
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[index].title)
@@ -121,9 +129,7 @@ export default function Workshops(props){
             }
             setImageIndex(0)
             toggleArrows(index)
-        }else if(props.url == ''){
-            renderSingleImagePage()
-        }else if( props.url == '/stoneworkshop'){
+        }else{
             renderSingleImagePage()
         }
     }
@@ -163,14 +169,19 @@ export default function Workshops(props){
             document.getElementById('single-image').append(img)
             toggleArrows(workshops.length - 1)
         }else if(props.url == '/stoneworkshop'){
-            displaystoneWorkshop(true)
+            console.log('hete')
+            setSpecialComponentDisplayed(<StoneworkshopPage/>)
+            setRoutedToComponent(true)
+        }else if(props.url == '/feast23'){
+            setSpecialComponentDisplayed(<Feast23/>)
+            setRoutedToComponent(true)
         }
         document.getElementById('all-workshops-view').innerHTML = ''
         workshops.map(each =>{
             let img = document.createElement('img')
             img.setAttribute('src',each.images[0])
             img.onclick = () => {
-                displaystoneWorkshop(false)  
+                setRoutedToComponent(false)  
                 window.history.replaceState(null, "activity", "/activity")
                 setIndex(workshops.indexOf(each))
             }
@@ -184,9 +195,9 @@ export default function Workshops(props){
 
     return(
         <div id="workshop-page-container">
-            {stoneWorkshopVisible?
+            {routedToComponent?
                 <div id="single-workshop-view">
-                    <StoneworkshopPage/>
+                    {specialComponentDisplayed}
                 </div>
                 :
                 isMobile ? 

@@ -96,6 +96,9 @@ function App() {
           <Route path='/activity/stoneworkshop' element={
             <Workshops url={'/stoneworkshop'}/>
           }/>
+          <Route path='/activity/feast23' element={
+            <Workshops url={'/feast23'}/>
+          }/>
           <Route path='/archive' element={
             <Archive/>
           }/>
