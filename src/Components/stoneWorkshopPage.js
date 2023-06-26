@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react"
 import '../Styles/Stoneworkshop.scss'
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
-import { useIntl} from 'react-intl';
+import { useIntl} from 'react-intl'
 import Alefantinos from '../Images/Instructors/Alefantinos.jpg'
 import Vergianos from '../Images/Instructors/Vergianos.jpg'
 
@@ -62,17 +62,17 @@ export default function StoneworkshopPage(){
                 <a href={workshop.formlink} target='_blank'>{workshop.registration}</a>
             </div>
             <div id='sw-instructors'>
-              <span className="sw-subtitle">{workshop.instructorTitle}</span>
-              <span className="instructor-name">{workshop.instructorName1}</span>
-              <span className="instructor-text">
-                <img src={Alefantinos}/>
-                <span>{workshop.instructorBio1}</span>
-              </span>
-              <span className="instructor-name">{workshop.instructorName2}</span>
-              <span className="instructor-text">
-                <img src={Vergianos}/>
-                <span>{workshop.instructorBio2}</span>
-              </span>
+                <span className="sw-subtitle">{workshop.instructorTitle}</span>
+                <span className="instructor-name">{workshop.instructorName1}</span>
+                <span className="instructor-text">
+                    <img src={Alefantinos}/>
+                    <span>{workshop.instructorBio1}</span>
+                </span>
+                <span className="instructor-name">{workshop.instructorName2}</span>
+                <span className="instructor-text">
+                    <img src={Vergianos}/>
+                    <span>{workshop.instructorBio2}</span>
+                </span>
             </div>
         </div>
     )

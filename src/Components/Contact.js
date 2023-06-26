@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 import '../Styles/App.scss'
 import '../Styles/Contact.scss'
-import {useIntl} from 'react-intl';
-import {FormattedMessage} from 'react-intl';
-import logo from './home_logo.png';
+import {useIntl} from 'react-intl'
+import {FormattedMessage} from 'react-intl'
+import logo from './home_logo.png'
 import Footer from './Footer.js'
 
 

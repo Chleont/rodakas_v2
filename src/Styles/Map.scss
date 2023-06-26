@@ -8,6 +8,7 @@
 
 
 #map-page-container{
+    font-family: 'Ubuntu', sans-serif;
     width:100%;
     height:calc(100% - var(--navbar-height));
 }
@@ -29,17 +30,115 @@
 }
 
 #legend{
-    width:12%;
+    width:calc(12% - 1em);
     border: 2px solid $menuLettersStrong;
     border-radius: 15px;
     margin:1.5em 0 1.5em 1em;
+    position: relative;
 }
 
 #mapper-container{
-    width:88%;
-    height: fit-content;
+    width:76%;
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.App  ::-webkit-scrollbar{
+    width: 0.4em;
+    height:0.4em;
+  }
+  
+  .App  ::-webkit-scrollbar-track {
+    background: $mainBeige;
+  }
+  
+  .App  ::-webkit-scrollbar-thumb {
+    background-color: $menuLetters;
+    color: $contactGrey; 
+    border: none;
+  }
+#mapper{
+    position: absolute;
+    top:0;
+    left:0;
 }
 
 .map{
     width:100%;
+}
+
+.dropdown{
+    position:absolute;
+    z-index: 2;
+    top:0.2em;
+    width:100%;
+    left:0;
+}
+
+#legend-text{
+    margin-top:2.5em;
+}
+
+.dropdown-toggle{
+    background-color: transparent;
+    padding:.3em .4em;
+    font-size:.9em;
+    border-radius:20px;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover{
+    background-color: $menuLettersStrong;
+    border:2px solid $menuLettersStrong;
+    color:white;
+}
+
+.dropdown-menu{
+    width:100%;
+    word-break: break-word;
+    font-size: .9em;
+}
+
+.dropdown-menu form{
+    padding-top:.5em;
+    width:100%;
+    flex-direction: column;
+    background-color:white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.dropdown-menu form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width:100%;
+}
+
+.dropdown-menu form label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom:.5em;
+    width:100%;
+    margin-right:auto;
+}
+
+.dropdown-menu form label span{
+    text-align: start;
+    padding-left: 1em;
+}
+
+.checkbox{
+    transform: scale(120%);
+    accent-color: #894ca1;
+}
+
+#selection-text{
+    width:12%;
 }

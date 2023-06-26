@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 import '../Styles/App.scss'
 import '../Styles/Workshops.scss'
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
-import { useIntl} from 'react-intl';
-import StoneworkshopPage from "./stoneWorkshopPage";
-import Feast23 from "./Feast23";
+import { useIntl} from 'react-intl'
+import StoneworkshopPage from "./stoneWorkshopPage"
+import Feast23 from "./Feast23"
 
 export default function Workshops(props){
 
@@ -14,24 +14,26 @@ export default function Workshops(props){
     var locale = lang.locale
     const [wIndex, setIndex] = useState(workshops.length - 1)
     const [imageIndex, setImageIndex] = useState(0)
-    const [isMobile, setWidth] = useState(window.innerWidth < 1000);
+    const [isMobile, setWidth] = useState(window.innerWidth < 1000)
     const [routedToComponent, setRoutedToComponent] = useState(false)
     const [specialComponentDisplayed, setSpecialComponentDisplayed] = useState(<></>)
 
     function toggleArrows(index){
         let arrows = document.getElementsByClassName('workshop-page-arrow')
+
         if(workshops[index].images.length > 1){
             arrows[0].style.visibility = 'visible'
             arrows[1].style.visibility = 'visible'
-         }else{
+        }else{
             arrows[0].style.visibility = 'hidden'
             arrows[1].style.visibility = 'hidden'
-         }
+        }
     }
 
     function leftArrow(){
         if(imageIndex > 0){
             let img = document.createElement('img')
+
             img.setAttribute('src',workshops[wIndex].images[imageIndex - 1])
             img.onclick = ()=>{window.open(workshops[wIndex].images[imageIndex - 1], '_blank').focus()}
             document.getElementById('single-image').innerHTML = ''
@@ -43,6 +45,7 @@ export default function Workshops(props){
     function rightArrow(){
         if(workshops[wIndex].images.length - 1 > imageIndex ){
             let img = document.createElement('img')
+
             img.setAttribute('src',workshops[wIndex].images[imageIndex + 1])
             img.onclick = ()=>{window.open(workshops[wIndex].images[imageIndex + 1], '_blank').focus()}
             document.getElementById('single-image').innerHTML = ''
@@ -77,6 +80,7 @@ export default function Workshops(props){
             document.getElementById('single-workshop-view').style.padding = '2em 0 1em 0'
             if(props.url == ''){
                 let img = document.createElement('img')
+
                 document.getElementById('title').append(workshops[wIndex].title)
                 document.getElementById('dates').append(workshops[wIndex].dates)
                 img.setAttribute('src',workshops[wIndex].images[0])
@@ -85,6 +89,7 @@ export default function Workshops(props){
                 document.getElementById('single-image').append(img)
                 if(workshops[wIndex].button){
                     let button = document.createElement('button')
+
                     button.innerHTML = workshops[wIndex].button
                     button.onclick = () =>{
                         renderWorkshopPage(workshops[wIndex].navigate)
@@ -108,6 +113,7 @@ export default function Workshops(props){
     function showWorkshop(index){
         if(!routedToComponent){
             let img = document.createElement('img')
+
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[index].title)
             document.getElementById('dates').innerHTML = ''
@@ -118,6 +124,7 @@ export default function Workshops(props){
             document.getElementById('single-image').append(img)
             if(workshops[index].button){
                 let button = document.createElement('button')
+
                 button.innerHTML = workshops[index].button
                 button.onclick = () =>{
                     renderWorkshopPage(workshops[index].navigate)
@@ -146,6 +153,7 @@ export default function Workshops(props){
     useEffect(()=>{
         if(props.url == ''){
             let img = document.createElement('img')
+
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[workshops.length - 1].title)
             document.getElementById('dates').innerHTML = ''
@@ -155,6 +163,7 @@ export default function Workshops(props){
             )
             if(workshops[workshops.length - 1].button){
                 let button = document.createElement('button')
+
                 button.innerHTML = workshops[workshops.length - 1].button
                 button.onclick = () =>{
                     renderWorkshopPage(workshops[workshops.length - 1].navigate)
@@ -179,6 +188,7 @@ export default function Workshops(props){
         document.getElementById('all-workshops-view').innerHTML = ''
         workshops.map(each =>{
             let img = document.createElement('img')
+
             img.setAttribute('src',each.images[0])
             img.onclick = () => {
                 setRoutedToComponent(false)  
@@ -215,15 +225,15 @@ export default function Workshops(props){
                     </div>
                     :
                     <div id="single-workshop-view">
-                    <div id='info'>
-                        <span id='title'></span>
-                        <span id='dates'></span>
-                        <span id='button'></span>
-                    </div>
-                    <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
-                    <div id='single-image'/>
-                    <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
-                </div>      
+                        <div id='info'>
+                            <span id='title'></span>
+                            <span id='dates'></span>
+                            <span id='button'></span>
+                        </div>
+                        <span id="le-arr" className="workshop-page-arrow" onClick={()=>leftArrow()}/>
+                        <div id='single-image'/>
+                        <span id="ri-arr" className="workshop-page-arrow" onClick={()=>rightArrow()}/>
+                    </div>      
             }
             <div id="all-workshops-view">
             </div>

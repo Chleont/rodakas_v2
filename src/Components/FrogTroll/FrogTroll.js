@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react"
 import './FrogTroll.scss'
 import trollBody from './fb.png'
 import trollJumping from './fj.png'
@@ -19,8 +19,8 @@ export default function FrogTroll({options}){
     }
 
     var canvas = null,
-        width =  Math.max(window.screen.width, window.innerWidth),
-        height =  Math.max(window.screen.height, window.innerHeight),
+        width = Math.max(window.screen.width, window.innerWidth),
+        height = Math.max(window.screen.height, window.innerHeight),
         units = propOption.units,
         x = null,
         y = null,
@@ -73,7 +73,7 @@ export default function FrogTroll({options}){
             hitInterval = setInterval(function(){
                 killPointer()
             },propOption.timeToAttack)
-        }, propOption.timeToOpenMouth);
+        }, propOption.timeToOpenMouth)
     }
 
     function killPointer(){
@@ -82,26 +82,26 @@ export default function FrogTroll({options}){
         // canvas.height = document.getElementById('frog-troll-container').clientHeight
         canvas.width = document.body.clientWidth
         canvas.height = document.body.clientHeight
-        ctx = canvas.getContext("2d");
+        ctx = canvas.getContext("2d")
 
         // Calculate center of frog's mouth coordinates
         x = document.getElementById('dot').getBoundingClientRect().x + document.getElementById('dot').getBoundingClientRect().width/2
         y = document.getElementById('dot').getBoundingClientRect().y + document.getElementById('dot').getBoundingClientRect().height/2
         
         // Add offset depending on frog's position and on frog's head rotation
-        offsety = navbarHeight +  (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.2) - frogy
+        offsety = navbarHeight + (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.2) - frogy
         offsetx = Math.sin(radians) * (200 - trollWidth) * 0.08 - frogx
         
         // Draw tongue
-        ctx.beginPath();
+        ctx.beginPath()
         // ctx.moveTo(x - offsetx,y - offsety);
-        ctx.moveTo(x - offsetx,y + offsety);
-        ctx.lineWidth = propOption.size + 2;
-        ctx.strokeStyle = "#ff7887";
-        ctx.lineTo(mouseX, mouseY - navbarHeight);
-        ctx.stroke();
+        ctx.moveTo(x - offsetx,y + offsety)
+        ctx.lineWidth = propOption.size + 2
+        ctx.strokeStyle = "#ff7887"
+        ctx.lineTo(mouseX, mouseY - navbarHeight)
+        ctx.stroke()
         setTimeout(function(){
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
         },100)
 
         // Tongue's hit aftermath
@@ -129,6 +129,7 @@ export default function FrogTroll({options}){
         let randX = Math.random() * (width - trollSize) - (width - trollSize) / 2
         let randY = Math.random() * ((height - trollSize) - 2 * navbarHeight) - ((height - trollSize) - 2 * navbarHeight) / 2
         let transitionTime = Math.round(Math.max(Math.abs(frogx - randX),Math.abs(frogy - randY)) / 100) / 10 + 0.1
+
         if (randX === frogx){
             randX = randX + 10 
         }
@@ -157,18 +158,18 @@ export default function FrogTroll({options}){
         document.getElementById('frog-troll-head').style.visibility = 'hidden'
         
         let dx = (newPositionData.x - frogx),
-        dy = (newPositionData.y - frogy),
-        halfDist = Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2,
-        φ = -Math.atan(dy/dx),
-        ω = Math.PI/2 - φ,
-        centery = null,
-        r = null,         
-        centerx = null,
-        instances = newPositionData.t * 20,
-        xinterval = dx / instances,
-        θinterval= Math.abs(2 * φ / instances),
-        θ = null,
-        points = []
+            dy = (newPositionData.y - frogy),
+            halfDist = Math.sqrt((newPositionData.x - frogx)**2 + (newPositionData.y - frogy)**2)/2,
+            φ = -Math.atan(dy/dx),
+            ω = Math.PI/2 - φ,
+            centery = null,
+            r = null,         
+            centerx = null,
+            instances = newPositionData.t * 20,
+            xinterval = dx / instances,
+            θinterval= Math.abs(2 * φ / instances),
+            θ = null,
+            points = []
         
 
         //Calculate jumpin circular curve's center and radious
@@ -243,8 +244,8 @@ export default function FrogTroll({options}){
     }
 
     function rotatePointer(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
+        mouseX = e.clientX
+        mouseY = e.clientY
         pointer = document.getElementById("frog-troll-head")
         pointerBox = pointer.getBoundingClientRect()
         centerPoint = window.getComputedStyle(pointer).transformOrigin
@@ -257,10 +258,10 @@ export default function FrogTroll({options}){
             jump()
         }else{
             radians = Math.atan2(mouseX - centerX, mouseY - centerY)
-            degrees = (radians * (180 / Math.PI) * -1);
+            degrees = (radians * (180 / Math.PI) * -1)
             
             // Turn head
-            pointer.style.transform = 'rotate('+degrees+'deg)';
+            pointer.style.transform = 'rotate('+degrees+'deg)'
             
             //Set position of mouth
             mouthCenter = [Math.sin(radians) * fontSize, (Math.cos(radians) - 2) * fontSize]
@@ -270,9 +271,10 @@ export default function FrogTroll({options}){
 
     function rotateBack(time) {
         var seconds = isNaN(time)?0.4:time
+
         pointer = document.getElementById("frog-troll-head")
         pointer.style.transitionDuration = `${seconds}s`
-        pointer.style.transform = 'rotate('+0+'deg)';
+        pointer.style.transform = 'rotate('+0+'deg)'
         setTimeout(
             function(){
                 pointer.style.transitionDuration = '0s'
@@ -296,8 +298,8 @@ export default function FrogTroll({options}){
 
     useEffect(()=>{
         // document.getElementById('frog-troll-container').addEventListener('mousemove', listener );
-        document.body.addEventListener('mousemove', listener );
-        document.body.addEventListener('mouseleave', stopHunting );
+        document.body.addEventListener('mousemove', listener )
+        document.body.addEventListener('mouseleave', stopHunting )
         trollWidth = document.getElementById('frog-troll').offsetWidth
     },[listener])
 

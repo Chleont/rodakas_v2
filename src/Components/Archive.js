@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 import '../Styles/App.scss'
 import '../Styles/Archive.scss'
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
-import { useIntl } from 'react-intl';
-import {FormattedMessage} from 'react-intl';
+import { useIntl } from 'react-intl'
+import {FormattedMessage} from 'react-intl'
 
 export default function Workshops(){
 
@@ -71,8 +71,8 @@ export default function Workshops(){
 
     useEffect(()=>{
         console.log('a')
-        document.getElementById('photo0').style.zIndex = 2;
-        document.getElementById('photo0').style.opacity = 1;
+        document.getElementById('photo0').style.zIndex = 2
+        document.getElementById('photo0').style.opacity = 1
         interval = setInterval(rightArrow,15000)
     },[])
 

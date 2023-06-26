@@ -1,5 +1,5 @@
-import React from 'react';
-import '../Styles/App.scss';
+import React from 'react'
+import '../Styles/App.scss'
 import fb from './footer_fb.png'
 import yt from './footer_yt.png'
 

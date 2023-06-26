@@ -1,118 +1,160 @@
-import React, {useEffect, useRef, useState} from "react";
-import mapNoBack from '../Images/map/Map_no_back.png'
+import React, {useEffect, useRef, useState} from "react"
+import mapNoBack from '../Images/map/Map_cropped_bottom-right.png'
 import '../Styles/Map.scss'
-import ImageMapper from 'react-img-mapper';
+import ImageMapper from 'react-img-mapper'
 import json from './ex.json'
+import basemap from '../Images/map/Basemap.jpg'
+import langfileGreek from '../Lang/el.json'
+import langfileEnglish from '../Lang/en.json'
+import { useIntl} from 'react-intl'
 
 export default function Map(){
 
+    var lang = useIntl()
+    var locale = lang.locale
+    const[langFile, setlangfile] = useState(langfileGreek.map)
 
+    useEffect(()=>{
+        if(locale === 'el')
+        {
+            setlangfile(langfileGreek.map)
+        }else{
+            setlangfile(langfileEnglish.map)
+        }
+    },[locale])
+  
     const map = {name:'Margarites',areas:json}
     const [width, setWidth] = useState(null)
-    const [localCoords, setLocalCoords] = useState({x: 0, y: 0});
+    const [localCoords, setLocalCoords] = useState({x: 0, y: 0})
     const [houses, setHouses] = useState([])
     const [overflow, setOverflow] = useState(0)
     var realCoords = useRef([])
 
     useEffect(()=>{
-        let container = document.getElementById('map-page-container')
-        setWidth(container.offsetHeight * 1.5)
+        let container = document.getElementById('mapper-container')
+
+        // setWidth(container.offsetHeight * 1.5)
+        setWidth(container.offsetWidth)
         // setWidth('1636')
         // setWidth('3272')
         document.getElementById('mapper-container').style.width = width
     },[])
 
-    const handleMouseMove = event => {
-        setLocalCoords({
-          x: event.clientX - document.getElementById('mapper-container').offsetLeft,
-          y: event.clientY - document.getElementById('mapper-container').offsetTop,
-        });
-      };
+    /* Coordinates input code */
+
+    // const handleMouseMove = event => {
+    //     setLocalCoords({
+    //         x: event.clientX - document.getElementById('mapper-container').offsetLeft,
+    //         y: event.clientY - document.getElementById('mapper-container').offsetTop,
+    //     })
+    // }
     
-    useEffect(() => {
-      document.getElementById('mapper-container').addEventListener('mousemove', handleMouseMove);
-      console.log(document.getElementById('mapper-container'))
-      return () => {
-          document.getElementById('mapper-container').removeEventListener(
-          'mousemove',
-          handleMouseMove,
-        );
-      };
-    }, []);
+    // useEffect(() => {
+    //     document.getElementById('mapper-container').addEventListener('mousemove', handleMouseMove)
+    //     console.log(document.getElementById('mapper-container'))
+    //     return () => {
+    //         document.getElementById('mapper-container').removeEventListener(
+    //             'mousemove',
+    //             handleMouseMove,
+    //         )
+    //     }
+    // }, [])
 
+    // const passCoords = React.useCallback((e)=>{
+    //     e.stopPropagation()
+    //     e.preventDefault()
+    //     realCoords.current.push(parseInt(document.getElementById('x').innerHTML.substring(1),10) + document.body.firstElementChild.firstElementChild.scrollLeft)
+    //     realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10) + document.body.firstElementChild.firstElementChild.scrollTop )
+    //     console.log(realCoords.current)
+    // })
 
-    const passCoords = React.useCallback((e)=>{
-        e.stopPropagation();
-        e.preventDefault();
-        realCoords.current.push(parseInt(document.getElementById('x').innerHTML.substring(1),10) + document.body.firstElementChild.firstElementChild.scrollLeft)
-        realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10)  + document.body.firstElementChild.firstElementChild.scrollTop )
-        console.log(realCoords.current)
-    })
+    // function startRec(){
+    //     setHouses([])
+    //     document.getElementById('mapper-container').addEventListener('click',passCoords)
+    // }
 
-    function startRec(){
-      setHouses([])
-      document.getElementById('mapper-container').addEventListener('click',passCoords);
-    }
+    // function handleEnter(e){
+    //     if(e.key === 'Enter'){
+    //         e.preventDefault()
+    //         let houseis = houses
 
-    function handleEnter(e){
-      if(e.key === 'Enter'){
-        e.preventDefault();
-        let houseis = houses
-        houseis.push({
-          id:e.target.value,
-          name:e.target.value,
-          shape: "poly",
-          fillColor: "#eab54d4d",
-          title:"",
-          strokeColor: "transparent",
-          coords:realCoords.current
-        })
-        setHouses(houseis)
-        realCoords.current=[]
-        console.log(houses,houseis)
-      }
-    }
+    //         houseis.push({
+    //             id:e.target.value,
+    //             name:e.target.value,
+    //             shape: "poly",
+    //             fillColor: "#eab54d4d",
+    //             title:"",
+    //             strokeColor: "transparent",
+    //             coords:realCoords.current
+    //         })
+    //         setHouses(houseis)
+    //         realCoords.current=[]
+    //         console.log(houses,houseis)
+    //     }
+    // }
 
-    function completeRec(){
-      document.getElementById('mapper-container').removeEventListener('click',passCoords)
-      const element = document.createElement("a");
-      const textFile = new Blob([JSON.stringify(houses)], {type: 'text/plain'}); 
-      element.href = URL.createObjectURL(textFile);
-      element.download = "userFile.txt";
-      document.body.appendChild(element); 
-      element.click();
-    }
+    // function completeRec(){
+    //     document.getElementById('mapper-container').removeEventListener('click',passCoords)
+    //     const element = document.createElement("a")
+    //     const textFile = new Blob([JSON.stringify(houses)], {type: 'text/plain'})
+ 
+    //     element.href = URL.createObjectURL(textFile)
+    //     element.download = "userFile.txt"
+    //     document.body.appendChild(element) 
+    //     element.click()
+    // }
 
-    function printMap(){
-      console.log(map)
-    }
+    // function printMap(){
+    //     console.log(map)
+    // }
 
     function handleClick(area){
-      console.log(area)
+        console.log(area)
     }
 
     function handleMouseEnter(area){
-      //Display some info about the house in box somewhere
+        //Display some info about the house in box somewhere
     }
 
     function handleMouseLeave(area){
-      //Stop Displaying info
+        //Stop Displaying info
     }
 
     function zoom(type){
-      if(type == 'in'){
-        setOverflow(prev =>{return prev+1})
-        setWidth(prev=>{return prev+150})
-      }else{
-        setOverflow(prev =>{return prev-1})
-        setWidth(prev=>{return prev-150})
-      }
-      if(overflow > 0 && document.getElementById('map-container').style.overflowY == 'hidden'){
-        document.getElementById('map-container').style.overflowY = 'visible'
-      }else if(document.getElementById('map-container').style.overflowY == 'visible'){
-        document.getElementById('map-container').style.overflowY = 'hidden'
-      }
+        if(type == 'in'){
+            setOverflow(prev =>{return prev+1})
+            setWidth(prev=>{return prev+150})
+        }else{
+            setOverflow(prev =>{return prev-1})
+            setWidth(prev=>{return prev-150})
+        }
+        if(overflow > 0 && document.getElementById('map-container').style.overflowY == 'hidden'){
+            document.getElementById('map-container').style.overflowY = 'visible'
+        }else if(document.getElementById('map-container').style.overflowY == 'visible'){
+            document.getElementById('map-container').style.overflowY = 'hidden'
+        }
     }
+
+    const [isOpen, setIsOpen] = useState(false)
+    const [checkboxValues, setCheckboxValues] = useState({
+        option1: false,
+        option2: false,
+        option3: false,
+    })
+    
+    const handleCheckboxChange = (event) => {
+        const { name, checked } = event.target
+
+        setCheckboxValues((prevState) => ({
+            ...prevState,
+            [name]: checked,
+        }))
+    }
+    
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen)
+    }
+    
 
     return(
         <div id="map-page-container">
@@ -127,23 +169,74 @@ export default function Map(){
               onKeyDown={(e)=>{handleEnter(e)}}
             /> */}
             <div id='buttons-container'>
-              <button onClick={()=>{zoom('in')}}>+</button>
-              <button onClick={()=>{zoom('out')}}>-</button>
+                <button onClick={()=>{zoom('in')}}>+</button>
+                <button onClick={()=>{zoom('out')}}>-</button>
             </div>
             <div id='map-container'>
-              <div id='legend'></div>
-              <div id='mapper-container'>
-                  <ImageMapper id='mapper'
-                      src={mapNoBack} 
-                      map={map} 
-                      responsive
-                      parentWidth={width}
-                      onMouseEnter={area=>{handleMouseEnter(area)}}
-                      onMouseLeave={area=>{handleMouseLeave(area)}}
-                      onClick={area=>{handleClick(area)}}
-                  />
-              </div>
-              <div id='selectio-text'></div>
+                <div id='legend'> 
+                    <div className="dropdown">
+                        <button className="dropdown-toggle" onClick={toggleDropdown}>
+                            {langFile.display}
+                        </button>
+                        {isOpen && (
+                            <div className="dropdown-menu">
+                                <form>
+                                    <label>
+                                        <input
+                                            className="checkbox"
+                                            type="checkbox"
+                                            name="option1"
+                                            checked={checkboxValues.option1}
+                                            onChange={handleCheckboxChange}
+                                        />
+                                        <span>
+                                            {langFile.buildings}
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input
+                                            className="checkbox"
+                                            type="checkbox"
+                                            name="option2"
+                                            checked={checkboxValues.option2}
+                                            onChange={handleCheckboxChange}
+                                        />
+                                        <span>
+                                            {langFile.families}
+                                        </span>
+                                    </label>
+                                    <label>
+                                        <input
+                                            className="checkbox"
+                                            type="checkbox"
+                                            name="option3"
+                                            checked={checkboxValues.option3}
+                                            onChange={handleCheckboxChange}
+                                        />
+                                        <span>
+                                            {langFile.basemap}
+                                        </span>
+                                    </label>
+                                </form>
+                            </div>
+                        )}
+                    </div>
+                    <div id='legend-text'>
+                        <span>{langFile.legend}</span>
+                    </div>
+                </div>
+                <div id='mapper-container'>
+                    <ImageMapper id='mapper'
+                        src={mapNoBack} 
+                        map={map} 
+                        responsive
+                        parentWidth={width}
+                        onMouseEnter={area=>{handleMouseEnter(area)}}
+                        onMouseLeave={area=>{handleMouseLeave(area)}}
+                        onClick={area=>{handleClick(area)}}
+                    />
+                </div>
+                <div id='selection-text'></div>
             </div>
         </div>
     )

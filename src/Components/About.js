@@ -1,22 +1,24 @@
-import React from "react";
+import React from "react"
 import '../Styles/App.scss'
 import '../Styles/About.scss'
-import padouva from '../Images/Members/members_padouva.jpg';
-import papadakis from '../Images/Members/members_papadakis.jpg';
-import cleontidis from '../Images/Members/members_cleontidis.jpg';
-import defaultIcon from './home_logo.png';
-import {FormattedMessage} from 'react-intl';
+import padouva from '../Images/Members/members_padouva.jpg'
+import papadakis from '../Images/Members/members_papadakis.jpg'
+import cleontidis from '../Images/Members/members_cleontidis.jpg'
+import defaultIcon from './home_logo.png'
+import {FormattedMessage} from 'react-intl'
 
 export default function About(){
 
     function showCv(e){
         let id = e.target.parentElement.parentElement.parentElement.id
+
         document.getElementById(id).lastElementChild.style.display = 'flex'
         document.getElementById(id).firstElementChild.lastElementChild.lastElementChild.style.display = 'none'
     }
 
     function hideCv(e){
         let id = e.target.parentElement.parentElement.id
+
         document.getElementById(id).lastElementChild.style.display = 'none'
         document.getElementById(id).firstElementChild.lastElementChild.lastElementChild.style.display = 'block'
     }

@@ -1,19 +1,21 @@
-import React from 'react';
-import '../Styles/App.scss';
-import {FormattedMessage} from 'react-intl';
-import {useNavigate} from 'react-router-dom';
+import React from 'react'
+import '../Styles/App.scss'
+import {FormattedMessage} from 'react-intl'
+import {useNavigate} from 'react-router-dom'
 
 
 function NavbarMobileMenu(){
 
     function routeChange(path){
         return(
-        navigate(path)
+            navigate(path)
         )
     }
-    let navigate = useNavigate();
+    let navigate = useNavigate()
+
     function showOptions(){
-        let menu = document.getElementById('dropdown-menu') 
+        let menu = document.getElementById('dropdown-menu')
+ 
         if(menu.style.display ==='flex'){
             menu.style.display = 'none'
         }else{

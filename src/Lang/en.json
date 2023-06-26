@@ -208,5 +208,12 @@
     },
     "speech":{
         "0":"English translation is not currently available"
+    },
+    "map":{
+        "display":"Map Layers",
+        "legend":"Legend",
+        "buildings":"Building usage",
+        "basemap":"Satelite",
+        "families":"Family islands"
     }
 }

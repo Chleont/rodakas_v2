@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 import '../Styles/App.scss'
 import '../Styles/Multimedia.scss'
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage} from 'react-intl'
 
 export default function Multimedia(){
     return(

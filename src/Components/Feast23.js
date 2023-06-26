@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react"
 import langfileGreek from '../Lang/el.json'
-import { useIntl} from 'react-intl';
+import { useIntl} from 'react-intl'
 import langfileEnglish from '../Lang/en.json'
 import '../Styles/Feast23.scss'
 
@@ -38,10 +38,10 @@ export default function Feast23Page(){
     return(
         <div id='feast23-container'>
             <iframe allowfullscreen="allowfullscreen"
-                    mozallowfullscreen="mozallowfullscreen" 
-                    msallowfullscreen="msallowfullscreen" 
-                    oallowfullscreen="oallowfullscreen" 
-                    webkitallowfullscreen="webkitallowfullscreen" id="feast23-video" src="https://www.youtube.com/embed/CZkJqF2TJpA"></iframe>
+                mozallowfullscreen="mozallowfullscreen" 
+                msallowfullscreen="msallowfullscreen" 
+                oallowfullscreen="oallowfullscreen" 
+                webkitallowfullscreen="webkitallowfullscreen" id="feast23-video" src="https://www.youtube.com/embed/CZkJqF2TJpA"></iframe>
             {speech.length > 0?
                 speech.map(each=>{
                     return(
