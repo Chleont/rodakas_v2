@@ -3,7 +3,7 @@
 
 
 :root {
-    --buttons-height: 1.5em;
+    --buttons-height: 2em;
   }
 
 
@@ -11,14 +11,6 @@
     font-family: 'Ubuntu', sans-serif;
     width:100%;
     height:calc(100% - var(--navbar-height));
-}
-
-#buttons-container{
-    height:var(--buttons-height)
-}
-
-#buttons-container button{
-    padding: 0 auto 0 auto;
 }
 
 #map-container{
@@ -30,15 +22,16 @@
 }
 
 #legend{
-    width:calc(12% - 1em);
+    width:calc(12% - 2em);
     border: 2px solid $menuLettersStrong;
     border-radius: 15px;
     margin:1.5em 0 1.5em 1em;
     position: relative;
+    padding:.5em;
 }
 
 #mapper-container{
-    width:76%;
+    width:66%;
     height: 100%;
     font-family: 'Ubuntu', sans-serif;
     overflow: auto;
@@ -77,10 +70,6 @@
     left:0;
 }
 
-#legend-text{
-    margin-top:2.5em;
-}
-
 .dropdown-toggle{
     background-color: transparent;
     padding:.3em .4em;
@@ -95,28 +84,29 @@
     color:white;
 }
 
+#controls{
+    margin:auto auto 1.5em auto;
+    border: 2px solid $menuLettersStrong;
+    border-radius: 15px;
+    padding:.5em;
+}
+
 .dropdown-menu{
     width:100%;
     word-break: break-word;
     font-size: .9em;
+    margin: 0 auto 1em auto;
 }
 
 .dropdown-menu form{
-    padding-top:.5em;
-    width:100%;
+    padding:.5em;
+    margin: 0 auto 0 auto;
+    width:fit-content;
     flex-direction: column;
     background-color:white;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-}
-
-.dropdown-menu form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width:100%;
 }
 
 .dropdown-menu form label{
@@ -125,8 +115,6 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom:.5em;
-    width:100%;
-    margin-right:auto;
 }
 
 .dropdown-menu form label span{
@@ -135,10 +123,57 @@
 }
 
 .checkbox{
-    transform: scale(120%);
+    transform: scale(150%);
     accent-color: #894ca1;
 }
 
-#selection-text{
-    width:12%;
+#right-box{
+    width:22%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5em 1em 0 0;
+    flex-direction: column;
 }
+
+#infobox{
+    width:100%;
+    height: 65%;
+    border: 2px solid $menuLettersStrong;
+    border-radius: 15px;
+    margin-bottom:2em;
+}
+
+#buttons-container{
+    margin:0 auto 0 auto;
+}
+
+#buttons-container button{
+    margin:0 .5em 0 .5em;
+    padding: .2em;
+    font-size:1.1em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border:2px solid $menuLettersStrong;
+    color:black;
+    border-radius: .5em;
+    cursor: pointer;
+}
+
+#buttons-container button:hover{
+    background-color: $menuLettersStrong;
+    color:white;
+}
+
+#buttons-container :first-child::before{
+    content:'\2b';
+    font: var(--fa-font-solid);
+}
+
+#buttons-container :last-child::before{
+    content:'\f068';
+    font: var(--fa-font-solid);
+}
+  

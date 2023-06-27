@@ -1,12 +1,17 @@
 import React, {useEffect, useRef, useState} from "react"
-import mapNoBack from '../Images/map/Map_cropped_bottom-right.png'
 import '../Styles/Map.scss'
 import ImageMapper from 'react-img-mapper'
 import json from './ex.json'
-import basemap from '../Images/map/Basemap.jpg'
+
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl'
+
+/** Maps */
+import satellite from '../Images/map/Basemap.jpg'
+import symbols from '../Images/map/Map_symbols.png'
+import simple from '../Images/map/Map_simple.png'
+import satellite_symbols from '../Images/map/Basemap_symbols.jpg'
 
 export default function Map(){
 
@@ -23,22 +28,60 @@ export default function Map(){
         }
     },[locale])
   
-    const map = {name:'Margarites',areas:json}
+    const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json})
+    const [displayedMap, setDisplayedMap] = useState(simple)
     const [width, setWidth] = useState(null)
-    const [localCoords, setLocalCoords] = useState({x: 0, y: 0})
-    const [houses, setHouses] = useState([])
+    // const [localCoords, setLocalCoords] = useState({x: 0, y: 0})
+    // const [houses, setHouses] = useState([])
     const [overflow, setOverflow] = useState(0)
-    var realCoords = useRef([])
+    const [checkboxValues, setCheckboxValues] = useState({
+        option1: false,
+        option2: false,
+        option3: false,
+    })
+    // var realCoords = useRef([])
 
     useEffect(()=>{
         let container = document.getElementById('mapper-container')
 
-        // setWidth(container.offsetHeight * 1.5)
-        setWidth(container.offsetWidth)
+        setWidth(container.offsetHeight * 1.5)
+        // setWidth(container.offsetWidth)
         // setWidth('1636')
         // setWidth('3272')
         document.getElementById('mapper-container').style.width = width
     },[])
+
+    useEffect(()=>{
+        if(checkboxValues.option1){
+            if(checkboxValues.option2){
+                if(checkboxValues.option3){
+                    // All
+                }else{
+                    // Families - usages
+                }
+            }else{
+                if(checkboxValues.option3){
+                    setDisplayedMap(satellite_symbols)
+                }else{
+                    setDisplayedMap(symbols)
+                }
+            }
+        }else{
+            if(checkboxValues.option2){
+                if(checkboxValues.option3){
+                    // Families - satellite
+                }else{
+                    // Families
+                }
+            }else{
+                if(checkboxValues.option3){
+                    setDisplayedMap(satellite)
+                }else{
+                    setDisplayedMap(simple)
+                }
+            }
+        }
+    },[checkboxValues])
 
     /* Coordinates input code */
 
@@ -135,12 +178,8 @@ export default function Map(){
         }
     }
 
-    const [isOpen, setIsOpen] = useState(false)
-    const [checkboxValues, setCheckboxValues] = useState({
-        option1: false,
-        option2: false,
-        option3: false,
-    })
+    // const [isOpen, setIsOpen] = useState(false)
+
     
     const handleCheckboxChange = (event) => {
         const { name, checked } = event.target
@@ -151,9 +190,9 @@ export default function Map(){
         }))
     }
     
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen)
-    }
+    // const toggleDropdown = () => {
+    //     setIsOpen(!isOpen)
+    // }
     
 
     return(
@@ -168,67 +207,14 @@ export default function Map(){
             <input id="houseInput"
               onKeyDown={(e)=>{handleEnter(e)}}
             /> */}
-            <div id='buttons-container'>
-                <button onClick={()=>{zoom('in')}}>+</button>
-                <button onClick={()=>{zoom('out')}}>-</button>
-            </div>
             <div id='map-container'>
                 <div id='legend'> 
-                    <div className="dropdown">
-                        <button className="dropdown-toggle" onClick={toggleDropdown}>
-                            {langFile.display}
-                        </button>
-                        {isOpen && (
-                            <div className="dropdown-menu">
-                                <form>
-                                    <label>
-                                        <input
-                                            className="checkbox"
-                                            type="checkbox"
-                                            name="option1"
-                                            checked={checkboxValues.option1}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        <span>
-                                            {langFile.buildings}
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input
-                                            className="checkbox"
-                                            type="checkbox"
-                                            name="option2"
-                                            checked={checkboxValues.option2}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        <span>
-                                            {langFile.families}
-                                        </span>
-                                    </label>
-                                    <label>
-                                        <input
-                                            className="checkbox"
-                                            type="checkbox"
-                                            name="option3"
-                                            checked={checkboxValues.option3}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        <span>
-                                            {langFile.basemap}
-                                        </span>
-                                    </label>
-                                </form>
-                            </div>
-                        )}
-                    </div>
-                    <div id='legend-text'>
-                        <span>{langFile.legend}</span>
-                    </div>
+                    <span>{langFile.legend}</span>
                 </div>
                 <div id='mapper-container'>
                     <ImageMapper id='mapper'
-                        src={mapNoBack} 
-                        map={map} 
+                        src={displayedMap} 
+                        map={areasMap} 
                         responsive
                         parentWidth={width}
                         onMouseEnter={area=>{handleMouseEnter(area)}}
@@ -236,7 +222,64 @@ export default function Map(){
                         onClick={area=>{handleClick(area)}}
                     />
                 </div>
-                <div id='selection-text'></div>
+                <div id='right-box'>
+                    <div id='infobox'>
+                        Λόγια
+                    </div>
+                    <div id="controls">
+                        {/* <div className="dropdown">
+                        <button className="dropdown-toggle" onClick={toggleDropdown}>
+                            {langFile.display}
+                        </button>
+                        {isOpen && ( */}
+                        <div className="dropdown-menu">
+                            <form>
+                                <label>
+                                    <input
+                                        className="checkbox"
+                                        type="checkbox"
+                                        name="option1"
+                                        checked={checkboxValues.option1}
+                                        onChange={handleCheckboxChange}
+                                    />
+                                    <span>
+                                        {langFile.buildings}
+                                    </span>
+                                </label>
+                                <label>
+                                    <input
+                                        className="checkbox"
+                                        type="checkbox"
+                                        name="option2"
+                                        checked={checkboxValues.option2}
+                                        onChange={handleCheckboxChange}
+                                    />
+                                    <span>
+                                        {langFile.families}
+                                    </span>
+                                </label>
+                                <label>
+                                    <input
+                                        className="checkbox"
+                                        type="checkbox"
+                                        name="option3"
+                                        checked={checkboxValues.option3}
+                                        onChange={handleCheckboxChange}
+                                    />
+                                    <span>
+                                        {langFile.basemap}
+                                    </span>
+                                </label>
+                            </form>
+                        </div>
+                        {/* )}
+                    </div> */}
+                        <div id='buttons-container'>
+                            <button onClick={()=>{zoom('in')}}></button>
+                            <button onClick={()=>{zoom('out')}}></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
