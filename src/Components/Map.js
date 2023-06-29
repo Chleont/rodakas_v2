@@ -31,21 +31,18 @@ export default function Map(){
     const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json})
     const [displayedMap, setDisplayedMap] = useState(simple)
     const [width, setWidth] = useState(null)
-    // const [localCoords, setLocalCoords] = useState({x: 0, y: 0})
-    // const [houses, setHouses] = useState([])
     const [overflow, setOverflow] = useState(0)
     const [checkboxValues, setCheckboxValues] = useState({
         option1: false,
         option2: false,
         option3: false,
     })
-    // var realCoords = useRef([])
 
     useEffect(()=>{
         let container = document.getElementById('mapper-container')
 
-        setWidth(container.offsetHeight * 1.5)
-        // setWidth(container.offsetWidth)
+        // setWidth(container.offsetHeight * 1.5)
+        setWidth(container.offsetWidth - 10)
         // setWidth('1636')
         // setWidth('3272')
         document.getElementById('mapper-container').style.width = width
@@ -84,6 +81,11 @@ export default function Map(){
     },[checkboxValues])
 
     /* Coordinates input code */
+
+    // const [localCoords, setLocalCoords] = useState({x: 0, y: 0})
+    // const [houses, setHouses] = useState([])
+
+    // var realCoords = useRef([])
 
     // const handleMouseMove = event => {
     //     setLocalCoords({
@@ -151,6 +153,14 @@ export default function Map(){
     //     console.log(map)
     // }
 
+    // const [isOpen, setIsOpen] = useState(false)
+    
+    // const toggleDropdown = () => {
+    //     setIsOpen(!isOpen)
+    // }
+
+    /** Map */
+
     function handleClick(area){
         console.log(area)
     }
@@ -178,9 +188,7 @@ export default function Map(){
         }
     }
 
-    // const [isOpen, setIsOpen] = useState(false)
-
-    
+    /** Controls */
     const handleCheckboxChange = (event) => {
         const { name, checked } = event.target
 
@@ -189,11 +197,18 @@ export default function Map(){
             [name]: checked,
         }))
     }
-    
-    // const toggleDropdown = () => {
-    //     setIsOpen(!isOpen)
-    // }
-    
+
+    /** Legend */
+
+    function hideLegend(){
+        document.getElementById('legend').style.display = 'none'
+        document.getElementById('toggle-legend').style.display = 'flex'
+    }
+
+    function showLegend(){
+        document.getElementById('legend').style.display = 'flex'
+        document.getElementById('toggle-legend').style.display = 'none'       
+    }
 
     return(
         <div id="map-page-container">
@@ -208,11 +223,8 @@ export default function Map(){
               onKeyDown={(e)=>{handleEnter(e)}}
             /> */}
             <div id='map-container'>
-                <div id='legend'> 
-                    <span>{langFile.legend}</span>
-                </div>
                 <div id='mapper-container'>
-                    <ImageMapper id='mapper'
+                    <ImageMapper
                         src={displayedMap} 
                         map={areasMap} 
                         responsive
@@ -223,8 +235,10 @@ export default function Map(){
                     />
                 </div>
                 <div id='right-box'>
-                    <div id='infobox'>
-                        Λόγια
+                    <div id='infobox-scroll-container'>
+                        <div id='infobox'>
+                        Δημιουργήθηκε το 2017 από μια ομάδα κατοίκων του χωριού Μαργαρίτες Ρεθύμνου. Στόχος ήταν η καταγραφή Ιστορικών ζωής των πιο μεγάλων σε ηλικία κατοίκων της Κοινότητας.Κίνητρο για τη δημιουργία αυτού του αρχείου, ήταν η συνειδητοποίηση ότι με το τέλος της γενιάς των ανθρώπων που το 2017 είναι από 80 ετών και επάνω, χάνεται η ζωντανή μνήμη ιστορικών γεγονότων που ξεκινούν από το Β’ Παγκόσμιο Πόλεμο, την Κατοχή, τον εμφύλιο και προχωρουν ως τις μέρες μας. Χάνεται επίσης η ζωντανή μνήμη κοινωνικών γεγονότων και σχέσεων κατά τη διάρκεια μιας περιόδου που οι Μαργαρίτες και οι γύρω κοινότητες ήταν πολυπληθέστερες, ο βιοπορισμός βασιζόταν στη γεωργική παραγωγή και την αγγειοπλαστική και οι συναλλαγές γινόταν ως επι το πλείστον με ανταλλαγή προϊόντων. Επιλέον με τη γενιά αυτή τελειώνει και η ζωντανή μνήμη επαγγελματων, και πρακτικών καθημερινής ζωής όπως και η μνήμη της μορφής του οικισμού, πριν τα μέσα του 20ου αιώνα.Ισχυρό κίνητρο επίσης ήταν η ανάγκη αποτύπωσης του λόγου των ανθρώπων, που αφηγούνται. Λόγου ανεπηρρέαστου συνήθως από την εγκύκλια παιδεία και που όσο αφορά το περιεχόμενο, το λεκτικό και την προσωδία του, απηχεί την εποχή της Προφορικότητας, εποχή που η γνώση, η πληροφορία, η δράση, το συναίσθημα αλλά και κάθε είδους σχέση αναδύονταν και αποτυπώνονταν μέσα από την ζωντανη και συνεχή προφορική αφήγηση στην Κοινότητα.
+                        </div>
                     </div>
                     <div id="controls">
                         {/* <div className="dropdown">
@@ -279,6 +293,22 @@ export default function Map(){
                             <button onClick={()=>{zoom('out')}}></button>
                         </div>
                     </div>
+                </div>
+                <div id='legend'>
+                    <div id='hide-legend' onClick={()=>{hideLegend()}}>
+                        <span/>
+                    </div>
+                    <div id='legend-contents'>
+                        {langFile.legend} 
+                    </div>
+                </div>
+                <div id='toggle-legend' onClick={()=>{showLegend()}}> 
+                    <span>
+                        <span>
+                            {langFile.legend}&nbsp;&nbsp;
+                        </span>
+                        <span className="rot180"></span>   
+                    </span>
                 </div>
             </div>
         </div>
