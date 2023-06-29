@@ -1,14 +1,18 @@
 import React, {useEffect, useRef, useState} from "react"
 import '../Styles/Map.scss'
 import ImageMapper from 'react-img-mapper'
-import json from './ex.json'
+import json from './MapData/mapdata.json'
 
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl'
 
+/** Map data */
+import json_hover from './MapData/mapdata.json'
+import json_families from './MapData/mapdata_families.json'
+
 /** Maps */
-import satellite from '../Images/map/Basemap.jpg'
+import satellite from '../Images/map/Basemap_simple.jpg'
 import symbols from '../Images/map/Map_symbols.png'
 import simple from '../Images/map/Map_simple.png'
 import satellite_symbols from '../Images/map/Basemap_symbols.jpg'
@@ -28,7 +32,7 @@ export default function Map(){
         }
     },[locale])
   
-    const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json})
+    const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json_hover})
     const [displayedMap, setDisplayedMap] = useState(simple)
     const [width, setWidth] = useState(null)
     const [overflow, setOverflow] = useState(0)
@@ -49,36 +53,30 @@ export default function Map(){
     },[])
 
     useEffect(()=>{
+
         if(checkboxValues.option1){
-            if(checkboxValues.option2){
-                if(checkboxValues.option3){
-                    // All
-                }else{
-                    // Families - usages
-                }
+            if(checkboxValues.option3){
+                setDisplayedMap(satellite_symbols)
             }else{
-                if(checkboxValues.option3){
-                    setDisplayedMap(satellite_symbols)
-                }else{
-                    setDisplayedMap(symbols)
-                }
+                setDisplayedMap(symbols)
             }
         }else{
-            if(checkboxValues.option2){
-                if(checkboxValues.option3){
-                    // Families - satellite
-                }else{
-                    // Families
-                }
+            if(checkboxValues.option3){
+                setDisplayedMap(satellite)
             }else{
-                if(checkboxValues.option3){
-                    setDisplayedMap(satellite)
-                }else{
-                    setDisplayedMap(simple)
-                }
+                setDisplayedMap(simple)
             }
         }
+
     },[checkboxValues])
+
+    // useEffect(()=>{
+    //     if(checkboxValues.option2){
+    //         setAreasMap({name:'Margarites',areas:json_families})
+    //     }else if(!checkboxValues.option2){
+    //         setAreasMap({name:'Margarites',areas:json_hover})
+    //     }
+    // },[checkboxValues])
 
     /* Coordinates input code */
 
@@ -153,12 +151,6 @@ export default function Map(){
     //     console.log(map)
     // }
 
-    // const [isOpen, setIsOpen] = useState(false)
-    
-    // const toggleDropdown = () => {
-    //     setIsOpen(!isOpen)
-    // }
-
     /** Map */
 
     function handleClick(area){
@@ -192,10 +184,24 @@ export default function Map(){
     const handleCheckboxChange = (event) => {
         const { name, checked } = event.target
 
-        setCheckboxValues((prevState) => ({
-            ...prevState,
-            [name]: checked,
-        }))
+        if(name == 'option2' && checked && checkboxValues.option3){
+            setCheckboxValues({
+                option1:checkboxValues.option1,
+                option2: checked,
+                option3: false
+            })
+        }else if(name == 'option3' && checked && checkboxValues.option2){
+            setCheckboxValues({
+                option1:checkboxValues.option1,
+                option2: false,
+                option3: checked
+            })
+        }else{
+            setCheckboxValues((prevState) => ({
+                ...prevState,
+                [name]: checked,
+            }))
+        }
     }
 
     /** Legend */
@@ -226,7 +232,7 @@ export default function Map(){
                 <div id='mapper-container'>
                     <ImageMapper
                         src={displayedMap} 
-                        map={areasMap} 
+                        map={checkboxValues.option2?{name:'Margarites',areas:json_families}:{name:'Margarites',areas:json_hover}} 
                         responsive
                         parentWidth={width}
                         onMouseEnter={area=>{handleMouseEnter(area)}}
@@ -241,11 +247,6 @@ export default function Map(){
                         </div>
                     </div>
                     <div id="controls">
-                        {/* <div className="dropdown">
-                        <button className="dropdown-toggle" onClick={toggleDropdown}>
-                            {langFile.display}
-                        </button>
-                        {isOpen && ( */}
                         <div className="dropdown-menu">
                             <form>
                                 <label>
@@ -286,8 +287,6 @@ export default function Map(){
                                 </label>
                             </form>
                         </div>
-                        {/* )}
-                    </div> */}
                         <div id='buttons-container'>
                             <button onClick={()=>{zoom('in')}}></button>
                             <button onClick={()=>{zoom('out')}}></button>
