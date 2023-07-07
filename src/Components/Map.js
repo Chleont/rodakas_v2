@@ -16,6 +16,8 @@ import satellite from '../Images/map/Basemap_simple.jpg'
 import symbols from '../Images/map/Map_symbols.png'
 import simple from '../Images/map/Map_simple.png'
 import satellite_symbols from '../Images/map/Basemap_symbols.jpg'
+import islands from '../Images/map/Map_islands.png'
+import islands_symbols from '../Images/map/Map_islands_symbols.png'
 
 export default function Map(){
 
@@ -55,6 +57,9 @@ export default function Map(){
     useEffect(()=>{
 
         if(checkboxValues.option1){
+            if(checkboxValues.option2){
+                setDisplayedMap(islands_symbols)
+            }
             if(checkboxValues.option3){
                 setDisplayedMap(satellite_symbols)
             }else{
@@ -63,6 +68,8 @@ export default function Map(){
         }else{
             if(checkboxValues.option3){
                 setDisplayedMap(satellite)
+            }else if(checkboxValues.option2){
+                setDisplayedMap(islands)
             }else{
                 setDisplayedMap(simple)
             }
