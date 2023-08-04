@@ -125,6 +125,58 @@
             "evening":"Valuation and closing event for the end of the Stonework Workshops July 2023"
         } 
     },
+    "loomworkshop":{
+        "title":"Workshop of loom weaving",
+        "dates":"2 - 9 September 2023",
+        "introtext":"A well-built masonry is always enviable, it catches our eye and takes us on a journey through its symmetry but also its asymmetrical uniqueness. It gives us admiration for the master's mirage, the desire to see the life inside it and the era that gave birth to it. The techniques and experience of traditional stonework still lives in the hands of some craftsmen throughout Greece. For the fourth year, the Rodakas team is organizing two Workshops for the transmission and application of the basic principles of traditional building in our country, using natural materials. The experiential knowledge, the work and the completion of the specific project, create the unique possibility to change the relationship and perspective of the participant towards buildings of all kinds, the built space and its environment. On your side will be the local Masters Yiannis Alefantinos (Margarites), for the restoration of a stone wall and the pointing with natural materials, and Kostas Vergianakis with his workshop (Alfa) for the construction of dry stone. Their biographies are below. You will also attend a theoretical and practical introduction to the applications of soil and lime based mortars in traditional and sustainable constructions by architects Claire Oiry, Giorgos Andresakis and Giorgos Igglezakis. The program of parallel actions will be published soon.",
+        "info1":"The Drystone Construction workshop and the Restoration of Traditional Masonry with Natural Materials workshop will run concurrently so participants of this year's stonework workshop can choose to participate in one of the two.",
+        "Programtitle":"Physiognomy and program of the workshop:",
+        "program":"The workshop will begin with the reception of the participants and a historical and architectural tour of the village on Saturday, July 22. The workshops will be daily in the morning hours until noon at 14.00 from Sunday 23 to Saturday 29 July. In the afternoons, parallel activities such as speeches and thematic excursions will take place. On the last day, after a debriefing at noon, a celebration will follow in the evening for the closing of the workshop. The detailed program and parallel actions will be announced soon.",
+        "accommodation":"Accommodation:",
+        "accommodationInfo1":"Accommodation is provided free of charge for a certain number of participants in the hospitality area of the monastery of Christ Savior and Saint Gedeon.",
+        "accommodationHouses":"Accommodation is available in the guesthouses:",
+        "accommodationHouses1":"\"kouriton House\" in the settlement of Margarites' Tzannakiana, with available: Double rooms at a cost of 20 euros per person with breakfast. Triple and Quadruple rooms at a cost of 15 euros per person. Contact phone: 6945722052 Ms. Anastasia Fryganaki",
+        "accommodationHouses2":"\"Chalicoutika\", Margarites. A house fully equipped with two bedrooms with double beds and one single bed in common space available. The cost of the entire residence is 70 euros. Contact phone: 6973005153 Mr. George Skalidakis",
+        "accommodationHouses3":"\"Archontiko Rodomeli\" Margarites. Guesthouse with double rooms. Room price 50 euros. Contact phone number Ms. Eleni Giannousaki 6979101973",
+        "accommodationHouses4":"\"Discover Margarites Home\" Margarites. A house fully equipped with two bedrooms, one with double bed and one with two single beds and two additional sofa-beds in the living room. The cost of the entire residence is configured according to communication. Contact phone: 2831050761 Mrs. Katerina Christodoulaki",
+        "costAndRegistration":"Cost of the workshop and registration:",
+        "cost":"The cost of the workshop is 120 euros. In order to reserve your place, an advance payment of 50 euros must be deposited into the account of Rodakas GR60 0171 3750 0063 7516 4234 881, ΑΜΚΕ RODAKAS (Piraeus Bank). To register your participation, fill out the form below.",
+        "registration":"Registration",
+        "formlink":"https://forms.gle/DQ8yA7T69kmdgWiw9",
+        "instructorTitle":"instructors:",
+        "instructorName1":"Despina Pantelaki-Somaki",
+        "instructorBio1":"I was born in Chania to pious and honest parents. My father was Telemachos Pantelakis, a traffic policeman in Chania and my mother Sofia was from Heraklion. She worked at the weaving mill of Eleni Kastrinoyannis. From my mother I got the influence and loved the art of weaving. At the age of sixteen, I got married to Emmanuel Somakis, a navy officer, and we had two children, Telemachus-Antonio and Stefania. I worked in many different jobs, favor making, making buttons, stringing pearls in goldsmiths, worked selling frozen goods and oranges in street food stores. But I always wanted to work with the loom! I was enchanted by the sound, the colors, the smells of the threads, the result... I had said that at the age of 40, no matter what I did, I would start a loom and I did it! At first I was disparaged for my choice to take up the loom, but I was not deterred. I'm proud to be a weaver!",
+        "instructorBio11":"Despina Pantelaki-Somaki has been teaching weaving art at Lykeion ton Ellinidon in Chania for five years. She has been supplying with textiles the house of Chanel and also the house of Dior has been interested in being supplied. She has a collaboration with the Greek brand Gaenus of Eftychia Sarris in London and with other important houses.",
+        "instructorName2":"Manolis Kouratoras",
+        "instructorBio2":"CV",
+        "program0":"The workshops of masonry restoration using natural materials and drystone wall construction will take place every moring from 23 of July to 28 of July, between 8.30 and 14.00.", 
+        "program1":{
+            "date":"Saturday 22 July:",
+            "morning": "Historical and architectural tour of Margarites by the Master of the Restoration Workshop Mr. Yiannis Alefantinos and the Ethnologist Mrs. Maria Padouva.",
+            "evening":"The principles and laws of stonework in the local example by the Master of the Drystone Workshop, Mr. Konstantinos Vergianakis."
+        },  
+        "program2":{
+            "date":"Sunday 23 July:",
+            "evening":"Presentation in the courtyard of the Margarites Primary School, by Mrs. Maria Vakondiou, PhD in Archaeology, University of Crete, on the topic: Sculptors in the area of ​​Mylopotamos during the Venetian period."
+        },
+        "program3":{
+            "date":"Monday 24 July:",
+            "evening":"Presentation in the courtyard of the Margarites Primary school by Mr. Mousis Mylonas Emeritus Professor of Ecology of the University of Crete on the topic: The Ecological Significance of Drystone in a changing environment."
+        },        
+        "program4":{
+            "date":"Wednesday 26 July:",
+            "evening":"Hiking and geological tour in the Margarites gorge by Geologist Dr. Charalambos Fasoulas, President of the Psiloritis Geopark."
+        },        
+        "program5":{
+            "date":"Friday 28 July:",
+            "evening":"Presentation in the yard of the Margarites Primary school by the architect Mrs. Claire Oiry and the architects Mr. Giorgos Andresakis and Mr. Giorgos Igglezakis on the topic: Clay and Lime. The binding materials of sustainable construction. The presentation will be an introduction to the workshop that will take place on July 29 for the practical introduction to mortars in traditional and sustainable constructions."
+        },        
+        "program6":{
+            "date":"Saturday 29 July:",
+            "morning":"Workshop for the practical introduction to mortars in traditional and sustainable constructions by the architect Mrs. Claire Oiry and the architects Mr. George Andresakis and Mr. George Inglezakis",
+            "evening":"Valuation and closing event for the end of the Stonework Workshops July 2023"
+        } 
+    },
     "workshops":{
         "1":{
             "title":"Preservation and restoration of masonry using natural materials workshop",
@@ -193,7 +245,6 @@
             "images":[
                 "https://i.imgur.com/heQFlPI.jpeg"
             ],
-            "button":"More",
             "navigate":"/feast23"
         },
         "10":{
@@ -202,8 +253,16 @@
             "images":[
                 "https://i.imgur.com/0f06LRw.jpg"
             ],
-            "button":"Information and Registration",
             "navigate":"/stoneworkshop"
+        },
+        "11":{
+            "title":"Loom weaving workshop",
+            "dates":"2 - 9 September 2023",
+            "images":[
+                "https://i.imgur.com/iqmyfQ1.jpeg"
+            ],
+            "button":"Information and registration",
+            "navigate":"/loomworkshop"
         }
     },
     "speech":{

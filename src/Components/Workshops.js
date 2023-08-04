@@ -5,6 +5,7 @@ import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl'
 import StoneworkshopPage from "./stoneWorkshopPage"
+import LoomworkshopPage from "./loomWorkshopPage"
 import Feast23 from "./Feast23"
 
 export default function Workshops(props){
@@ -62,6 +63,9 @@ export default function Workshops(props){
             setRoutedToComponent(true)
         }else if(url == '/feast23'){
             setSpecialComponentDisplayed(<Feast23/>)
+            setRoutedToComponent(true)
+        }else if(url == '/loomworkshop'){
+            setSpecialComponentDisplayed(<LoomworkshopPage/>)
             setRoutedToComponent(true)
         }
     }
@@ -178,11 +182,13 @@ export default function Workshops(props){
             document.getElementById('single-image').append(img)
             toggleArrows(workshops.length - 1)
         }else if(props.url == '/stoneworkshop'){
-            console.log('hete')
             setSpecialComponentDisplayed(<StoneworkshopPage/>)
             setRoutedToComponent(true)
         }else if(props.url == '/feast23'){
             setSpecialComponentDisplayed(<Feast23/>)
+            setRoutedToComponent(true)
+        }else if(props.url == '/loomworkshop'){
+            setSpecialComponentDisplayed(<LoomworkshopPage/>)
             setRoutedToComponent(true)
         }
         document.getElementById('all-workshops-view').innerHTML = ''
