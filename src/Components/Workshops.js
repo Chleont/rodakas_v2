@@ -91,6 +91,7 @@ export default function Workshops(props){
 
                 document.getElementById('title').append(workshops[wIndex].title)
                 if(workshops[wIndex].subtitle){
+                    document.getElementById('and').innerHTML = '&'
                     document.getElementById('title2').append(workshops[wIndex].subtitle)
                 }
                 document.getElementById('dates').append(workshops[wIndex].dates)
@@ -127,8 +128,10 @@ export default function Workshops(props){
 
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[index].title)
+            document.getElementById('and').innerHTML = ''
+            document.getElementById('title2').innerHTML = ''
             if(workshops[index].subtitle){
-                document.getElementById('title2').innerHTML = ''
+                document.getElementById('and').innerHTML = '&'
                 document.getElementById('title2').append(workshops[index].subtitle)
             }
             document.getElementById('dates').innerHTML = ''
@@ -171,8 +174,10 @@ export default function Workshops(props){
 
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[workshops.length - 1].title)
+            document.getElementById('and').innerHTML = ''
+            document.getElementById('title2').innerHTML = ''
             if(workshops[workshops.length - 1].subtitle){
-                document.getElementById('title2').innerHTML = ''
+                document.getElementById('and').innerHTML = '&'
                 document.getElementById('title2').append(workshops[workshops.length - 1].title)
             }
             document.getElementById('dates').innerHTML = ''
@@ -238,6 +243,7 @@ export default function Workshops(props){
                     <div id="single-workshop-view">
                         <div id='info'>
                             <span id='title'></span>
+                            <span id='and'></span>
                             <span id='title2'></span>
                             <span id='dates'></span>
                             <span id='button'></span>
@@ -252,6 +258,7 @@ export default function Workshops(props){
                     <div id="single-workshop-view">
                         <div id='info'>
                             <span id='title'></span>
+                            <span id='and'></span>
                             <span id='title2'></span>
                             <span id='dates'></span>
                             <span id='button'></span>
