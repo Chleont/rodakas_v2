@@ -96,8 +96,11 @@ function App() {
                     {/* <Route path='/activity/stoneworkshop' element={
                         <Workshops url={'/stoneworkshop'}/>
                     }/> */}
-                    <Route path='/activity/loomworkshop' element={
+                    {/* <Route path='/activity/loomworkshop' element={
                         <Workshops url={'/loomworkshop'}/>
+                    }/> */}
+                    <Route path='/activity/stonecurving' element={
+                        <Workshops url={'/stonecurving'}/>
                     }/>
                     {/* <Route path='/activity/feast23' element={
                         <Workshops url={'/feast23'}/>

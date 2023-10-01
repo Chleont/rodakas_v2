@@ -245,6 +245,17 @@
     padding:.8em 0 .5em 0;
 }
 
+#modularinfobox{
+    z-index: 100;
+    width:fit-content;
+    height: fit-content;
+    padding:.1em .13em;
+    position: absolute;
+    border:1px solid $menuLettersStrong;
+    border-radius: 5px;
+    background-color: rgba(white, 0.9);
+}
+
 @media only screen and (max-width: 1000px) {
     #map-container{
         flex-direction:column;

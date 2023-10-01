@@ -5,7 +5,7 @@ import json from './MapData/mapdata.json'
 
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
-import { useIntl} from 'react-intl'
+import { useIntl } from 'react-intl'
 
 /** Map data */
 import json_hover from './MapData/mapdata.json'
@@ -23,7 +23,8 @@ export default function Map(){
 
     var lang = useIntl()
     var locale = lang.locale
-    const[langFile, setlangfile] = useState(langfileGreek.map)
+    const [langFile, setlangfile] = useState(langfileGreek.map)
+    const [infoBoxPosition, setInfoBoxPosition] = useState({x:0,y:0})
 
     useEffect(()=>{
         if(locale === 'el')
@@ -34,7 +35,7 @@ export default function Map(){
         }
     },[locale])
   
-    const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json_hover})
+    // const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json_hover})
     const [displayedMap, setDisplayedMap] = useState(simple)
     const [width, setWidth] = useState(null)
     const [overflow, setOverflow] = useState(0)
@@ -42,6 +43,7 @@ export default function Map(){
         option1: false,
         option2: false,
         option3: false,
+        json: json_hover
     })
 
     useEffect(()=>{
@@ -164,12 +166,30 @@ export default function Map(){
         console.log(area)
     }
 
+
+    function handleMouseMove(event){
+        setInfoBoxPosition({ x: event.clientX + 2, y: event.clientY - 32})
+    }
+
     function handleMouseEnter(area){
-        //Display some info about the house in box somewhere
+        let data = null
+
+        let json = document.getElementById('mapper-container').firstElementChild.lastElementChild.name == 'Families'?json_families:json_hover
+
+        // BAD PRACTICE!! We get the locale from HTML elements because function only has the initial value and does not respond to changes
+        if(document.getElementById('toggle-legend').firstElementChild.firstElementChild.innerHTML.charAt(0) == 'L'){
+            data = json.find(object => object.id === area.id).titleEn
+        }else{
+            data = json.find(object => object.id === area.id).titleGr
+        }
+        if(data){
+            document.getElementById('modularinfobox').style.display = 'inline-block'
+            document.getElementById('modularinfobox').innerHTML = data
+        }
     }
 
     function handleMouseLeave(area){
-        //Stop Displaying info
+        document.getElementById('modularinfobox').style.display = 'none'
     }
 
     function zoom(type){
@@ -195,13 +215,15 @@ export default function Map(){
             setCheckboxValues({
                 option1:checkboxValues.option1,
                 option2: checked,
-                option3: false
+                option3: false,
+                json:json_hover
             })
         }else if(name == 'option3' && checked && checkboxValues.option2){
             setCheckboxValues({
                 option1:checkboxValues.option1,
                 option2: false,
-                option3: checked
+                option3: checked,
+                json:json_hover
             })
         }else{
             setCheckboxValues((prevState) => ({
@@ -224,7 +246,7 @@ export default function Map(){
     }
 
     return(
-        <div id="map-page-container">
+        <div id="map-page-container" onMouseMove={handleMouseMove}>
 
             {/* Polygon input component - click start, click on all edges of polygon, fill the name field and hit enter, continue with next polygon */}
 
@@ -239,7 +261,7 @@ export default function Map(){
                 <div id='mapper-container'>
                     <ImageMapper
                         src={displayedMap} 
-                        map={checkboxValues.option2?{name:'Margarites',areas:json_families}:{name:'Margarites',areas:json_hover}} 
+                        map={checkboxValues.option2?{name:'Families',areas:checkboxValues.json}:{name:'Margarites',areas:checkboxValues.json}} 
                         responsive
                         parentWidth={width}
                         onMouseEnter={area=>{handleMouseEnter(area)}}
@@ -317,6 +339,7 @@ export default function Map(){
                     </span>
                 </div>
             </div>
+            <div id="modularinfobox" style={{ top: infoBoxPosition.y, left: infoBoxPosition.x, display: 'none'}}></div>
         </div>
     )
 }

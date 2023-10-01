@@ -250,6 +250,39 @@
                 ]
             }
         ] 
+    }, 
+    "stonecurvingworkshop":{
+        "title1":"Pottery stone kiln restoration workshop",
+        "dates1":"27 - 31 October 2023",
+        "introtext1":"With the help and information of old Margarites' potters and with the Master of Rodaka's Stonework Workshops Yiannis Alefantinos, the restoration of the walls of an old Margarita pottery kiln begins on 10/27/23. It is a circular building with a special structure. The works concern the restoration of the worn stones and the construction and coating of the vessels' firing chamber.",
+        "info1":"The number of participants for the workshop is limited, so a priority number will be respected. More about the program of activities of the Workshop will be posted soon. Deadline for registration until 10/20.",
+        "title2":"Stone carving workshop",
+        "dates2":"28 - 30 October 2023", 
+        "introtext2":"The sculptor, Mr. Michalis Athanasakis, is coming to Margarites from October 28 to 30 to show us how to carve and create the reliefs on the stone, but also to talk to us about the art and techniques of mosaic.",
+        "info2":"More about the program of activities of the Workshop will be posted soon. Deadline for registration until 10/20.",
+        "Programtitle":"Physiology and program of the laboratory:",
+        "program":"The workshops will take place at the same time in different places, so it is possible to register in only one of the two. The workshops will take place in the mornings and optionally in the afternoons in the case of stone carving. In the afternoons, parallel activities such as speeches and thematic excursions will take place. The detailed program and parallel actions will be announced soon.",
+        "accommodation": "Accommodation:",
+        "accommodationInfo": [
+            "Accommodation is available free of charge for a certain number of participants at the hospitality venue of the Monastery of Savior Christ and St. Gedeon.",
+            "\"The house of the Kourites\" in the settlement of Margarites Tzannakiana, offers the following options: Double rooms with a cost of 20 euros per person including breakfast. Triple and quadruple rooms with a cost of 15 euros per person. Contact number: 6945722052, Ms. Anastasia Fryganaki.",
+            "\"Halikoutika\" Margarites. A residence available with full equipment and two available bedrooms with double beds and one single bed. The cost for the entire residence is 70 euros. Contact number: 6973005153, Mr. George Skalidakis.",
+            "\"Archontiko Rodomeli\" Margarites. Guesthouse with double rooms. Room price is 50 euros. Contact number: 6979101973, Ms. Eleni Giannousaki.",
+            "\"Discover Margarites Home\" Margarites. A residence available with full equipment and two bedrooms, one with a double bed and the other with two single beds, as well as two additional sofa-beds in the living room. The cost of the residence is negotiable. Contact numbers: 2831050761, 6936366365, Ms. Katerina Christodoulaki."
+        ],
+        "costAndRegistration":"Workshop cost and registration:",
+        "cost":"The cost of the stone kiln restoration workshop is 100 euros. For the stone carving workshop it is 80 euros. In order to reserve your place, an advance payment of 30 euros in the case of restoration and 20 euros in the case of stone curving must be deposited to the account of Rodakas GR60 0171 3750 0063 7516 4234 881, AMKE RODAKAS (Piraeus). To register, fill out the form below.",
+        "registration":"Registration",
+        "formlink":"https://forms.gle/viV8LVw5rnBavSGN7",
+        "instructorTitle":"Masters:",
+        "instructorName1":"",
+        "instructorBio1":"",
+        "program0":"", 
+        "program1":{
+            "date":"",
+            "morning": "",
+            "evening":""
+        }
     },
     "workshops":{
         "1":{
@@ -335,8 +368,17 @@
             "images":[
                 "https://i.imgur.com/tnuTANR.jpeg"
             ],
-            "button":"Information and registration",
             "navigate":"/loomworkshop"
+        },
+        "12":{
+            "title":"Stone-built potery kiln restoration workshop",
+            "subtitle":"Stone curving workshop",
+            "dates":"27-31 October 2023",
+            "images":[
+                "https://i.imgur.com/Hoyf9bu.jpg"
+            ],
+            "button":"Information and registration",
+            "navigate":"/stonecurving"
         }
     },
     "speech":{

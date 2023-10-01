@@ -6,6 +6,7 @@ import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl'
 import StoneworkshopPage from "./stoneWorkshopPage"
 import LoomworkshopPage from "./loomWorkshopPage"
+import StonecurvingPage from "./stoneCurvingPage"
 import Feast23 from "./Feast23"
 
 export default function Workshops(props){
@@ -67,6 +68,9 @@ export default function Workshops(props){
         }else if(url == '/loomworkshop'){
             setSpecialComponentDisplayed(<LoomworkshopPage/>)
             setRoutedToComponent(true)
+        }else if(url == '/stonecurving'){
+            setSpecialComponentDisplayed(<StonecurvingPage/>)
+            setRoutedToComponent(true)
         }
     }
 
@@ -86,6 +90,9 @@ export default function Workshops(props){
                 let img = document.createElement('img')
 
                 document.getElementById('title').append(workshops[wIndex].title)
+                if(workshops[wIndex].subtitle){
+                    document.getElementById('title2').append(workshops[wIndex].subtitle)
+                }
                 document.getElementById('dates').append(workshops[wIndex].dates)
                 img.setAttribute('src',workshops[wIndex].images[0])
                 img.onclick = ()=>{window.open(workshops[wIndex].images[0], '_blank').focus()}
@@ -120,6 +127,10 @@ export default function Workshops(props){
 
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[index].title)
+            if(workshops[index].subtitle){
+                document.getElementById('title2').innerHTML = ''
+                document.getElementById('title2').append(workshops[index].subtitle)
+            }
             document.getElementById('dates').innerHTML = ''
             document.getElementById('dates').append(workshops[index].dates)
             img.setAttribute('src',workshops[index].images[0])
@@ -160,6 +171,10 @@ export default function Workshops(props){
 
             document.getElementById('title').innerHTML = ''
             document.getElementById('title').append(workshops[workshops.length - 1].title)
+            if(workshops[workshops.length - 1].subtitle){
+                document.getElementById('title2').innerHTML = ''
+                document.getElementById('title2').append(workshops[workshops.length - 1].title)
+            }
             document.getElementById('dates').innerHTML = ''
             document.getElementById('dates').append(workshops[workshops.length - 1].dates)
             img.setAttribute('src', '../Images/workshops/stone_summer_2023'
@@ -189,6 +204,9 @@ export default function Workshops(props){
             setRoutedToComponent(true)
         }else if(props.url == '/loomworkshop'){
             setSpecialComponentDisplayed(<LoomworkshopPage/>)
+            setRoutedToComponent(true)
+        }else if(props.url == '/stonecurving'){
+            setSpecialComponentDisplayed(<StonecurvingPage/>)
             setRoutedToComponent(true)
         }
         document.getElementById('all-workshops-view').innerHTML = ''
@@ -220,6 +238,7 @@ export default function Workshops(props){
                     <div id="single-workshop-view">
                         <div id='info'>
                             <span id='title'></span>
+                            <span id='title2'></span>
                             <span id='dates'></span>
                             <span id='button'></span>
                         </div>
@@ -233,6 +252,7 @@ export default function Workshops(props){
                     <div id="single-workshop-view">
                         <div id='info'>
                             <span id='title'></span>
+                            <span id='title2'></span>
                             <span id='dates'></span>
                             <span id='button'></span>
                         </div>

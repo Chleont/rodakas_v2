@@ -1,0 +1,201 @@
+@import 'Colors.scss';
+
+
+#scw-container{
+    font-family: 'Ubuntu', sans-serif;
+    width:100%;
+    padding: 0 calc(10% - 0.6em) 0 10%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: $menuLettersStrong;
+    overflow-y: auto;
+    scrollbar-color: $menuLetters $mainBeige;
+    scrollbar-width: auto;
+    margin-bottom: 1em;
+    font-weight:500;
+}
+
+#workshop-page-container ::-webkit-scrollbar{
+    margin-left: auto;
+    width: 0.6em;
+}
+
+#workshop-page-container ::-webkit-scrollbar-track {
+    background: $mainBeige;
+}
+
+#workshop-page-container ::-webkit-scrollbar-thumb {
+    background-color: $menuLetters;
+    color: $menuLetters;
+    border-radius: 20px;   
+    border: none;
+}
+
+#scw-header{
+    display:flex;
+    flex-direction: inherit;
+    margin-bottom: .8em;
+}
+
+#scw-header :first-child{
+    font-size:1.8em;
+    font-weight: 500;
+}
+
+#scw-header span{
+    font-size:1.5em;
+    margin-bottom: .7em;
+}
+
+#scw-header :last-child{
+    margin-top: .3em;
+    font-size:1em;
+}
+.introtext{
+    margin-bottom:0
+}
+
+#scw-info{
+    font-size:1em;
+    text-align: justify;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+
+#scw-accomodation{
+    text-align: justify;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#scw-inscription{
+    text-align: justify;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#scw-insription span{
+    margin-bottom: .5em;
+}
+#scw-inscription :last-child{
+    padding: .3em 1em .3em 1em;
+    border: 4px solid $menuLettersStrong;
+    background-color: transparent;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 20px;
+    color:$menuLettersStrong;
+    margin: 1.5em auto 1em auto;
+}
+
+#scw-inscription :last-child:hover{
+    background-color: $menuLettersStrong;
+    border: 4px solid $menuLetters;
+    color:$mainBeige;
+}
+
+.scw-subtitle{
+    font-weight: 600;
+    margin: 1.8em 0 .8em 0;
+}
+.scw-mabottom{
+    margin-bottom: .4em;
+}
+
+.program-element{
+    margin:0 0 0.2em 0;
+}
+
+.program-element p:first-of-type{
+    font-weight: 600;
+    margin-bottom: .4em;
+}
+
+.program-text{
+    margin-top:.3em;
+    margin-bottom: 0;
+}
+
+#accomodation-info p:first-of-type{
+    margin-bottom:.3em;
+}
+
+#accomodation-free{
+    margin-bottom:.8em;
+}
+
+.instructor{
+    margin-bottom:.8em;
+}
+
+.instructor-name{
+    font-weight:600;
+}
+
+.instructor p{
+    text-align:left;
+}
+
+.instructor-text span{
+    text-align:justify;
+}
+
+.accomodation-text{
+    margin-top:.5em;
+    margin-bottom: 0;
+}
+
+.paragraph{
+    margin-left:1em;
+}
+
+#scw-instructors{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size:1em;
+}
+
+.instructor-text{
+    width:100%;
+    text-align: left;
+}
+.instructor-text img{
+    border-radius: 10px;
+    width:200px;
+    float:left;
+    padding-right:1em;
+}
+
+.bio-special{
+    font-weight: 600;
+    margin-top:.2em;
+    text-align: center!important;
+}
+
+@media only screen and (max-width: 1000px) {
+    #scw-container{
+        width:90%;
+        padding:0 0;
+    }
+
+    .instructor-text img{
+        width:170px;
+    }
+
+    .instructor-text span{
+        word-break: normal;
+    }
+}
