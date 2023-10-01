@@ -6,7 +6,7 @@ import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl'
 import StoneworkshopPage from "./stoneWorkshopPage"
 import LoomworkshopPage from "./loomWorkshopPage"
-import StonecurvingPage from "./stoneCurvingPage"
+import StonecarvingPage from "./stoneCarvingPage"
 import Feast23 from "./Feast23"
 
 export default function Workshops(props){
@@ -68,8 +68,8 @@ export default function Workshops(props){
         }else if(url == '/loomworkshop'){
             setSpecialComponentDisplayed(<LoomworkshopPage/>)
             setRoutedToComponent(true)
-        }else if(url == '/stonecurving'){
-            setSpecialComponentDisplayed(<StonecurvingPage/>)
+        }else if(url == '/stonecarving'){
+            setSpecialComponentDisplayed(<StonecarvingPage/>)
             setRoutedToComponent(true)
         }
     }
@@ -210,8 +210,8 @@ export default function Workshops(props){
         }else if(props.url == '/loomworkshop'){
             setSpecialComponentDisplayed(<LoomworkshopPage/>)
             setRoutedToComponent(true)
-        }else if(props.url == '/stonecurving'){
-            setSpecialComponentDisplayed(<StonecurvingPage/>)
+        }else if(props.url == '/stonecarving'){
+            setSpecialComponentDisplayed(<StonecarvingPage/>)
             setRoutedToComponent(true)
         }
         document.getElementById('all-workshops-view').innerHTML = ''

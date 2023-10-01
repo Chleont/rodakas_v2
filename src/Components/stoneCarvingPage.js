@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import '../Styles/Stonecurvingworkshop.scss'
+import '../Styles/Stonecarvingworkshop.scss'
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl} from 'react-intl'
@@ -11,14 +11,14 @@ export default function StoneworkshopPage(){
 
     var lang = useIntl()
     var locale = lang.locale
-    const[workshop, setWorkshop] = useState(langfileGreek.stonecurvingworkshop)
+    const[workshop, setWorkshop] = useState(langfileGreek.stonecarvingworkshop)
 
     useEffect(()=>{
         if(locale === 'el')
         {
-            setWorkshop(langfileGreek.stonecurvingworkshop)
+            setWorkshop(langfileGreek.stonecarvingworkshop)
         }else{
-            setWorkshop(langfileEnglish.stonecurvingworkshop)
+            setWorkshop(langfileEnglish.stonecarvingworkshop)
         }
     },[locale])
 
