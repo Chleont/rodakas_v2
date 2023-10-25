@@ -9,13 +9,15 @@ export default function FrogTroll({options}){
 
     var propOption = {
         units: options.units? options.units : 'em',
+        fontSize: options.fontSize? options.fontSize : null,
         size: options.size? options.size: 10,
         startingPosition:{
             x: options.startingPosition.x? options.startingPosition.x : 0,
             y: options.startingPosition.y? options.startingPosition.y : 0
         },
         timeToOpenMouth: options.timeToOpenMouth? options.timeToOpenMouth : 2000,
-        timeToAttack: options.timeToAttack? options.timeToAttack : 1000
+        timeToAttack: options.timeToAttack? options.timeToAttack : 1000,
+        navbarHeight: options.navbarHeight? options.navbarHeight : 0
     }
 
     var canvas = null,
@@ -41,20 +43,25 @@ export default function FrogTroll({options}){
         trollWidth = null,
         offsety = null,
         offsetx = null,
-        fontSize = null
+        fontSize = null,
+        navbarHeight = propOption.navbarHeight
 
-    if(width < 1024){
-        fontSize = 16
-    }else if(width >= 1024 && width < 1280){
-        fontSize = 19
-    }else if(width >=1280){
-        fontSize = 20
+    if(propOption.fontSize == null){
+        if(width < 1024){
+            fontSize = 16
+        }else if(width >= 1024 && width < 1280){
+            fontSize = 19
+        }else if(width >=1280){
+            fontSize = 20
+        }
+    }else{
+        fontSize = propOption.fontSize
     }
         
     var trollSize = units === 'em'? propOption.size * fontSize : propOption.size,
         frogx = units === 'em'? propOption.startingPosition.x * fontSize : propOption.startingPosition.x,
-        frogy = units === 'em'? propOption.startingPosition.y * fontSize : propOption.startingPosition.y,
-        navbarHeight = 4.8 * fontSize
+        frogy = units === 'em'? propOption.startingPosition.y * fontSize : propOption.startingPosition.y
+
 
     if(Math.abs(frogx) > (width - trollSize) /2){
         frogx = Math.sign(frogx) * (width - trollSize) / 2
@@ -78,24 +85,25 @@ export default function FrogTroll({options}){
 
     function killPointer(){
         canvas = document.getElementById('canvas')
-        // canvas.width = document.getElementById('frog-troll-container').clientWidth
-        // canvas.height = document.getElementById('frog-troll-container').clientHeight
-        canvas.width = document.body.clientWidth
-        canvas.height = document.body.clientHeight
+        canvas.width = document.getElementById('frog-troll-container').clientWidth
+        canvas.height = document.getElementById('frog-troll-container').clientHeight
         ctx = canvas.getContext("2d")
 
         // Calculate center of frog's mouth coordinates
-        x = document.getElementById('dot').getBoundingClientRect().x + document.getElementById('dot').getBoundingClientRect().width/2
-        y = document.getElementById('dot').getBoundingClientRect().y + document.getElementById('dot').getBoundingClientRect().height/2
+        x = document.getElementById('frog-troll-head').getBoundingClientRect().x 
+        y = document.getElementById('frog-troll-head').getBoundingClientRect().y
         
         // Add offset depending on frog's position and on frog's head rotation
-        offsety = navbarHeight + (200 - trollWidth) * (Math.cos(radians) * 0.1 - 0.2) - frogy
-        offsetx = Math.sin(radians) * (200 - trollWidth) * 0.08 - frogx
-        
+
+        // cos changes offset when head is close to vertical direction and sin when it's close to horizontal
+        // Combination is needed because tongue is not in the center of the frog's mouth
+        offsety = document.getElementById('frog-troll-head').getBoundingClientRect().height * (0.5 + 0.1 * Math.cos(radians)) - navbarHeight
+        offsetx = document.getElementById('frog-troll-head').getBoundingClientRect().width/2 * (1.1 + 0.3 * Math.sin(radians))
+ 
+        console.log(Math.cos(radians), Math.sin(radians))
         // Draw tongue
         ctx.beginPath()
-        // ctx.moveTo(x - offsetx,y - offsety);
-        ctx.moveTo(x - offsetx,y + offsety)
+        ctx.moveTo(x + offsetx , y + offsety)
         ctx.lineWidth = propOption.size + 2
         ctx.strokeStyle = "#ff7887"
         ctx.lineTo(mouseX, mouseY - navbarHeight)
@@ -105,9 +113,6 @@ export default function FrogTroll({options}){
         },100)
 
         // Tongue's hit aftermath
-        // document.getElementById('frog-troll-container').style.cursor = 'none'
-        // document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
-        // document.getElementById('frog-troll-container').removeEventListener('mouseleave', stopHunting)
         document.body.style.cursor = 'none'
         document.body.removeEventListener('mousemove', listener)
         document.body.removeEventListener('mouseleave', stopHunting)

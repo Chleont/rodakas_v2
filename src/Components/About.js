@@ -35,7 +35,7 @@ export default function About(){
                 <div className="about-object">
                     <span className="title"><FormattedMessage id='about2-title'/></span>
                     <span className="text"><FormattedMessage id='about2-text1'/></span>
-                    <span className="text"><FormattedMessage id='about2-text1'/></span>
+                    <span className="text"><FormattedMessage id='about2-text2'/></span>
                 </div>
             </div>
             <div id="members">

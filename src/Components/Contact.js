@@ -1,18 +1,36 @@
-import React from "react"
+import React, {useEffect} from "react"
 import '../Styles/App.scss'
 import '../Styles/Contact.scss'
 import {useIntl} from 'react-intl'
 import {FormattedMessage} from 'react-intl'
 import logo from './home_logo.png'
 import Footer from './Footer.js'
+import FrogTroll from './FrogTroll/FrogTroll'
 
 
 export default function Contact(){
     var lang = useIntl()
     var locale = lang.locale
 
+    useEffect(()=>{
+
+        return(() => console.log(document.getElementById('browser-menu-container').style.fontSize)
+        )
+    })
     return(
         <div id="contact-page">
+            <FrogTroll options={{
+                size:3, 
+                units: 'em',
+                // fontSize: 20,
+                startingPosition:{
+                    x:0,
+                    y:0
+                }, 
+                timeToOpenMouth:2000,
+                timeToAttack:1000,
+                navbarHeight: 84
+            }}/>
             <img src={logo} className="app-logo" id="contactpage-logo" alt="logo" />
             <span id='contact-title'><FormattedMessage id="COMMUNICATION"/></span>
             <span className="contact-info"><FormattedMessage id="address"/>:&nbsp;<a id="address-link" href="https://goo.gl/maps/tYvfeehq4TCpodGm9" target="_blank"><FormattedMessage id="margarites"/></a></span>

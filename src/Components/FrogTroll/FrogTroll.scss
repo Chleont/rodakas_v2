@@ -6,12 +6,13 @@
 #frog-troll-container{
     pointer-events: none;
     width:100%;
-    height:calc(100% - 4.8em);
+    height:100%;
     z-index:10000;
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    position:absolute;
 }
 
 #frog-troll-container :last-child{
