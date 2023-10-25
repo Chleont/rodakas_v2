@@ -24,14 +24,16 @@ function App() {
     const [messages, setMessages] = useState(Greek)
     const [isMobile, setWidth] = useState(window.innerWidth < 1000)
     const frogOptions = {
-        size:2, 
+        size:3, 
+        units: 'em',
+        // fontSize: 20,
         startingPosition:{
             x:0,
             y:0
         }, 
-        units:'em',
         timeToOpenMouth:2000,
-        timeToAttack:1000
+        timeToAttack:1000,
+        navbarHeight: 84
     }
     let navigate = useNavigate()
 
