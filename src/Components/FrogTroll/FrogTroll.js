@@ -100,7 +100,6 @@ export default function FrogTroll({options}){
         offsety = document.getElementById('frog-troll-head').getBoundingClientRect().height * (0.5 + 0.1 * Math.cos(radians)) - navbarHeight
         offsetx = document.getElementById('frog-troll-head').getBoundingClientRect().width/2 * (1.1 + 0.3 * Math.sin(radians))
  
-        console.log(Math.cos(radians), Math.sin(radians))
         // Draw tongue
         ctx.beginPath()
         ctx.moveTo(x + offsetx , y + offsety)
@@ -174,54 +173,74 @@ export default function FrogTroll({options}){
             xinterval = dx / instances,
             θinterval= Math.abs(2 * φ / instances),
             θ = null,
-            points = []
-        
+            points = [],
+            initialAngle = 0,
+            finalAngle = 0,
+            rotationFragment = 0,
+            rotation = 1
 
+        console.log(φ*180/Math.PI)
         //Calculate jumpin circular curve's center and radious
 
         if(newPositionData.y <= frogy && Math.abs(φ) < Math.PI/4){
-            console.log('1')
             centerx = newPositionData.x
             r = Math.abs(halfDist/Math.cos(ω))
             centery = newPositionData.y + r 
         }else if(newPositionData.y <= frogy && Math.abs(φ) >= Math.PI/4){
-            console.log('2')
             centery = frogy
             r = Math.abs(halfDist/Math.cos(φ))
             centerx = frogx + Math.sign(Math.sin(φ)) * r
         }else if(newPositionData.y >= frogy && Math.abs(φ) < Math.PI/4){
-            console.log('3')
             r = Math.abs(halfDist/Math.cos(ω))
             centerx = frogx
             centery = frogy + r
         }else if(newPositionData.y >= frogy && Math.abs(φ) >= Math.PI/4){
-            console.log('3')
             r = Math.abs(halfDist/Math.cos(ω))
             centery = newPositionData.y
             centerx = newPositionData.x + Math.sign(Math.sin(φ)) * r
         }
 
-
-
-        for(let i = 0; i <= instances; i++){
-
-            // Calculate frog body rotation
-            if(dx > 0){
-                θ = Math.abs(φ) >= Math.PI/4 ? (Math.abs(Math.PI/2 - φ) - i * θinterval) * 180/Math.PI : (Math.abs(φ) - i * θinterval) * 180/Math.PI
+        // Calculate initial frog body's rotation
+        if(newPositionData.y >= frogy){
+            if(newPositionData.x >= frogx){
+                initialAngle = Math.PI/2
             }else{
-                θ = Math.abs(φ) >= Math.PI/4 ? (Math.PI - Math.abs(Math.PI/2) + i * θinterval) * 180/Math.PI : (Math.PI - Math.abs(φ) + i * θinterval) * 180/Math.PI
+                initialAngle = -Math.PI/2
             }
+        }else{
+            initialAngle = 0
+        }
+       
+        // Calculate final frog body's rotation
+        if(newPositionData.x <= frogx){
+            rotation = -1
+            finalAngle = -Math.PI/2 + φ
+        }else{
+            rotation = 1
+            finalAngle = Math.PI/2 - φ
+        }
 
+        // Rotate to initial angle
+        document.getElementById('frog-troll').style.transform = `translate(${frogx}px,${frogy}px) rotate(${(initialAngle * 180) / Math.PI}deg)`
+
+        // Calculate the amount of rotation between each step and the direction (rotation == -1 -> counterclockwise)
+        rotationFragment = Math.abs(((finalAngle - initialAngle) / instances) * 180 / Math.PI) * rotation
+
+        // Calculate all coordinates and rotations for each point between initial and final position
+        for(let i = 0; i <= instances; i++){
             points.push({
-
+               
                 // Calculate coordinates of points
                 x:frogx + i * xinterval,
                 y: -1 * (Math.sqrt(Math.pow(r,2) - Math.pow((frogx + i * xinterval - centerx),2)) - Math.abs(centery)),
-                bodyAngle: θ,
 
                 // Move frog to next point and recall function for next position
                 func: function(){
-                    document.getElementById('frog-troll').style.transform = `translate(${this.x}px,${this.y}px)`
+                    if(!points[points.indexOf(this)+1]){
+                        document.getElementById('frog-troll').style.transform = `translate(${this.x}px,${this.y}px) rotate(0deg)`
+                    }else{
+                        document.getElementById('frog-troll').style.transform = `translate(${this.x}px,${this.y}px) rotate(${(initialAngle * 180 / Math.PI) + (rotationFragment * i)}deg)`
+                    }
                     if(points.indexOf(this) < points.length - 1){
                         setTimeout(
                             ()=>{
@@ -229,7 +248,6 @@ export default function FrogTroll({options}){
                             },15
                         )
                     }else{
-                        // document.getElementById('frog-troll-container').addEventListener('mousemove', listener )
                         document.body.addEventListener('mousemove', listener )
                         setTimeout(()=>{
                             document.getElementById('frog-troll-body').src = trollBody
@@ -239,13 +257,15 @@ export default function FrogTroll({options}){
                 }
             })
         }
-        console.log(points, φ *180/Math.PI)
+
         // Call jump
         points[0].func()
-
         // Set new position
         frogx = newPositionData.x
         frogy = newPositionData.y 
+
+        // Rotate back to initial position
+        // document.getElementById('frog-troll').style.transform = `translate(${frogx}px,${frogy}px) rotate(0deg)`
     }
 
     function rotatePointer(e) {
