@@ -24,9 +24,9 @@ function App() {
     const [messages, setMessages] = useState(Greek)
     const [isMobile, setWidth] = useState(window.innerWidth < 1000)
     const frogOptions = {
-        size:3, 
+        size:4, 
         units: 'em',
-        // fontSize: 20,
+        fontSize: 20,
         startingPosition:{
             x:0,
             y:0

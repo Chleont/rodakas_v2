@@ -94,7 +94,6 @@ export default function FrogTroll({options}){
         y = document.getElementById('frog-troll-head').getBoundingClientRect().y
         
         // Add offset depending on frog's position and on frog's head rotation
-
         // cos changes offset when head is close to vertical direction and sin when it's close to horizontal
         // Combination is needed because tongue is not in the center of the frog's mouth
         offsety = document.getElementById('frog-troll-head').getBoundingClientRect().height * (0.5 + 0.1 * Math.cos(radians)) - navbarHeight
@@ -179,9 +178,7 @@ export default function FrogTroll({options}){
             rotationFragment = 0,
             rotation = 1
 
-        console.log(φ*180/Math.PI)
         //Calculate jumpin circular curve's center and radious
-
         if(newPositionData.y <= frogy && Math.abs(φ) < Math.PI/4){
             centerx = newPositionData.x
             r = Math.abs(halfDist/Math.cos(ω))
@@ -260,12 +257,10 @@ export default function FrogTroll({options}){
 
         // Call jump
         points[0].func()
+
         // Set new position
         frogx = newPositionData.x
         frogy = newPositionData.y 
-
-        // Rotate back to initial position
-        // document.getElementById('frog-troll').style.transform = `translate(${frogx}px,${frogy}px) rotate(0deg)`
     }
 
     function rotatePointer(e) {
@@ -278,7 +273,6 @@ export default function FrogTroll({options}){
         centerY = pointerBox.top + parseInt(centers[1]) - window.pageYOffset
         centerX = pointerBox.left + parseInt(centers[0]) - window.pageXOffset
         if(Math.abs(mouseX - centerX) < (0.8 * trollSize) && Math.abs(mouseY - centerY) < (0.8 * trollSize)){
-            // document.getElementById('frog-troll-container').removeEventListener('mousemove', listener)
             document.body.removeEventListener('mousemove', listener)
             jump()
         }else{
@@ -322,7 +316,6 @@ export default function FrogTroll({options}){
     }
 
     useEffect(()=>{
-        // document.getElementById('frog-troll-container').addEventListener('mousemove', listener );
         document.body.addEventListener('mousemove', listener )
         document.body.addEventListener('mouseleave', stopHunting )
         trollWidth = document.getElementById('frog-troll').offsetWidth
