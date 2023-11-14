@@ -14,7 +14,7 @@ function Footer(){
                 <img src={yt} alt='youtube'/>
             </a>
             <p>
-                © 2023 Copyright: <a href="https://rodakas.org"><u>rodakas.org</u></a> 
+                © 2023 Ρόδακας 
             </p>
         </div>
     )

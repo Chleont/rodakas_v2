@@ -5,7 +5,6 @@ import {useIntl} from 'react-intl'
 import {FormattedMessage} from 'react-intl'
 import logo from './home_logo.png'
 import Footer from './Footer.js'
-import FrogTroll from './FrogTroll/FrogTroll'
 
 
 export default function Contact(){

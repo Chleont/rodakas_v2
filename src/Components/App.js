@@ -15,10 +15,11 @@ import Workshops from './Workshops'
 import Multimedia from './Multimedia'
 import About from './About'
 import Map from './Map'
-import FrogTroll from './FrogTroll/FrogTroll'
+import FrogTroll from 'frog-troll'
 
 
 function App() {
+
 
     const [locale, setLocale] = useState('el')
     const [messages, setMessages] = useState(Greek)
@@ -35,6 +36,7 @@ function App() {
         timeToAttack:1000,
         navbarHeight: 84
     }
+
     let navigate = useNavigate()
 
     function handleWindowSizeChange() {
