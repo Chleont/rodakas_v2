@@ -15,7 +15,6 @@ import Workshops from './Workshops'
 import Multimedia from './Multimedia'
 import About from './About'
 import Map from './Map'
-import FrogTroll from 'frog-troll'
 
 
 function App() {
@@ -120,19 +119,6 @@ function App() {
                     }/>
                     <Route path='/contact' element={
                         <Contact/>
-                    }/>
-                    <Route path='/troll' element={
-                        // options:{
-                        //   units:string 'em' or 'px' (default 'em')
-                        //   startingPosition:{ calculated from center of screen
-                        //     x:integer,
-                        //     y:integer
-                        //   },
-                        //   timeToOpenMouth:ms
-                        //   timeToAttack:ms
-                        //   size:{number}
-                        // }
-                        <FrogTroll options={frogOptions}/>
                     }/>
                 </Routes>
             </IntlProvider>
