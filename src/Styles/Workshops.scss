@@ -365,8 +365,13 @@
         border-radius: 5px;
         box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15);
     }
+    #workshop-page-container .photo-container{
+        width:100vw;
+        height:500px;
+        min-height:0;
+    }
 
-
+}
 
     @media only screen and (max-width: 650px) {
         #workshop-page-container .each-container{
@@ -384,7 +389,19 @@
             width:100%;
         }
         .workshops-category{
+            margin-bottom:50px;
             width:100%;
         }
+        #ca-le-arr{
+            bottom:0px;
+            left:100px;
+        }        
+        #ca-ri-arr{
+            bottom:0px;
+            right:100px;
+        }
+        #other-category .photo-container{
+            height: 380px;
+        }
     }
-  }
+  
