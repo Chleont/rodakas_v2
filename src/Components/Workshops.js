@@ -8,10 +8,13 @@ import StoneworkshopPage from "./stoneWorkshopPage"
 import LoomworkshopPage from "./loomWorkshopPage"
 import StonecarvingPage from "./stoneCarvingPage"
 import Feast23 from "./Feast23"
+import PhotoCarousel from "./photoCarousel"
+
 
 export default function Workshops(props){
 
     const [workshops,setWorkshops ] = useState(Object.keys(langfileGreek.workshops).map((key) => langfileGreek.workshops[key]))
+    const [loadedImagesNumber, setLoadedImagesNumber] = useState(0)
     var lang = useIntl()
     var locale = lang.locale
     const [wIndex, setIndex] = useState(workshops.length - 1)
@@ -19,6 +22,10 @@ export default function Workshops(props){
     const [isMobile, setWidth] = useState(window.innerWidth < 1000)
     const [routedToComponent, setRoutedToComponent] = useState(false)
     const [specialComponentDisplayed, setSpecialComponentDisplayed] = useState(<></>)
+    const [stoneImages,setStoneimages] = useState([])
+    const [loomImages,setLoomimages] = useState([])
+    const [otherImages,setOtherimages] = useState([])
+
 
     function toggleArrows(index){
         let arrows = document.getElementsByClassName('workshop-page-arrow')
@@ -36,7 +43,7 @@ export default function Workshops(props){
         if(imageIndex > 0){
             let img = document.createElement('img')
 
-            img.setAttribute('src',workshops[wIndex].images[imageIndex - 1])
+            img.setAttribute('src', process.env.PUBLIC_URL + '/Images/Posters/' + workshops[wIndex].images[imageIndex - 1])
             img.onclick = ()=>{window.open(workshops[wIndex].images[imageIndex - 1], '_blank').focus()}
             document.getElementById('single-image').innerHTML = ''
             document.getElementById('single-image').append(img)
@@ -48,7 +55,7 @@ export default function Workshops(props){
         if(workshops[wIndex].images.length - 1 > imageIndex ){
             let img = document.createElement('img')
 
-            img.setAttribute('src',workshops[wIndex].images[imageIndex + 1])
+            img.setAttribute('src', process.env.PUBLIC_URL + '/Images/Posters/' + workshops[wIndex].images[imageIndex + 1])
             img.onclick = ()=>{window.open(workshops[wIndex].images[imageIndex + 1], '_blank').focus()}
             document.getElementById('single-image').innerHTML = ''
             document.getElementById('single-image').append(img)
@@ -136,7 +143,7 @@ export default function Workshops(props){
             }
             document.getElementById('dates').innerHTML = ''
             document.getElementById('dates').append(workshops[index].dates)
-            img.setAttribute('src',workshops[index].images[0])
+            img.setAttribute('src', process.env.PUBLIC_URL + '/Images/Posters/' + workshops[index].images[0])
             img.onclick = ()=>{window.open(workshops[index].images[0], '_blank').focus()}
             document.getElementById('single-image').innerHTML = ''
             document.getElementById('single-image').append(img)
@@ -169,6 +176,7 @@ export default function Workshops(props){
     },[locale])
 
     useEffect(()=>{
+
         if(props.url == ''){
             let img = document.createElement('img')
 
@@ -182,9 +190,6 @@ export default function Workshops(props){
             }
             document.getElementById('dates').innerHTML = ''
             document.getElementById('dates').append(workshops[workshops.length - 1].dates)
-            img.setAttribute('src', '../Images/workshops/stone_summer_2023'
-            // workshops[workshops.length - 1].images[0]
-            )
             if(workshops[workshops.length - 1].button){
                 let button = document.createElement('button')
 
@@ -197,10 +202,14 @@ export default function Workshops(props){
             }else{
                 document.getElementById('button').innerHTML = ''  
             }
-            img.onclick = ()=>{window.open(workshops[workshops.length - 1].images[0], '_blank').focus()}
+
+            // img.onclick = ()=>{window.open(workshops[workshops.length - 1].images[0], '_blank').focus()}
+
             document.getElementById('single-image').innerHTML = ''
             document.getElementById('single-image').append(img)
+
             toggleArrows(workshops.length - 1)
+
         }else if(props.url == '/stoneworkshop'){
             setSpecialComponentDisplayed(<StoneworkshopPage/>)
             setRoutedToComponent(true)
@@ -214,18 +223,37 @@ export default function Workshops(props){
             setSpecialComponentDisplayed(<StonecarvingPage/>)
             setRoutedToComponent(true)
         }
-        document.getElementById('all-workshops-view').innerHTML = ''
-        workshops.map(each =>{
-            let img = document.createElement('img')
+        for(let i=0; i <= workshops.length - 1; i++){
+            if(workshops[i].category == 'stone' && document.getElementById('stone-category')){
+                let images = stoneImages
 
-            img.setAttribute('src',each.images[0])
-            img.onclick = () => {
-                setRoutedToComponent(false)  
-                window.history.replaceState(null, "activity", "/activity")
-                setIndex(workshops.indexOf(each))
+                images.unshift({
+                    url:process.env.PUBLIC_URL + '/Images/Posters/' + workshops[i].images[0],
+                    tag:'',
+                    index:i
+                })
+                setStoneimages(images)
+            }else if(workshops[i].category == 'loom' && document.getElementById('loom-category')){
+                let images = loomImages
+
+                images.unshift({
+                    url:process.env.PUBLIC_URL + '/Images/Posters/' + workshops[i].images[0],
+                    tag:'',
+                    index:i
+                })
+                setLoomimages(images)
+            }else if(workshops[i].category == 'other' && document.getElementById('other-category')){
+                let images=otherImages
+
+                images.unshift({
+                    url:process.env.PUBLIC_URL + '/Images/Posters/' + workshops[i].images[0],
+                    tag:'',
+                    index:i
+                })
+                setOtherimages(images)
             }
-            document.getElementById('all-workshops-view').prepend(img)
-        })
+            setLoadedImagesNumber(i)
+        }
     },[])
 
     useEffect(()=>{
@@ -269,7 +297,21 @@ export default function Workshops(props){
                     </div>      
             }
             <div id="all-workshops-view">
+                <div className="workshops-row">
+                    <div className="workshops-category" id='stone-category'>
+                        {loadedImagesNumber >= workshops.length-1 && <PhotoCarousel click={setIndex} carouselImages={stoneImages} title={'stone'}/>}
+                    </div>
+                    <div className="workshops-category" id='loom-category'>
+                        {loadedImagesNumber >= workshops.length-1 && <PhotoCarousel click={setIndex} carouselImages={loomImages} title={'weaving'}/>}
+                    </div>
+                </div>
+                <div className="workshops-row">
+                    <div className="workshops-category" id='other-category'>
+                        {loadedImagesNumber >= workshops.length-1 && <PhotoCarousel click={setIndex} carouselImages={otherImages} title={'other'}/>}
+                    </div>
+                </div>
             </div>
+            
         </div>
     )
 }

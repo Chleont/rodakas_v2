@@ -37,7 +37,7 @@
     width:50%;
     display:flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     text-align: start;
     box-shadow: 0 .5em 1em rgba(0,0,0,.15);
@@ -73,9 +73,13 @@
 }
 
 .each-container{
+    padding: 0 0;
+    border-radius: 0;
     height:70vh;
+    background-color: transparent;
     transition: opacity 2s;
     position:absolute;
+    min-width:fit-content;
     width:fit-content;
     height:100%;
     display:flex;
@@ -83,7 +87,7 @@
     justify-content: center;
 }
 
-#archive #le-arr{
+#ca-le-arr{
     transform: translateX(-.25em);
     z-index:100;
     font-weight:400;
@@ -91,7 +95,7 @@
     margin: auto auto auto 0;
 }
 
-#archive #ri-arr{
+#ca-ri-arr{
     transform: translateX(.25em);
     z-index:100;
     font-weight:400;
@@ -112,13 +116,13 @@
     border-radius: 5px;
     width:fit-content;
     text-align: center;
-    font-size: .5em;
     font-weight: 500;
     background-color: rgba(white,0.7);
     position:absolute;
     bottom:1em;
     margin-bottom: 0;
 }
+
 
 .archive-div a{
     background-color: transparent;

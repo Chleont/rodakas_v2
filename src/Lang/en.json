@@ -7,6 +7,9 @@
     "communication":"Contact",
     "COMMUNICATION":"COMMUNICATION",
     "address":"Address",
+    "stone":"Stone",
+    "weaving":"Weaving",
+    "other":"Other",
     "margarites":"Margarites,  Rethymno 74052, Greece",
     "president-contact":"Padouva Maria - President: 0030 – 6944330970",
     "secretary-contact": "Stamataki Georgia – Secretary: 0030 – 6941592259",
@@ -289,85 +292,97 @@
             "title":"Preservation and restoration of masonry using natural materials workshop",
             "dates":"31 July - 2 August 2020",
             "images":[
-                "https://i.imgur.com/kD6pA2B.jpg",
-                "https://i.imgur.com/wJiWyzR.jpg",
-                "https://i.imgur.com/aOBoSVE.jpg"
-            ]
+                "stone1a.jpg",
+                "stone1b.jpg",
+                "stone1c.jpg"
+            ],
+            "category":"stone"
         },
         "2":{
             "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
             "dates":"25 - 31 July 2021",
             "images":[
-                "https://i.imgur.com/VljrNaN.jpg",
-                "https://i.imgur.com/H6EhmSt.jpg",
-                "https://i.imgur.com/b9qY1mt.jpg",
-                "https://i.imgur.com/mezUuxE.jpg"
-            ]
+                "stone2a.jpg",
+                "stone2b.jpg",
+                "stone2c.jpg",
+                "stone2d.jpg"
+            ],
+            "category":"stone"
         },
         "3":{        
             "title":"Analog photography workshop",
             "dates":"24 - 27 March 2022",
             "images":[
-                "https://i.imgur.com/sATS7g3.jpg"
-            ]
+                "photo1.jpg"
+            ],
+            "category":"other"
         },
         "4":{
             "title":"Loom weaving workshop",
             "dates":"12 - 18 June 2022",
             "images":[
-                "https://i.imgur.com/UxkF2RT.png"
-            ]
+                "loom1.jpg"
+            ],
+            "category":"loom"
         },
         "5":{
             "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
             "dates":"24 - 30 July 2022",
             "images":[
-                "https://i.imgur.com/fyL6Jx6.jpg"
-            ]
+                "stone3.jpg"
+            ],
+            "category":"stone"
         },
         "6":{
             "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
             "dates":"22 - 28 October 2022",
             "images":[
-                "https://i.imgur.com/Nqja63c.jpg"
-            ]
+                "stone4.jpg"
+            ],
+            "category":"stone"
         },
         "7":{
             "title":"Loom weaving workshop",
             "dates":"20 - 26 November 2022",
             "images":[
-                "https://i.imgur.com/GALaxQL.jpg"
-            ]
+                "loom2.jpg"
+            ],
+            "category":"loom"
         },
         "8":{
             "title":"Loom weaving sessions",
             "dates":"January - February 2023",
             "images":[
-                "https://i.imgur.com/nBw5wzF.jpg"
-            ]
+                "loom3.jpg"
+            ],
+            "category":"loom"
         },
         "9":{
             "title":"Feast of Rodakas",
             "dates":"13 May 2023",
             "images":[
-                "https://i.imgur.com/heQFlPI.jpeg"
+                "feast1.jpg"
             ],
+            "category":"other",
             "navigate":"/feast23"
         },
         "10":{
             "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
             "dates":"22 - 29 july 2023",
             "images":[
-                "https://i.imgur.com/0f06LRw.jpg"
+                "stone5a.jpg",
+                "stone5b.jpg"
             ],
+            "category":"stone",
             "navigate":"/stoneworkshop"
         },
         "11":{
             "title":"Loom weaving workshop",
             "dates":"2 - 9 September 2023",
             "images":[
-                "https://i.imgur.com/tnuTANR.jpeg"
+                "loom4.jpg"
             ],
+            "category":"loom",
             "navigate":"/loomworkshop"
         },
         "12":{
@@ -375,8 +390,9 @@
             "subtitle":"Stone carving workshop",
             "dates":"27-31 October 2023",
             "images":[
-                "https://i.imgur.com/Hoyf9bu.jpg"
+                "stone6.jpg"
             ],
+            "category":"stone",
             "navigate":"/stonecarving"
         }
     },
