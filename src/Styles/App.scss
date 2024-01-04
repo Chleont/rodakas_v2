@@ -236,6 +236,9 @@ html {
   .Navbar button{
     font-size:1em;
   }
+  #footer{
+    margin-bottom:50px;
+  }
 }
 
 @media only screen and (max-width: 999px) {
@@ -261,8 +264,5 @@ html {
   }
   #burger-menu-button span::before {
     font-size:1.75em;
-  }
-  #footer{
-    margin-bottom:30px;
   }
 }
