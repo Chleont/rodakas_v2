@@ -31,7 +31,7 @@ export default function Contact(){
                     <img src={globalGeoparks} className='logo' alt='global-geoparks'/>
                     <img src={europeanGeoparks} className='logo' alt='european-geoparks'/>
                 </div>
-                <img src={geopark} className='logo' id='geopark-logo' alt='geopark'/>
+                <a href='https://www.psiloritisgeopark.gr/' target='_blank'><img src={geopark} className='logo' id='geopark-logo' alt='geopark'/></a>
             </div>
         </div>
     )
