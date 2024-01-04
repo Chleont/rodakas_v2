@@ -14,7 +14,7 @@ function Footer(){
                 <img src={yt} alt='youtube'/>
             </a>
             <p>
-                © 2023 Ρόδακας 
+                © 2024 Ρόδακας 
             </p>
         </div>
     )

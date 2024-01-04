@@ -18,7 +18,7 @@
 #contact-title{
     margin: .5em 0 .7em 0;
     font-weight: 100;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 #contact-page :nth-child(5){
@@ -31,7 +31,7 @@
 
 #contact-button{
     margin: 0.8em 0 1.2em 0;
-    font-size: 1em;
+    font-size: .9em;
     padding: .4em 1em .5em 1em;
     border-radius: 20px;
     background-color: transparent;
@@ -51,7 +51,7 @@
 
 .contact-info{
     margin-bottom: .7em;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 100;
 }
 
@@ -60,6 +60,39 @@
 }
 
 #contact-page #footer{
+    width:fit-content;
     margin-top: auto;
-    margin-bottom:1.2em
+    font-size: .8em;
+    margin:0 auto;
 }
+
+.logos-container{
+    margin-top: auto;
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:center;
+    background-color: rgb(35,31,32);
+    flex-wrap: wrap;
+}
+
+#double-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    margin-top: .6em;
+    margin-bottom: .6em;
+    height: 80px;
+}
+
+#geopark-logo{
+    margin-left: 1em;
+}
+
+

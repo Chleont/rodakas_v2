@@ -5,6 +5,9 @@ import {useIntl} from 'react-intl'
 import {FormattedMessage} from 'react-intl'
 import logo from './home_logo.png'
 import Footer from './Footer.js'
+import geopark from './geopark.png'
+import globalGeoparks from './global-geoparks.png'
+import europeanGeoparks from './european-geoparks.png'
 
 
 export default function Contact(){
@@ -23,6 +26,13 @@ export default function Contact(){
             <span className="contact-info"><FormattedMessage id="clerk-contact"/></span>
             <a id="contact-button" target="_blank" href="https://forms.gle/FLdCKXrDMk3euu7c6"><FormattedMessage id="send-us-message"/></a>
             <Footer/>
+            <div className="logos-container">
+                <div id='double-logo'>
+                    <img src={globalGeoparks} className='logo' alt='global-geoparks'/>
+                    <img src={europeanGeoparks} className='logo' alt='european-geoparks'/>
+                </div>
+                <img src={geopark} className='logo' id='geopark-logo' alt='geopark'/>
+            </div>
         </div>
     )
 }
