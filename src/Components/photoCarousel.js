@@ -90,7 +90,7 @@ class PhotoCarousel extends Component {
                         return (
                             <div
                                 className="each-container"
-                                style={{ opacity: 0, zIndex: 1 }}
+                                style={{ opacity: 0, zIndex: 1, height:'610px', display:'flex', flexDirection:'row', justifyContent:'center'}}
                                 key={this.carouselImages.indexOf(each)}
                                 id={each.url}
                             >

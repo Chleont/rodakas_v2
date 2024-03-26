@@ -162,7 +162,6 @@
     justify-content: center;
     width:100%;
     background-color: rgba(white,0.5);
-    height:700px;
     padding-top:50px;
 }
 .workshops-category{
@@ -224,11 +223,12 @@
 }
 
 #workshop-page-container #carousel-photo{
-    margin:0 auto auto auto;
+    margin:auto;
     width:350px;
-    // height:500px;
+    height:auto;
     border-radius: 5px;
     box-shadow: 0 .5em 1em rgba(0,0,0,.15);
+    cursor: auto;
 }
 #workshop-page-container #photo-name{
     color:rgba(black,0.8);

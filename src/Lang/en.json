@@ -129,27 +129,26 @@
         } 
     },
     "loomworkshop":{
-        "title": "Weaving Workshop at the Loom",
-        "dates": "September 2 - September 9, 2023",
-        "text_slogan": "\"A hundred and one pieces of the loom. The last one, the chicken's feather...\"",
-        "introtext": [
-            "Come and solve puzzles and decode some of the myriad secrets of the art of weaving under the guidance of our instructors: Mr. Manolis Kouratoras, a graduate weaver and weaving foreman, and our inspired weaver and instructor, Ms. Despina Pantelaki-Somaki.",
-            "At the workshop, parallel activities will be conducted by the researcher and visual artist Ms. Debora Jeromin, the weaver and specialist in natural dyes Ms. Katerina Korre, and the weavers from Margarites, Ms. Maria Dandolou and Ms. Eleni Karfaki, who will share their knowledge and memories.",
-            "This workshop is designed for both beginners and advanced weavers and will cover fine and coarse fabric weaving, as well as tapestry, on four traditional Margarites looms and one more recent one (1975), provided by the weaver and instructor Ms. Despina Pantelaki-Somaki and the textile weaver and weaving foreman Mr. Manolis Kouratoras. One of the traditional looms, donated to Rodakas by Ms. Argiroula Syragopoulou-Andreadaki, has been set up in its purely traditional form, with warp threads made of rope. On this loom, Mr. Manolis Kouratoras will teach the technique of the old \"deximato,\" one of the many techniques of traditional Cretan weaving, and he will provide his expertise and guidance to pass the technique on to new weavers."
+        "title":"Weaving Workshop at Margarites",
+        "dates":"May 25th - June 2nd, 2024",
+        "text_slogan": "“A hundred and one pieces of the loom. The last one, the hen's feather…”",
+        "introtext":[
+            "The time has come to meet again and take a new step in getting to know and understanding the art of weaving on the looms of Margarites.",
+            "The workshop will take place from May 25th to June 2nd with operating hours from 15:30 to 20:30 and will consist of two parts."
         ],
-        "Programtitle": "Outline and Schedule of the Workshop:",
-        "programText": "The workshop will commence with the welcoming of participants on Saturday, September 2. Classes will take place in the afternoons on weekdays and in the mornings on weekends. During the mornings, the loom space will be open for those who wish to practice.",
-        "accommodation": "Accommodation:",
-        "accommodationInfo": [
-            "Accommodation is available free of charge for a certain number of participants at the hospitality venue of the Monastery of Savior Christ and St. Gedeon.",
-            "\"The house of the Kourites\" in the settlement of Margarites Tzannakiana, offers the following options: Double rooms with a cost of 20 euros per person including breakfast. Triple and quadruple rooms with a cost of 15 euros per person. Contact number: 6945722052, Ms. Anastasia Fryganaki.",
-            "\"Halikoutika\" Margarites. A residence available with full equipment and two available bedrooms with double beds and one single bed. The cost for the entire residence is 70 euros. Contact number: 6973005153, Mr. George Skalidakis.",
-            "\"Archontiko Rodomeli\" Margarites. Guesthouse with double rooms. Room price is 50 euros. Contact number: 6979101973, Ms. Eleni Giannousaki.",
-            "\"Discover Margarites Home\" Margarites. A residence available with full equipment and two bedrooms, one with a double bed and the other with two single beds, as well as two additional sofa-beds in the living room. The cost of the residence is negotiable. Contact numbers: 2831050761, 6936366365, Ms. Katerina Christodoulaki."
+        "Programtitle":"Profile and program of the workshop:",
+        "programText":"The workshop will start with the reception of the participants on Saturday, May 25th. During the mornings of the lesson days, the loom space will be open for those who wish to practice.",
+        "accommodation":"Accommodation:",
+        "accommodationInfo":[
+            "Accommodation is provided free of charge for a specific number of participants in the accommodation space of the Monastery of Christ the Savior and Saint Gedeon.",
+            "“The House of the Kouretes” in the village of Margarites Tzannakiana, with available: Double, Triple, and Quadruple rooms. Contact number: 6945722052, Mrs. Anastasia Friganaki",
+            "“Halikoutika” in Margarites. A residence available with full equipment and two bedrooms with double beds and one single. Contact number: 6973005153, Mr. George Skalidakis",
+            "“Archontiko Rodomeli” in Margarites. Guesthouse with double rooms. Contact number: Mrs. Eleni Giannousaki 6979101973",
+            "“Discover Margarites Home” in Margarites. A residence available with full equipment and two bedrooms, one with a double bed and one with two singles, and two additional sofa beds in the living room. The cost of accommodation is determined by agreement. Contact number: 2831050761, 6936366365, Mrs. Katerina Christodoulaki"
         ],
-        "costAndRegistration": "Workshop Cost and Registration:",
-        "cost": "The cost of the workshop is 120 euros. To reserve your spot, a deposit of 50 euros must be made to the account of Rodakas, GR60 0171 3750 0063 7516 4234 881, AMKE RODAKAS (Piraeus). To register, please fill out the form below.",
-        "registration": "Registration",
+        "costAndRegistration":"Cost of the workshop and registration:",
+        "cost":"The cost of the workshop is 120 euros. In order to reserve your spot, a deposit of 50 euros must be made to the account of Rodakas GR60 0171 3750 0063 7516 4234 881, AMKE RODAKAS (Piraeus). To register, please fill out the form below.",
+        "registration":"Registration",
         "formlink":"https://forms.gle/DQ8yA7T69kmdgWiw9",
         "instructorTitle": "Teachers:",
         "instructors": [
@@ -172,88 +171,40 @@
                     "I have been accused of 'patenting' the production of Cretan Weavings using the technique of the three treadles with mechanical support. For me, this is right because it is economically affordable and offers the opportunity to decorate many homes better than imported textiles.",
                     "After my retirement, I offer my experience and knowledge wherever requested for the revival and development of Weaving Art."
                 ]
-            },
-            {
-                "name": "Deborah Jeromin",
-                "image": null,
-                "bio": [
-                    "Deborah Jeromin is a visual artist working in Leipzig (DE) and Crete (GR). She mainly explores historical themes and makes them accessible through various media. Her focus is primarily on the craft processes of textile products, feminist history, and spaces of National Socialism. Her work has been presented at DOK Leipzig, Kurzfilmtage Oberhausen, Museum der bildenden Künste in Leipzig, as well as the 5+1 Festival in Heraklion and other places.",
-                    "\nAbout the documentary film 'Tangled Threads' by Deborah Jeromin:",
-                    "The artistic documentary 'Tangled Threads' follows the traces of silk parachutes - from their National Socialist, propaganda production of silk to the Battle of Crete in 1941, where the silk fabrics of the parachutes were reused by women. In a place where airplanes rarely flew, 10,000 paratroopers landed on the island in May 1941.",
-                    "Women in Crete recall the German terrorism during the occupation. They cut the parachutes and recycled them into scarves and dresses. These craft processes have shaped their memory and are units of time recorded on their bodies."
-                ]
-            },
-            {
-                "name": "Katerina Korre",
-                "image": null,
-                "bio": [
-                    "Born in Athens, Katerina Korre studied at the Law School of the University of Athens and at the École Nationale Supérieure des Arts Décoratifs in Paris (ENSAD Paris), specializing in Textile and Impression.",
-                    "She settled in Rethymno in 1978, where she operated a tapestry workshop and the art space DIMITO for 25 years. From 2000 to 2009, she directed the tapestry and natural dyeing workshop ISTOS in Maroulas, Rethymno. She taught weaving and dyeing in workshops and at the Center for Contemporary Artistic Creation of Rethymno (C.C.A.C.R., program 'Thread, Fabric, Clothing'). She also taught painting at the Visual Art Workshops of the Center for Contemporary Artistic Creation of Rethymno (1999-2003) and freehand drawing to architecture candidates (DIMITO Gallery, 1993-2001).",
-                    "She participated in group exhibitions in Athens, Piraeus, Rethymno, Heraklion, Paris, and Montreal. Concerning natural dyeing, she delivered speeches and presentations at conferences, and for two years, she contributed a column titled 'Daemon of Plant Colors' to the monthly supplement 'Daemon of Ecology' in the newspaper 'Avgi' (2002-2005). She resides in the village of Koufi, Rethymno, where she continues to appreciate the beauty of plant colors and dyes."
-                ]
             }
         ],
-        "program": [
+        "program":[
             {
-                "date": "Saturday, September 2:",
-                "activities": [
-                    "09:00: Meeting at Margarites and settling in your accommodation",
-                    "11:00 - 14:30 - Wool processing and spinning guided by Ms. Deborah Jeromin with the participation of Ms. Maria Dandolou",
-                    "17:00 - 19:30 - Completion of the morning wool processing workshop",
-                    "19:45 - 22:00 - Presentation of Ms. Deborah Jeromin's work and screening of her documentary 'Tangled Threads'"
+                "date":"Part A",
+                "activities":[]
+            }, 
+            {
+                "date":"May 25th - 28th, 30th - 31st “From theory to practice”",
+                "activities":[ 
+                    "With instructor Despoina Somaki, it will include:",
+                    "Weaving on thick and thin warp",
+                    "Special emphasis on the application and learning of “kouskouse”",
+                    "Weaving with rayon",
+                    "Traditional Cretan as well as contemporary designs",
+                    "Weaving different items (bags, “vouries”, “sakoulia” and belts)."
+                ]
+            },  
+            {
+                "date":"May 29th “Yarnology and theory of weaving art”",
+                "activities":[ 
+                    "With instructor weaver Manolis Kuratoras."
                 ]
             },
             {
-                "date": "Sunday, September 3:",
-                "activities": [
-                    "10:30 - 14:30 - Dyeing Workshop with natural materials: madder, woad, and weld, theory, and practice of natural dyeing with Katerina Korre",
-                    "17:00 - 20:30 - Setting up a traditional loom, introduction to the theory: General principles of weaving and warping by Mr. Manolis Kuratoras"
-                ]
-            },
+                "date":"Part B",
+                "activities":[]
+            }, 
             {
-                "date": "Monday, September 4:",
-                "activities": [
-                    "15:00 - 17:30 - General principles of weaving and warping, application to the traditional Cretan pattern 'Deximato' by Mr. Manolis Kuratoras",
-                    "17:30 - 20:30 - Lesson on looms by Ms. Despoina Somaki",
-                    "Beginners: Operation of the loom and techniques, application on a coarse loom, weaving coarse fabric and towels",
-                    "Advanced: Work on the large loom, synchronization of hands and feet, patterns and designs, measurements for different woven items (carpets, towels, tablecloths, curtains, dresses, etc.)"
-                ]
-            },
-            {
-                "date": "Tuesday, September 5:",
-                "activities": [
-                    "15:00 - 17:30 - General principles of weaving and warping, application to the traditional Cretan pattern 'Deximato' by Mr. Manolis Kuratoras",
-                    "17:30 - 20:30 - Lesson on looms by Ms. Despoina Somaki"
-                ]
-            },
-            {
-                "date": "Wednesday, September 6:",
-                "activities": [
-                    "14:00 - 17:00 - Visit to Agia Mylopotamos, guided by Mr. Manolis Kuratoras in his workshop, and a lesson on General principles of Nematology by himself",
-                    "17:30 - 20:30 - Lesson on looms by Ms. Despoina Somaki"
-                ]
-            },
-            {
-                "date": "Thursday, September 7:",
-                "activities": [
-                    "15:00 - 20:30 - Lesson on looms by Ms. Despoina Somaki"
-                ]
-            },
-            {
-                "date": "Friday, September 8:",
-                "activities": [
-                    "15:00 - 20:30 - Lesson on looms by Ms. Despoina Somaki, with the participation of Ms. Eleni Karfaki"
-                ]
-            },
-            {
-                "date": "Saturday, September 9:",
-                "activities": [
-                    "09:30 - 14:00 - Lesson on looms by Ms. Despoina Somaki, completion of the works, cutting and sewing of the fabrics, tying the loom, and preparation for its next use",
-                    "Evaluation of the Workshop and closing event"
-                ]
+                "date":"June 1st - 2nd “Wool processing, yarn creation and weaving on small looms”",
+                "activities":["For beginners and children with weaver Eirini Xanthioti."]
             }
-        ] 
-    }, 
+        ]
+    },
     "stonecarvingworkshop":{
         "title1":"Pottery stone kiln restoration workshop",
         "dates1":"27 - 31 October 2023",
@@ -394,6 +345,15 @@
             ],
             "category":"stone",
             "navigate":"/stonecarving"
+        },"13":{
+            "title":"Weaving Workshop",
+            "dates":"May 25th - June 2nd, 2024",
+            "images":[
+                "loom5.jpg"
+            ],
+            "category":"loom",
+            "navigate":"/loomworkshop",
+            "button":"Information & Registration"
         }
     },
     "speech":{
