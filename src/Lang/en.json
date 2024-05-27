@@ -327,7 +327,16 @@
                 "loom5.jpg"
             ],
             "category":"loom",
-            "navigate":"/loomworkshop",
+            "navigate":"/loomworkshop"
+        },
+        "14":{
+            "title":"Drystone wall construction workshop and preservation and restoration of masonry using natural materials workshop",
+            "dates":"19-26 July 2024",
+            "images":[
+                "stone7.jpg"
+            ],
+            "category":"stone",
+            "navigate":"/stoneworkshop",
             "button":"Information & Registration"
         }
     },
