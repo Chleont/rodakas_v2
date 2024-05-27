@@ -96,15 +96,15 @@ function App() {
                     <Route path='/activity' element={
                         <Workshops url={''}/>
                     }/>
-                    {/* <Route path='/activity/stoneworkshop' element={
+                    <Route path='/activity/stoneworkshop' element={
                         <Workshops url={'/stoneworkshop'}/>
-                    }/> */}
+                    }/>
                     <Route path='/activity/loomworkshop' element={
                         <Workshops url={'/loomworkshop'}/>
                     }/>
-                    <Route path='/activity/stonecarving' element={
+                    {/* <Route path='/activity/stonecarving' element={
                         <Workshops url={'/stonecarving'}/>
-                    }/>
+                    }/> */}
                     {/* <Route path='/activity/feast23' element={
                         <Workshops url={'/feast23'}/>
                     }/> */}

@@ -34,7 +34,8 @@ export default function StoneworkshopPage(){
                 <span>{workshop.info2}</span>
                 <span className="sw-subtitle">{workshop.Programtitle}</span>
                 <span className="sw-activity-date">{workshop.program0}</span>
-                <span className="sw-activity-date">{workshop.program1.date}</span>
+                <span className="sw-activity">{workshop.program1}</span>
+                {/* <span className="sw-activity-date">{workshop.program1.date}</span>
                 <span className="sw-activity">11:00 - 13:00: {workshop.program1.morning}</span>
                 <span className="sw-activity">18:30 - 20:30: {workshop.program1.evening}</span>
                 <span className="sw-activity-date">{workshop.program2.date}</span>
@@ -47,14 +48,14 @@ export default function StoneworkshopPage(){
                 <span className="sw-activity">20:00 - 21:00: {workshop.program5.evening}</span>
                 <span className="sw-activity-date">{workshop.program5.date}</span>
                 <span className="sw-activity">09:30 - 14:00: {workshop.program6.morning}</span>
-                <span className="sw-activity">18:30 - 20:30: {workshop.program6.evening}</span>
+                <span className="sw-activity">18:30 - 20:30: {workshop.program6.evening}</span> */}
                 <span className="sw-subtitle">{workshop.accommodation}</span>
                 <span>{workshop.accommodationInfo1}</span>
                 <span>{workshop.accommodationInfo2}</span>
                 <span className="sw-subtitle">{workshop.accommodationHouses}</span>
-                <span>{workshop.accommodationHouses1}</span>
-                <span>{workshop.accommodationHouses2}</span>
-                <span>{workshop.accommodationHouses3}</span>
+                <div>{workshop.accommodationHouses1}</div>
+                <div>{workshop.accommodationHouses2}</div>
+                <div>{workshop.accommodationHouses3}</div>
             </div>
             <div id='sw-inscription'>
                 <span className="sw-subtitle">{workshop.costAndRegistration}</span>
@@ -62,17 +63,19 @@ export default function StoneworkshopPage(){
                 <a href={workshop.formlink} target='_blank'>{workshop.registration}</a>
             </div>
             <div id='sw-instructors'>
-                <span className="sw-subtitle">{workshop.instructorTitle}</span>
-                <span className="instructor-name">{workshop.instructorName1}</span>
-                <span className="instructor-text">
-                    <img src={Alefantinos}/>
-                    <span>{workshop.instructorBio1}</span>
-                </span>
-                <span className="instructor-name">{workshop.instructorName2}</span>
-                <span className="instructor-text">
-                    <img src={Vergianos}/>
-                    <span>{workshop.instructorBio2}</span>
-                </span>
+                <div className="sw-subtitle">{workshop.instructorTitle}</div>
+                <div className="sw-instructor">
+                    <span className="instructor-text">
+                        <img src={Alefantinos}/>
+                        <span><div className="instructor-name">{workshop.instructorName1}</div>{workshop.instructorBio1}</span>
+                    </span>
+                </div>
+                <div className="sw-instructor">
+                    <span className="instructor-text">
+                        <img src={Vergianos}/>
+                        <span><div className="instructor-name">{workshop.instructorName2}</div>{workshop.instructorBio2}</span>
+                    </span>
+                </div>
             </div>
         </div>
     )

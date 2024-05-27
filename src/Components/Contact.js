@@ -19,7 +19,7 @@ export default function Contact(){
             <img src={logo} className="app-logo" id="contactpage-logo" alt="logo" />
             <span id='contact-title'><FormattedMessage id="COMMUNICATION"/></span>
             <span className="contact-info"><FormattedMessage id="address"/>:&nbsp;<a id="address-link" href="https://goo.gl/maps/tYvfeehq4TCpodGm9" target="_blank"><FormattedMessage id="margarites"/></a></span>
-            <span className="contact-info">Email: rodakas.koinsep@gmail.com</span>
+            <span className="contact-info">Email: rodakas.org@gmail.com</span>
             <span className="contact-info">Α.Γ.Ε.ΜΗ: 169024650000</span>
             <span className="contact-info"><FormattedMessage id="president-contact"/></span>
             <span className="contact-info"><FormattedMessage id="secretary-contact"/></span>
