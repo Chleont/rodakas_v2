@@ -102,7 +102,7 @@ export default function Workshops(props){
                     document.getElementById('title2').append(workshops[wIndex].subtitle)
                 }
                 document.getElementById('dates').append(workshops[wIndex].dates)
-                img.setAttribute('src',workshops[wIndex].images[0])
+                img.setAttribute('src',process.env.PUBLIC_URL + '/Images/Posters/' + workshops[wIndex].images[0])
                 img.onclick = ()=>{window.open(workshops[wIndex].images[0], '_blank').focus()}
                 document.getElementById('single-image').innerHTML = ''
                 document.getElementById('single-image').append(img)
