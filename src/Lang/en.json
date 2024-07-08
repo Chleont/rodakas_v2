@@ -100,8 +100,57 @@
         "instructorBio1":"Yiannis Alefantinos was born in 1956, in Tzannakiana, a settlement of the Community of Margarites Mylopotamos. His grandfather, like his father Giannis and his paternal uncles, George and Nikos, were all stonemasons and were involved in construction as well as stone sculpting. He studied with them from his childhood. He learned from a child the techniques of mining and the types of local stone, the building of the stone wall, the chiselling and the construction of doors, as well as the sculpting of the stone. He built \"with couple\" the master Giorgis Gerovasakis, in the Despotic of the Metropolis of Rethymnon, he participated in the construction of the churches of the Prophet Elias in Ancient Eleftherna, of the Holy Trinity in Angeliana, of Agios Georgios in Humeri, of Agios Spyridon in Piguniana, in the construction of the school in the village of Chonos Rethymnon. He also worked on the restoration of the Monastery of Agios Ioannis in Bali as well as on the restoration projects of the Fortezza of Rethymno and the mansion-tower of the doctor Emmanuel Mathioudakis in Angeliana. He was involved in the construction of a large number of stone-built houses until the 90s. When the use of stone as a basic building material decreased, he continued working in the reconstruction and restoration of stone structures, in pointing and plastering of stone masonry. He used local soils and experimented with them for the strength and tightness of joints and plasters. He was interested in solidity as much as the aesthetic effect and therefore used the knowledge from the tradition of his ancestors and his own great technical experience. At the same time, as he respected and always had a great interest in tradition, he created a remarkable written archive of records of his fellow villagers, but also of historical events that he experienced and that characterized his time. Yiannis Alefantinos is the last stone mason in Margarites, who knows and applies the local building techniques, which were used for centuries by the stone masons in this village, creating its excellent characteristic image. Since the first stone workshop in the summer of 2020, Yiannis Alefantinos has participated as an instructor in all the stonework restoration workshops of RODAKAS. He also took part in the research of the Margarites Oral Narratives Group for the historical recording of the families and homes of the Margarites Community and helped significantly in the realization of the documentary of the Margarites Oral Narratives Group: \"The Threshold of Memory\".",
         "instructorName2":"Kostis Vergianakis",
         "instructorBio2":"Kostas Vergianakis was born in 1962 in the Alpha settlement of Mylopotamos municipality, a village with a rich cultural heritage. In the settlement, due to the rich subsoil in porolite deposits, the famous Alfopetra, a stone easy to process and resistant to its use in constructions, there were developed many famous and remarkable, for the time in which each lived, masters in building with stone. In 1985, Kostas Vergianakis was taught the art of stonework by two of these \"masters\", Charalampos and Yiannis Vergianakis. Craftsmen with a significant legacy in the field of stone constructions. His acquaintance and collaboration with Manolis Skevakis, stonemason - sculptor, in 1990 pushed him to see the construction of stone from another angle, while then the professional collaboration with Konstantinos Tzanoudakis or Tzanoudokostas from the village of Langa in the municipality of Mylopotamos, master craftsman equally renowned for his building technique, he further expanded his knowledge and construction perception. Today, Kostas Vergianakis follows the same path that all the above showed him. Each one individually contributed in his own way to the formation of his character as a \"master craftsman\" with valuable construction experience. And he, in turn, tries to pass on his knowledge and the art he possesses, to anyone who is willing to learn.",
-        "program0": "The workshops on masonry restoration and jointing with natural materials and dry stone construction will be held daily from July 19 to 26, in the mornings between 8:30 and 14:00.",
-        "program1": "In the afternoons, the workshop will include parallel activities such as hikes, lectures, and guided tours. The program with the parallel activities will be announced soon."    
+        "program0": "The workshops will take place every day, in the mornings between 8:00 and 14:30 from July 19 to July 26",
+        "freeParticipationNotice": {
+            "normal":"All events taking place on the evenings are ",
+            "bold":"free of charge and open to the public"
+        },
+        "program1": {
+            "date": "Friday, July 19",
+            "arrival": "Arrival and introduction of participants",
+            "morning": "Historical and architectural tour in Margarites by the Master and Teacher of the Restoration Workshop Mr. Giannis Alefantinos and the Ethnologist Mrs. Maria Padouva.",
+            "evening": "The principles and laws of masonry in the local example by the Master and Teacher of the Dry Stone Workshop Mr. Konstantinos Vergianakis."
+        },
+        "program2": {
+            "date": "Saturday, July 20",
+            "morning": "Conducting workshops",
+            "evening": "Presentations:",
+            "evening1": "Trade and reuse of stone in Venetian Crete, Mrs. Maria Vakondiou, Archaeologist",
+            "evening2": "The extraction of stone without mechanical means, Mr. Giannis Alefantinos, Teacher of the Restoration Workshop"
+        },
+        "program3": {
+            "date": "Sunday, July 21",
+            "morning": "Conducting workshops",
+            "evening": "Talks:",
+            "evening1": "Memory and community from the experience of workshops and recordings of Rodakas, Mrs. Maria Padouva, Ethnologist, President of AMKE Rodakas",
+            "evening2": "Dry stone constructions as a connecting element of man with the abiotic environment in Geoparks, Dr. Charalambos Fasoulas, Geologist, President of UNESCO Global Geopark of Psiloritis",
+            "evening3": "The art of dry stone at a large scale. The threat of large scale, Mr. Valantis Manolesakis, Architect Engineer, Secretary of the Architects Association of Rethymno"
+        },
+        "program4": {
+            "date": "Monday, July 22",
+            "morning": "Conducting workshops",
+            "evening": "Hiking and visit to the ancient quarry of Peristeres in Ancient Eleutherna"
+        },
+        "program5": {
+            "date": "Tuesday, July 23",
+            "morning": "Conducting workshops",
+            "evening": "Free afternoon"
+        },
+        "program6": {
+            "date": "Wednesday, July 24",
+            "morning": "Conducting workshops",
+            "evening": "Visit to a mitato in Zoniana and guided tour by the master Anastasis Papadakis"
+        },
+        "program7": {
+            "date": "Thursday, July 25",
+            "morning": "Conducting workshops",
+            "evening": "Evaluation of the workshop"
+        },
+        "program8": {
+            "date": "Friday, July 26",
+            "morning": "Conducting workshops and closing of activities",
+            "evening": "Workshop closing celebration"
+        }
     },
     "loomworkshop":{
         "title":"Weaving Workshop at Margarites",

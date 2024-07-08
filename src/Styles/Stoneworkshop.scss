@@ -18,6 +18,27 @@
     font-weight:500;
 }
 
+.sw-activity{
+    margin-bottom: 1em;
+}
+
+.sw-activity-date{
+    font-weight: bold;
+    margin-bottom: .3em;
+}
+
+.sw-activity-tab{
+    margin-left: 1em;
+}
+
+.sw-activity-list div{
+    margin-bottom: .5em;
+}
+
+.sw-activity-list li{
+    margin-bottom: .5em;
+}
+
 #workshop-page-container ::-webkit-scrollbar{
     margin-left: auto;
     width: 0.6em;
