@@ -10,7 +10,7 @@ export default function StoneworkshopPage(){
 
     var lang = useIntl()
     var locale = lang.locale
-    const[workshop, setWorkshop] = useState(langfileGreek.loomworkshop)
+    const[workshop, setWorkshop] = useState(langfileGreek.loomdesignworkshop)
 
     function importAll(r) {
         return r.keys().map(r)
@@ -22,9 +22,9 @@ export default function StoneworkshopPage(){
 
         if(locale === 'el')
         {
-            setWorkshop(langfileGreek.loomworkshop)
+            setWorkshop(langfileGreek.loomdesignworkshop)
         }else{
-            setWorkshop(langfileEnglish.loomworkshop)
+            setWorkshop(langfileEnglish.loomdesignworkshop)
         }
     },[locale])
 
