@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from "react"
 import '../Styles/Map.scss'
 import ImageMapper from 'react-img-mapper'
 import json from './MapData/mapdata.json'
-
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
 import { useIntl } from 'react-intl'
@@ -23,6 +22,7 @@ export default function Map(){
 
     var lang = useIntl()
     var locale = lang.locale
+    var hoverTimeout = null;
     const [langFile, setlangfile] = useState(langfileGreek.map)
     const [infoBoxPosition, setInfoBoxPosition] = useState({x:0,y:0})
 
@@ -172,24 +172,29 @@ export default function Map(){
     }
 
     function handleMouseEnter(area){
-        let data = null
 
-        let json = document.getElementById('mapper-container').firstElementChild.lastElementChild.name == 'Families'?json_families:json_hover
+        // let data = null
+        // let json = document.getElementById('mapper-container').firstElementChild.lastElementChild.name == 'Families'?json_families:json_hover
 
-        // BAD PRACTICE!! We get the locale from HTML elements because function only has the initial value and does not respond to changes
-        if(document.getElementById('toggle-legend').firstElementChild.firstElementChild.innerHTML.charAt(0) == 'L'){
-            data = json.find(object => object.id === area.id).titleEn
-        }else{
-            data = json.find(object => object.id === area.id).titleGr
-        }
-        if(data){
-            document.getElementById('modularinfobox').style.display = 'inline-block'
-            document.getElementById('modularinfobox').innerHTML = data
-        }
+        // // BAD PRACTICE!! We get the locale from HTML elements because function only has the initial value and does not respond to changes
+        // if(document.getElementById('toggle-legend').firstElementChild.firstElementChild.innerHTML.charAt(0) == 'L'){
+        //     data = json.find(object => object.id === area.id).titleEn
+        // }else{
+        //     data = json.find(object => object.id === area.id).titleGr
+        // }
+
+        hoverTimeout = window.setTimeout(function(){
+            console.log(infoBoxPosition)
+            document.getElementById('hover-data-box').style.display = 'flex'
+            document.getElementById('hover-data-box').style.left = infoBoxPosition.x
+            document.getElementById('hover-data-box').style.top = infoBoxPosition.y
+            document.getElementById('hover-data-box').innerText = area.name
+        }, 1204)
     }
 
     function handleMouseLeave(area){
-        document.getElementById('modularinfobox').style.display = 'none'
+        window.clearTimeout(hoverTimeout)
+        document.getElementById('hover-data-box').style.display = 'none'
     }
 
     function zoom(type){
@@ -258,6 +263,7 @@ export default function Map(){
               onKeyDown={(e)=>{handleEnter(e)}}
             /> */}
             <div id='map-container'>
+                <span id='hover-data-box'/>
                 <div id='mapper-container'>
                     <ImageMapper
                         src={displayedMap} 
@@ -339,7 +345,6 @@ export default function Map(){
                     </span>
                 </div>
             </div>
-            <div id="modularinfobox" style={{ top: infoBoxPosition.y, left: infoBoxPosition.x, display: 'none'}}></div>
         </div>
     )
 }

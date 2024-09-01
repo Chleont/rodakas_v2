@@ -12,12 +12,20 @@
     height:calc(100% - var(--navbar-height));
 }
 
+#hover-data-box{
+    position:absolute;
+    z-index: 10;
+    width:10em;
+    display:none;
+}
+
 #map-container{
     display:flex;
     flex-direction:row;
     justify-content: center;
     overflow-y:hidden;
     height:100%;
+    position: relative;
 }
 
 #mapper-container{
@@ -262,6 +270,7 @@
         align-items: center;
         justify-content: center;
         height:fit-content;
+        position: relative;
     }
     #mapper-container{
         width:100%;

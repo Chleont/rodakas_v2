@@ -451,7 +451,16 @@
                 "stone7.jpg"
             ],
             "category":"stone",
-            "navigate":"/stoneworkshop",
+            "navigate":"/stoneworkshop"
+        },
+        "15":{
+            "title":"Weaving Workshop",
+            "dates":"5 - 11 October 2024",
+            "images":[
+                "loom6.jpg"
+            ],
+            "category":"loom",
+            "navigate":"/loomworkshop",
             "button":"Information & Registration"
         }
     },
