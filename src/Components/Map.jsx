@@ -263,7 +263,7 @@ export default function Map(){
               onKeyDown={(e)=>{handleEnter(e)}}
             /> */}
             <div id='map-container'>
-                <span id='hover-data-box'/>
+                <span id='hover-data-box' className="bg-red-200"/>
                 <div id='mapper-container'>
                     <ImageMapper
                         src={displayedMap} 

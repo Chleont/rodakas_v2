@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './Styles/index.css'
 import './Styles/App.scss'
 import './Styles/styles.css'
+import './tailwind.css'
 import { BrowserRouter } from 'react-router-dom'
 import { initializeApp } from "firebase/app"
 import { getAnalytics } from "firebase/analytics"
