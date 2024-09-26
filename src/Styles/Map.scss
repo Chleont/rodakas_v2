@@ -12,13 +12,6 @@
     height:calc(100% - var(--navbar-height));
 }
 
-#hover-data-box{
-    position:absolute;
-    z-index: 10;
-    width:10em;
-    display:none;
-}
-
 #map-container{
     display:flex;
     flex-direction:row;

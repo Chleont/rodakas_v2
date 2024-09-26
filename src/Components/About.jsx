@@ -20,7 +20,7 @@ export default function About(){
         let id = e.target.parentElement.parentElement.id
 
         document.getElementById(id).lastElementChild.style.display = 'none'
-        document.getElementById(id).firstElementChild.lastElementChild.lastElementChild.style.display = 'block'
+        document.getElementById(id).firstElementChild.lastElementChild.lastElementChild.style.display = 'flex'
     }
 
     return(

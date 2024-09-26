@@ -8,6 +8,7 @@ import { useIntl } from 'react-intl'
 
 /** Map data */
 import json_hover from './MapData/mapdata.json'
+import mapMetadata from './MapData/map_metadata.json'
 import json_families from './MapData/mapdata_families.json'
 
 /** Maps */
@@ -24,16 +25,25 @@ export default function Map(){
     var locale = lang.locale
     var hoverTimeout = null;
     const [langFile, setlangfile] = useState(langfileGreek.map)
-    const [infoBoxPosition, setInfoBoxPosition] = useState({x:0,y:0})
+    const infoBoxPosition = useRef({x:0,y:0})
+    const metadata = useRef(mapMetadata.gr)
 
     useEffect(()=>{
         if(locale === 'el')
         {
             setlangfile(langfileGreek.map)
+            metadata.current = mapMetadata.gr
         }else{
             setlangfile(langfileEnglish.map)
+            metadata.current = mapMetadata.en
         }
     },[locale])
+
+    useEffect(()=>{
+        console.log(metadata)
+    },[
+        metadata
+    ])
   
     // const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json_hover})
     const [displayedMap, setDisplayedMap] = useState(simple)
@@ -94,12 +104,16 @@ export default function Map(){
 
     // var realCoords = useRef([])
 
-    // const handleMouseMove = event => {
-    //     setLocalCoords({
-    //         x: event.clientX - document.getElementById('mapper-container').offsetLeft,
-    //         y: event.clientY - document.getElementById('mapper-container').offsetTop,
-    //     })
-    // }
+    const handleMouseMove = event => {
+        infoBoxPosition.current= {
+            x: event.clientX - document.getElementById('mapper-container').offsetLeft,
+            y: event.clientY - document.getElementById('mapper-container').offsetTop,
+        }
+        // setLocalCoords({
+        //     x: event.clientX - document.getElementById('mapper-container').offsetLeft,
+        //     y: event.clientY - document.getElementById('mapper-container').offsetTop,
+        // })
+    }
     
     // useEffect(() => {
     //     document.getElementById('mapper-container').addEventListener('mousemove', handleMouseMove)
@@ -167,9 +181,9 @@ export default function Map(){
     }
 
 
-    function handleMouseMove(event){
-        setInfoBoxPosition({ x: event.clientX + 2, y: event.clientY - 32})
-    }
+    // function handleMouseMove(event){
+    //     infoBoxPosition.current = { x: event.clientX, y: event.clientY}
+    // }
 
     function handleMouseEnter(area){
 
@@ -184,17 +198,21 @@ export default function Map(){
         // }
 
         hoverTimeout = window.setTimeout(function(){
-            console.log(infoBoxPosition)
-            document.getElementById('hover-data-box').style.display = 'flex'
-            document.getElementById('hover-data-box').style.left = infoBoxPosition.x
-            document.getElementById('hover-data-box').style.top = infoBoxPosition.y
-            document.getElementById('hover-data-box').innerText = area.name
+            document.getElementById('hover-data-box').classList.remove('hidden')
+            document.getElementById('hover-data-box').classList.add('flex')
+            document.getElementById('hover-data-box').style.left = `${infoBoxPosition.current.x}px`
+            document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y-140}px`
+            if(document.getElementById('hover-data-box').offsetTop < 0){
+                document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y + document.getElementById('hover-data-box').offsetHeight - 84}px`
+            }
+            document.getElementById('hover-data-content').innerText = metadata.current[area.id].title != ''? metadata.current[area.id].title : metadata.current[area.id].name
         }, 1204)
     }
 
     function handleMouseLeave(area){
         window.clearTimeout(hoverTimeout)
-        document.getElementById('hover-data-box').style.display = 'none'
+        document.getElementById('hover-data-box').classList.remove('flex')
+        document.getElementById('hover-data-box').classList.add('hidden')
     }
 
     function zoom(type){
@@ -263,14 +281,17 @@ export default function Map(){
               onKeyDown={(e)=>{handleEnter(e)}}
             /> */}
             <div id='map-container'>
-                <span id='hover-data-box' className="bg-red-200"/>
+                <span id='hover-data-box' className="flex flex-col items-center justify-center absolute z-10 w-fit h-fit overflow-visible">
+                    <span id='hover-data-content' className="min-w-40 w-fit rounded border border-1 border-[rgb(196, 177, 177)] bg-[#f7eeec] min-h-30 h-fit"></span>
+                    {/* <span className="mb-auto mr-auto" style={{width:'20px',height: '20px',borderLeft:'15px solid transparent',borderRight:'15px solid transparent',borderTop:'15px solid white'}}></span> */}
+                </span>
                 <div id='mapper-container'>
                     <ImageMapper
                         src={displayedMap} 
                         map={checkboxValues.option2?{name:'Families',areas:checkboxValues.json}:{name:'Margarites',areas:checkboxValues.json}} 
                         responsive
                         parentWidth={width}
-                        onMouseEnter={area=>{handleMouseEnter(area)}}
+                        onMouseEnter={(area,event)=>{handleMouseEnter(area)}}
                         onMouseLeave={area=>{handleMouseLeave(area)}}
                         onClick={area=>{handleClick(area)}}
                     />
