@@ -3,26 +3,26 @@ import '../Styles/App.scss'
 import '../Styles/Archive.scss'
 import langfileGreek from '../Lang/el.json'
 import langfileEnglish from '../Lang/en.json'
-import { useIntl } from 'react-intl'
 import {FormattedMessage} from 'react-intl'
 import PhotoCarousel from './photoCarousel'
 
 export default function Workshops(){
 
-    var lang = useIntl()
-
-    const images = [
+    const images=[
         {
-            url:'https://i.imgur.com/YT6HFdA.jpg',
-            tag: lang.locale === 'el' ? langfileGreek.mavrogiannis : langfileEnglish.mavrogiannis
+            url: process.env.PUBLIC_URL + '/Images/Archive/Mavrogiannis.jpg',
+            tagEn: langfileEnglish.mavrogiannis,
+            tagGr: langfileGreek.mavrogiannis
         },
         {
-            url:'https://i.imgur.com/ifExjq3.jpg',
-            tag: lang.locale === 'el' ? langfileGreek.karfakis : langfileEnglish.karfakis
+            url: process.env.PUBLIC_URL + '/Images/Archive/PaKarfakis.jpg',
+            tagEn: langfileEnglish.karfakis,
+            tagGr: langfileGreek.karfakis
         },
         {
-            url:'https://i.imgur.com/DeY4Pcc.jpg',
-            tag: lang.locale === 'el' ? langfileGreek.drosaki : langfileEnglish.drosaki
+            url: process.env.PUBLIC_URL + '/Images/Archive/ElDrosaki.jpg',
+            tagEn: langfileEnglish.drosaki, 
+            tagGr: langfileGreek.drosaki
         }
     ]
 
@@ -33,7 +33,7 @@ export default function Workshops(){
                 <span className="unavailable"><FormattedMessage id="not available"/></span>
                 <span><FormattedMessage id="narratives-archive-text"/></span>
             </div>
-            <div className="archive-div">
+            <div className="archive-div h-fit">
                 <span><FormattedMessage id="photo-archive"/></span>
                 <span className="unavailable"><FormattedMessage id="not available"/></span>
                 <span><FormattedMessage id="photo-archive-text"/></span>
@@ -42,7 +42,9 @@ export default function Workshops(){
             <div className="archive-div">
                 <span><FormattedMessage id="stone-house-title"/></span>
                 <span><FormattedMessage id="stone-house-text"/></span>
-                <a target="_blank" data-method="get" href="https://rodakasdotorg.files.wordpress.com/2021/05/katoikia-margarites.pdf"><FormattedMessage id="download"/></a>
+                <a target="_blank" data-method="get" href="https://rodakasdotorg.files.wordpress.com/2021/05/katoikia-margarites.pdf">
+                    <FormattedMessage id="download"/>
+                </a>
             </div>
         </div>
     )

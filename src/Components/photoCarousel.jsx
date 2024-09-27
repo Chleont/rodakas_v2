@@ -1,109 +1,67 @@
-import React, { Component } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import {FormattedMessage} from 'react-intl'
+import { useIntl } from 'react-intl'
 
 
-class PhotoCarousel extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            photoIndex: 0,
-        }
+export function PhotoCarousel(props){
+    
+    var lang = useIntl()
+    var locale = lang.locale
+    const carouselImages = props.carouselImages
+    const photoIndex = useRef(0)
+    const [image,setImage] = useState(carouselImages[0])
+    var timer = useRef(null)
 
-        this.interval = null
-        this.carouselImages = props.carouselImages
+    useEffect(()=>{
+        timer.current = setTimeout(()=>{rightArrow()}, 5000)
+        return (() =>{clearTimeout(timer.current)})
+    },[])
+    
+    useEffect(()=>{
+        setImage(carouselImages[photoIndex.current])
+    },[carouselImages])
 
-        this.leftArrow = this.leftArrow.bind(this)
-        this.rightArrow = this.rightArrow.bind(this)
-        this.goToStart = this.goToStart.bind(this)
-        this.goToEnd = this.goToEnd.bind(this)
-    }
-
-    leftArrow() {
-        const { photoIndex } = this.state
-
+    function leftArrow() {
         if (photoIndex > 0) {
-            document.getElementById(`${this.carouselImages[photoIndex].url}`).style.opacity = '0'
-            document.getElementById(`${this.carouselImages[photoIndex - 1].url}`).style.opacity = '1'
-            document.getElementById(`${this.carouselImages[photoIndex].url}`).style.zIndex = '1'
-            document.getElementById(`${this.carouselImages[photoIndex - 1].url}`).style.zIndex = '2'
-            this.setState({ photoIndex: photoIndex - 1 })
+            photoIndex.current = photoIndex.current - 1
+            setImage(carouselImages[photoIndex.current])
         } else {
-            this.goToEnd()
+            photoIndex.current = carouselImages.length - 1
+            setImage(carouselImages[photoIndex.current])
         }
     }
 
-    rightArrow() {
-        const { photoIndex } = this.state
-
-        if (photoIndex < this.carouselImages.length - 1) {
-            document.getElementById(`${this.carouselImages[photoIndex].url}`).style.opacity = '0'
-            document.getElementById(`${this.carouselImages[photoIndex + 1].url}`).style.opacity = '1'
-            document.getElementById(`${this.carouselImages[photoIndex].url}`).style.zIndex = '1'
-            document.getElementById(`${this.carouselImages[photoIndex + 1].url}`).style.zIndex = '2'
-            this.setState({ photoIndex: photoIndex + 1 })
+    function rightArrow(){
+        clearTimeout(timer.current)
+        if (photoIndex.current < 2) {
+            photoIndex.current = photoIndex.current + 1
+            setImage(carouselImages[photoIndex.current])
         } else {
-            this.goToStart()
+            photoIndex.current = 0 
+            setImage(carouselImages[photoIndex.current])
         }
+        timer.current = setTimeout(()=>{rightArrow()}, 5000)
     }
 
-    goToStart() {
-        const { photoIndex } = this.state
-
-        document.getElementById(`${this.carouselImages[photoIndex].url}`).style.opacity = '0'
-        document.getElementById(`${this.carouselImages[0].url}`).style.opacity = '1'
-        document.getElementById(`${this.carouselImages[photoIndex].url}`).style.zIndex = '1'
-        document.getElementById(`${this.carouselImages[0].url}`).style.zIndex = '2'
-        this.setState({ photoIndex: 0 })
-    }
-
-    goToEnd() {
-        const { photoIndex } = this.state
-        const { carouselImages } = this
-
-        document.getElementById(`${this.carouselImages[photoIndex].url}`).style.opacity = '0'
-        document.getElementById(`${this.carouselImages[this.carouselImages.length - 1].url}`).style.opacity = '1'
-        document.getElementById(`${this.carouselImages[photoIndex].url}`).style.zIndex = '1'
-        document.getElementById(`${this.carouselImages[this.carouselImages.length - 1].url}`).style.zIndex = '2'
-        this.setState({ photoIndex: carouselImages.length - 1 })
-    }
-
-    componentDidMount() {
-        if (document.getElementById(`${this.carouselImages[0].url}`)) {
-            document.getElementById(`${this.carouselImages[0].url}`).style.zIndex = 2
-            document.getElementById(`${this.carouselImages[0].url}`).style.opacity = 1
-            this.interval = setInterval(this.rightArrow, 15000)
-        }
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.interval)
-    }
-
-    render() {
-
-        return (
-            <span id="photo-carousel">
-                <span className='category-title'>{this.props.title!=''?<FormattedMessage id={this.props.title}/>:''}</span>
-                <div className="photo-container">
-                    <span id="ca-le-arr" className="workshop-page-arrow" onClick={this.leftArrow} />
-                    {this.carouselImages.map((each) => {
-                        return (
-                            <div
-                                className="each-container"
-                                style={{ opacity: 0, zIndex: 1, height:'610px', display:'flex', flexDirection:'row', justifyContent:'center'}}
-                                key={this.carouselImages.indexOf(each)}
-                                id={each.url}
-                            >
-                                <img id="carousel-photo" src={each.url} onClick={this.props.click?()=>this.props.click(each.index):()=>{}}/>
-                                <span id="photo-name">{each.tag}</span>
-                            </div>
-                        )
-                    })}
-                    <span id="ca-ri-arr" className="workshop-page-arrow" onClick={this.rightArrow} />
+    return (
+        <span id="photo-carousel" className='h-fit'>
+            <span className='category-title'>{props.title!=''?<FormattedMessage id={props.title}/>:''}</span>
+            <div className="photo-container">
+                <span id="ca-le-arr" className="workshop-page-arrow" onClick={()=>{leftArrow()}} />
+                <div
+                    className="each-container"
+                    style={{ height:'610px', display:'flex', flex:'100%', flexDirection:'row', justifyContent:'center'}}
+                    key={carouselImages.indexOf(image)}
+                    id={image.url}
+                >
+                    <img id="carousel-photo" src={image.url} onClick={props.click?()=>props.click(image.index):()=>{}}/>
+                    <span id="photo-name">{locale === 'el'? image.tagGr:image.tagEn}</span>
                 </div>
-            </span>
-        )
-    }
+                <span id="ca-ri-arr" className="workshop-page-arrow" onClick={()=>{rightArrow()}} />
+            </div>
+        </span>
+    )
 }
+
 
 export default PhotoCarousel
