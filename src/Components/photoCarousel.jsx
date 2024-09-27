@@ -10,6 +10,7 @@ export function PhotoCarousel(props){
     const carouselImages = props.carouselImages
     const photoIndex = useRef(0)
     const [image,setImage] = useState(carouselImages[0])
+    const [isFading, setIsFading] = useState(false)
     var timer = useRef(null)
 
     useEffect(()=>{
@@ -21,18 +22,26 @@ export function PhotoCarousel(props){
         setImage(carouselImages[photoIndex.current])
     },[carouselImages])
 
-    function leftArrow() {
-        if (photoIndex > 0) {
+    async function leftArrow() {
+        clearTimeout(timer.current)
+        setIsFading(true); // Start fading out
+        await new Promise(resolve => setTimeout(resolve, 300)); // Wait for 0.6 seconds
+        if (photoIndex.current > 0) {
             photoIndex.current = photoIndex.current - 1
             setImage(carouselImages[photoIndex.current])
         } else {
             photoIndex.current = carouselImages.length - 1
             setImage(carouselImages[photoIndex.current])
         }
+        await new Promise(resolve => setTimeout(resolve, 10)); // Wait for 0.6 seconds
+        setIsFading(false); // Fade in the new image
+        timer.current = setTimeout(()=>{rightArrow()}, 5000)
     }
 
-    function rightArrow(){
+    async function rightArrow(){
         clearTimeout(timer.current)
+        setIsFading(true); // Start fading out
+        await new Promise(resolve => setTimeout(resolve, 300)); // Wait for 0.6 seconds
         if (photoIndex.current < 2) {
             photoIndex.current = photoIndex.current + 1
             setImage(carouselImages[photoIndex.current])
@@ -40,6 +49,8 @@ export function PhotoCarousel(props){
             photoIndex.current = 0 
             setImage(carouselImages[photoIndex.current])
         }
+        await new Promise(resolve => setTimeout(resolve, 10)); // Wait for 0.6 seconds
+        setIsFading(false); // Fade in the new image
         timer.current = setTimeout(()=>{rightArrow()}, 5000)
     }
 
@@ -49,7 +60,7 @@ export function PhotoCarousel(props){
             <div className="photo-container">
                 <span id="ca-le-arr" className="workshop-page-arrow" onClick={()=>{leftArrow()}} />
                 <div
-                    className="each-container"
+                    className={`each-container ${isFading ? 'opacity-0' : 'opacity-1'}`}
                     style={{ height:'610px', display:'flex', flex:'100%', flexDirection:'row', justifyContent:'center'}}
                     key={carouselImages.indexOf(image)}
                     id={image.url}

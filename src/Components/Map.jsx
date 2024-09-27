@@ -205,7 +205,8 @@ export default function Map(){
             if(document.getElementById('hover-data-box').offsetTop < 0){
                 document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y + document.getElementById('hover-data-box').offsetHeight - 84}px`
             }
-            document.getElementById('hover-data-content').innerText = metadata.current[area.id].title != ''? metadata.current[area.id].title : metadata.current[area.id].name
+            console.log(metadata.current[area.id])
+            document.getElementById('hover-data-content').innerText = metadata.current[area.id].name
         }, 1204)
     }
 
