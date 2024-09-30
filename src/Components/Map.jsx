@@ -23,9 +23,10 @@ export default function Map(){
 
     var lang = useIntl()
     var locale = lang.locale
-    var hoverTimeout = null;
+    var hoverTimeout = null
     const [langFile, setlangfile] = useState(langfileGreek.map)
     const infoBoxPosition = useRef({x:0,y:0})
+    const [modalContent,setModalContent] = useState([])
     const metadata = useRef(mapMetadata.gr)
 
     useEffect(()=>{
@@ -111,27 +112,27 @@ export default function Map(){
         }
         // setLocalCoords({
         //     x: event.clientX - document.getElementById('mapper-container').offsetLeft,
-        //     y: event.clientY - document.getElementById('mapper-container').offsetTop,
+        //     y: event.clientY - document.getElementById('mapper-container').offsetTop
         // })
     }
     
-    // useEffect(() => {
-    //     document.getElementById('mapper-container').addEventListener('mousemove', handleMouseMove)
-    //     console.log(document.getElementById('mapper-container'))
-    //     return () => {
-    //         document.getElementById('mapper-container').removeEventListener(
-    //             'mousemove',
-    //             handleMouseMove,
-    //         )
-    //     }
-    // }, [])
+    useEffect(() => {
+        document.getElementById('mapper-container').addEventListener('mousemove', handleMouseMove)
+        console.log(document.getElementById('mapper-container'))
+        return () => {
+            document.getElementById('mapper-container').removeEventListener(
+                'mousemove',
+                handleMouseMove,
+            )
+        }
+    }, [])
 
     // const passCoords = React.useCallback((e)=>{
     //     e.stopPropagation()
     //     e.preventDefault()
     //     realCoords.current.push(parseInt(document.getElementById('x').innerHTML.substring(1),10) + document.body.firstElementChild.firstElementChild.scrollLeft)
     //     realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10) + document.body.firstElementChild.firstElementChild.scrollTop )
-    //     console.log(realCoords.current)
+    //     console.log(parseInt(document.getElementById('x').innerHTML.substring(1),10) + document.body.firstElementChild.firstElementChild.scrollLeft,parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10) + document.body.firstElementChild.firstElementChild.scrollTop)
     // })
 
     // function startRec(){
@@ -169,11 +170,7 @@ export default function Map(){
     //     document.body.appendChild(element) 
     //     element.click()
     // }
-
-    // function printMap(){
-    //     console.log(map)
-    // }
-
+    
     /** Map */
 
     function handleClick(area){
@@ -185,36 +182,44 @@ export default function Map(){
     //     infoBoxPosition.current = { x: event.clientX, y: event.clientY}
     // }
 
-    function handleMouseEnter(area){
-
-        // let data = null
-        // let json = document.getElementById('mapper-container').firstElementChild.lastElementChild.name == 'Families'?json_families:json_hover
-
-        // // BAD PRACTICE!! We get the locale from HTML elements because function only has the initial value and does not respond to changes
-        // if(document.getElementById('toggle-legend').firstElementChild.firstElementChild.innerHTML.charAt(0) == 'L'){
-        //     data = json.find(object => object.id === area.id).titleEn
-        // }else{
-        //     data = json.find(object => object.id === area.id).titleGr
-        // }
-
-        hoverTimeout = window.setTimeout(function(){
-            document.getElementById('hover-data-box').classList.remove('hidden')
-            document.getElementById('hover-data-box').classList.add('flex')
-            document.getElementById('hover-data-box').style.left = `${infoBoxPosition.current.x}px`
-            document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y-140}px`
+    useEffect(()=>{
+        if(modalContent){
+            let classList = ['flex','flex-col','items-center','justify-center']
+            let parent = document.createElement('div')
+            
+            classList.map(each=>{parent.classList.add(each)})
+    
+            modalContent.map(each=>{
+                let child = document.createElement('div')
+            
+                classList.map(each=>{child.classList.add(each)})
+                child.classList.add('mb-2')
+                let usage = document.createElement('div')
+                
+                if(each.usage != ''){
+                    usage.innerText = each.usage
+                }else{
+                    usage.innerText = "Κατοικία"
+                }
+                usage.classList.add('font-bold')
+                child.append(usage)
+            
+                each.owners.map(owner=>{
+                    let ownerElement = document.createElement('div')
+                   
+                    ownerElement.innerText = owner
+                    child.append(ownerElement)
+                })
+                parent.append(child)
+            })
+            document.getElementById('hover-data-content').append(parent)
+            document.getElementById('hover-data-box').style.left = `${infoBoxPosition.current.x + 5}px`
+            document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y - 84 -document.getElementById('hover-data-box').offsetHeight}px`
             if(document.getElementById('hover-data-box').offsetTop < 0){
-                document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y + document.getElementById('hover-data-box').offsetHeight - 84}px`
+                document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y - 84}px`
             }
-            console.log(metadata.current[area.id])
-            document.getElementById('hover-data-content').innerText = metadata.current[area.id].name
-        }, 1204)
-    }
-
-    function handleMouseLeave(area){
-        window.clearTimeout(hoverTimeout)
-        document.getElementById('hover-data-box').classList.remove('flex')
-        document.getElementById('hover-data-box').classList.add('hidden')
-    }
+        }
+    },[modalContent])
 
     function zoom(type){
         if(type == 'in'){
@@ -275,15 +280,14 @@ export default function Map(){
             {/* Polygon input component - click start, click on all edges of polygon, fill the name field and hit enter, continue with next polygon */}
 
             {/* <span id='x'>({localCoords.x}</span><span>,</span><span id='y'>{localCoords.y})</span>
-            <button onClick={()=>{printMap()}}>print Map</button>
-            <button onClick={()=>{startRec()}}>Start</button>
-            <button onClick={()=>{completeRec()}}>Completed</button>
+            <button onClick={()=>{startRec()}}>Start</button> */}
+            {/* <button onClick={()=>{completeRec()}}>Completed</button>
             <input id="houseInput"
               onKeyDown={(e)=>{handleEnter(e)}}
             /> */}
             <div id='map-container'>
                 <span id='hover-data-box' className="flex flex-col items-center justify-center absolute z-10 w-fit h-fit overflow-visible">
-                    <span id='hover-data-content' className="min-w-40 w-fit rounded border border-1 border-[rgb(196, 177, 177)] bg-[#f7eeec] min-h-30 h-fit"></span>
+                    {modalContent && <span id='hover-data-content' className="px-2 min-w-40 w-fit rounded border border-1 border-[rgb(196, 177, 177)] bg-[#f7eeec] min-h-30 h-fit"/>}
                     {/* <span className="mb-auto mr-auto" style={{width:'20px',height: '20px',borderLeft:'15px solid transparent',borderRight:'15px solid transparent',borderTop:'15px solid white'}}></span> */}
                 </span>
                 <div id='mapper-container'>
@@ -292,8 +296,15 @@ export default function Map(){
                         map={checkboxValues.option2?{name:'Families',areas:checkboxValues.json}:{name:'Margarites',areas:checkboxValues.json}} 
                         responsive
                         parentWidth={width}
-                        onMouseEnter={(area,event)=>{handleMouseEnter(area)}}
-                        onMouseLeave={area=>{handleMouseLeave(area)}}
+                        onMouseEnter={(area)=>{
+                            hoverTimeout = window.setTimeout(function(){
+                                setModalContent(metadata.current[area.id].data)
+                            }, 1204)
+                        }}
+                        onMouseLeave={()=>{
+                            window.clearTimeout(hoverTimeout)
+                            setModalContent(null)
+                        }}
                         onClick={area=>{handleClick(area)}}
                     />
                 </div>
