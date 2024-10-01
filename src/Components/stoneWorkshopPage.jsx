@@ -1,28 +1,27 @@
-import React, {useEffect, useState} from "react"
-import '../Styles/Stoneworkshop.scss'
-import langfileGreek from '../Lang/el.json'
-import langfileEnglish from '../Lang/en.json'
-import { useIntl} from 'react-intl'
-import Alefantinos from '../Images/Instructors/Alefantinos.jpg'
-import Vergianos from '../Images/Instructors/Vergianos.jpg'
+import React, { useEffect, useState } from "react";
+import '../Styles/Stoneworkshop.scss';
+import langfileGreek from '../Lang/el.json';
+import langfileEnglish from '../Lang/en.json';
+import { useIntl } from 'react-intl';
+import Alefantinos from '../Images/Instructors/Alefantinos.jpg';
+import Vergianos from '../Images/Instructors/Vergianos.jpg';
 
 
-export default function StoneworkshopPage(){
+export default function StoneworkshopPage() {
 
-    var lang = useIntl()
-    var locale = lang.locale
-    const[workshop, setWorkshop] = useState(langfileGreek.stoneworkshop)
+    var lang = useIntl();
+    var locale = lang.locale;
+    const [workshop, setWorkshop] = useState(langfileGreek.stoneworkshop);
 
-    useEffect(()=>{
-        if(locale === 'el')
-        {
-            setWorkshop(langfileGreek.stoneworkshop)
-        }else{
-            setWorkshop(langfileEnglish.stoneworkshop)
+    useEffect(() => {
+        if (locale === 'el') {
+            setWorkshop(langfileGreek.stoneworkshop);
+        } else {
+            setWorkshop(langfileEnglish.stoneworkshop);
         }
-    },[locale])
+    }, [locale]);
 
-    return(
+    return (
         <div id='sw-container'>
             <div id='sw-header'>
                 <span>{workshop.title}</span>
@@ -68,7 +67,7 @@ export default function StoneworkshopPage(){
                 </div>
                 <div className="sw-activity">
                     <div className="sw-activity-date">{workshop.program7.date}</div>
-                    <div >20:30 - 22:30: {workshop.program7.evening}</div>       
+                    <div >20:30 - 22:30: {workshop.program7.evening}</div>
                 </div>
                 <div>
                     <div className="sw-activity-date">{workshop.program8.date}</div>
@@ -91,17 +90,17 @@ export default function StoneworkshopPage(){
                 <div className="sw-subtitle">{workshop.instructorTitle}</div>
                 <div className="sw-instructor">
                     <span className="instructor-text">
-                        <img src={Alefantinos}/>
+                        <img src={Alefantinos} />
                         <span><div className="instructor-name">{workshop.instructorName1}</div>{workshop.instructorBio1}</span>
                     </span>
                 </div>
                 <div className="sw-instructor">
                     <span className="instructor-text">
-                        <img src={Vergianos}/>
+                        <img src={Vergianos} />
                         <span><div className="instructor-name">{workshop.instructorName2}</div>{workshop.instructorBio2}</span>
                     </span>
                 </div>
             </div>
         </div>
-    )
+    );
 }

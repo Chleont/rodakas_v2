@@ -3,36 +3,33 @@
         "browser": true,
         "es2021": true
     },
-    // "extends": [
-    //     "plugin:react/recommended",
-    //     "google"
-    // ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
+    "extends": [
+        "eslint:recommended"
     ],
     "rules": {
-        "indent": ["error", 4],
-        "no-multi-spaces": ["error"],
-        "require-jsdoc" : 0,
-        "semi": [1,"never"],
-        "padding-line-between-statements": [
+        "react/react-in-jsx-scope": "off",
+        "no-useless-escape": "off",
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "indent": "off", // Set your preferred indentation size
+        "semi": [
             "error",
-            { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
-            { "blankLine": "any",    "prev": ["const", "let", "var"], "next": ["const", "let", "var"]},
-            { "blankLine": "always",    "prev": ["import", "cjs-import"], "next": ["export","function"]}
-
-        ]
-    },
-    "settings":{
-        "react":{
-            "version":"detect"
-        }
+            "always"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "no-multi-spaces": [
+            "error"
+        ],
+        "react-hooks/exhaustive-deps": "off",
+        "react/prop-types": "off",
+        "object-curly-spacing": [
+            0,
+            "always"
+        ],
+        "array-bracket-spacing": "off",
+        "arraysInObjects": 0
     }
 }

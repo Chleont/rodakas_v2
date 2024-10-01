@@ -1,28 +1,27 @@
-import React, {useEffect, useState} from "react"
-import '../Styles/Stonecarvingworkshop.scss'
-import langfileGreek from '../Lang/el.json'
-import langfileEnglish from '../Lang/en.json'
-import { useIntl} from 'react-intl'
-import Alefantinos from '../Images/Instructors/Alefantinos.jpg'
-import Vergianos from '../Images/Instructors/Vergianos.jpg'
+import React, { useEffect, useState } from "react";
+import '../Styles/Stonecarvingworkshop.scss';
+import langfileGreek from '../Lang/el.json';
+import langfileEnglish from '../Lang/en.json';
+import { useIntl } from 'react-intl';
+import Alefantinos from '../Images/Instructors/Alefantinos.jpg';
+import Vergianos from '../Images/Instructors/Vergianos.jpg';
 
 
-export default function StoneworkshopPage(){
+export default function StoneworkshopPage() {
 
-    var lang = useIntl()
-    var locale = lang.locale
-    const[workshop, setWorkshop] = useState(langfileGreek.stonecarvingworkshop)
+    var lang = useIntl();
+    var locale = lang.locale;
+    const [workshop, setWorkshop] = useState(langfileGreek.stonecarvingworkshop);
 
-    useEffect(()=>{
-        if(locale === 'el')
-        {
-            setWorkshop(langfileGreek.stonecarvingworkshop)
-        }else{
-            setWorkshop(langfileEnglish.stonecarvingworkshop)
+    useEffect(() => {
+        if (locale === 'el') {
+            setWorkshop(langfileGreek.stonecarvingworkshop);
+        } else {
+            setWorkshop(langfileEnglish.stonecarvingworkshop);
         }
-    },[locale])
+    }, [locale]);
 
-    return(
+    return (
         <div id='scw-container'>
             <div id='scw-header'>
                 <span>{workshop.title1}</span>
@@ -58,8 +57,8 @@ export default function StoneworkshopPage(){
 
                 {/* Accommodation */}
                 <span className="sw-subtitle">{workshop.accommodation}</span>
-                {workshop.accommodationInfo.map(each => 
-                    <p className='accomodation-text paragraph' id={workshop.accommodationInfo.indexOf(each)==0?'accomodation-free':''} key={workshop.accommodationInfo.indexOf(each)}>{each}</p>
+                {workshop.accommodationInfo.map(each =>
+                    <p className='accomodation-text paragraph' id={workshop.accommodationInfo.indexOf(each) == 0 ? 'accomodation-free' : ''} key={workshop.accommodationInfo.indexOf(each)}>{each}</p>
                 )}
                 <div id='scw-inscription'>
                     <span className="scw-subtitle">{workshop.costAndRegistration}</span>
@@ -82,5 +81,5 @@ export default function StoneworkshopPage(){
                 </span>
             </div> */}
         </div>
-    )
+    );
 }

@@ -59,7 +59,7 @@ function App() {
     return (
         <div className="App">
             <IntlProvider locale={locale} defaultLocale = 'el' messages={messages}>
-                <div className='Navbar'>
+                <div id='navbar' className='Navbar'>
                     {isMobile ? <NavbarMobileMenu/>:<NavbarBrowserMenu/>}
                     <button className="noOutlineButton navbarButton" id="pick-language-button" onClick={
                         function(){

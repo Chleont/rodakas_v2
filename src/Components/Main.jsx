@@ -1,7 +1,7 @@
-import {Component} from 'react'
-import '../Styles/styles.css'
+import { Component } from 'react';
+import '../Styles/styles.css';
 
-class Main extends Component{
+class Main extends Component {
 
 }
-export default Main
+export default Main;
