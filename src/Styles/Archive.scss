@@ -2,143 +2,143 @@
 @import 'App.scss';
 
 
-#archive{
-    height:calc(100vh - var(--navbar-height));
+#archive {
+    height: calc(100vh - var(--navbar-height));
     font-family: 'Ubuntu', sans-serif;
-    background-image:url('../Images/backgrounds/archive_back.jpg');
+    background-image: url('../Images/backgrounds/archive_back.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
-    width:100%;
-    overflow-x:auto;
-    color:$menuLettersStrong;
+    width: 100%;
+    overflow-x: auto;
+    color: $menuLettersStrong;
 }
 
 
-.archive-div :first-child{
+.archive-div :first-child {
     font-weight: 500;
     font-size: 1.8em;
     margin-bottom: .5em;
 }
 
-#archive > div:last-child{
+#archive>div:last-child {
     margin-bottom: 1.5em;
 }
 
-.archive-div{
-    margin-top:1.2em;
+.archive-div {
+    margin-top: 1.2em;
     padding: 1.5em 2em 1.2em 2em;
-    background-color: rgba(white,0.5);
+    background-color: rgba(white, 0.5);
     border-radius: 10px;
-    width:50%;
-    display:flex;
+    width: 50%;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: start;
-    box-shadow: 0 .5em 1em rgba(0,0,0,.15);
-    font-size:1em;
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .15);
+    font-size: 1em;
     font-weight: 400;
 }
 
-.unavailable{
+.unavailable {
     margin-bottom: .5em;
     font-weight: 500;
 }
 
-#photo-carousel{
-    position:relative;
-    width:100%;
-    margin-top:1.25em;
+#photo-carousel {
+    position: relative;
+    width: 100%;
+    margin-top: 1.25em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.photo-container{
-    position:relative;
-    flex-wrap:wrap;
-    width:100%;
+.photo-container {
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
     margin-top: 1.5em;
-    display:flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     margin-bottom: 1em;
 }
 
-.each-container{
+.each-container {
     padding: 0 0;
     border-radius: 0;
     background-color: transparent;
     transition: opacity 0.3s;
-    min-width:fit-content;
-    width:fit-content;
-    align-items:center;
+    min-width: fit-content;
+    width: fit-content;
+    align-items: center;
 }
 
-#ca-le-arr{
+#ca-le-arr {
     transform: translateX(-.25em);
-    z-index:100;
-    font-weight:400;
-    font-size:2em;
+    z-index: 100;
+    font-weight: 400;
+    font-size: 2em;
     margin: auto auto auto 0;
 }
 
-#ca-ri-arr{
+#ca-ri-arr {
     transform: translateX(.25em);
-    z-index:100;
-    font-weight:400;
-    font-size:2em;
+    z-index: 100;
+    font-weight: 400;
+    font-size: 2em;
     margin: auto 0 auto auto;
 }
 
-#carousel-photo{
+#carousel-photo {
     margin: 0 0 0 0;
-    height:100%;
+    height: 100%;
     border-radius: 5px;
-    box-shadow: 0 .5em 1em rgba(0,0,0,.15);
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .15);
 }
 
-#photo-name{
+#photo-name {
     transition: opacity 1s;
     padding: .2em 1em .3em 1em;
     border-radius: 5px;
-    width:fit-content;
+    width: fit-content;
     text-align: center;
     font-weight: 500;
-    background-color: rgba(white,0.7);
-    position:absolute;
-    bottom:1em;
+    background-color: rgba(white, 0.7);
+    position: absolute;
+    bottom: 1em;
     margin-bottom: 0;
 }
 
 
-.archive-div a{
+.archive-div a {
     background-color: transparent;
     text-decoration: none;
     font-size: 1.2em;
     margin: .5em auto 0 auto;
-    color:$menuLettersStrong;
+    color: $menuLettersStrong;
     border: 2px solid $menuLettersStrong;
     padding: .2em .6em .3em .6em;
     border-radius: 20px;
     cursor: pointer;
 }
 
-.archive-div a:hover{
+.archive-div a:hover {
     background-color: $menuLettersStrong;
-    color:$mainBeige;
+    color: $mainBeige;
     border: 2px solid $mainBeige;
 }
 
 @media only screen and (max-width: 1000px) {
-    .archive-div{
-        width:calc(95vw - 4em);
+    .archive-div {
+        width: calc(95vw - 4em);
     }
 }

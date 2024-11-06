@@ -1,152 +1,153 @@
 @import 'Colors.scss';
 
-#workshop-page-container{
-    height:calc(100vh - var(--navbar-height));
-    overflow-y:auto;
+#workshop-page-container {
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
     font-family: 'Ubuntu', sans-serif;
-    background-image:url('../Images/backgrounds/workshop_back.jpg');
+    background-image: url('../Images/backgrounds/workshop_back.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    display:flex;
+    display: flex;
     align-items: center;
     flex-direction: column;
     // padding-bottom:6em;
-    width:100%;
+    width: 100%;
 }
 
-#single-workshop-view{
+#single-workshop-view {
     padding: 2em 0 1em 0;
-    background-color: rgba(white,0.5);
+    background-color: rgba(white, 0.5);
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom:1em;
+    margin-bottom: 1em;
 }
 
-#single-image{
+#single-image {
     cursor: auto;
     pointer-events: none;
     margin: 0 auto 0 auto;
-    width:fit-content;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 }
 
-#le-arr::before{
-    content:'\f053';
+#le-arr::before {
+    content: '\f053';
     font: var(--fa-font-solid);
 }
 
-#ca-le-arr::before{
-    content:'\f053';
+#ca-le-arr::before {
+    content: '\f053';
     font: var(--fa-font-solid);
 }
 
 
-#le-arr{
+#le-arr {
     margin: auto 0 auto 0;
 }
 
-#ri-arr::before{
-    content:'\f054';
+#ri-arr::before {
+    content: '\f054';
     font: var(--fa-font-solid);
 }
 
-#ca-ri-arr::before{
-    content:'\f054';
+#ca-ri-arr::before {
+    content: '\f054';
     font: var(--fa-font-solid);
 }
 
-#ri-arr{
+#ri-arr {
     margin: auto auto auto 0;
 }
 
-.workshop-page-arrow{
+.workshop-page-arrow {
     font-size: 3em;
-    color:$menuLettersPale;
+    color: $menuLettersPale;
     cursor: pointer;
 }
 
-.workshop-page-arrow:hover{
-    color:$menuLetters;
+.workshop-page-arrow:hover {
+    color: $menuLetters;
 }
 
-#single-image img{
-    width:350px;
+#single-image img {
+    width: 350px;
 }
 
-#info{
+#info {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
-    width:50%;
-    color:$menuLettersStrong;
-    font-weight:500;
+    width: 50%;
+    color: $menuLettersStrong;
+    font-weight: 500;
     word-wrap: break-word;
     padding-right: 1em;
 }
 
-#title, #title2{
-    padding-left:2em;
-    height:33%;
+#title,
+#title2 {
+    padding-left: 2em;
+    height: 33%;
     overflow-wrap: break-word;
     text-align: right;
     font-size: 1.4em;
-    font-weight:500;
-    display:flex;
+    font-weight: 500;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#dates{
-    height:33%;
-    font-weight:500;
+#dates {
+    height: 33%;
+    font-weight: 500;
     text-align: right;
     font-size: 1.2em;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#button{
-    height:33%;
+#button {
+    height: 33%;
     text-align: right;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
-#button button{
+#button button {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1em;
     background-color: transparent;
-    font-weight:500;
+    font-weight: 500;
     text-align: center;
-    border:2px solid $menuLettersStrong;
+    border: 2px solid $menuLettersStrong;
     box-shadow: none;
-    color:inherit;
-    padding:2px 8px 5px 8px;
-    border-radius:20px;
-    cursor:pointer;
+    color: inherit;
+    padding: 2px 8px 5px 8px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
-#button button:hover{
-    color:$mainBeige;
+#button button:hover {
+    color: $mainBeige;
     background-color: $menuLettersStrong
 }
 
-#all-workshops-view{
+#all-workshops-view {
     margin-top: auto;
     // height:calc(20vh + 5em);
     // min-height: 20vh;
-    width:100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     //for firefox scrollbar 
@@ -155,86 +156,89 @@
     overflow-y: visible;
 }
 
-.workshops-row{
-    display:flex;
+.workshops-row {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width:100%;
-    background-color: rgba(white,0.5);
-    padding-top:50px;
-}
-.workshops-category{
-    width:600px;
-    margin:auto;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
+    width: 100%;
+    background-color: rgba(white, 0.5);
+    padding-top: 50px;
 }
 
-#workshop-page-container .category-title{
-    margin-bottom:1em;
-    width:600px;
+.workshops-category {
+    width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#workshop-page-container .category-title {
+    margin-bottom: 1em;
+    width: 600px;
     font-weight: 500;
     font-size: 1.4em;
     color: rgba(black, 0.8);
 }
 
-#workshop-page-container #photo-carousel{
-    position:relative;
-    width:inherit;
+#workshop-page-container #photo-carousel {
+    position: relative;
+    width: inherit;
     display: flex;
     min-height: fit-content;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:0;
+    margin-top: 0;
 }
-#workshop-page-container .photo-container{
-    position:relative;
-    display:flex;
+
+#workshop-page-container .photo-container {
+    background-color: rgba(white, 0.25);
+    border-radius: 30%;
+    position: relative;
+    display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    width:600px;
-    margin:0;
-    min-height:700px;
+    width: 600px;
+    margin: 0;
+    min-height: 700px;
 }
 
-#workshop-page-container .photo-container img{
-    max-height:600px;
-    cursor:pointer;
+#workshop-page-container .photo-container img {
+    max-height: 600px;
+    cursor: pointer;
     // max-width:350px;
 }
 
-#workshop-page-container .each-container{
+#workshop-page-container .each-container {
     padding: 1.5em 4em;
-    border-radius:30%;
-    background-color: rgba(white, 0.25);
     transition: opacity 2s;
-    position:absolute;
-    display:flex;
+    position: absolute;
+    display: flex;
     justify-content: center;
     align-items: center;
-    height:fit-content;
-    width:fit-content;
-    min-width:calc(100% - 8em);
+    height: fit-content;
+    width: fit-content;
+    min-width: calc(100% - 8em);
 }
 
-#workshop-page-container #carousel-photo{
-    margin:auto;
-    width:350px;
-    height:auto;
+#workshop-page-container #carousel-photo {
+    margin: auto;
+    width: 350px;
+    height: auto;
     border-radius: 5px;
-    box-shadow: 0 .5em 1em rgba(0,0,0,.15);
+    box-shadow: 0 .5em 1em rgba(0, 0, 0, .15);
     cursor: auto;
 }
-#workshop-page-container #photo-name{
-    color:rgba(black,0.8);
+
+#workshop-page-container #photo-name {
+    color: rgba(black, 0.8);
     transition: opacity 1s;
     border-radius: 5px;
-    width:calc(350px - 2em);
+    width: calc(350px - 2em);
     text-align: center;
     font-size: 1em;
     font-weight: 500;
@@ -245,27 +249,27 @@
     padding: 0.2em 1em 0.3em 1em;
 }
 
-#ca-le-arr{
+#ca-le-arr {
     transform: translateX(-.25em);
-    z-index:100;
-    font-weight:400;
-    font-size:2em;
+    z-index: 100;
+    font-weight: 400;
+    font-size: 2em;
     position: absolute;
-    bottom:50%;
-    left:1em;
+    bottom: 50%;
+    left: 1em;
 }
 
-#ca-ri-arr{
+#ca-ri-arr {
     transform: translateX(.25em);
-    z-index:100;
-    font-weight:400;
-    font-size:2em;
+    z-index: 100;
+    font-weight: 400;
+    font-size: 2em;
     position: absolute;
-    bottom:50%;
-    right:1em;
+    bottom: 50%;
+    right: 1em;
 }
 
-#workshop-page-container ::-webkit-scrollbar{
+#workshop-page-container ::-webkit-scrollbar {
     height: 0.6em;
 }
 
@@ -276,132 +280,147 @@
 #workshop-page-container ::-webkit-scrollbar-thumb {
     background-color: $mainPetrol;
     color: $mainPetrol;
-    border-radius: 20px;   
+    border-radius: 20px;
     border: none;
 }
 
 
 @media only screen and (max-width: 1200px) {
-    .App{
+    .App {
         overflow-y: auto;
     }
-    #workshop-page-container{
-        height:fit-content;
+
+    #workshop-page-container {
+        height: fit-content;
     }
-    #single-workshop-view{
+
+    #single-workshop-view {
         position: relative;
-        height:fit-content;
+        height: fit-content;
         // top:var(--navbar-height);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         padding: 0 0 0 0;
     }
-    #info{
+
+    #info {
         display: flex;
         padding-right: 0;
         align-items: center;
         justify-content: center;
-        height:fit-content;
-        width:100%
+        height: fit-content;
+        width: 100%
     }
 
-    #title, #title2, #and{
+    #title,
+    #title2,
+    #and {
         padding-left: 0;
         text-align: center;
-        margin-top:1em;
+        margin-top: 1em;
         padding: 0 .3em 0 .3em;
     }
 
-    #dates{
+    #dates {
         text-align: center;
-        margin-top:1em;
+        margin-top: 1em;
         padding: 0 .3em 0 .3em;
     }
 
-    #single-image{
+    #single-image {
         display: flex;
         align-items: center;
         justify-content: center;
-        width:100%;
+        width: 100%;
         margin-top: 1em;
     }
 
-    #ri-arr{
+    #ri-arr {
         margin: auto 0 auto 0;
     }
 
-    #single-image img{
+    #single-image img {
         max-width: 80vw;
         padding: 0 0 1em 0;
     }
-    #all-workshops-view{
-        position:relative;
-        margin-top:auto;
+
+    #all-workshops-view {
+        position: relative;
+        margin-top: auto;
         min-height: 10em;
     }
-    #all-workshops-view img{
-        height:8em;
-    }
-    #info #button{
-        margin-top:1em;
+
+    #all-workshops-view img {
+        height: 8em;
     }
 
-    .workshops-row:nth-last-of-type(1){
-        padding-top:0px;
+    #info #button {
+        margin-top: 1em;
     }
 
-    .workshops-row{
+    .workshops-row:nth-last-of-type(1) {
+        padding-top: 0px;
+    }
+
+    .workshops-row {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height:fit-content;
+        height: fit-content;
     }
+
     #workshop-page-container #carousel-photo {
         margin: 0 auto auto auto;
         width: 350px;
-        max-width:80vw;
-        height:auto;
+        max-width: 80vw;
+        height: auto;
         border-radius: 5px;
         box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.15);
     }
-    #workshop-page-container .photo-container{
-        width:100vw;
-        height:500px;
-        min-height:0;
+
+    #workshop-page-container .photo-container {
+        width: 100vw;
+        height: 500px;
+        min-height: 0;
     }
 
 }
 
-    @media only screen and (max-width: 650px) {
-        #workshop-page-container .each-container{
-            padding: 0;
-            background-color: transparent;
-        }
-        #workshop-page-container .photo-container{
-            width:100vw;
-        }
-        
-        #workshop-page-container .category-title{
-            width:80vw;
-        }
-        #workshop-page-container #photo-carousel{
-            width:100%;
-        }
-        .workshops-category{
-            margin-bottom:50px;
-            width:100%;
-        }
-        #ca-le-arr{
-            bottom:0px;
-            left:100px;
-        }        
-        #ca-ri-arr{
-            bottom:0px;
-            right:100px;
-        }
-        #other-category .photo-container{
-            height: 380px;
-        }
+@media only screen and (max-width: 650px) {
+    #workshop-page-container .each-container {
+        padding: 0;
+        background-color: transparent;
     }
-  
+
+    #workshop-page-container .photo-container {
+        width: 100vw;
+    }
+
+    #workshop-page-container .category-title {
+        width: 80vw;
+    }
+
+    #workshop-page-container #photo-carousel {
+        width: 100%;
+    }
+
+    .workshops-category {
+        margin-bottom: 50px;
+        width: 100%;
+    }
+
+    #ca-le-arr {
+        bottom: 0px;
+        left: 100px;
+    }
+
+    #ca-ri-arr {
+        bottom: 0px;
+        right: 100px;
+    }
+
+    #other-category .photo-container {
+        height: 380px;
+    }
+}

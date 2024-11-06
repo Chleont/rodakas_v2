@@ -1,4 +1,3 @@
-
 {
     "gr":{
         "1":{"name":"1","data":[{"usage":"Χαλκιάδικο","period":"","owners":["Νίκος Γεραρχάκης"]},{"usage":"","period":"","owners":["Κων/νος Δάνδολος"]}]},
@@ -234,18 +233,18 @@
         "233":{"name":"233","data":[{"usage":"","period":"","owners":["Γιώργος Μαρούλης"]}]},
         "234":{"name":"234","data":[{"usage":"","period":"","owners":["Περιουσία Μπογιατζή"]},{"usage":"","period":"","owners":["Περιουσία Μαρή"]}]},
         "235":{"name":"235","data":[{"usage":"Καφενείο","period":"","owners":[]}]},
-        "ek-agios-dimitrios":{"name":"ek-agios-dimitrios","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-agios-nikolaos":{"name":"ek-agios-nikolaos","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-agios-stefanos":{"name":"ek-agios-stefanos","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-ai-giannis":{"name":"ek-ai-giannis","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-keropoula":{"name":"ek-keropoula","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-mixail-archanggelos":{"name":"ek-mixail-archanggelos","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-panagia":{"name":"ek-panagia","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-sotiras":{"name":"ek-sotiras","data":[{"usage":"","period":"","owners":[]}]},
+        "ek-agios-dimitrios":{"name":"ek-agios-dimitrios","data":[{"usage":"Εκκλησία Αγίου Δημητρίου","period":"","owners":[]}]},
+        "ek-agios-nikolaos":{"name":"ek-agios-nikolaos","data":[{"usage":"Εκκλησία Αγίου Νικολάου","period":"","owners":[]}]},
+        "ek-agios-stefanos":{"name":"ek-agios-stefanos","data":[{"usage":"Εκκλησία Αγίου Στεφάνου","period":"","owners":[]}]},
+        "ek-ai-giannis":{"name":"ek-ai-giannis","data":[{"usage":"Εγγλησία Αγίου Ιωάννη","period":"","owners":[]}]},
+        "ek-keropoula":{"name":"ek-keropoula","data":[{"usage":"Εκκλησια Παναγίας Κεροπούλας","period":"","owners":[]}]},
+        "ek-mixail-archanggelos":{"name":"ek-mixail-archanggelos","data":[{"usage":"Εκκλησία Μιχαήλ Αρχάγγελου","period":"","owners":[]}]},
+        "ek-panagia":{"name":"ek-panagia","data":[{"usage":"Εκκλησία Παναγίας Περδικιώτισσας","period":"","owners":[]}]},
+        "ek-sotiras":{"name":"ek-sotiras","data":[{"usage":"Εκκλησία Σωτήρα Χριστού","period":"","owners":[]}]},
         "k":{"name":"k","data":[{"usage":"","period":"","owners":[]}]},
-        "kipoi":{"name":"kipoi","data":[{"usage":"Κήποι","period":"","owners":[]}]},
-        "sxoleio":{"name":"sxoleio","data":[{"usage":"","period":"","owners":[]}]},
-        "vrisi":{"name":"vrisi","data":[{"usage":"","period":"","owners":[]}]}
+        "kipoi":{"name":"kipoi","data":[{"usage":"Κήπος","period":"","owners":[]}]},
+        "sxoleio":{"name":"sxoleio","data":[{"usage":"Σχολείο","period":"","owners":[]}]},
+        "vrisi":{"name":"vrisi","data":[{"usage":"Υδραγωγείο","period":"","owners":[]}]}
     },
     "en":{    
         "1":{"name":"1","data":[{"usage":"Χαλκιάδικο","period":"","owners":["Νίκος Γεραρχάκης"]},{"usage":"","period":"","owners":["Κων/νος Δάνδολος"]}]},
@@ -481,17 +480,17 @@
         "233":{"name":"233","data":[{"usage":"","period":"","owners":["Γιώργος Μαρούλης"]}]},
         "234":{"name":"234","data":[{"usage":"","period":"","owners":["Περιουσία Μπογιατζή"]},{"usage":"","period":"","owners":["Περιουσία Μαρή"]}]},
         "235":{"name":"235","data":[{"usage":"Καφενείο","period":"","owners":[]}]},
-        "ek-agios-dimitrios":{"name":"ek-agios-dimitrios","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-agios-nikolaos":{"name":"ek-agios-nikolaos","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-agios-stefanos":{"name":"ek-agios-stefanos","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-ai-giannis":{"name":"ek-ai-giannis","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-keropoula":{"name":"ek-keropoula","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-mixail-archanggelos":{"name":"ek-mixail-archanggelos","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-panagia":{"name":"ek-panagia","data":[{"usage":"","period":"","owners":[]}]},
-        "ek-sotiras":{"name":"ek-sotiras","data":[{"usage":"","period":"","owners":[]}]},
+        "ek-agios-dimitrios":{"name":"ek-agios-dimitrios","data":[{"usage":"Εκκλησία Αγίου Δημητρίου","period":"","owners":[]}]},
+        "ek-agios-nikolaos":{"name":"ek-agios-nikolaos","data":[{"usage":"Εκκλησία Αγίου Νικολάου","period":"","owners":[]}]},
+        "ek-agios-stefanos":{"name":"ek-agios-stefanos","data":[{"usage":"Εκκλησία Αγίου Στεφάνου","period":"","owners":[]}]},
+        "ek-ai-giannis":{"name":"ek-ai-giannis","data":[{"usage":"Εγγλησία Αγίου Ιωάννη","period":"","owners":[]}]},
+        "ek-keropoula":{"name":"ek-keropoula","data":[{"usage":"Εκκλησια Παναγίας Κεροπούλας","period":"","owners":[]}]},
+        "ek-mixail-archanggelos":{"name":"ek-mixail-archanggelos","data":[{"usage":"Εκκλησία Μιχαήλ Αρχάγγελου","period":"","owners":[]}]},
+        "ek-panagia":{"name":"ek-panagia","data":[{"usage":"Εκκλησία Παναγίας Περδικιώτισσας","period":"","owners":[]}]},
+        "ek-sotiras":{"name":"ek-sotiras","data":[{"usage":"Εκκλησία Σωτήρα Χριστού","period":"","owners":[]}]},
         "k":{"name":"k","data":[{"usage":"","period":"","owners":[]}]},
-        "kipoi":{"name":"kipoi","data":[{"usage":"Κήποι","period":"","owners":[]}]},
-        "sxoleio":{"name":"sxoleio","data":[{"usage":"","period":"","owners":[]}]},
-        "vrisi":{"name":"vrisi","data":[{"usage":"","period":"","owners":[]}]}
+        "kipoi":{"name":"kipoi","data":[{"usage":"Κήπος","period":"","owners":[]}]},
+        "sxoleio":{"name":"sxoleio","data":[{"usage":"Σχολείο","period":"","owners":[]}]},
+        "vrisi":{"name":"vrisi","data":[{"usage":"Υδραγωγείο","period":"","owners":[]}]}
     }
 }

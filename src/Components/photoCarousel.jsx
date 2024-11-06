@@ -42,7 +42,7 @@ export function PhotoCarousel(props) {
         clearTimeout(timer.current);
         setIsFading(true); // Start fading out
         await new Promise(resolve => setTimeout(resolve, 300)); // Wait for 0.6 seconds
-        if (photoIndex.current < 2) {
+        if (photoIndex.current < props.carouselImages.length - 1) {
             photoIndex.current = photoIndex.current + 1;
             setImage(carouselImages[photoIndex.current]);
         } else {

@@ -3,14 +3,13 @@ import '../Styles/Stoneworkshop.scss';
 import langfileGreek from '../Lang/el.json';
 import langfileEnglish from '../Lang/en.json';
 import { useIntl } from 'react-intl';
-// import Somaki from '../Images/Instructors/Somaki.jpg'
 
 
 export default function StoneworkshopPage() {
 
     var lang = useIntl();
     var locale = lang.locale;
-    const [workshop, setWorkshop] = useState(langfileGreek.loomdesignworkshop);
+    const [workshop, setWorkshop] = useState(langfileGreek.loomchildren);
 
     function importAll(r) {
         return r.keys().map(r);
@@ -21,9 +20,9 @@ export default function StoneworkshopPage() {
     useEffect(() => {
 
         if (locale === 'el') {
-            setWorkshop(langfileGreek.loomdesignworkshop);
+            setWorkshop(langfileGreek.loomchildren);
         } else {
-            setWorkshop(langfileEnglish.loomdesignworkshop);
+            setWorkshop(langfileEnglish.loomchildren);
         }
     }, [locale]);
 
@@ -37,6 +36,7 @@ export default function StoneworkshopPage() {
             <div id='sw-info'>
                 {workshop.introtext.map(each => <p className='introtext' key={workshop.introtext.indexOf(each)}>{each}</p>)}
                 <span id="info-title" className="sw-subtitle">{workshop.Programtitle}</span>
+                <span className="mb-4 flex flex-col">{workshop.programText.map(each => <p>{each}</p>)}</span>
                 {/* Program */}
                 {workshop.program.map(each =>
                     <span className='program-element' key={workshop.program.indexOf(each)}>
@@ -50,10 +50,11 @@ export default function StoneworkshopPage() {
                     <p className='accomodation-text paragraph' id={workshop.accommodationInfo.indexOf(each) == 0 ? 'accomodation-free' : ''} key={workshop.accommodationInfo.indexOf(each)}>{each}</p>
                 )}
             </div>
-            <div id='sw-inscription'>
+            <div id='sw-inscription' className="w-full flex flex-col align-start">
                 <span className="sw-subtitle">{workshop.costAndRegistration}</span>
-                <span className="paragraph">{workshop.cost}</span>
-                <a href={workshop.formlink} target='_blank'>{workshop.registration}</a>
+                <span>{workshop.cost}</span>
+                <span className="font-bold">{workshop.registration}</span>
+                {/* <a href={workshop.formlink} target='_blank'>{workshop.registration}</a> */}
             </div>
 
             {/* Instructors */}
@@ -62,10 +63,9 @@ export default function StoneworkshopPage() {
                 {workshop.instructors.map(each => {
                     if (each.image) {
                         var imgFile = '';
-
                         instImages.map(img => {
-                            if (img.default.includes(each.image)) {
-                                imgFile = img.default;
+                            if (img.includes(each.image)) {
+                                imgFile = img;
                             }
                         });
                     }

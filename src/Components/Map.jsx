@@ -26,26 +26,8 @@ export default function Map() {
     var hoverTimeout = null;
     const [langFile, setlangfile] = useState(langfileGreek.map);
     const infoBoxPosition = useRef({ x: 0, y: 0 });
-    const [modalContent, setModalContent] = useState([]);
+    const [modalContent, setModalContent] = useState(null);
     const metadata = useRef(mapMetadata.gr);
-
-    useEffect(() => {
-        if (locale === 'el') {
-            setlangfile(langfileGreek.map);
-            metadata.current = mapMetadata.gr;
-        } else {
-            setlangfile(langfileEnglish.map);
-            metadata.current = mapMetadata.en;
-        }
-    }, [locale]);
-
-    useEffect(() => {
-        console.log(metadata);
-    }, [
-        metadata
-    ]);
-
-    // const [areasMap,setAreasMap] = useState({name:'Margarites',areas:json_hover})
     const [displayedMap, setDisplayedMap] = useState(simple);
     const [width, setWidth] = useState(null);
     const [overflow, setOverflow] = useState(0);
@@ -56,15 +38,32 @@ export default function Map() {
         json: json_hover
     });
 
-    useEffect(() => {
-        let container = document.getElementById('mapper-container');
+    /* Coordinates input code */
+    const [inputMode, setInputMode] = useState(false);
+    const [coords, setCoords] = useState({ x: 0, y: 0 });
+    const [houses, setHouses] = useState([]);
+    var realCoords = useRef([]);
+    var waitingForHotkey = useRef(false);
 
-        // setWidth(container.offsetHeight * 1.5)
-        setWidth(container.offsetWidth - 10);
-        // setWidth('1636')
-        // setWidth('3272')
-        document.getElementById('mapper-container').style.width = width;
+    // Add event listeners for tracking mouse position and keys combinations pressed
+    useEffect(() => {
+        document.getElementById('mapper-container').addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('keydown', handleKeynDown);
+        return () => {
+            document.getElementById('mapper-container').removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('keydown', handleKeynDown);
+        };
     }, []);
+
+    useEffect(() => {
+        if (locale === 'el') {
+            setlangfile(langfileGreek.map);
+            metadata.current = mapMetadata.gr;
+        } else {
+            setlangfile(langfileEnglish.map);
+            metadata.current = mapMetadata.en;
+        }
+    }, [locale]);
 
     useEffect(() => {
 
@@ -89,138 +88,156 @@ export default function Map() {
 
     }, [checkboxValues]);
 
-    // useEffect(()=>{
-    //     if(checkboxValues.option2){
-    //         setAreasMap({name:'Margarites',areas:json_families})
-    //     }else if(!checkboxValues.option2){
-    //         setAreasMap({name:'Margarites',areas:json_hover})
-    //     }
-    // },[checkboxValues])
+    useEffect(() => {
+        if (modalContent) {
 
-    /* Coordinates input code */
+            let parentClassList = ['flex', 'flex-col', 'items-start', 'justify-center'];
+            let childCLasslist = ['flex', 'flex-col', 'items-start', 'justify-center', 'w-full', 'bg-[#f8fff3]', 'mb-1.5'];
 
-    // const [localCoords, setLocalCoords] = useState({x: 0, y: 0})
-    // const [houses, setHouses] = useState([])
+            //Building container
+            let parent = document.createElement('div');
+            parentClassList.map(each => { parent.classList.add(each); });
 
-    // var realCoords = useRef([])
+            modalContent.map(each => {
+                // Building different periods of usage & ownership
+                let child = document.createElement('div');
+                childCLasslist.map(each => { child.classList.add(each); });
+
+                // Building usage
+                let usage = document.createElement('div');
+                if (each.usage != '') {
+                    usage.innerText = each.usage;
+                } else {
+                    usage.innerText = "Κατοικία";
+                }
+                usage.classList.add('font-medium', 'w-full', 'text-start', 'px-0.5', 'bg-[#e5fbd4]');
+                child.append(usage);
+
+                //Building owners
+                each.owners.map(owner => {
+                    let ownerElement = document.createElement('div');
+                    ownerElement.classList.add('px-0.5');
+                    ownerElement.innerText = owner;
+                    child.append(ownerElement);
+                });
+
+                // //Add line between periods
+                // if (modalContent.indexOf(each) < modalContent.length - 1) {
+                //     let line = document.createElement('div');
+                //     line.classList.add('border-b-[1px]', 'border-slate-500', 'border-dotted', 'w-3/12', 'mx-auto', 'mt-2', 'mb-1');
+                //     child.append(line);
+                // }
+                parent.append(child);
+            });
+
+            let navbarHeight = document.getElementById('navbar').offsetHeight;
+            document.getElementById('hover-data-content').append(parent);
+
+            // Position modal box next to cursor
+            document.getElementById('hover-data-box').style.left = `${infoBoxPosition.current.x + 5}px`;
+            document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y - navbarHeight - document.getElementById('hover-data-box').offsetHeight}px`;
+
+            // Make sure the entire modal box is inside screen
+            if (document.getElementById('hover-data-box').offsetTop < 0) {
+                document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y - navbarHeight}px`;
+            }
+        }
+    }, [modalContent]);
+
+    useEffect(() => {
+        if (inputMode) {
+            setWidth(2921);
+            waitingForHotkey.current = false;
+            document.getElementById('mapper-container').style.width = width;
+        } else {
+            setWidth(document.getElementById('mapper-container').offsetWidth - 10);
+            document.getElementById('mapper-container').style.width = width;
+        }
+    }, [inputMode]);
 
     const handleMouseMove = event => {
         infoBoxPosition.current = {
             x: event.clientX - document.getElementById('mapper-container').offsetLeft,
             y: event.clientY - document.getElementById('mapper-container').offsetTop,
         };
-        // setLocalCoords({
-        //     x: event.clientX - document.getElementById('mapper-container').offsetLeft,
-        //     y: event.clientY - document.getElementById('mapper-container').offsetTop
-        // })
+        if (inputMode) { setCoords({ x: event.clientX, y: event.clientY }); };
     };
 
-    useEffect(() => {
-        document.getElementById('mapper-container').addEventListener('mousemove', handleMouseMove);
-        console.log(document.getElementById('mapper-container'));
-        return () => {
-            document.getElementById('mapper-container').removeEventListener(
-                'mousemove',
-                handleMouseMove,
-            );
-        };
-    }, []);
+    const handleKeynDown = event => {
+        if (event.key === "Shift") {
+            waitingForHotkey.current = true;
+            document.addEventListener('keyup', handleKeyUp);
+        } else if (waitingForHotkey.current && (event.key === 'I' || event.key === 'i' || event.key === 'ι' || event.key === 'Ι')) {
+            waitingForHotkey.current = false;
+            setInputMode(true);
+        }
+    };
 
-    // const passCoords = React.useCallback((e)=>{
-    //     e.stopPropagation()
-    //     e.preventDefault()
-    //     realCoords.current.push(parseInt(document.getElementById('x').innerHTML.substring(1),10) + document.body.firstElementChild.firstElementChild.scrollLeft)
-    //     realCoords.current.push(parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10) + document.body.firstElementChild.firstElementChild.scrollTop )
-    //     console.log(parseInt(document.getElementById('x').innerHTML.substring(1),10) + document.body.firstElementChild.firstElementChild.scrollLeft,parseInt(document.getElementById('y').innerHTML.substring(0,document.getElementById('y').innerHTML.length),10) + document.body.firstElementChild.firstElementChild.scrollTop)
-    // })
+    const handleKeyUp = event => {
+        if (event.key === "Shift") {
+            waitingForHotkey.current = false;
+            document.removeEventListener('keyup', handleKeyUp);
+        }
+    };
 
-    // function startRec(){
-    //     setHouses([])
-    //     document.getElementById('mapper-container').addEventListener('click',passCoords)
-    // }
+    /* Data input code */
 
-    // function handleEnter(e){
-    //     if(e.key === 'Enter'){
-    //         e.preventDefault()
-    //         let houseis = houses
+    const passCoords = React.useCallback((e) => {
+        console.log('pass');
+        e.stopPropagation();
+        e.preventDefault();
+        realCoords.current = [...realCoords.current, parseInt(infoBoxPosition.current.x) + document.getElementById('mapper-container').scrollLeft + 58 /** Offset between first maping coordinates and current method*/];
+        realCoords.current = [...realCoords.current, parseInt(infoBoxPosition.current.y) + document.getElementById('mapper-container').scrollTop - document.getElementById('navbar').offsetHeight];
+        console.log(parseInt(infoBoxPosition.current.x) + document.getElementById('mapper-container').scrollLeft, parseInt(infoBoxPosition.current.y) + document.getElementById('mapper-container').scrollTop - document.getElementById('navbar').offsetHeight);
+    });
 
-    //         houseis.push({
-    //             id:e.target.value,
-    //             name:e.target.value,
-    //             shape: "poly",
-    //             fillColor: "#eab54d4d",
-    //             title:"",
-    //             strokeColor: "transparent",
-    //             coords:realCoords.current
-    //         })
-    //         setHouses(houseis)
-    //         realCoords.current=[]
-    //         console.log(houses,houseis)
-    //     }
-    // }
+    function startRec() {
+        setHouses([]);
+        document.getElementById('start-recording-button').classList.remove('hover:bg-yellow-100');
+        document.getElementById('start-recording-button').classList.add('bg-red-500');
+        document.getElementById('start-recording-button').classList.add('text-white');
+        document.getElementById('mapper-container').addEventListener('click', passCoords);
+    }
 
-    // function completeRec(){
-    //     document.getElementById('mapper-container').removeEventListener('click',passCoords)
-    //     const element = document.createElement("a")
-    //     const textFile = new Blob([JSON.stringify(houses)], {type: 'text/plain'})
+    function handleEnter(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            let houseis = houses;
 
-    //     element.href = URL.createObjectURL(textFile)
-    //     element.download = "userFile.txt"
-    //     document.body.appendChild(element) 
-    //     element.click()
-    // }
+            houseis.push({
+                id: e.target.value,
+                name: e.target.value,
+                shape: "poly",
+                fillColor: "#eab54d4d",
+                title: "",
+                strokeColor: "transparent",
+                coords: realCoords.current
+            });
+            setHouses(houseis);
+            realCoords.current = [];
+            console.log(houses, houseis);
+        }
+    }
 
-    /** Map */
+    function completeRec() {
+        document.getElementById('start-recording-button').classList.add('hover:bg-yellow-100');
+        document.getElementById('start-recording-button').classList.remove('bg-red-500');
+        document.getElementById('start-recording-button').classList.remove('text-white');
+        document.getElementById('mapper-container').removeEventListener('click', passCoords);
+        const element = document.createElement("a");
+        const textFile = new Blob([JSON.stringify(houses)], { type: 'text/plain' });
 
+        element.href = URL.createObjectURL(textFile);
+        element.download = "userFile.txt";
+        document.body.appendChild(element);
+        element.click();
+    }
+    /* End of data input code */
+
+    /* Map */
     function handleClick(area) {
         console.log(area);
     }
-
-
-    // function handleMouseMove(event){
-    //     infoBoxPosition.current = { x: event.clientX, y: event.clientY}
-    // }
-
-    useEffect(() => {
-        if (modalContent) {
-            let classList = ['flex', 'flex-col', 'items-center', 'justify-center'];
-            let parent = document.createElement('div');
-
-            classList.map(each => { parent.classList.add(each); });
-
-            modalContent.map(each => {
-                let child = document.createElement('div');
-
-                classList.map(each => { child.classList.add(each); });
-                child.classList.add('mb-2');
-                let usage = document.createElement('div');
-
-                if (each.usage != '') {
-                    usage.innerText = each.usage;
-                } else {
-                    usage.innerText = "Κατοικία";
-                }
-                usage.classList.add('font-bold');
-                child.append(usage);
-
-                each.owners.map(owner => {
-                    let ownerElement = document.createElement('div');
-
-                    ownerElement.innerText = owner;
-                    child.append(ownerElement);
-                });
-                parent.append(child);
-            });
-            let navbarHeight = document.getElementById('navbar').offsetHeight;
-
-            document.getElementById('hover-data-content').append(parent);
-            document.getElementById('hover-data-box').style.left = `${infoBoxPosition.current.x + 5}px`;
-            document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y - navbarHeight - document.getElementById('hover-data-box').offsetHeight}px`;
-            if (document.getElementById('hover-data-box').offsetTop < 0) {
-                document.getElementById('hover-data-box').style.top = `${infoBoxPosition.current.y - navbarHeight}px`;
-            }
-        }
-    }, [modalContent]);
 
     function zoom(type) {
         if (type == 'in') {
@@ -237,7 +254,8 @@ export default function Map() {
         }
     }
 
-    /** Controls */
+    /* Controls */
+
     const handleCheckboxChange = (event) => {
         const { name, checked } = event.target;
 
@@ -263,7 +281,7 @@ export default function Map() {
         }
     };
 
-    /** Legend */
+    /* Legend */
 
     function hideLegend() {
         document.getElementById('legend').style.display = 'none';
@@ -276,20 +294,22 @@ export default function Map() {
     }
 
     return (
-        <div id="map-page-container" onMouseMove={handleMouseMove}>
+        <div id="map-page-container" className="relative" onMouseMove={handleMouseMove}>
 
             {/* Polygon input component - click start, click on all edges of polygon, fill the name field and hit enter, continue with next polygon */}
 
-            {/* <span id='x'>({localCoords.x}</span><span>,</span><span id='y'>{localCoords.y})</span>
-            <button onClick={()=>{startRec()}}>Start</button> */}
-            {/* <button onClick={()=>{completeRec()}}>Completed</button>
-            <input id="houseInput"
-              onKeyDown={(e)=>{handleEnter(e)}}
-            /> */}
+            {inputMode && <span className="absolute pl-2 pt-2 top-0 left-0 z-10 flex flex-row gap-x-2">
+                <button id="cursor-pointer start-recording-button" className="px-2 rounded border border-1 border-slate-400 hover:bg-yellow-100" onClick={() => { startRec(); }}>Start</button>
+                <button className="cursor-pointer px-2 rounded border border-1 border-slate-400 hover:bg-yellow-100" onClick={() => { completeRec(); }}>Completed</button>
+                <input className="px-2 rounded border border-1 border-slate-400 focus-visible:outline-none" id="houseInput"
+                    onKeyDown={(e) => { handleEnter(e); }}
+                />
+                <a className="font-bold hover:text-red-500 cursor-pointer" onClick={() => { setInputMode(false); }}>X</a>
+            </span>}
+
             <div id='map-container'>
                 <span id='hover-data-box' className="flex flex-col items-center justify-center absolute z-10 w-fit h-fit overflow-visible">
-                    {modalContent && <span id='hover-data-content' className="px-2 min-w-40 w-fit rounded border border-1 border-[rgb(196, 177, 177)] bg-[#f7eeec] min-h-30 h-fit" />}
-                    {/* <span className="mb-auto mr-auto" style={{width:'20px',height: '20px',borderLeft:'15px solid transparent',borderRight:'15px solid transparent',borderTop:'15px solid white'}}></span> */}
+                    {modalContent && <span id='hover-data-content' className="text-[0.9em] overflow-hidden min-w-40 w-fit rounded-lg border border-1 border-[rgb(196, 177, 177)] bg-white min-h-30 h-fit" />}
                 </span>
                 <div id='mapper-container'>
                     <ImageMapper
