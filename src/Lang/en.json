@@ -181,7 +181,7 @@
         "instructors": [
             {
                 "name": "Manolis Kouratoras",
-                "image": null,
+                "image": "Kouratoras",
                 "bio": [
                     "I was born and raised in Agia, Rethymno, and after a long career, I have returned to live in my hometown. I graduated from the six-year Economic High School of Heraklion. I also graduated from the Panhellenic School of Spinning, Weaving, and Knitting and obtained a State Diploma as a Weaving Supervisor.",
                     "After being selected by my school, I received a scholarship to study in Italy at textile machinery manufacturing houses, where I specialized as an official assembler for SOMET weaving looms in Greece. I also underwent intensive training in various textile machines. I worked in Athens for a textile machinery agency and later served as a Supervisor at the major industry ELLINOROMANA in Thessaloniki and as Technical Director at PAPADIMITRIOU in Larissa.",
@@ -233,7 +233,7 @@
         ],
         "programB": [
             {
-                "date": "Part B: Traditional Weaving Art of Crete: Theory and Practice.",
+                "date": "Part B: Traditional Weaving Art of Crete: Theory and Practice",
                 "activities": [
                     ""
                 ]
