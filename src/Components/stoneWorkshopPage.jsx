@@ -43,7 +43,7 @@ export default function StoneworkshopPage() {
                 </span>
                 <span className="sw-activity-date">{workshop.program2.date}</span>
                 <div className="sw-activity-list">
-                    <div>8:30 - 14:00: {workshop.program1.morning}</div>
+                    <div>8:30 - 14:00: {workshop.program2.morning}</div>
                     <div>17:30 - 20:00: {workshop.program2.evening}</div>
                 </div>
                 <span className="sw-activity-date">{workshop.program3.date}</span>
@@ -53,34 +53,36 @@ export default function StoneworkshopPage() {
                 <div className="mb-2">
                     <div className="sw-activity-date">{workshop.program4.date}</div>
                     <div className="sw-activity-list">
-                        <div >18:30 - 20:30: {workshop.program4.evening}</div>
-                        {/* <li className="sw-activity-tab">{workshop.program4.evening1}</li>
-                            <li className="sw-activity-tab">{workshop.program4.evening2}</li>
-                            <li className="sw-activity-tab">{workshop.program4.evening3}</li> */}
+                        <div >20:30 - 22:00: {workshop.program4.evening}</div>
+                        <li className="sw-activity-tab">{workshop.program4.evening1}</li>
+                        <li className="sw-activity-tab">{workshop.program4.evening2}</li>
                     </div>
                 </div>
                 <div className="mb-2">
                     <div className="sw-activity-date">{workshop.program5.date}</div>
                     <div className="sw-activity-list">
-                        <div>{workshop.program5.evening}</div>
+                        <div>19:30 - 21:30: {workshop.program5.evening}</div>
                     </div>
                 </div>
                 <div className="mb-2">
                     <div className="sw-activity-date">{workshop.program6.date}</div>
                     <div className="sw-activity-list">
-                        <div >17:30 - 21:00: {workshop.program6.evening}</div>
+                        <div >{workshop.program6.evening}</div>
                     </div>
                 </div>
                 <div className="mb-2">
                     <div className="sw-activity-date">{workshop.program7.date}</div>
                     <div className="sw-activity-list">
-                        <div >20:30 - 22:30: {workshop.program7.evening}</div>
+                        <div >20:00 - 22:30: {workshop.program7.evening}</div>
+                        <li className="sw-activity-tab">{workshop.program7.evening1}</li>
+                        <li className="sw-activity-tab">{workshop.program7.evening2}</li>
+                        <li className="sw-activity-tab">{workshop.program7.evening3}</li>
                     </div>
                 </div>
                 <div>
                     <div className="sw-activity-date">{workshop.program8.date}</div>
                     <div className="sw-activity-list">
-                        <div >13:00: {workshop.program8.midday}</div>
+                        <div >8:00 - 14:30: {workshop.program8.morning}</div>
                         <div >21:00: {workshop.program8.evening}</div>
                     </div>
                 </div>

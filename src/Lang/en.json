@@ -112,39 +112,43 @@
             "date": "Saturday, July 19",
             "arrival": "Arrival and introduction of the participants",
             "morning": "Guided tour of Margarites by ethnologist Ms. Maria Padouva.",
-            "midday": "Lunch and introduction to the Master and Instructor of the Restoration Workshop, Mr. Yiannis Alefantinos",
-            "evening": "The principles and rules of stone masonry in the local context, presented by the Master and Instructor of the Dry Stone Workshop, Mr. Konstantinos Vergianakis."
+            "midday": "Lunch and meeting with the Master and Instructor of the Restoration Workshop, Mr. Giannis Alefantinos",
+            "evening": "The principles and laws of stone masonry in the local context by the Master and Instructor of the Dry Stone Workshop, Mr. Konstantinos Vergianakis."
         },
         "program2": {
             "date": "Sunday, July 20",
             "morning": "Visit and guided tour of the ancient quarry of Peristere and the Museum of Ancient Eleutherna",
-            "evening": "Demonstration and practical lesson in stone extraction"
+            "evening": "Demonstration and hands-on lesson on stone extraction"
         },
         "program3": {
             "date": "Monday, July 21",
-            "evening": "Visit and guided tour of the modern quarry of village Alpha"
+            "evening": "Visit and guided tour of the modern quarry of Alphas"
         },
         "program4": {
             "date": "Tuesday, July 22",
-            "evening": "Evening of talks on technical and historical topics related to traditional stone masonry",
-            "evening1": "The topics of the talks will be announced soon"
+            "evening": "Evening of lectures on technical and historical topics related to traditional stone masonry",
+            "evening1": "“Margarites during the Venetian period: The testimony of architecture” Maria Vakondios, Archaeologist",
+            "evening2": "“Load-bearing stone masonry: Structural integrity, types of damage, repairs and reinforcements” Amalia Kasampali, Civil Engineer and Giorgos Andresakis, Architect Engineer."
         },
         "program5": {
             "date": "Wednesday, July 23",
-            "evening": "Free afternoon"
+            "evening": "Visit to mitata in the Zoniana area with reference to their history and construction techniques by Master Anastasis Papadakis and a geological tour by a representative of the UNESCO Psiloritis Global Geopark."
         },
         "program6": {
             "date": "Thursday, July 24",
-            "evening": "Visit to the mitata (shepherds' stone huts) in the area of Zoniana and guided tour by Master Anastasios Papadakis"
+            "evening": "Free afternoon"
         },
         "program7": {
             "date": "Friday, July 25",
-            "evening": "Screening of the Rodakas documentary ‘Harder Years – Happier Years’, roundtable discussion on ‘Oral narratives, memory, and their uses’"
+            "evening": "Screening of the Rodakas documentary “Harder Years – Happier Years,” roundtable discussion on “Oral narratives, memory and its uses”",
+            "evening1": "“Archaeological memories of death – Timeless ‘narratives’ from Gavdos” Katerina Kopaka, Emeritus Professor of Prehistoric Archaeology, University of Crete",
+            "evening2": "“Memory and orality” Giorgos Nikolakakis, Associate Professor of Social Anthropology, University of Crete",
+            "evening3": "“How does one remember? Memory and its use in the Margarites Community of Mylopotamos” Maria Padouva, Ethnologist/Philologist, President of the NGO Rodakas."
         },
         "program8": {
             "date": "Saturday, July 26",
-            "midday": "Workshop evaluation",
-            "evening": "Workshop closing"
+            "morning": "Workshop lesson and evaluation",
+            "evening": "Farewell event"
         }
     },
     "loomworkshop": {
