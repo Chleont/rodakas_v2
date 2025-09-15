@@ -35,21 +35,13 @@ export default function StoneworkshopPage() {
                 <span><i>{workshop.text_slogan}</i></span>
             </div>
             <div id='sw-info'>
-                {workshop.introtext.map(each => <p className='introtext' key={workshop.introtext.indexOf(each)}>{each}</p>)}
+                {workshop.introtext.map(each => <p className='introtext' key={workshop.introtext.indexOf(each)} dangerouslySetInnerHTML={{ __html: each }}></p>)}
                 <span id="info-title" className="sw-subtitle">{workshop.Programtitle}</span>
                 {/* <span className="mb-4 flex flex-col">{workshop.programText.map(each => <p>{each}</p>)}</span> */}
                 {/* Program */}
                 <div style={{ marginTop: '1em' }}>
-                    {workshop.programA.map(each =>
-                        <span className='program-element' key={workshop.programA.indexOf(each)}>
-                            <p>{each.date}</p>
-                            {each.activities.map(text => <p className='program-text paragraph' key={each.activities.indexOf(text)}>{text}</p>)}
-                        </span>
-                    )}
-                </div>
-                <div style={{ marginTop: '1em' }}>
-                    {workshop.programB.map(each =>
-                        <span className='program-element' key={workshop.programB.indexOf(each)}>
+                    {workshop.program.map(each =>
+                        <span className='program-element' key={workshop.program.indexOf(each)}>
                             <p>{each.date}</p>
                             {each.activities.map(text => <p className='program-text paragraph' key={each.activities.indexOf(text)}>{text}</p>)}
                         </span>
@@ -58,9 +50,13 @@ export default function StoneworkshopPage() {
 
                 {/* Accommodation */}
                 <span className="sw-subtitle">{workshop.accommodation}</span>
-                {workshop.accommodationInfo.map(each =>
-                    <p className='accomodation-text paragraph' id={workshop.accommodationInfo.indexOf(each) == 0 ? 'accomodation-free' : ''} key={workshop.accommodationInfo.indexOf(each)}>{each}</p>
-                )}
+                <span>{workshop.accommodationInfo1}</span>
+                <span className="sw-subtitle">{workshop.accommodationHouses}</span>
+                <div>{workshop.accommodationHouses1}</div>
+                <div>{workshop.accommodationHouses2}</div>
+                <div>{workshop.accommodationHouses3}</div>
+                <div>{workshop.accommodationHouses4}</div>
+                <div>{workshop.accommodationHouses5}</div>
             </div>
             <div id='sw-inscription' className="w-full flex flex-col align-start">
                 <span className="sw-subtitle">{workshop.costAndRegistration}</span>
@@ -109,16 +105,6 @@ export default function StoneworkshopPage() {
                         </div>
                     );
                 })}
-                <span className="instructor-name">{workshop.instructorName1}</span>
-                <span className="instructor-text">
-                    <span>{workshop.instructorBio1}</span>
-                    <br />
-                    <span>{workshop.instructorBio11}</span>
-                </span>
-                <span className="instructor-name">{workshop.instructorName2}</span>
-                <span className="instructor-text">
-                    <span>{workshop.instructorBio2}</span>
-                </span>
             </div>
         </div >
     );

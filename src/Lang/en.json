@@ -152,43 +152,32 @@
         }
     },
     "loomworkshop": {
-        "title": "Weaving and Natural Dyeing Workshop by Rodakas in Margarites",
-        "dates": "March 29 - April 5, 2023",
+        "title": "Rodakas Weaving Workshop in Margarites",
+        "dates": "October 12 - 18, 2025",
         "text_slogan": "",
         "introtext": [
-            "From March 29 to April 5, we will meet with our teachers and their valuable lessons, work together, and witness the works of our hands on the looms at Rodakas in Margarites.",
-            "With instructors Clarissa Joy Holmes, Manolis Kouratoras, and Despina Somaki.",
-            "We will also discuss the prospects of the weaving craft, 'from dream to livelihood,' with relevant professionals and experts.",
-            "The workshop is conducted with the generous sponsorship of the John S. Latsis Public Benefit Foundation."
+            "Another cycle of Rodakas in the art of Weaving, funded by the <i>Ioannis S. Latsis Public Benefit Foundation</i>",
+            "On looms with teacher Vasileia Anipsitaki, where we will measure to place the design, combine and mix colors, learn to weave straight, curved, and variously shaped patterns and designs with different textures.",
+            "And also, teacher Manolis Kouratoras will show us the ‘Diasimo’ (the preparation, arrangement, and winding of threads on the warping frame, which will become the warp of our weavings).",
+            "And teacher Katerina Korre will show us the dyeing art and the many shades that can be given by two very important, yet humble plants in dyeing: the ‘Akoniza(e)’ and the Oxalis."
         ],
-        "Programtitle": "Workshop Identity and Schedule:",
-        "programText": "The workshop will begin with the arrival of participants on Saturday, March 29.",
+        "Programtitle": "Identity and program of the workshop:",
+        "programText": "The workshop will begin with the reception of participants on Sunday, October 12.",
         "accommodation": "Accommodation:",
-        "accommodationInfo": [
-            "There is free accommodation available for a limited number of participants at the hospitality space of the Monastery of the Savior Christ and Saint Gideon.",
-            "‘The House of Kourites’ in the settlement of Margarites, Tsannakiana, offering: Double, Triple, and Quadruple rooms. Contact phone: 6945722052, Mrs. Anastasia Fryganaki.",
-            "‘Chalikoutika’ Margarites. A fully equipped residence available with two bedrooms, each with a double bed and one single. Contact phone: 6973005153, Mr. Giorgos Skalidakis.",
-            "‘Archontiko Rodomeli’ Margarites. Guesthouse with double rooms. Contact phone: 6979101973, Mrs. Eleni Giannousaki.",
-            "‘Discover Margarites Home’ Margarites. A fully equipped residence with two bedrooms—one with a double bed, one with two single beds, plus two sofa beds in the living room. Pricing is determined by agreement. Contact phone: 2831050761, 6936366365, Mrs. Katerina Christodoulaki."
-        ],
-        "costAndRegistration": "Workshop Cost and Registration:",
-        "cost": "The workshop has no financial cost; all spots are filled. To join the waiting list, please fill out the form below.",
-        "registration": "Join the waiting list",
-        "formlink": "https://forms.gle/zvDdbbeKwpNBiMzi9",
-        "instructorTitle": "Instructors:",
+        "accommodationInfo1": "There is the possibility of free accommodation for a limited number of participants at the guesthouse of the Monastery of Christ the Savior and Saint Gedeon.",
+        "accommodationInfo2": "Additionally, a free camping space is available for participants with their own tents.",
+        "accommodationHouses": "Accommodation is also available in the following guesthouses:",
+        "accommodationHouses1": "“DM Margarites”, which can host six people. Contact phone: 6936601084, Ms. Asimenia Kavgalaki",
+        "accommodationHouses2": "“H&M HOME” Margarites, which can host six people. Contact phone: 6976745669, Mr. Haris Rousis",
+        "accommodationHouses3": "“The House of the Kourites” in the settlement of Margarites Tzannakiana, offering: double, triple, and quadruple rooms with breakfast. Contact phone: 6945722052, Ms. Anastasia Fryganaki",
+        "accommodationHouses4": "“Chalikoutika” Margarites. A fully equipped house with two bedrooms with double beds and one single. Contact phone: 6973005153, Mr. Giorgos Skalidakis",
+        "accommodationHouses5": "“Archontiko Rodomeli” Margarites. Guesthouse with double rooms. Contact phone: Ms. Eleni Giannousaki 6979101973",
+        "costAndRegistration": "Workshop cost and registration:",
+        "cost": "Participation is free of charge, places are limited, and priority will be given on a first-come, first-served basis.",
+        "registration": "Registration",
+        "formlink": "https://forms.gle/5wwDboFK2tSLZnav6",
+        "instructorTitle": "Teachers:",
         "instructors": [
-            {
-                "name": "Manolis Kouratoras",
-                "image": "Kouratoras",
-                "bio": [
-                    "I was born and raised in Agia, Rethymno, and after a long career, I have returned to live in my hometown. I graduated from the six-year Economic High School of Heraklion. I also graduated from the Panhellenic School of Spinning, Weaving, and Knitting and obtained a State Diploma as a Weaving Supervisor.",
-                    "After being selected by my school, I received a scholarship to study in Italy at textile machinery manufacturing houses, where I specialized as an official assembler for SOMET weaving looms in Greece. I also underwent intensive training in various textile machines. I worked in Athens for a textile machinery agency and later served as a Supervisor at the major industry ELLINOROMANA in Thessaloniki and as Technical Director at PAPADIMITRIOU in Larissa.",
-                    "Upon returning to Crete, I worked for years as the lead designer at Eleni Kastrinogianni’s business, a brand synonymous with traditional Cretan weaving. At the same time, I provided services as a designer and technician for smaller textile workshops in Heraklion.",
-                    "I received official recognition as a certified instructor in weaving and participated in numerous training programs. I volunteered to establish and launch the weaving workshop at the Center for Special Needs Children, Agios Spyridon. Through the Crete Regional Operational Program, I taught a 150-hour course on ‘Modern Technology and Aesthetics in the Weaving Art.’ I also reconstructed a functional replica of Penelope’s loom, which was officially presented at the Heraklion Museum by the University of the Mountains, with distinguished guests including Professor and Sorbonne Rector Eleni Arveler.",
-                    "I have been criticized for ‘patenting’ the production of the Cretan woven fabric using the three-beam technique with mechanical support. However, I believe this makes the fabric more accessible and affordable while keeping Cretan homes adorned with traditional textiles rather than foreign ones.",
-                    "After retiring, I continue to share my experience and knowledge wherever I am asked to help revive and develop the weaving craft."
-                ]
-            },
             {
                 "name": "Despina Pantelaki-Somaki",
                 "image": "Somaki",
@@ -200,63 +189,58 @@
                 ]
             },
             {
-                "name": "Clarissa Joy Holmes",
-                "image": "Holmes",
+                "name": "Vasileia Anipsitaki",
+                "image": "Anipsataki",
                 "bio": [
-                    "Clarissa Joy Holmes is from Montana, USA, and has been living in Crete for the past eight years. Her long-standing involvement with fabric design, dyeing, and pattern-making led her back to traditional methods of producing dyes and patterns.",
-                    "Join us to learn how to extract dyes from plants and flowers as was done in the past. Discover which local plants can be used and explore dyes derived from plants of other regions.",
-                    "On the second day of the workshop, you will have the opportunity to print your own fabric using leaves and flowers as the base for creating your unique design."
+                    "I was born and raised in Sitia, Crete. I studied at the School of Architecture of A.U.Th. Alongside my professional career (1980–2025), I attended lessons in: Painting with Ms. Irini Kourtidi and Mr. Giorgos Rorris; Encaustic painting (painting with heated wax, known from the Fayum portraits) with Ms. Katerina Perimeni (Benaki Museum); Weaving with Ms. Sofia Tsourinaki (SEN); Fresco painting with Mr. Angelos Mplias (Benaki Museum); Arabic Calligraphy with Ms. Irini Gonou (Benaki Museum). I have presented my work in group and solo exhibitions:",
+                    "• Group exhibition in Terlizzi, Italy with Fayum works (2013)",
+                    "• Solo exhibition at ‘Dielefsis’ Cultural Center with Fayum works (2013)",
+                    "• Solo exhibition at the Cultural Center of Sitia Municipality with Fayum and oil paintings (2014)",
+                    "• Group exhibition at the Cultural Center of Sitia Municipality with paintings and weaving works (2017)",
+                    "• Group exhibition at the Cultural Center of Sitia Municipality with paintings (2019)",
+                    "• Solo exhibition at Arte Visione Art Hall with paintings, weaving, calligraphy, and encaustic works (2022)",
+                    "• Group exhibition titled “The Chronicle of Art” at Arte Visione Art Hall (2022) and at METHI, Heraklion, Crete",
+                    "• Solo exhibition at V. Kornaros Cultural Center in Sitia, Crete with weaving and calligraphy works (2023)",
+                    "• Group exhibition at V. Kornaros Cultural Center in Sitia, Crete with weaving works (2024)",
+                    "• Group Exhibition of Weaving Handicrafts at METHI Heraklion (2024)",
+                    "• Group Exhibition of Weaving Handicrafts at the Municipal Gallery of Kallithea “Sofia Laskaridou” (2024)",
+                    "My profession is Architecture, which coexists and collaborates with many different arts. I am influenced by the Bauhaus movement (1919–1933 in Germany), which merged the inspiration and skills of artists and craftsmen, sometimes leading to works and everyday objects of high aesthetics for mass production and use. I engage in various arts and crafts, without being a formal teacher. I am a lifelong learner, constantly discovering the magic in new artistic expressions and artifacts of the world. In weaving on a frame loom, I have gained much experience, so, as an advanced learner, I can, in the manner of mutual teaching, transmit basic knowledge and techniques to beginners in this ancient art, which continues to amaze us with its ingenuity and beauty."
+                ]
+            },
+            {
+                "name": "Manolis Kouratoras",
+                "image": "Kouratoras",
+                "bio": [
+                    "I was born and raised in Agia, Rethymno, and after a long career, I have returned to live in my hometown. I graduated from the six-year Economic High School of Heraklion. I also graduated from the Panhellenic School of Spinning, Weaving, and Knitting and obtained a State Diploma as a Weaving Supervisor.",
+                    "After being selected by my school, I received a scholarship to study in Italy at textile machinery manufacturing houses, where I specialized as an official assembler for SOMET weaving looms in Greece. I also underwent intensive training in various textile machines. I worked in Athens for a textile machinery agency and later served as a Supervisor at the major industry ELLINOROMANA in Thessaloniki and as Technical Director at PAPADIMITRIOU in Larissa.",
+                    "Upon returning to Crete, I worked for years as the lead designer at Eleni Kastrinogianni’s business, a brand synonymous with traditional Cretan weaving. At the same time, I provided services as a designer and technician for smaller textile workshops in Heraklion.",
+                    "I received official recognition as a certified instructor in weaving and participated in numerous training programs. I volunteered to establish and launch the weaving workshop at the Center for Special Needs Children, Agios Spyridon. Through the Crete Regional Operational Program, I taught a 150-hour course on ‘Modern Technology and Aesthetics in the Weaving Art.’ I also reconstructed a functional replica of Penelope’s loom, which was officially presented at the Heraklion Museum by the University of the Mountains, with distinguished guests including Professor and Sorbonne Rector Eleni Arveler.",
+                    "I have been criticized for ‘patenting’ the production of the Cretan woven fabric using the three-beam technique with mechanical support. However, I believe this makes the fabric more accessible and affordable while keeping Cretan homes adorned with traditional textiles rather than foreign ones.",
+                    "After retiring, I continue to share my experience and knowledge wherever I am asked to help revive and develop the weaving craft."
                 ]
             }
         ],
-        "programA": [
+        "program": [
             {
-                "date": "Part A: Natural Dyeing and Eco-Printing Workshop",
+                "date": "October 12",
                 "activities": [
-                    "Instructor: Clarissa Joy Holmes."
+                    "9:00 - 10:30: Reception and introduction of participants",
+                    "11:00 - 14:30: Dyeing lesson with teacher Katerina Korre",
+                    "Afternoon: Weaving lesson on the frame loom with teacher Vasileia Anipsitaki"
                 ]
             },
             {
-                "date": "March 29",
+                "date": "October 13",
                 "activities": [
-                    "Seasonal and evergreen plants will provide us with their pigments. We will learn which local plants can be used and explore dyes made from plants of other regions."
+                    "Morning: Weaving lesson on the frame loom with teacher Vasileia Anipsitaki",
+                    "Afternoon: Warping lesson with teacher Manolis Kouratoras"
                 ]
             },
             {
-                "date": "March 30",
+                "date": "October 14 - 18",
                 "activities": [
-                    "We will have the opportunity to print our own fabric using leaves and flowers as a base to create our own designs."
-                ]
-            }
-        ],
-        "programB": [
-            {
-                "date": "Part B: Traditional Weaving Art of Crete: Theory and Practice",
-                "activities": [
-                    ""
-                ]
-            },
-            {
-                "date": "Every day 10:00 - 14:00",
-                "activities": [
-                    "Instructor: Manolis Kouratoras",
-                    "Basic knowledge of traditional and freehand woven designs. Adapting traditional patterns to modern aesthetics.",
-                    "Raw materials needed for weaving and their availability, including international yarn numbering terminology.",
-                    "Information on entering handmade woven products into the modern market and professional opportunities."
-                ]
-            },
-            {
-                "date": "Every day 17:00 - 20:00",
-                "activities": [
-                    "Instructor: Despina Somaki",
-                    "Hands-on application of the morning lesson designs on the looms.",
-                    "We will weave:",
-                    "• Rag rugs for carpets or bags",
-                    "• Kilims for walls or floors",
-                    "• Burlap bags",
-                    "• Patterned fabric",
-                    "• Belts",
-                    "... blending colors, threads, knowledge, and enthusiasm as always... 'and the shuttle will become the song of the weaver in the workshop...'"
+                    "Morning: Weaving lesson on the frame loom with teacher Vasileia Anipsitaki",
+                    "Afternoon: Weaving lesson on the loom with teacher Despina Somaki"
                 ]
             }
         ]
@@ -584,7 +568,16 @@
                 "stone8.jpg"
             ],
             "category": "stone",
-            "navigate": "/stoneworkshop",
+            "navigate": "/stoneworkshop"
+        },
+        "19": {
+            "title": "Weaving workshop of Rodakas in Margarites",
+            "dates": "12 - 18 October 2025",
+            "images": [
+                "loom9.jpg"
+            ],
+            "category": "loom",
+            "navigate": "/loomworkshop",
             "button": "Information and registration"
         }
     },
