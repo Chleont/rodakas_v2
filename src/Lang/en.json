@@ -174,8 +174,8 @@
         "accommodationHouses4": "“Chalikoutika” Margarites. A fully equipped house with two bedrooms with double beds and one single. Contact phone: 6973005153, Mr. Giorgos Skalidakis",
         "accommodationHouses5": "“Archontiko Rodomeli” Margarites. Guesthouse with double rooms. Contact phone: Ms. Eleni Giannousaki 6979101973",
         "costAndRegistration": "Workshop cost and registration:",
-        "cost": "Participation is free of charge, places are limited, and priority will be given on a first-come, first-served basis.",
-        "registration": "Registration",
+        "cost": "Participation is free of charge, places are full.",
+        "registration": "Register to the waiting list",
         "formlink": "https://forms.gle/5wwDboFK2tSLZnav6",
         "instructorTitle": "Teachers:",
         "instructors": [
@@ -218,6 +218,17 @@
                     "I received official recognition as a certified instructor in weaving and participated in numerous training programs. I volunteered to establish and launch the weaving workshop at the Center for Special Needs Children, Agios Spyridon. Through the Crete Regional Operational Program, I taught a 150-hour course on ‘Modern Technology and Aesthetics in the Weaving Art.’ I also reconstructed a functional replica of Penelope’s loom, which was officially presented at the Heraklion Museum by the University of the Mountains, with distinguished guests including Professor and Sorbonne Rector Eleni Arveler.",
                     "I have been criticized for ‘patenting’ the production of the Cretan woven fabric using the three-beam technique with mechanical support. However, I believe this makes the fabric more accessible and affordable while keeping Cretan homes adorned with traditional textiles rather than foreign ones.",
                     "After retiring, I continue to share my experience and knowledge wherever I am asked to help revive and develop the weaving craft."
+                ]
+            },
+            {
+                "name": "Katerina Korre",
+                "image": "Korre",
+                "bio": [
+                    "She was born in Athens. She studied at the Law School of the University of Athens, at the Doxiadis School (Athens Technological Institute, Department of Decoration), and at the École Nationale Supérieure des Arts Décoratifs in Paris (ENSAD, Master’s in Textile, Printing).",
+                    "She settled in Rethymno in 1978, where for 24 years she ran a tapestry workshop and the art space DIMITO. From 2000 to 2009 she directed the tapestry and natural dyeing workshop ISTOS in Maroulas, Rethymno. She taught weaving and dyeing in seminars (Anogeia, Rethymno, Chania, Mesara) and at the Rethymno Center of Contemporary Artistic Creation (KSEDR program “Thread, Fabric, Clothing”).",
+                    "She taught painting at the Fine Arts Workshops of the Rethymno Center of Contemporary Artistic Creation (1999–2003) and freehand drawing for architecture candidates (DIMITO Gallery, 1993–2001). She has participated in group exhibitions (Athens, Piraeus, Rethymno, Heraklion, Paris, Montreal).",
+                    "Regarding natural dyeing, she has given lectures and presentations at conferences, and for two years she wrote the column “The Demon of Plant Colors” in the monthly supplement “The Demon of Ecology” in the newspaper Avgi (2002–2005).",
+                    "She lives in the village of Koufi, Rethymno, where she continues to enjoy the beauty of plant-based colors and dyes."
                 ]
             }
         ],
