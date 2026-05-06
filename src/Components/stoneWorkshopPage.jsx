@@ -30,9 +30,11 @@ export default function StoneworkshopPage() {
             </div>
             <div id='sw-info'>
                 <span className="mb-2">{workshop.introtext}</span>
+                <span className="mb-2">{workshop.introtext2}</span>
                 <span className="mb-2">{workshop.info1}</span>
-                <span>{workshop.info2}</span>
+                <span className="mb-2">{workshop.info2}</span>
                 <span className="mb-2">{workshop.info3}</span>
+                <span className="mb-2">{workshop.info4}</span>
                 <span className="mb-2">{workshop.program0}</span>
                 <span>{workshop.freeParticipationNotice.normal}<b>{workshop.freeParticipationNotice.bold}</b></span>
                 <span className="sw-subtitle">{workshop.programTempTitle}</span>
