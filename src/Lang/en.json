@@ -132,33 +132,64 @@
         "programTempTitle": "Workshop lesson program:",
         "programParallel": "The program of the afternoon parallel activities will be announced soon.",
         "program1": {
-            "date": "Friday, July 17",
-            "arrival": "Arrival at the pottery kiln restoration workshop site, welcome with coffee, introductions and the first lesson with Master Yiannis Alefantinos.",
-            "evening": "The principles and laws of masonry in the local context by Master and Instructor of the Dry Stone Workshop, Mr. Konstantinos Vergianakis."
+            "date": "Friday 17 July",
+            "arrival": "Arrival at the pottery kiln restoration workshop site, welcome coffee, introductions, and the first lesson with Master Builder Giannis Alefantinos.",
+            "evening": "Historical walk through the village with ethnologist and philologist Maria Padouva and Master Builder Giannis Alefantinos, focusing on the landscape, ways of life, and dwelling traditions through the narratives of the village's older residents. (For participants in the Kiln Restoration Workshop and anyone else interested)"
         },
         "program2": {
-            "date": "Saturday, July 18",
+            "date": "Saturday 18 July:",
             "morning": "Pottery kiln restoration workshop",
-            "evening": "Demonstration and practical lesson on stone extraction"
+            "evening": "Demonstration and practical lesson in stone quarrying"
         },
         "program3": {
-            "date": "Sunday, July 19",
+            "date": "Sunday 19 July",
             "morning1": "Pottery kiln restoration workshop",
-            "arrival": "Arrival of participants of the dry stone construction and masonry restoration workshops, welcome with coffee and introductions",
-            "morning2": "Historical walk in the village with ethnologist and philologist Maria Padouva, referring to the history of the village, its residents and families through their narratives and observation of its architecture."
+            "arrival": "Arrival of the participants of the dry stone wall construction and stone masonry restoration workshops, welcome coffee and introductions",
+            "morning2": "Historical walk through the village with ethnologist and philologist Maria Padouva, focusing on the landscape, ways of life, and dwelling traditions through the narratives of the village's older residents. (For participants in the Stone Masonry Restoration Workshop and anyone else interested)",
+            "evening": "Basic principles of building a stone wall with Master Builder Kostis Vergiannakis"
         },
         "program4": {
-            "date": "Monday 20 - Friday 24 July",
-            "morning": "Dry stone construction and masonry restoration workshops with natural materials",
-            "eveningTranslation": "Evening",
-            "evening": "Parallel activities"
+            "date": "Monday 20 July",
+            "morning": "Dry stone wall construction and stone masonry restoration workshops using natural materials",
+            "evening1": "Visit and guided tour of the Museum of Ancient Eleutherna",
+            "evening2": "Walk and guided tour of the ancient quarry of Peristere. The tour will be led by licensed tour guide and Rodakas member Smaragda Touloupa."
         },
         "program5": {
-            "date": "Saturday, July 25",
-            "morning": "Dry stone construction and masonry restoration workshops with natural materials",
-            "midday": "Discussion and reflection on the workshops and the experience of participants and master craftsmen",
-            "evening": "Closing farewell celebration of the workshops."
+            "date": "Tuesday 21 July",
+            "morning": "Dry stone wall construction and stone masonry restoration workshops using natural materials",
+            "evening": "Free afternoon"
         },
+        "program6": {
+            "date": "Wednesday 22 July",
+            "morning": "Dry stone wall construction and stone masonry restoration workshops using natural materials",
+            "evening": "Visit to the Nida Plateau and its mitata with the support of the Psiloritis UNESCO Global Geopark"
+        },
+        "program7": {
+            "date": "Thursday 23 July",
+            "morning": "Dry stone wall construction and stone masonry restoration workshops using natural materials",
+            "evening": "Lecture on 'The pathology of stone materials' by Michalis Troullinos, Conservator of Antiquities and Works of Art, former Head of the Conservation Department of the Ephorate of Antiquities of Rethymno."
+        },
+        "program8": {
+            "date": "Friday 24 July",
+            "morning": "Dry stone wall construction and stone masonry restoration workshops using natural materials",
+            "title": "The Generations of Clay – Opening of the Two-Day Event on Ceramic Art",
+            "evening1": "Historical walk in Margarites (for those attending the symposium)",
+            "evening2": "'Observations on the practice of ceramic art (13th–15th c.) in Byzantine or Latin-ruled regions and related examples from Venetian Crete (13th–17th c.)', Dr. Anastasia Giangaki.",
+            "evening3": "'Cretan pottery: from the Minoans to the Romans', Dr. Kostis S. Christakis.",
+            "evening4": "'My memoirs', Dimitris Lymperidis, Potter.",
+            "evening5": "Round table discussion: Discussion on the challenges and future of local/traditional pottery. Moderated by Gelly Kallinikou and Dimitris Lymperidis."
+        },
+        "program9": {
+            "date": "Saturday 25 July",
+            "morning": "Dry stone wall construction and stone masonry restoration workshops using natural materials",
+            "title": "The Generations of Clay – Continuation of the Two-Day Event on Ceramic Art",
+            "evening1": "Visit, introductions and small clay workshops alongside the potters of Margarites",
+            "evening2": "'Clay Memory and Cultural Heritage: The role of Nitsa Papadogianni and EOMMEX in the revival of Rethymno pottery', Eirini Grigoraki-Zanni.",
+            "evening3": "'The pottery of Margarites, past and present', Giorgos Dalampelas.",
+            "evening4": "Documentary: 'Biographies from Clay' – The potters of Margarites speak about their world. Directed by Thodoris Markou.",
+            "evening5": "Farewell celebration for the stone workshop and the ceramic art two-day event, at the Katochoria Square of Margarites."
+        },
+        "programNote": "The lectures will take place in the courtyard of the Margarites Primary School",
         "formlink": "https://forms.gle/AFqUCiGtSHTdddnS7",
         "instructorTitle": "instructors:",
         "instructorName1": "Yiannis Alefantinos",

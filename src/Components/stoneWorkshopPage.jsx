@@ -37,15 +37,14 @@ export default function StoneworkshopPage() {
                 <span className="mb-2">{workshop.info4}</span>
                 <span className="mb-2">{workshop.program0}</span>
                 <span>{workshop.freeParticipationNotice.normal}<b>{workshop.freeParticipationNotice.bold}</b></span>
-                <span className="sw-subtitle">{workshop.programTempTitle}</span>
-                <span className="mb-2"><i>{workshop.programParallel}</i></span>
+                <br></br>
+                {/* <span className="sw-subtitle">{workshop.programTempTitle}</span> */}
+                {/* <span className="mb-2"><i>{workshop.programParallel}</i></span> */}
                 {/* <span className="sw-subtitle">{workshop.Programtitle}</span> */}
                 <span className="sw-activity-date">{workshop.program1.date}</span>
                 <span className="sw-activity-list">
                     <div >09:00 - 14:30: {workshop.program1.arrival}</div>
-                    {/* <div >11:00 - 13:00: {workshop.program1.morning}</div>
-                    <div >13:00 - 15:00: {workshop.program1.midday}</div>
-                    <div >19:00 - 20:30: {workshop.program1.evening}</div> */}
+                    <div >19:00 - 20:00: {workshop.program1.evening}</div>
                 </span>
                 <span className="sw-activity-date">{workshop.program2.date}</span>
                 <div className="sw-activity-list">
@@ -56,42 +55,60 @@ export default function StoneworkshopPage() {
                     <div>8:00 - 14:30: {workshop.program3.morning1}</div>
                     <div>9:00 - 11:00: {workshop.program3.arrival}</div>
                     <div>11:00 - 12:00: {workshop.program3.morning2}</div>
+                    <div>19:00 - 20:00: {workshop.program3.evening}</div>
                 </div>
                 <div className="sw-activity-date">{workshop.program4.date}</div>
                 <div className="sw-activity-list">
-                    <div >8:00 - 14:30: {workshop.program4.morning}</div>
-                    <div >{workshop.program4.eveningTranslation}: {workshop.program4.evening}</div>
-                    {/* <li className="sw-activity-tab">{workshop.program4.evening1}</li>
-                    <li className="sw-activity-tab">{workshop.program4.evening2}</li> */}
+                    <div >8:00 - 13:30: {workshop.program4.morning}</div>
+                    <div >16:00 - 17:30: {workshop.program4.evening1}</div>
+                    <div >18:00 - 20:00: {workshop.program4.evening2}</div>
                 </div>
                 <div className="sw-activity-date">{workshop.program5.date}</div>
                 <div className="sw-activity-list">
-                    <div>8:00 - 13:00: {workshop.program5.morning}</div>
-                    <div>13:30 - 14:30: {workshop.program5.midday}</div>
-                    <div>21:00: {workshop.program5.evening}</div>
+                    <div>8:00 - 14:30: {workshop.program5.morning}</div>
+                    <div>{workshop.program5.evening}</div>
                 </div>
-                {/* <div className="mb-2">
+                <div className="mb-2">
                     <div className="sw-activity-date">{workshop.program6.date}</div>
                     <div className="sw-activity-list">
-                        <div >{workshop.program6.evening}</div>
+                        <div >8:00 - 13:30: {workshop.program6.morning}</div>
+                        <div>16:00 - 22:00 {workshop.program6.evening}</div>
                     </div>
                 </div>
                 <div className="mb-2">
                     <div className="sw-activity-date">{workshop.program7.date}</div>
                     <div className="sw-activity-list">
-                        <div >20:00 - 22:30: {workshop.program7.evening}</div>
-                        <li className="sw-activity-tab">{workshop.program7.evening1}</li>
-                        <li className="sw-activity-tab">{workshop.program7.evening2}</li>
-                        <li className="sw-activity-tab">{workshop.program7.evening3}</li>
+                        <div >8:00 - 14:30: {workshop.program7.morning}</div>
+                        <div >20:00 - 21:00: {workshop.program7.evening}</div>
+                    </div>
+                </div>
+                <div className="mb-2">
+                    <div className="sw-activity-date">{workshop.program8.date}</div>
+                    <div className="sw-activity-list">
+                        <div>8:00 - 14:30: {workshop.program8.morning}</div>
+                        <div><b>{workshop.program8.title}</b></div>
+                        <li className="sw-activity-tab">18:30 - 19:30: {workshop.program8.evening1}</li>
+                        <li className="sw-activity-tab">20:00 - 20:30: {workshop.program8.evening2}</li>
+                        <li className="sw-activity-tab">20:30 - 21:00: {workshop.program8.evening3}</li>
+                        <li className="sw-activity-tab">21:00 - 21:30: {workshop.program8.evening4}</li>
+                        <li className="sw-activity-tab">21:30 - 22:00: {workshop.program8.evening5}</li>
                     </div>
                 </div>
                 <div>
-                    <div className="sw-activity-date">{workshop.program8.date}</div>
+                    <div className="sw-activity-date">{workshop.program9.date}</div>
                     <div className="sw-activity-list">
-                        <div >8:00 - 14:30: {workshop.program8.morning}</div>
-                        <div >21:00: {workshop.program8.evening}</div>
+                        <div >8:00 - 12:30: {workshop.program9.morning}</div>
+                        <div><b>{workshop.program9.title}</b></div>
+                        <div >17:30 - 19:30: {workshop.program9.evening1}</div>
+                        <li className="sw-activity-tab">20:00 - 20:30: {workshop.program9.evening2}</li>
+                        <li className="sw-activity-tab">20:30 - 21:00: {workshop.program9.evening3}</li>
+                        <li className="sw-activity-tab">21:00 - 21:15: {workshop.program9.evening4}</li>
+                        <li className="sw-activity-tab">21:30: {workshop.program9.evening5}</li>
                     </div>
-                </div> */}
+                </div>
+                <div>
+                    <i>* {workshop.programNote}</i>
+                </div>
                 <span className="sw-subtitle">{workshop.accommodation}</span>
                 <span className="mb-2">{workshop.accommodationInfo1}</span>
                 <span>{workshop.accommodationInfo2}</span>
