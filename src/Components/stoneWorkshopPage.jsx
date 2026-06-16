@@ -5,6 +5,7 @@ import langfileEnglish from '../Lang/en.json';
 import { useIntl } from 'react-intl';
 import Alefantinos from '../Images/Instructors/Alefantinos.jpg';
 import Vergianos from '../Images/Instructors/Vergianos.jpg';
+import logo from '../Images/Logo-perif.png';
 
 
 export default function StoneworkshopPage() {
@@ -37,10 +38,12 @@ export default function StoneworkshopPage() {
                 <span className="mb-2">{workshop.info4}</span>
                 <span className="mb-2">{workshop.program0}</span>
                 <span>{workshop.freeParticipationNotice.normal}<b>{workshop.freeParticipationNotice.bold}</b></span>
-                <br></br>
                 {/* <span className="sw-subtitle">{workshop.programTempTitle}</span> */}
                 {/* <span className="mb-2"><i>{workshop.programParallel}</i></span> */}
-                {/* <span className="sw-subtitle">{workshop.Programtitle}</span> */}
+                <span className="sw-coorganization">{workshop.prefecture}</span>
+                <div className="sw-coorganization-logo">
+                    <img src={logo} width="300px" />
+                </div>
                 <span className="sw-activity-date">{workshop.program1.date}</span>
                 <span className="sw-activity-list">
                     <div >09:00 - 14:30: {workshop.program1.arrival}</div>
