@@ -6,6 +6,7 @@ import langfileEnglish from '../Lang/en.json';
 import { useIntl } from 'react-intl';
 import StoneworkshopPage from "./stoneWorkshopPage";
 import LoomworkshopPage from "./loomWorkshopPage";
+import LoomChildrenworkshopPage from "./loomChildrenWorkshopPage";
 import StonecarvingPage from "./stoneCarvingPage";
 import Feast23 from "./Feast23";
 import PhotoCarousel from "./photoCarousel";
@@ -71,6 +72,9 @@ export default function Workshops(props) {
             setRoutedToComponent(true);
         } else if (url == '/feast23') {
             setSpecialComponentDisplayed(<Feast23 />);
+            setRoutedToComponent(true);
+        } else if (url == '/loomchildrenworkshop') {
+            setSpecialComponentDisplayed(<LoomChildrenworkshopPage />);
             setRoutedToComponent(true);
         } else if (url == '/loomworkshop') {
             setSpecialComponentDisplayed(<LoomworkshopPage />);
@@ -217,6 +221,9 @@ export default function Workshops(props) {
             setRoutedToComponent(true);
         } else if (props.url == '/loomworkshop') {
             setSpecialComponentDisplayed(<LoomworkshopPage />);
+            setRoutedToComponent(true);
+        } else if (props.url == '/loomchildrenworkshop') {
+            setSpecialComponentDisplayed(<LoomChildrenworkshopPage />);
             setRoutedToComponent(true);
         } else if (props.url == '/stonecarving') {
             setSpecialComponentDisplayed(<StonecarvingPage />);

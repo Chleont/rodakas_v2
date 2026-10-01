@@ -375,62 +375,28 @@
         ]
     },
     "loomchildren": {
-        "title": "Weaving Workshop for Children",
-        "dates": "November 2024 - April 2025",
-        "text_slogan": "",
+        "title": "Weaving Workshop for Children and teenagers",
+        "dates": "November 2026 - March 2027",
         "introtext": [
-            "The children asked for it since last summer. So we started a weaving workshop for them, in the Rodakas loom area in Margarites."
+            "On Wednesday afternoons, from November 4 until the end of winter and the beginning of spring, our gatherings filled with yarns and woven creations will take place once again. For the younger ones, for children and for... the grandmothers who accompany them and who, together with them, delight in the revival of the art of weaving through young hands. Our teacher will be Nektaria Kampitaki. Her whole life has been intertwined with the yarns and threads of weaving, as well as with the stitches of all kinds of embroidery and sewing, and she loves teaching them. (You can find her biography below.)"
         ],
-        "Programtitle": "Workshop Outline and Program:",
+        "Programtitle": "Workshop format and programme:",
         "programText": [
-            "The workshop will be held twice a month over two weekends, engaging the children for 4 hours on Sunday of the first weekend and for 4 hours on Saturday and another 4 on Sunday of the second weekend.",
-            "The weekends are not necessarily consecutive; see dates below:"
+            "The workshop will take place every Wednesday from 5:00 to 7:00 p.m. in the Rodakas loom workshop, in Margarites, Mylopotamos.",
+            "Weaving on looms and on small and large frames, making ornaments from yarn, processing wool and other beautiful and special creations... And at the same time, whenever the teacher allows it, we will read old and new stories. So that the mind may delight while the hands are at work."
         ],
-        "accommodation": "",
-        "accommodationInfo": [],
         "costAndRegistration": "Registration:",
-        "cost": "A child can start attending the workshop at any time during the 6 months it will run.",
-        "registration": "For information and registration, call 6944330970",
-        "formlink": "",
-        "instructorTitle": "Instructors:",
+        "registration": "For information and registration, call ",
+        "phone": "6944330970",
+        "instructorTitle": "Teacher:",
         "instructors": [
             {
-                "name": "Despina Pantelaki-Somaki",
-                "image": "Somaki",
+                "name": "Nektaria Kampitaki",
+                "image": "kampitaki",
                 "bio": [
-                    "I was born in Chania to devout and honorable parents. My father was Tilemachos Pantelakis, a traffic policeman in Chania, and my mother Sophia was from Heraklion. She worked at Eleni Kastrinogianni's weaving workshop. I inherited from my mother, who was a major influence, the love for the art of weaving. I got married at the age of sixteen to Emmanuel Somakis, a navy officer, and we had two children, Tilemachos Antonios and Stefania. I worked in various different jobs, making wedding favors, sewing buttons, stringing pearls in goldsmith workshops, and selling frozen goods and oranges in markets. However, I always wanted to work with a loom! The sound, the colors, the scent of the threads, and the end result enchanted me... I said that no matter what, at the age of 40, I would get a loom, and I made it happen! In the beginning, my choice to engage in weaving was met with disdain, but I didn't give up. I am proud to be a weaver!",
-                    "Despina Pantelaki-Somaki has been teaching weaving at the Lyceum of Greek Women in Chania for five years. Her weavings have been acquired by Chanel and have attracted the interest of Dior. She collaborates with the Greek brand Gaenus, owned by Eftychia Sarri, in London, and with other important fashion houses."
+                    "I was born in Grigoria, in the province of Pyrgiotissa, Heraklion, in 1976. My grandmother, Eirini, taught me to embroider. When I was seven, she taught me the Byzantine stitch, along with other types and techniques of embroidery. At the age of thirteen, I went to the Kalyviani Monastery to learn weaving from the nuns. Around the same time, a sewing teacher from a state institution came to Magarikari, and I took dressmaking lessons, which I later continued as an apprentice at Singer, where I learned cutwork embroidery and also how to make patterns. At the age of twenty, I went to the workshop of the Monastery of Saint John the Far-Away in Megara, where I learned gold embroidery. Later, I apprenticed under the renowned weaver Maria Zacharioudaki from Zaros. From her, I learned the triopatitiro technique, along with many other weaving techniques that I have been practicing ever since. I also worked alongside Popi Tsimpiskaki in Rethymno on traditional Cretan costumes.",
+                    "Since 2017, I have been working steadily with Klotho, a Greek fashion and weaving brand based in Rethymno, founded by Alexandra Theochari. During this period, I have also collaborated with the renowned weaver and teacher Manolis Kouratoras. In 2025, I graduated from the Pilot Educational Programme in the Art of Weaving offered by KEDIVIM, which took place in Anogeia. In 2025–26, I participated in the six-month weaving workshop of rodakas.org as an assistant to teacher Manolis Kouratoras. To this day, all my experience and passion have been devoted to the art of weaving and embroidery."
                 ]
-            },
-            {
-                "name": "Eirini Xanthioti",
-                "image": "Xanthioti",
-                "bio": [
-                    "Eirini Xanthioti holds a Bachelor’s degree in Business Administration and Education from Athens University of Business and Economics, with expertise in marketing and teaching proficiency in social and economic sciences. She studied theater in education at the School of Play in Athens and learned weaving and textile arts under Despina Somaki and Manolis Kouratoras at the Rodakas Loom Workshop in Crete, as well as under Sofia Tsourinaki at the Youth Education Association in Athens.",
-                    "Eirini worked as a theater educator from 2015 to 2019 in various educational settings, including Aerini Poli and Perivoli sti Vari in Athens, as well as in summer camps and theater classes for children in Plakias and Sounio. She managed theater programs and facilitated workshops in permaculture and non-violence education for children aged 3 to 16. Recently, Eirini has led weaving workshops for children and beginners at the Rodakas Loom Workshop from March 2023 to January 2024 and organized weaving sessions at cultural festivals such as Fashion Revolution Week in Athens, Fields of Amalthia Festival, and European Wool Day in Metsovo. Eirini also completed an internship with Maria Sigma, assisting in fabric creation, and continues to lead workshops in art spaces like Peru Athens and Conseederate. Through her work, Eirini promotes arts education, sustainability, and creativity in community settings."
-                ]
-            }
-        ],
-        "program": [
-            {
-                "date": "Sunday 24/11, Weekend 30/11-1/12",
-                "activities": []
-            },
-            {
-                "date": "Sunday 15/12, Weekend 18-19/01",
-                "activities": []
-            },
-            {
-                "date": "Sunday 26/01, Weekend 15-16/02",
-                "activities": []
-            },
-            {
-                "date": "Sunday 23/02, Weekend 15-16/03",
-                "activities": []
-            },
-            {
-                "date": "Sunday 30/03, Weekend 5-6/04",
-                "activities": []
             }
         ]
     },

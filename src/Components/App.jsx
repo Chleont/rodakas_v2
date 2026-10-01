@@ -102,6 +102,9 @@ function App() {
                     <Route path='/activity/loomworkshop' element={
                         <Workshops url={'/loomworkshop'} />
                     } />
+                    <Route path='/activity/loomchildrenworkshop' element={
+                        <Workshops url={'/loomchildrenworkshop'} />
+                    } />
                     {/* <Route path='/activity/stonecarving' element={
                         <Workshops url={'/stonecarving'}/>
                     }/> */}
