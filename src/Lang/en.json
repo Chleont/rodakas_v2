@@ -200,42 +200,105 @@
     },
     "loomworkshop": {
         "title": "Rodakas Weaving Workshop in Margarites",
-        "dates": "October 12 - 18, 2025",
+        "dates": "15–22 November 2026",
         "text_slogan": "",
         "introtext": [
-            "Ένας ακόμη κύκλος του Ρόδακα στην τέχνη της Υφαντικής, με τη χρηματοδότηση του <i>Κοινωφελούς Ιδρύματος Ιωάννη Σ. Λάτση,</i>",
-            "Σε τελάρα με δασκάλα τη Βασιλεία Ανηψητάκη, όπου θα μετρήσουμε για να τοποθετήσουμε το σχέδιο, θα συνδυάσουμε και θα αναμείξουμε χρώματα, θα μάθουμε να υφαίνουμε ευθύγραμμα, καμπύλα και ποικίλων σχημάτων μοτίβα και σχέδια με διαφορετικές υφές.",
-            "Στους αργαλειούς, με δασκάλα τη Δέσποινα Σωμάκη όπου θα εξασκηθούμε σε διαφορετικούς τύπους υφαντών, με το λεπτό νήμα στο στημόνι και στο υφάδι αλλά και με το χοντρό στημόνι και κουρέλια για υφάδι, για τη δημιουργία κάθε είδους, σχεδιου και  χρήσης υφάσματος.",
-            "Κι ακόμη ο δάσκαλος Μανώλης Κουράτορας θα μας δείξει το Διάσιμο (προετοιμασία, διευθέτηση και τύλιγμα των νημάτων στο «αντί» που θα αποτελέσουν το στημόνι  των υφαντών μας)",
-            "Και η δασκάλα Κατερίνα Κορρέ θα μάς δείξει τη βαφική τέχνη και τις πολλές αποχρώσεις που μπορούν να δώσουν δύο πολύ σημαντικά για τη βαφική αν και τόσο ταπεινά φυτά: Η «Ακονιζά(έ)» και η Ξυνίδα."
+            "Rodakas is always moving forward and dreaming, bringing together three consecutive workshops on Weaving, Natural Dyeing and Felting. We are delighted to welcome back to Margarites, after some time away, our weaving teacher, Despina Somaki, to learn alongside her, among other things, the impressive Kouskouse (pattern weaving) and Soumak (stitch) techniques.",
+            "This will be followed by a two-day workshop dedicated to the theory and practice of plant-based dyeing, with an emphasis on autumn plants. The instructor will be Katerina Korre, whose extensive expertise and in-depth practical knowledge of natural dyes are truly exceptional. She will share some of this knowledge with us through stories about yarns and weaving techniques that have been forgotten over the passage of time.",
+            "On the final day, a felting workshop will take place, led by weaver Anthi Makedou, with Elena Papadaki as her assistant. Together, we will learn how to make woollen fabric without a loom, suitable for a wide variety of uses and applications."
         ],
-        "Programtitle": "Identity and program of the workshop:",
-        "programText": "The workshop will begin with the reception of participants on Sunday, October 12.",
+        "Programtitle": "Workshop overview and programme:",
+        "programText": "The workshop will begin with the welcome of participants on 15 November.",
         "accommodation": "Accommodation:",
-        "accommodationInfo1": "There is the possibility of free accommodation for a limited number of participants at the guesthouse of the Monastery of Christ the Savior and Saint Gedeon.",
-        "accommodationInfo2": "Additionally, a free camping space is available for participants with their own tents.",
-        "accommodationHouses": "Accommodation is also available in the following guesthouses:",
-        "accommodationHouses1": "“DM Margarites”, which can host six people. Contact phone: 6936601084, Ms. Asimenia Kavgalaki",
-        "accommodationHouses2": "“H&M HOME” Margarites, which can host six people. Contact phone: 6976745669, Mr. Haris Rousis",
-        "accommodationHouses3": "“The House of the Kourites” in the settlement of Margarites Tzannakiana, offering: double, triple, and quadruple rooms with breakfast. Contact phone: 6945722052, Ms. Anastasia Fryganaki",
-        "accommodationHouses4": "“Chalikoutika” Margarites. A fully equipped house with two bedrooms with double beds and one single. Contact phone: 6973005153, Mr. Giorgos Skalidakis",
-        "accommodationHouses5": "“Archontiko Rodomeli” Margarites. Guesthouse with double rooms. Contact phone: Ms. Eleni Giannousaki 6979101973",
-        "costAndRegistration": "Workshop cost and registration:",
-        "cost": "Participation is free of charge, places are full.",
-        "registration": "Register to the waiting list",
-        "formlink": "https://forms.gle/5wwDboFK2tSLZnav6",
-        "instructorTitle": "Teachers:",
+        "accommodationInfo1": "Accommodation is available in a house in Margarites with a capacity of three people and in another house in Ancient Eleutherna with a capacity of five people. Accommodation is offered for a nominal fee to cover maintenance and running costs, and places will be allocated on a first-come, first-served basis.",
+        "accommodationInfo2": "Free camping space is also available for participants bringing their own tents.",
+        "accommodationHouses": "Accommodation is also available at the following guesthouses:",
+        "accommodationHouses2": "\"H&M HOME\", Margarites, which can accommodate six people. Contact: Haris Roussis, tel. 6976745669",
+        "accommodationHouses3": "\"The House of the Kouretes\" in the Tzannakiana neighbourhood of Margarites, offering double, triple and quadruple rooms with breakfast. Contact: Anastasia Fryganaki, tel. 6945722052",
+        "accommodationHouses4": "\"Chalikoutika\", Margarites. A fully equipped house with two bedrooms featuring double beds and one single bedroom. Contact: Giorgos Skalidakis, tel. 6973005153",
+        "accommodationHouses5": "\"Archontiko Rodomeli\", Margarites. A guesthouse with double rooms. Contact: Eleni Giannousaki, tel. 6979101973",
+        "accommodationHouses1": "A guesthouse in Ancient Eleutherna (10 minutes by car from the village), which can accommodate four people in two double beds. Contact: Asimenia Kavgalaki, tel. 6936601084",
+        "costAndRegistration": "Workshop fee and registration:",
+        "cost": "The participation fee for the entire workshop is €150.",
+        "registration": "Registration",
+        "formlink": "https://forms.gle/4Mtv6vtA8mPdMH6R7",
+        "instructorTitle": "Instructors:",
         "instructors": [
             {
                 "name": "Despina Pantelaki-Somaki",
                 "image": "Somaki",
                 "bio": [
-                    "I was born in Chania to devout and honorable parents. My father, Tilemachos Pantelakis, was a traffic officer in Chania, and my mother, Sofia, was from Heraklion and worked at Eleni Kastrinogianni’s weaving mill. My mother influenced me, and I grew to love the art of weaving. At sixteen, I married Emmanouil Somakis, a Navy officer, and we had two children, Tilemachos Antonios and Stefania.",
-                    "I worked in various fields—making wedding favors, sewing buttons, stringing pearls in jewelry stores, selling frozen goods and oranges in farmers' markets. However, I always longed to weave! The sounds, the colors, the smell of the threads, the final product enchanted me… I promised myself that at 40, no matter what I had done before, I would set up a loom, and I did it!",
-                    "At first, my choice to become a weaver was met with disdain, but I persevered. I am proud to be a weaver!",
-                    "Despina Pantelaki-Somaki has been teaching weaving at the Lyceum of Greek Women in Chania for five years. Her woven works have been acquired by the fashion house Chanel, and Dior has also shown interest. She collaborates with the Greek brand Gaenus by Eftychia Sarri in London and other renowned fashion houses."
+                    "I was born in Chania to devout and honest parents. My father was Tilemachos Pantelakis, a traffic police officer in Chania, and my mother, Sofia, was from Heraklion. She worked at the weaving workshop of Eleni Kastrinogianni. Through my mother, I was introduced to weaving and developed a love for the craft. At the age of sixteen, I married Emmanouil Somakis, a naval officer, and we had two children, Tilemachos Antonios and Stefania. I worked in many different jobs: making wedding favours, producing buttons as a subcontractor, stringing pearls in jewellery shops, selling frozen goods, and selling oranges at open-air markets. But I always wanted to work with a loom! I was enchanted by its sound, the colours, the smell of the yarns, and the finished result. I had said that when I turned forty, whatever else I had done in life, I would get a loom—and I made it happen! At first, people looked down on my choice to take up weaving, but I was not discouraged. I am proud to be a weaver!",
+                    "Despina Pantelaki-Somaki has been teaching the art of weaving at the Lyceum Club of Greek Women in Chania for the past five years. Her woven pieces have been purchased by Chanel, and Dior has expressed interest in acquiring her work. She collaborates with the Greek brand Gaenus, founded by Eftychia Sarri in London, as well as with other prominent fashion houses."
                 ]
             },
+            {
+                "name": "Katerina Korre",
+                "image": "Korre",
+                "bio": [
+                    "She was born in Athens. She studied at the Law School of the University of Athens, the Doxiadis School (Athens Technological Institute, Department of Interior Decoration), and the École Nationale Supérieure des Arts Décoratifs in Paris (ENSAD), where she completed a master's degree in Textile and Print.",
+                    "She settled in Rethymno in 1978, where she ran a tapestry workshop and the DIMITO art space for 24 years. From 2000 to 2009, she directed ISTOS, a tapestry and plant-dyeing workshop in Maroulas, Rethymno. She taught weaving and dyeing in workshops and seminars in Anogeia, Rethymno, Chania and Messara, as well as at the Centre for Contemporary Art in Rethymno (CCAR), as part of the \"Thread, Fabric, Clothing\" programme.",
+                    "She also taught painting at the Visual Arts Workshops of the Centre for Contemporary Art in Rethymno (1999–2003) and freehand drawing to prospective architecture students at the DIMITO gallery (1993–2001). She participated in group exhibitions in Athens, Piraeus, Rethymno, Heraklion, Paris and Montreal.",
+                    "Regarding plant-based dyeing, she has given talks and presentations at conferences and seminars. For two years, she also wrote a column entitled \"The Spirit of Plant Colours\" for the monthly supplement \"The Spirit of Ecology\" in the Avgi newspaper (2002–2005).",
+                    "She lives in the village of Koufi, Rethymno, where she continues to enjoy the beauty of plant colours and dyes."
+                ]
+            }
+        ],
+        "program": [
+            {
+                "date": "15 November",
+                "activities": [
+                    "9:00–10:30: Welcome and introductions",
+                    "11:00–14:30: Loom-weaving lesson with instructor Despina Somaki",
+                    "Afternoon: Independent practice on the loom"
+                ]
+            },
+            {
+                "date": "16–19 November",
+                "activities": [
+                    "Morning: Loom-weaving lesson with instructor Despina Somaki",
+                    "Afternoon: Independent practice on the loom"
+                ]
+            },
+            {
+                "date": "20–21 November",
+                "activities": [
+                    "Morning: Dyeing lesson with Katerina Korre",
+                    "Afternoon: Independent practice on the loom"
+                ]
+            },
+            {
+                "date": "22 November",
+                "activities": [
+                    "Morning: Felting workshop with Anthi Makedou and Elena Papadaki",
+                    "Midday: Workshop closing and farewell to participants"
+                ]
+            }
+        ]
+    },
+    "loomdesignworkshop": {
+        "title": "Weaving Workshop on the Loom",
+        "dates": "5 - 11 October 2024",
+        "text_slogan": "Margarites, Mylopotamos",
+        "introtext": [
+            "The main theme of the workshop will be learning and creating designs on the loom with instructor Manolis Kouratoras, a master weaver. Additionally, for two days, there will be an introduction to natural dyes and creating designs using the eco-printing technique, taught by Ms. Clarissa Joy Holmes, a fabric designer specializing in natural dyes."
+        ],
+        "Programtitle": "Profile and program of the workshop:",
+        "programText": "The workshop will start with the reception of the participants on Saturday, May 25th. During the mornings of the lesson days, the loom space will be open for those who wish to practice.",
+        "accommodation": "Accommodation:",
+        "accommodationInfo": [
+            "Accommodation is provided free of charge for a specific number of participants in the accommodation space of the Monastery of Christ the Savior and Saint Gedeon.",
+            "“The House of the Kouretes” in the village of Margarites Tzannakiana, with available: Double, Triple, and Quadruple rooms. Contact number: 6945722052, Mrs. Anastasia Friganaki",
+            "“Halikoutika” in Margarites. A residence available with full equipment and two bedrooms with double beds and one single. Contact number: 6973005153, Mr. George Skalidakis",
+            "“Archontiko Rodomeli” in Margarites. Guesthouse with double rooms. Contact number: Mrs. Eleni Giannousaki 6979101973",
+            "“Discover Margarites Home” in Margarites. A residence available with full equipment and two bedrooms, one with a double bed and one with two singles, and two additional sofa beds in the living room. The cost of accommodation is determined by agreement. Contact number: 2831050761, 6936366365, Mrs. Katerina Christodoulaki"
+        ],
+        "costAndRegistration": "Cost of the workshop and registration:",
+        "cost": "The cost of the workshop is 120 euros. In order to reserve your spot, a deposit of 50 euros must be made to the account of Rodakas GR60 0171 3750 0063 7516 4234 881, AMKE RODAKAS (Piraeus). To register, please fill out the form below.",
+        "registration": "Registration",
+        "formlink": "https://forms.gle/2WLFFTwY6AHxxsTYA",
+        "instructorTitle": "instructors:",
+        "instructors": [
             {
                 "name": "Vasileia Anipsitaki",
                 "image": "Anipsitaki",
@@ -265,78 +328,6 @@
                     "I received official recognition as a certified instructor in weaving and participated in numerous training programs. I volunteered to establish and launch the weaving workshop at the Center for Special Needs Children, Agios Spyridon. Through the Crete Regional Operational Program, I taught a 150-hour course on ‘Modern Technology and Aesthetics in the Weaving Art.’ I also reconstructed a functional replica of Penelope’s loom, which was officially presented at the Heraklion Museum by the University of the Mountains, with distinguished guests including Professor and Sorbonne Rector Eleni Arveler.",
                     "I have been criticized for ‘patenting’ the production of the Cretan woven fabric using the three-beam technique with mechanical support. However, I believe this makes the fabric more accessible and affordable while keeping Cretan homes adorned with traditional textiles rather than foreign ones.",
                     "After retiring, I continue to share my experience and knowledge wherever I am asked to help revive and develop the weaving craft."
-                ]
-            },
-            {
-                "name": "Katerina Korre",
-                "image": "Korre",
-                "bio": [
-                    "She was born in Athens. She studied at the Law School of the University of Athens, at the Doxiadis School (Athens Technological Institute, Department of Decoration), and at the École Nationale Supérieure des Arts Décoratifs in Paris (ENSAD, Master’s in Textile, Printing).",
-                    "She settled in Rethymno in 1978, where for 24 years she ran a tapestry workshop and the art space DIMITO. From 2000 to 2009 she directed the tapestry and natural dyeing workshop ISTOS in Maroulas, Rethymno. She taught weaving and dyeing in seminars (Anogeia, Rethymno, Chania, Mesara) and at the Rethymno Center of Contemporary Artistic Creation (KSEDR program “Thread, Fabric, Clothing”).",
-                    "She taught painting at the Fine Arts Workshops of the Rethymno Center of Contemporary Artistic Creation (1999–2003) and freehand drawing for architecture candidates (DIMITO Gallery, 1993–2001). She has participated in group exhibitions (Athens, Piraeus, Rethymno, Heraklion, Paris, Montreal).",
-                    "Regarding natural dyeing, she has given lectures and presentations at conferences, and for two years she wrote the column “The Demon of Plant Colors” in the monthly supplement “The Demon of Ecology” in the newspaper Avgi (2002–2005).",
-                    "She lives in the village of Koufi, Rethymno, where she continues to enjoy the beauty of plant-based colors and dyes."
-                ]
-            }
-        ],
-        "program": [
-            {
-                "date": "October 12",
-                "activities": [
-                    "9:00 - 10:30: Reception and introduction of participants",
-                    "11:00 - 14:30: Dyeing lesson with teacher Katerina Korre",
-                    "Afternoon: Weaving lesson on the frame loom with teacher Vasileia Anipsitaki"
-                ]
-            },
-            {
-                "date": "October 13",
-                "activities": [
-                    "Morning: Weaving lesson on the frame loom with teacher Vasileia Anipsitaki",
-                    "Afternoon: Warping lesson with teacher Manolis Kouratoras"
-                ]
-            },
-            {
-                "date": "October 14 - 18",
-                "activities": [
-                    "Morning: Weaving lesson on the frame loom with teacher Vasileia Anipsitaki",
-                    "Afternoon: Weaving lesson on the loom with teacher Despina Somaki"
-                ]
-            }
-        ]
-    },
-    "loomdesignworkshop": {
-        "title": "Weaving Workshop on the Loom",
-        "dates": "5 - 11 October 2024",
-        "text_slogan": "Margarites, Mylopotamos",
-        "introtext": [
-            "The main theme of the workshop will be learning and creating designs on the loom with instructor Manolis Kouratoras, a master weaver. Additionally, for two days, there will be an introduction to natural dyes and creating designs using the eco-printing technique, taught by Ms. Clarissa Joy Holmes, a fabric designer specializing in natural dyes."
-        ],
-        "Programtitle": "Profile and program of the workshop:",
-        "programText": "The workshop will start with the reception of the participants on Saturday, May 25th. During the mornings of the lesson days, the loom space will be open for those who wish to practice.",
-        "accommodation": "Accommodation:",
-        "accommodationInfo": [
-            "Accommodation is provided free of charge for a specific number of participants in the accommodation space of the Monastery of Christ the Savior and Saint Gedeon.",
-            "“The House of the Kouretes” in the village of Margarites Tzannakiana, with available: Double, Triple, and Quadruple rooms. Contact number: 6945722052, Mrs. Anastasia Friganaki",
-            "“Halikoutika” in Margarites. A residence available with full equipment and two bedrooms with double beds and one single. Contact number: 6973005153, Mr. George Skalidakis",
-            "“Archontiko Rodomeli” in Margarites. Guesthouse with double rooms. Contact number: Mrs. Eleni Giannousaki 6979101973",
-            "“Discover Margarites Home” in Margarites. A residence available with full equipment and two bedrooms, one with a double bed and one with two singles, and two additional sofa beds in the living room. The cost of accommodation is determined by agreement. Contact number: 2831050761, 6936366365, Mrs. Katerina Christodoulaki"
-        ],
-        "costAndRegistration": "Cost of the workshop and registration:",
-        "cost": "The cost of the workshop is 120 euros. In order to reserve your spot, a deposit of 50 euros must be made to the account of Rodakas GR60 0171 3750 0063 7516 4234 881, AMKE RODAKAS (Piraeus). To register, please fill out the form below.",
-        "registration": "Registration",
-        "formlink": "https://forms.gle/2WLFFTwY6AHxxsTYA",
-        "instructorTitle": "instructors:",
-        "instructors": [
-            {
-                "name": "Manolis Kuratoras",
-                "image": null,
-                "bio": [
-                    "I was born and raised in Agia, Rethymno, and after a long career, I returned and live in my hometown. I graduated from the six-year Economic Gymnasium of Heraklion. I graduated and received a diploma from the Panhellenic School of Spinning, Weaving, and Knitting. I obtained a State Diploma as a Supervisor of Weaving.",
-                    "After being selected by my school, I went to Italy on a scholarship to work for manufacturers of textile machinery and obtained the official qualification of Fitter for the Greek market in the weaving machines of SOMET. I specialized in intensive seminars on various spinning and weaving machines. I worked in Athens for a textile machinery dealership. I also worked as a Supervisor in the major industry ELLENOROMANA in Thessaloniki and as the Technical Director in the large industry PAPADIMITRIOU in Larissa.",
-                    "Returning to Crete, I worked for years as the head and designer at the workshop of Eleni Kastrinogianni, a brand closely associated with the traditional weaving art of Crete. Simultaneously, I offered services as a designer and engineer to smaller crafts in Heraklion.",
-                    "I have been recognized as an educator in the weaving specialty, and I have participated in many programs as a trainer. I voluntarily participated in the establishment and launch of the weaving workshop at the Center for Special Children, Agios Spyridon. Within the framework of the Operational Programme for Crete, I participated with 150 hours of teaching in the program Modern Technology and Aesthetics in Weaving Art. I also constructed and created a functional replica of Penelope's loom, which was officially presented at the Heraklion Museum by the University of the Mountains, with distinguished guests, including the professor and president of the University of Sorbonne, Eleni Arveler. Simultaneously, I started in Heraklion and after a few years, I joined LEADER 2 and relocated my craft industry for producing Cretan weavings and traditional costume items to Agia, Rethymno.",
-                    "I have been accused of 'patenting' the production of Cretan Weavings using the technique of the three treadles with mechanical support. For me, this is right because it is economically affordable and offers the opportunity to decorate many homes better than imported textiles.",
-                    "After my retirement, I offer my experience and knowledge wherever requested for the revival and development of Weaving Art."
                 ]
             },
             {
